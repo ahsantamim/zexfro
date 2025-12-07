@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "@/styles/globals.css";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Company Profile - Your Business Name",
-  description: "Professional company profile website",
+  title: "Zexfro - Global Trade Made Simple",
+  description:
+    "Secure. Compliant. Global Trade Made Simple. Connect with verified partners in Europe.",
 };
 
 export default function RootLayout({
@@ -16,7 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={outfit.className}>
+        <Navbar />
+        <main className="min-h-screen">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

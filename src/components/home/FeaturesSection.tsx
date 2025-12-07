@@ -1,42 +1,123 @@
+import { Shield, Clock, Globe, CheckCircle, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
 export function FeaturesSection() {
   const features = [
     {
-      title: "Fast & Reliable",
-      description: "Built with performance in mind",
-      icon: "⚡",
+      title: "Secure & Compliant",
+      description:
+        "End-to-end encryption and full regulatory compliance across all ",
+      highlight: "EU trade regulations",
+      icon: Shield,
+      color: "text-blue-600",
+      bgColor: "bg-blue-50",
+      cardBg: "bg-blue-50/60",
+      hoverBg: "hover:bg-blue-50/80",
+      borderColor: "border-blue-200",
     },
     {
-      title: "Secure",
-      description: "Your data is safe with us",
-      icon: "🔒",
+      title: "Real-Time Tracking",
+      description: "Monitor your shipments and orders ",
+      highlight: "24/7 with live updates",
+      secondDescription: " and automated notifications",
+      icon: Clock,
+      color: "text-green-600",
+      bgColor: "bg-green-50",
+      cardBg: "bg-green-50/60",
+      hoverBg: "hover:bg-green-50/80",
+      borderColor: "border-green-200",
     },
     {
-      title: "24/7 Support",
-      description: "We're here whenever you need us",
-      icon: "💬",
+      title: "Global Network",
+      description: "Connect with ",
+      highlight: "100+ verified importers and exporters",
+      secondDescription: " across Europe and beyond",
+      icon: Globe,
+      color: "text-yellow-600",
+      bgColor: "bg-yellow-50",
+      cardBg: "bg-yellow-50/60",
+      hoverBg: "hover:bg-yellow-50/80",
+      borderColor: "border-yellow-200",
+    },
+    {
+      title: "Quality Assurance",
+      description: "All partners are vetted and products meet ",
+      highlight: "international quality standards",
+      icon: CheckCircle,
+      color: "text-red-600",
+      bgColor: "bg-red-50",
+      cardBg: "bg-red-50/60",
+      hoverBg: "hover:bg-red-50/80",
+      borderColor: "border-red-200",
     },
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Why Choose Us</h2>
-          <p className="text-xl text-gray-600">
-            We provide the best solutions for your business
+    <section className="py-16 md:py-24 bg-white relative">
+      <div className="container mx-auto max-w-7xl">
+        {/* Section Header */}
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            Why Choose Zexfro
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            Your trusted partner for secure, compliant, and efficient global
+            trade
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="p-8 border border-gray-200 rounded-lg hover:shadow-lg transition"
-            >
-              <div className="text-5xl mb-4">{feature.icon}</div>
-              <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
-            </div>
-          ))}
+
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <div
+                key={index}
+                className={`group p-6 ${feature.cardBg} ${feature.hoverBg} rounded-none hover:shadow-xl transition-all duration-300 border ${feature.borderColor}`}
+              >
+                <div
+                  className={`w-14 h-14 ${feature.bgColor} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 relative overflow-hidden`}
+                >
+                  <Icon
+                    className={`w-7 h-7 ${feature.color} transition-all duration-300 group-hover:scale-110`}
+                    strokeWidth={2}
+                  />
+                  <Icon
+                    className={`w-7 h-7 ${feature.color} absolute inset-0 m-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                    strokeWidth={3}
+                    fill="currentColor"
+                    fillOpacity={0.2}
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {feature.description}
+                  <span className="bg-cyan-100 text-gray-900 px-1.5 py-0.5 font-medium">
+                    {feature.highlight}
+                  </span>
+                  {feature.secondDescription}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* CTA Button */}
+        <div className="text-center">
+          <Button
+            asChild
+            variant="primary"
+            size="lg"
+            className="rounded-none group"
+          >
+            <Link href="/about">
+              Learn More About Us
+              <ArrowRight className="w-5 h-5 group-hover:-rotate-45 transition-transform duration-300" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

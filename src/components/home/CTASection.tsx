@@ -1,19 +1,60 @@
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export function CTASection() {
   return (
-    <section className="py-20 bg-blue-600 text-white">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
-        <p className="text-xl mb-8 text-blue-100">
-          Join thousands of satisfied customers today
-        </p>
-        <Link
-          href="/contact"
-          className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition"
+    <section className="py-20 bg-[#0A4D96] text-white relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute inset-0 opacity-[0.05]">
+        <svg
+          className="absolute left-10 top-10 h-32 w-32 text-white"
+          viewBox="0 0 100 100"
         >
-          Contact Us Now
-        </Link>
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            stroke="currentColor"
+            strokeWidth="4"
+            fill="none"
+          />
+        </svg>
+        <svg
+          className="absolute right-20 bottom-10 h-40 w-40 text-white"
+          viewBox="0 0 100 100"
+        >
+          <rect
+            x="10"
+            y="10"
+            width="80"
+            height="80"
+            stroke="currentColor"
+            strokeWidth="4"
+            fill="none"
+          />
+        </svg>
+      </div>
+
+      <div className="container mx-auto max-w-7xl px-4 text-center relative z-10">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          Ready to Get Started?
+        </h2>
+        <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+          Join thousands of satisfied customers and transform your global trade
+          operations today
+        </p>
+        <Button
+          asChild
+          variant="secondary"
+          size="lg"
+          className="bg-white text-[#0A4D96] hover:bg-white/90 border-white"
+        >
+          <Link href="/contact">
+            Contact Us Now
+            <ArrowRight className="ml-2 w-5 h-5 group-hover:rotate-[-45deg] transition-transform duration-300" />
+          </Link>
+        </Button>
       </div>
     </section>
   );
