@@ -1,23 +1,54 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect, useRef } from "react";
 
 export function HeroSection() {
+  const bgRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (bgRef.current) {
+            const scrolled = window.scrollY;
+            bgRef.current.style.transform = `translate3d(0, ${
+              scrolled * 0.5
+            }px, 0)`;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section
-      className="relative h-screen flex items-center text-white pt-20 pb-10 sm:pt-24 sm:pb-16 md:pt-32 md:pb-20 lg:pt-40 lg:pb-28"
-      style={{
-        backgroundImage: "url('/home/hero.avif')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <section className="relative h-screen flex flex-col text-white overflow-hidden">
+      {/* Parallax Background */}
+      <div
+        ref={bgRef}
+        className="absolute inset-0 w-full h-[120%] -top-[10%] will-change-transform"
+        style={{
+          backgroundImage: "url('/home/hero.avif')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+
       {/* Gradient overlay: darker left for text, brighter right for image visibility */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
 
       {/* Content Container - Max width 7xl (1280px) */}
-      <div className="container mx-auto relative z-10 max-w-7xl">
+      <div className="container mx-auto relative z-10 max-w-7xl flex-1 flex items-center pt-20 pb-10 sm:pt-24 sm:pb-16 md:pt-32 md:pb-20 lg:pt-40 lg:pb-28">
         <div className="max-w-3xl animate-fade-in">
           {/* H1 Title - Responsive Typography Scale */}
           <h1
@@ -79,6 +110,19 @@ export function HeroSection() {
             </p>
           </div>
         </div>
+      </div>
+
+      {/* Scroll Down Button - Bottom of screen */}
+      <div className="relative z-10 w-full flex justify-center">
+        <button
+          onClick={() =>
+            window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
+          }
+          className="px-6 py-3 flex items-center rounded-tl-xl rounded-tr-xl cursor-pointer justify-center gap-2 bg-[#F9FAFB] text-[#0A4D96] font-semibold text-sm tracking-wider"
+        >
+          <span>VIEW PRODUCTS</span>
+          <ArrowRight className="w-4 h-4 rotate-90" strokeWidth={2.5} />
+        </button>
       </div>
     </section>
   );

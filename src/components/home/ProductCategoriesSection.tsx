@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowButton } from "@/components/ui/ArrowButton";
 
 const categories = [
   {
@@ -174,25 +175,20 @@ export function ProductCategoriesSection() {
                 <div className="relative h-full flex flex-col p-6">
                   {/* Title & Subtitle - Bottom Left */}
                   <div className="flex-1" />
-                  <div className="space-y-2">
-                    <h3 className="text-2xl font-bold text-white">
-                      {category.title}
-                    </h3>
-                    <p className="text-sm text-gray-200">{category.subtitle}</p>
+                  <div className="flex items-end justify-between gap-4">
+                    <div className="space-y-2">
+                      <h3 className="text-2xl font-bold text-white">
+                        {category.title}
+                      </h3>
+                      <p className="text-sm text-gray-200">
+                        {category.subtitle}
+                      </p>
+                    </div>
+                    {/* Arrow Button - Bottom Right */}
+                    <ArrowButton />
                   </div>
                 </div>
               </Link>
-
-              {/* Arrow Button - Outside Link, positioned at bottom-right */}
-              <div className="absolute -bottom-3 -right-3 w-16 h-16 flex items-center cursor-pointer justify-center bg-white/90  rounded-full   z-10">
-                <Image
-                  src="/product/button arrow.svg"
-                  alt="View category"
-                  width={68}
-                  height={68}
-                  className=" group-hover:rotate-45 transition-transform duration-300"
-                />
-              </div>
             </div>
           ))}
         </div>

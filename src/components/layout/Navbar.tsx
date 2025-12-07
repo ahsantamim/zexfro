@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button as MovingBorderButton } from "@/components/ui/moving-border";
+import { ZexfroLogo } from "@/components/ui/ZexfroLogo";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -22,10 +23,8 @@ export function Navbar() {
       <div className="container mx-auto max-w-7xl">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="font-bold text-xl md:text-2xl text-[#0A4D96]">
-              Zexfro
-            </div>
+          <Link href="/" className="flex items-center">
+            <ZexfroLogo />
           </Link>
 
           {/* Desktop Navigation */}
@@ -43,12 +42,14 @@ export function Navbar() {
 
           {/* CTA Button - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button
-              asChild
-              className="bg-[#0A4D96] hover:bg-[#083a73] text-white"
-            >
-              <Link href="/register">Register</Link>
-            </Button>
+            <Link href="/register">
+              <MovingBorderButton
+                borderRadius="2 rem"
+                className="bg-[#0A4D96] text-white text-xl border-yellow-400 font-bold px-6 py-2"
+              >
+                Register
+              </MovingBorderButton>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -75,14 +76,18 @@ export function Navbar() {
               </Link>
             ))}
             <div className="pt-4 px-4">
-              <Button
-                asChild
-                className="w-full bg-[#0A4D96] hover:bg-[#083a73] text-white"
+              <Link
+                href="/register"
+                onClick={() => setIsOpen(false)}
+                className="block"
               >
-                <Link href="/register" onClick={() => setIsOpen(false)}>
+                <MovingBorderButton
+                  borderRadius="1.75rem"
+                  className="w-full bg-white text-[#0A4D96] border-[#0A4D96] font-semibold"
+                >
                   Register
-                </Link>
-              </Button>
+                </MovingBorderButton>
+              </Link>
             </div>
           </div>
         )}

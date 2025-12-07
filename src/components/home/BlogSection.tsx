@@ -134,7 +134,12 @@ export function BlogSection() {
 
         {/* View All Button */}
         <div className="text-center">
-          <Button asChild variant="secondary" size="lg">
+          <Button
+            asChild
+            variant="primary"
+            size="lg"
+            className="group rounded-none"
+          >
             <Link href="/blog">
               View All Articles
               <ArrowRight className="ml-2 w-5 h-5 group-hover:rotate-[-45deg] transition-transform duration-300" />

@@ -99,10 +99,10 @@ export function StatsSection() {
             lightMode={true}
           />
           <Stat
-            num={25.5}
+            num={1.5}
             decimals={1}
-            suffix="K+"
-            subheading="Projects completed"
+            suffix="k+"
+            subheading="Shipment completed"
             lightMode={true}
           />
           <Stat

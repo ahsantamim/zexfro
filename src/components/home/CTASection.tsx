@@ -46,9 +46,8 @@ export function CTASection() {
         </p>
         <Button
           asChild
-          variant="secondary"
           size="lg"
-          className="bg-white text-[#0A4D96] hover:bg-white/90 border-white"
+          className="bg-white text-[#0A4D96] hover:bg-white/90 rounded-none group"
         >
           <Link href="/contact">
             Contact Us Now
