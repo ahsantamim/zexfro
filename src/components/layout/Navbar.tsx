@@ -44,7 +44,7 @@ export function Navbar() {
           <div className="hidden md:flex items-center space-x-4">
             <Link href="/register">
               <MovingBorderButton
-                borderRadius="2 rem"
+                borderRadius="9999px"
                 className="bg-[#0A4D96] text-white text-xl border-yellow-400 font-bold px-6 py-2"
               >
                 Register
