@@ -1,20 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Company Profile Website
+
+A full-featured company profile website built with Next.js 16 App Router, TypeScript, Tailwind CSS, and Prisma.
+
+## Features
+
+### Public Pages
+
+- **Home**: Hero section, features, stats, and call-to-action
+- **About**: Company mission, vision, timeline, and team
+- **Services**: Service offerings with benefits
+- **Contact**: Contact form with Carbonio mail integration
+- **Products**: Dynamic product catalog with filtering
+- **Blog**: Dynamic blog with categories and search
+- **Registration**: User registration system
+
+### Admin Portal
+
+- **Dashboard**: Overview with stats and analytics
+- **Product Management**: Full CRUD operations for products
+- **Blog Management**: Create, edit, and publish blog posts
+- **Registration Management**: Review and manage user registrations
+- **Mail Integration**: Carbonio mail configuration and logs
+
+## Tech Stack
+
+- **Framework**: Next.js 16 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4
+- **Database**: Prisma ORM (supports PostgreSQL, MySQL, SQLite)
+- **Email**: Carbonio Mail integration with nodemailer
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+
+### 2. Set Up Environment Variables
+
+```bash
+cp .env.example .env.local
+```
+
+### 3. Set Up Database
+
+```bash
+npm run db:generate
+npm run db:push
+```
+
+### 4. Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
