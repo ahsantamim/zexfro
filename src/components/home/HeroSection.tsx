@@ -105,11 +105,10 @@ export function HeroSection() {
                          text-white drop-shadow-lg"
           >
             Secure. Compliant.
-            <br />
+            <br className="sm:hidden" /> {/* Break on mobile */}
             <span className="text-[#ffffff] bg-white/10 backdrop-blur-sm px-2 rounded">
               Global Trade
-            </span>
-            <br />
+            </span>{" "}
             Made Simple.
           </h1>
 
@@ -130,17 +129,17 @@ export function HeroSection() {
                 containerClassName="h-[56px] sm:h-[64px] md:h-[72px] lg:h-[80px] min-w-[200px] sm:min-w-[240px] md:min-w-[280px] lg:min-w-[320px]"
                 borderClassName="bg-[radial-gradient(#ffffff_40%,transparent_60%)] group-hover:bg-[radial-gradient(#0A4D96_40%,transparent_60%)] transition-all duration-500"
                 className="bg-[#0A4D96] cursor-pointer hover:bg-white active:bg-gray-100
-                           text-white hover:text-[#0A4D96]
-                           font-semibold
-                           transition-all duration-500 ease-in-out
-                           text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px]
-                           px-6 py-4 sm:px-8 sm:py-5 md:px-10 md:py-6 lg:px-12 lg:py-6
-                           h-full w-full
-                           flex items-center justify-center gap-3
-                           group"
+               text-white hover:text-[#0A4D96]
+               font-semibold
+               transition-all duration-500 ease-in-out
+               text-[22px] sm:text-[20px] md:text-[22px] lg:text-[24px]  /* Only mobile is larger */
+               px-6 py-4 sm:px-8 sm:py-5 md:px-10 md:py-6 lg:px-12 lg:py-6
+               h-full w-full
+               flex items-center justify-center gap-3
+               group"
               >
                 Register for Free
-                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:-rotate-45 transition-transform duration-300" />
+                <ArrowRight className="w-6 h-6 sm:w-5 sm:h-5 group-hover:-rotate-45 transition-transform duration-300" />
               </MovingBorderButton>
             </Link>
 
@@ -152,9 +151,25 @@ export function HeroSection() {
               </span>{" "}
               here
             </p>
+
+            {/* Secondary Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-2">
+              <Link href="/products?type=import">
+                <button className="px-6 py-3 sm:px-8 sm:py-3.5 bg-white/30 hover:bg-[#0A4D96] backdrop-blur-sm text-white font-medium text-[14px] sm:text-[18px] rounded-full border border-white/30 hover:border-white/50 transition-all duration-300 flex items-center gap-2 min-w-[180px] sm:min-w-[200px] justify-center cursor-pointer animate-[border-glow-blink_2s_ease-in-out_infinite] group">
+                  Import Products
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-rotate-45 transition-transform duration-300" />
+                </button>
+              </Link>
+              <Link href="/products?type=export">
+                <button className="px-6 py-3 sm:px-8 sm:py-3.5 bg-white/30 hover:bg-[#0A4D96] backdrop-blur-sm text-white font-medium text-[14px] sm:text-[18px] rounded-full border border-white/30 hover:border-white/50 transition-all duration-300 flex items-center gap-2 min-w-[180px] sm:min-w-[200px] justify-center cursor-pointer animate-[border-glow-blink_2s_ease-in-out_infinite] group">
+                  Export Products
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-rotate-45 transition-transform duration-300" />
+                </button>
+              </Link>
+            </div>
           </div>
 
-          <div className="mt-3 sm:mt-4 md:mt-5 pt-4 sm:pt-5 md:pt-6 border-t border-gray-400/20 max-w-md mx-auto">
+          <div className="mt-4 sm:mt-5 md:mt-6 pt-4 sm:pt-5 md:pt-6 border-t border-gray-400/20 max-w-md mx-auto">
             <p className="text-[11px] sm:text-[12px] md:text-[13px] text-gray-300">
               Trusted by <span className="font-bold text-white">100+</span>{" "}
               importers and exporters worldwide

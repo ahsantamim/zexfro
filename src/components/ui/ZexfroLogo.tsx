@@ -6,7 +6,7 @@ export function ZexfroLogo() {
   return (
     <div className="relative flex items-center select-none -space-x-2">
       {/* Globe Icon */}
-      <div className="w-16 h-16 md:w-20 md:h-20 relative -rotate-12">
+      <div className="w-16 h-16 md:w-28 md:h-28 relative -rotate-12">
         <Image
           src="/globe.svg"
           alt="Zexfro Globe"
