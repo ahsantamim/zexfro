@@ -97,7 +97,7 @@ export function HeroSection() {
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
 
-      <div className="container mx-auto relative z-10 max-w-7xl flex-1 flex items-center justify-center py-8 sm:py-12 md:py-16 px-4">
+      <div className="container mx-auto relative z-10 max-w-7xl flex-1 flex items-center justify-center px-4 pt-36 sm:pt-40 md:pt-44 lg:pt-48 pb-8 sm:pb-12 md:pb-16">
         <div className="max-w-4xl text-center animate-fade-in">
           <h1
             className="font-bold leading-[1.2] mb-4 sm:mb-5 md:mb-6 
@@ -129,7 +129,7 @@ export function HeroSection() {
                 containerClassName="h-[56px] sm:h-[64px] md:h-[72px] lg:h-[80px] min-w-[200px] sm:min-w-[240px] md:min-w-[280px] lg:min-w-[320px]"
                 borderClassName="bg-[radial-gradient(#ffffff_40%,transparent_60%)] group-hover:bg-[radial-gradient(#0A4D96_40%,transparent_60%)] transition-all duration-500"
                 className="bg-[#0A4D96] cursor-pointer hover:bg-white active:bg-gray-100
-               text-white hover:text-[#0A4D96]
+               text-green-400 hover:text-[#0A4D96]
                font-semibold
                transition-all duration-500 ease-in-out
                text-[22px] sm:text-[20px] md:text-[22px] lg:text-[24px]  /* Only mobile is larger */
@@ -153,15 +153,15 @@ export function HeroSection() {
             </p>
 
             {/* Secondary Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-2">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-48 mt-2 sm:mt-2">
               <Link href="/products?type=import">
-                <button className="px-6 py-3 sm:px-8 sm:py-3.5 bg-white/30 hover:bg-[#0A4D96] backdrop-blur-sm text-white font-medium text-[14px] sm:text-[18px] rounded-full border border-white/30 hover:border-white/50 transition-all duration-300 flex items-center gap-2 min-w-[180px] sm:min-w-[200px] justify-center cursor-pointer animate-[border-glow-blink_2s_ease-in-out_infinite] group">
+                <button className="px-6 py-3 sm:px-8 sm:py-3.5 bg-[#0A4D96] hover:bg-[#083a73] backdrop-blur-sm text-white font-medium text-[14px] sm:text-[18px] rounded-full border border-[#0A4D96] hover:border-white/50 transition-all duration-300 flex items-center gap-2 min-w-[180px] sm:min-w-[200px] justify-center cursor-pointer animate-[border-glow-blink_2s_ease-in-out_infinite] group">
                   Import Products
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-rotate-45 transition-transform duration-300" />
                 </button>
               </Link>
               <Link href="/products?type=export">
-                <button className="px-6 py-3 sm:px-8 sm:py-3.5 bg-white/30 hover:bg-[#0A4D96] backdrop-blur-sm text-white font-medium text-[14px] sm:text-[18px] rounded-full border border-white/30 hover:border-white/50 transition-all duration-300 flex items-center gap-2 min-w-[180px] sm:min-w-[200px] justify-center cursor-pointer animate-[border-glow-blink_2s_ease-in-out_infinite] group">
+                <button className="px-6 py-3 sm:px-8 sm:py-3.5 bg-[#0A4D96] hover:bg-[#083a73] backdrop-blur-sm text-white font-medium text-[14px] sm:text-[18px] rounded-full border border-[#0A4D96] hover:border-white/50 transition-all duration-300 flex items-center gap-2 min-w-[180px] sm:min-w-[200px] justify-center cursor-pointer animate-[border-glow-blink_2s_ease-in-out_infinite] group">
                   Export Products
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-rotate-45 transition-transform duration-300" />
                 </button>

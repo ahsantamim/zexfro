@@ -18,7 +18,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed h-40 top-0 left-0 right-0 z-50 bg-[#0A4D96] backdrop-blur-sm shadow-sm border-b border-[#083a73]">
+    <nav className="fixed h-60 top-0 left-0 right-0 z-50 bg-[#0A4D96] backdrop-blur-sm shadow-sm border-b border-[#083a73]">
       <div className="container mx-auto max-w-7xl h-full">
         {/* BOTTOM LAYER CONTENT */}
         <div className="flex items-end justify-between h-full pb-4">
