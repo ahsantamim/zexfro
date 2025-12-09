@@ -13,15 +13,14 @@ export function ZexfroLogo() {
           fill
           className="object-contain"
           style={{
-            filter:
-              "invert(21%) sepia(89%) saturate(1831%) hue-rotate(196deg) brightness(93%) contrast(97%)",
+            filter: "brightness(0) invert(1)",
           }}
         />
       </div>
 
       {/* Title */}
-      <h1 className="text-base md:text-lg font-extrabold tracking-wide text-[#0A4D96]">
-        ZEXFRO
+      <h1 className="text-base md:text-lg font-extrabold tracking-wide text-white">
+        ZEXFRO INTERNATIONAL
       </h1>
     </div>
   );
