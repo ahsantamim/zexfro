@@ -8,27 +8,33 @@ export function TestimonialsSection() {
       name: "Sarah Johnson",
       role: "Import Manager",
       company: "TechGlobal Ltd",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
       rating: 5,
-      quote: "Zexfro transformed our import process. The compliance features and verified partners gave us peace of mind we never had before.",
+      quote:
+        "Zexfro transformed our import process. The compliance features and verified partners gave us peace of mind we never had before.",
     },
     {
       id: 2,
       name: "Michael Chen",
       role: "Export Director",
       company: "EuroTrade GmbH",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
       rating: 5,
-      quote: "Real-time tracking and automated notifications saved us countless hours. The platform is intuitive and incredibly efficient.",
+      quote:
+        "Real-time tracking and automated notifications saved us countless hours. The platform is intuitive and incredibly efficient.",
     },
     {
       id: 3,
       name: "Emma Rodriguez",
       role: "Supply Chain Lead",
       company: "Global Ventures",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
+      image:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
       rating: 5,
-      quote: "Finding quality verified partners across Europe has never been easier. Zexfro's network is unmatched in the industry.",
+      quote:
+        "Finding quality verified partners across Europe has never been easier. Zexfro's network is unmatched in the industry.",
     },
   ];
 
@@ -73,7 +79,7 @@ export function TestimonialsSection() {
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-4 pt-4 border-t border-gray-200">
+              <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden">
                   <Image
                     src={testimonial.image}

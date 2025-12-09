@@ -44,21 +44,6 @@ export function Navbar() {
             ))}
           </div>
 
-<<<<<<< HEAD
-=======
-          {/* CTA Button - Desktop */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Link href="/register">
-              <MovingBorderButton
-                borderRadius="9999px"
-                className="bg-[#0A4D96] text-white text-xl border-yellow-400 font-bold px-6 py-2"
-              >
-                Register
-              </MovingBorderButton>
-            </Link>
-          </div>
-
->>>>>>> 6d46c27ee51654738a18ca956ccf3f960292f6ea
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
