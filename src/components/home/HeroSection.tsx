@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Button as MovingBorderButton } from "@/components/ui/moving-border";
 import { useEffect, useRef, useState } from "react";
 
@@ -19,29 +18,24 @@ export function HeroSection() {
     const typingSpeed = 100;
     const deletingSpeed = 60;
     const pauseTime = 900;
-
     const currentWord = texts[textIndex];
 
     const interval = setInterval(
       () => {
         setTypewriterText((prev) => {
-          // Typing
           if (!isDeleting) {
             if (prev.length < currentWord.length) {
               return currentWord.slice(0, prev.length + 1);
             }
-
             setTimeout(() => setIsDeleting(true), pauseTime);
             clearInterval(interval);
             return prev;
           }
 
-          // Deleting
           if (prev.length > 0) {
             return prev.slice(0, prev.length - 1);
           }
 
-          // Next word
           setIsDeleting(false);
           setTextIndex((i) => (i + 1) % texts.length);
           clearInterval(interval);
@@ -57,14 +51,13 @@ export function HeroSection() {
   // ★ Parallax
   useEffect(() => {
     let ticking = false;
-
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           if (bgRef.current) {
             const scrolled = window.scrollY;
             bgRef.current.style.transform = `translate3d(0, ${
-              scrolled * 0.5
+              scrolled * 0.4
             }px, 0)`;
           }
           ticking = false;
@@ -72,17 +65,16 @@ export function HeroSection() {
         ticking = true;
       }
     };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <section
-      className="relative flex flex-col text-white"
-      style={{ minHeight: "100svh" }}
+      className="relative flex flex-col justify-center text-white"
+      style={{ minHeight: "100vh", paddingTop: "240px" }}
     >
-      {/* Parallax Background */}
+      {/* Background */}
       <div
         ref={bgRef}
         className="absolute inset-0 w-full h-[120%] -top-[10%] will-change-transform"
@@ -94,100 +86,111 @@ export function HeroSection() {
         }}
       />
 
-      {/* Gradient overlay */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
 
-      <div className="container mx-auto relative z-10 max-w-7xl flex-1 flex items-center justify-center px-4 pt-36 sm:pt-40 md:pt-44 lg:pt-48 pb-8 sm:pb-12 md:pb-16">
-        <div className="max-w-4xl text-center animate-fade-in">
-          <h1
-            className="font-bold leading-[1.2] mb-4 sm:mb-5 md:mb-6 
-                         text-[28px] sm:text-[32px] md:text-[40px] lg:text-[56px]
-                         text-white drop-shadow-lg"
-          >
+      {/* MAIN HERO CONTENT (perfect centered) */}
+      <div className="container mx-auto max-w-7xl relative z-10 px-4 flex flex-col items-center justify-center text-center">
+        <div className="max-w-4xl animate-fade-in">
+          {/* TITLE */}
+          <h1 className="font-bold leading-[1.2] mb-6 text-[28px] sm:text-[36px] md:text-[42px] lg:text-[72px] drop-shadow-lg">
             Secure. Compliant.
-            <br className="sm:hidden" /> {/* Break on mobile */}
-            <span className="text-[#ffffff] bg-white/10 backdrop-blur-sm px-2 rounded">
+            <br className="sm:hidden" />
+            <span className="text-white bg-white/10 backdrop-blur-sm px-2 rounded">
               Global Trade
             </span>{" "}
             Made Simple.
           </h1>
 
-          <p
-            className="font-normal leading-[1.4] md:leading-[1.5] mb-6 sm:mb-7 md:mb-8
-                        text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px]
-                        text-gray-200 mx-auto max-w-[60ch]"
-          >
+          {/* SUBTITLE */}
+          <p className="font-normal leading-[1.4] md:leading-[1.5] mb-8 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-gray-200 mx-auto max-w-[60ch]">
             Connect with verified partners in Europe. Access approved product
             categories, manage orders seamlessly, and grow your business with
             confidence.
           </p>
 
+          {/* BUTTON */}
           <div className="space-y-4 flex flex-col items-center">
             <Link href="/register">
               <MovingBorderButton
                 borderRadius="9999px"
-                containerClassName="h-[56px] sm:h-[64px] md:h-[72px] lg:h-[80px] min-w-[200px] sm:min-w-[240px] md:min-w-[280px] lg:min-w-[320px]"
-                borderClassName="bg-[radial-gradient(#ffffff_40%,transparent_60%)] group-hover:bg-[radial-gradient(#0A4D96_40%,transparent_60%)] transition-all duration-500"
-                className="bg-[#0A4D96] cursor-pointer hover:bg-white active:bg-gray-100
-               text-green-400 hover:text-[#0A4D96]
-               font-semibold
-               transition-all duration-500 ease-in-out
-               text-[22px] sm:text-[20px] md:text-[22px] lg:text-[24px]  /* Only mobile is larger */
-               px-6 py-4 sm:px-8 sm:py-5 md:px-10 md:py-6 lg:px-12 lg:py-6
-               h-full w-full
-               flex items-center justify-center gap-3
-               group"
+                containerClassName="
+                  h-[56px] sm:h-[64px] md:h-[72px] lg:h-[90px]
+                  min-w-[240px] sm:min-w-[260px] md:min-w-[300px] lg:min-w-[360px]
+                "
+                borderClassName="
+                  bg-[radial-gradient(#7BE0A5_40%,transparent_60%)]
+                  group-hover:bg-[radial-gradient(#0AFF72_40%,transparent_60%)]
+                  transition-all duration-500
+                "
+                className="
+                  cursor-pointer relative overflow-hidden
+                  bg-gradient-to-r from-[#7BE0A5] via-[#1AD38E] to-[#0AFF72]
+                  hover:from-[#0AFF72] hover:via-[#15E67C] hover:to-[#7BE0A5]
+                  shadow-[0_0_18px_#14ff86,inset_0_0_12px_#14ff86]
+                  hover:shadow-[0_0_30px_#14ff86,inset_0_0_18px_#14ff86]
+                  transition-all duration-500 ease-in-out
+                  px-10 py-5 flex items-center justify-center gap-4
+                  rounded-full whitespace-nowrap group
+                "
               >
-                Register for Free
-                <ArrowRight className="w-6 h-6 sm:w-5 sm:h-5 group-hover:-rotate-45 transition-transform duration-300" />
+                <span
+                  className="
+                    bg-white text-transparent bg-clip-text italic font-bold tracking-tight font-[Poppins]
+                    drop-shadow-[2px_2px_5px_rgba(0,0,0,0.45)]
+                    [text-shadow:0px_1px_0px_#fff,0px_3px_0px_#e5e5e5,0px_4px_4px_rgba(0,0,0,0.55)]
+                    text-[32px] sm:text-[30px] md:text-[32px] lg:text-[36px]
+                  "
+                >
+                  Register for Free
+                </span>
+
+                <ArrowRight
+                  className="
+                    w-7 h-7 sm:w-6 sm:h-6 text-white 
+                    drop-shadow-[0_0_6px_#14ff86]
+                    transition-all duration-300
+                    group-hover:-rotate-45 group-hover:translate-x-2
+                  "
+                />
               </MovingBorderButton>
             </Link>
 
+            {/* TYPEWRITER */}
             <p className="text-[16px] sm:text-[18px] md:text-[20px] text-gray-200 min-h-[30px]">
               Register as an{" "}
-              <span className="font-semibold text-white bg-[#0A4D96]/40 backdrop-blur-sm rounded-full inline-block min-w-[120px]">
+              <span className="font-semibold text-white bg-[#0A4D96]/40 backdrop-blur-sm rounded-full inline-block min-w-[120px] px-2">
                 {typewriterText}
                 <span className="animate-ping">|</span>
               </span>{" "}
               here
             </p>
 
-            {/* Secondary Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-48 mt-2 sm:mt-2">
+            <div className="flex flex-row flex-wrap gap-y-4 gap-x-56 mt-12 justify-center">
               <Link href="/products?type=import">
-                <button className="px-6 py-3 sm:px-8 sm:py-3.5 bg-[#0A4D96] hover:bg-[#083a73] backdrop-blur-sm text-white font-medium text-[14px] sm:text-[18px] rounded-full border border-[#0A4D96] hover:border-white/50 transition-all duration-300 flex items-center gap-2 min-w-[180px] sm:min-w-[200px] justify-center cursor-pointer animate-[border-glow-blink_2s_ease-in-out_infinite] group">
+                <button className="px-8 py-3.5 bg-white font-bold cursor-pointer hover:bg-[#083a73] hover:text-white text-[#0A4D96] text-[18px] sm:text-[22px] rounded-full border border-[#0A4D96] transition-all duration-300 flex items-center gap-2 min-w-[200px] justify-center group whitespace-nowrap">
                   Import Products
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-rotate-45 transition-transform duration-300" />
+                  <ArrowRight className="w-5 h-5 group-hover:-rotate-45 transition-transform duration-300" />
                 </button>
               </Link>
+
               <Link href="/products?type=export">
-                <button className="px-6 py-3 sm:px-8 sm:py-3.5 bg-[#0A4D96] hover:bg-[#083a73] backdrop-blur-sm text-white font-medium text-[14px] sm:text-[18px] rounded-full border border-[#0A4D96] hover:border-white/50 transition-all duration-300 flex items-center gap-2 min-w-[180px] sm:min-w-[200px] justify-center cursor-pointer animate-[border-glow-blink_2s_ease-in-out_infinite] group">
+                <button className="px-8 py-3.5 bg-white font-bold cursor-pointer hover:bg-[#083a73] hover:text-white text-[#0A4D96] text-[18px] sm:text-[22px] rounded-full border border-[#0A4D96] transition-all duration-300 flex items-center gap-2 min-w-[200px] justify-center group whitespace-nowrap">
                   Export Products
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-rotate-45 transition-transform duration-300" />
+                  <ArrowRight className="w-5 h-5 group-hover:-rotate-45 transition-transform duration-300" />
                 </button>
               </Link>
             </div>
           </div>
 
-          <div className="mt-4 sm:mt-5 md:mt-6 pt-4 sm:pt-5 md:pt-6 border-t border-gray-400/20 max-w-md mx-auto">
-            <p className="text-[11px] sm:text-[12px] md:text-[13px] text-gray-300">
+          {/* TRUST BADGE */}
+          <div className="mt-10 pt-6 border-t border-gray-400/20 max-w-md mx-auto">
+            <p className="text-[12px] sm:text-[13px] text-gray-300">
               Trusted by <span className="font-bold text-white">100+</span>{" "}
               importers and exporters worldwide
             </p>
           </div>
         </div>
-      </div>
-
-      <div className="relative z-10 w-full flex justify-center">
-        <button
-          onClick={() =>
-            window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
-          }
-          className="px-6 py-2.5 sm:px-8 sm:py-3 flex items-center rounded-tl-full rounded-tr-full cursor-pointer justify-center gap-2 bg-[#F9FAFB] hover:bg-[#0A4D96] text-[#0A4D96] hover:text-white font-semibold text-xs sm:text-sm tracking-wider transition-all duration-300"
-        >
-          <span>VIEW PRODUCTS</span>
-          <ArrowRight className="w-4 h-4 rotate-90" strokeWidth={2.5} />
-        </button>
       </div>
     </section>
   );
