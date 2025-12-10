@@ -87,7 +87,7 @@ export function HeroSection() {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black/20" />
 
       {/* MAIN HERO CONTENT (perfect centered) */}
       <div className="container mx-auto max-w-7xl relative z-10 px-4 flex flex-col items-center justify-center text-center">
@@ -96,10 +96,8 @@ export function HeroSection() {
           <h1 className="font-bold leading-[1.2] mb-6 text-[28px] sm:text-[36px] md:text-[42px] lg:text-[72px] drop-shadow-lg">
             Secure. Compliant.
             <br className="sm:hidden" />
-            <span className="text-white bg-white/10 backdrop-blur-sm px-2 rounded">
-              Global Trade
-            </span>{" "}
-            Made Simple.
+            <span className="text-white  px-2 rounded">Global Trade</span> Made
+            Simple.
           </h1>
 
           {/* SUBTITLE */}
