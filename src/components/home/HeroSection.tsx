@@ -4,6 +4,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button as MovingBorderButton } from "@/components/ui/moving-border";
 import { useEffect, useRef, useState } from "react";
+import { ProductDrawer } from "@/components/home/ProductDrawer";
+import { RegisterModal } from "@/components/home/RegisterModal";
 
 export function HeroSection() {
   const bgRef = useRef<HTMLDivElement>(null);
@@ -109,7 +111,7 @@ export function HeroSection() {
 
           {/* BUTTON */}
           <div className="space-y-4 flex flex-col items-center">
-            <Link href="/register">
+            <RegisterModal>
               <MovingBorderButton
                 borderRadius="9999px"
                 containerClassName="
@@ -123,10 +125,9 @@ export function HeroSection() {
                 "
                 className="
                   cursor-pointer relative overflow-hidden
-                  bg-gradient-to-r from-[#7BE0A5] via-[#1AD38E] to-[#0AFF72]
+                  bg-green-900
                   hover:from-[#0AFF72] hover:via-[#15E67C] hover:to-[#7BE0A5]
-                  shadow-[0_0_18px_#14ff86,inset_0_0_12px_#14ff86]
-                  hover:shadow-[0_0_30px_#14ff86,inset_0_0_18px_#14ff86]
+               
                   transition-all duration-500 ease-in-out
                   px-10 py-5 flex items-center justify-center gap-4
                   rounded-full whitespace-nowrap group
@@ -134,7 +135,7 @@ export function HeroSection() {
               >
                 <span
                   className="
-                    bg-white text-transparent bg-clip-text italic font-bold tracking-tight font-[Poppins]
+                    bg-white text-transparent bg-clip-text  font-bold tracking-tight font-[Poppins]
                     drop-shadow-[2px_2px_5px_rgba(0,0,0,0.45)]
                     [text-shadow:0px_1px_0px_#fff,0px_3px_0px_#e5e5e5,0px_4px_4px_rgba(0,0,0,0.55)]
                     text-[32px] sm:text-[30px] md:text-[32px] lg:text-[36px]
@@ -152,7 +153,7 @@ export function HeroSection() {
                   "
                 />
               </MovingBorderButton>
-            </Link>
+            </RegisterModal>
 
             {/* TYPEWRITER */}
             <p className="text-[16px] sm:text-[18px] md:text-[20px] text-gray-200 min-h-[30px]">
@@ -165,19 +166,19 @@ export function HeroSection() {
             </p>
 
             <div className="flex flex-row flex-wrap gap-y-4 gap-x-56 mt-12 justify-center">
-              <Link href="/products?type=import">
+              <ProductDrawer type="import">
                 <button className="px-8 py-3.5 bg-white font-bold cursor-pointer hover:bg-[#083a73] hover:text-white text-[#0A4D96] text-[18px] sm:text-[22px] rounded-full border border-[#0A4D96] transition-all duration-300 flex items-center gap-2 min-w-[200px] justify-center group whitespace-nowrap">
                   Import Products
                   <ArrowRight className="w-5 h-5 group-hover:-rotate-45 transition-transform duration-300" />
                 </button>
-              </Link>
+              </ProductDrawer>
 
-              <Link href="/products?type=export">
+              <ProductDrawer type="export">
                 <button className="px-8 py-3.5 bg-white font-bold cursor-pointer hover:bg-[#083a73] hover:text-white text-[#0A4D96] text-[18px] sm:text-[22px] rounded-full border border-[#0A4D96] transition-all duration-300 flex items-center gap-2 min-w-[200px] justify-center group whitespace-nowrap">
                   Export Products
                   <ArrowRight className="w-5 h-5 group-hover:-rotate-45 transition-transform duration-300" />
                 </button>
-              </Link>
+              </ProductDrawer>
             </div>
           </div>
 
