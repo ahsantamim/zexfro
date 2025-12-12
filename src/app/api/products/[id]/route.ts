@@ -4,7 +4,7 @@ import {
   updateProduct,
   deleteProduct,
 } from "@/lib/api/products";
-import { getSession } from "@/lib/auth";
+import { getSession } from "@/auth";
 
 interface RouteContext {
   params: Promise<{ id: string }>;

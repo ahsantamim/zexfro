@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAllBlogPosts, createBlogPost } from "@/lib/api/blog";
-import { getSession } from "@/lib/auth";
+import { getSession } from "@/auth";
 
 export async function GET(request: NextRequest) {
   try {

@@ -19,7 +19,21 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Upload, CheckCircle2, Loader2 } from "lucide-react";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Upload, CheckCircle2, Loader2, Check, ChevronsUpDown } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 // Top 50 countries for selection
 const countries = [
@@ -91,6 +105,8 @@ export function RegisterModal({ children }: RegisterModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [fileName, setFileName] = useState<string>("");
+  const [countryOpen, setCountryOpen] = useState(false);
+  const [phoneCodeOpen, setPhoneCodeOpen] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -141,12 +157,12 @@ export function RegisterModal({ children }: RegisterModalProps) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-[#0a4a9e]/98 via-[#05306b]/98 to-[#041f3f]/98 backdrop-blur-xl border-2 border-white/20 text-white">
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-[#0a4a9e]/98 via-[#05306b]/98 to-[#041f3f]/98 backdrop-blur-xl border-2 border-white/20 text-white [&::-webkit-scrollbar]:w-3 [&::-webkit-scrollbar-track]:bg-white/10 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gradient-to-b [&::-webkit-scrollbar-thumb]:from-[#0a4a9e] [&::-webkit-scrollbar-thumb]:to-[#05306b] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:border-2 [&::-webkit-scrollbar-thumb]:border-white/20 hover:[&::-webkit-scrollbar-thumb]:from-[#0d5bbf] hover:[&::-webkit-scrollbar-thumb]:to-[#0a4a9e]">
         <DialogHeader>
-          <DialogTitle className="text-3xl font-bold text-white">
+          <DialogTitle className="text-3xl font-bold text-white text-center">
             Register Now
           </DialogTitle>
-          <DialogDescription className="text-gray-200 text-base">
+          <DialogDescription className="text-gray-200 text-base text-center">
             Join our network of verified importers and exporters worldwide
           </DialogDescription>
         </DialogHeader>
@@ -175,7 +191,7 @@ export function RegisterModal({ children }: RegisterModalProps) {
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
-                className="bg-white/10 border-white/30 text-white placeholder:text-gray-400 focus:border-white/50 focus:ring-white/50"
+                className="bg-white border-gray-300 text-black placeholder:text-gray-600 focus:border-blue-500 focus:ring-blue-500"
                 placeholder="Enter your full name"
               />
             </div>
@@ -185,28 +201,51 @@ export function RegisterModal({ children }: RegisterModalProps) {
               <Label htmlFor="country" className="text-white font-semibold">
                 Country *
               </Label>
-              <Select
-                required
-                value={formData.country}
-                onValueChange={(value) =>
-                  setFormData({ ...formData, country: value })
-                }
-              >
-                <SelectTrigger className="bg-white/10 border-white/30 text-white focus:border-white/50 focus:ring-white/50">
-                  <SelectValue placeholder="Select your country" />
-                </SelectTrigger>
-                <SelectContent className="bg-[#05306b] border-white/20 text-white max-h-60">
-                  {countries.map((country) => (
-                    <SelectItem
-                      key={country}
-                      value={country}
-                      className="text-white hover:bg-white/10 focus:bg-white/10"
-                    >
-                      {country}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              <Popover open={countryOpen} onOpenChange={setCountryOpen}>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant="outline"
+                    role="combobox"
+                    aria-expanded={countryOpen}
+                    className="w-full justify-between bg-white border-gray-300 text-black hover:bg-gray-50 hover:text-black"
+                  >
+                    {formData.country || "Select your country"}
+                    <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent 
+                  className="p-0" 
+                  style={{ width: "var(--radix-popover-trigger-width)" }}
+                  align="start"
+                >
+                  <Command>
+                    <CommandInput placeholder="Search country..." className="h-9" />
+                    <CommandList>
+                      <CommandEmpty>No country found.</CommandEmpty>
+                      <CommandGroup>
+                        {countries.map((country) => (
+                          <CommandItem
+                            key={country}
+                            value={country}
+                            onSelect={(currentValue: string) => {
+                              setFormData({ ...formData, country: currentValue === formData.country ? "" : currentValue });
+                              setCountryOpen(false);
+                            }}
+                          >
+                            {country}
+                            <Check
+                              className={cn(
+                                "ml-auto h-4 w-4",
+                                formData.country === country ? "opacity-100" : "opacity-0"
+                              )}
+                            />
+                          </CommandItem>
+                        ))}
+                      </CommandGroup>
+                    </CommandList>
+                  </Command>
+                </PopoverContent>
+              </Popover>
             </div>
 
             {/* Company Name */}
@@ -221,7 +260,7 @@ export function RegisterModal({ children }: RegisterModalProps) {
                 onChange={(e) =>
                   setFormData({ ...formData, companyName: e.target.value })
                 }
-                className="bg-white/10 border-white/30 text-white placeholder:text-gray-400 focus:border-white/50 focus:ring-white/50"
+                className="bg-white border-gray-300 text-black placeholder:text-gray-600 focus:border-blue-500 focus:ring-blue-500"
                 placeholder="Enter your company name"
               />
             </div>
@@ -238,15 +277,15 @@ export function RegisterModal({ children }: RegisterModalProps) {
                 onChange={(e) =>
                   setFormData({ ...formData, designation: e.target.value })
                 }
-                className="bg-white/10 border-white/30 text-white placeholder:text-gray-400 focus:border-white/50 focus:ring-white/50"
+                className="bg-white border-gray-300 text-black placeholder:text-gray-600 focus:border-blue-500 focus:ring-blue-500"
                 placeholder="e.g., CEO, Manager, Director"
               />
             </div>
 
-            {/* Product Type */}
+            {/* Client Type */}
             <div className="space-y-2">
               <Label htmlFor="productType" className="text-white font-semibold">
-                Product Type *
+                Client Type *
               </Label>
               <Select
                 required
@@ -255,21 +294,21 @@ export function RegisterModal({ children }: RegisterModalProps) {
                   setFormData({ ...formData, productType: value })
                 }
               >
-                <SelectTrigger className="bg-white/10 border-white/30 text-white focus:border-white/50 focus:ring-white/50">
-                  <SelectValue placeholder="Select product type" />
+                <SelectTrigger className="w-full bg-white border-gray-300 text-black focus:border-blue-500 focus:ring-blue-500">
+                  <SelectValue placeholder="I am an exporter" />
                 </SelectTrigger>
-                <SelectContent className="bg-[#05306b] border-white/20 text-white">
+                <SelectContent className="bg-white border-gray-300">
                   <SelectItem
-                    value="import"
-                    className="text-white hover:bg-white/10 focus:bg-white/10"
+                    value="exporter"
+                    className="text-black hover:bg-gray-100 focus:bg-gray-100"
                   >
-                    Import Products
+                    I am an exporter
                   </SelectItem>
                   <SelectItem
-                    value="export"
-                    className="text-white hover:bg-white/10 focus:bg-white/10"
+                    value="importer"
+                    className="text-black hover:bg-gray-100 focus:bg-gray-100"
                   >
-                    Export Products
+                    I am an importer
                   </SelectItem>
                 </SelectContent>
               </Select>
@@ -281,27 +320,51 @@ export function RegisterModal({ children }: RegisterModalProps) {
                 Phone Number *
               </Label>
               <div className="flex gap-2">
-                <Select
-                  value={formData.phoneCode}
-                  onValueChange={(value) =>
-                    setFormData({ ...formData, phoneCode: value })
-                  }
-                >
-                  <SelectTrigger className="bg-white/10 border-white/30 text-white focus:border-white/50 focus:ring-white/50 w-32">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent className="bg-[#05306b] border-white/20 text-white max-h-60">
-                    {phoneCodes.map((item) => (
-                      <SelectItem
-                        key={item.code}
-                        value={item.code}
-                        className="text-white hover:bg-white/10 focus:bg-white/10"
-                      >
-                        {item.code} {item.country}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <Popover open={phoneCodeOpen} onOpenChange={setPhoneCodeOpen}>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      role="combobox"
+                      aria-expanded={phoneCodeOpen}
+                      className="w-[200px] justify-between bg-white border-gray-300 text-black hover:bg-gray-50 hover:text-black"
+                    >
+                      {formData.phoneCode}
+                      <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent 
+                    className="p-0" 
+                    style={{ width: "var(--radix-popover-trigger-width)" }}
+                    align="start"
+                  >
+                    <Command>
+                      <CommandInput placeholder="Search country code..." className="h-9" />
+                      <CommandList>
+                        <CommandEmpty>No country code found.</CommandEmpty>
+                        <CommandGroup>
+                          {phoneCodes.map((item) => (
+                            <CommandItem
+                              key={item.code}
+                              value={`${item.code} ${item.country}`}
+                              onSelect={() => {
+                                setFormData({ ...formData, phoneCode: item.code });
+                                setPhoneCodeOpen(false);
+                              }}
+                            >
+                              <span className="text-sm">{item.code} {item.country}</span>
+                              <Check
+                                className={cn(
+                                  "ml-auto h-4 w-4",
+                                  formData.phoneCode === item.code ? "opacity-100" : "opacity-0"
+                                )}
+                              />
+                            </CommandItem>
+                          ))}
+                        </CommandGroup>
+                      </CommandList>
+                    </Command>
+                  </PopoverContent>
+                </Popover>
                 <Input
                   id="phone"
                   required
@@ -310,7 +373,7 @@ export function RegisterModal({ children }: RegisterModalProps) {
                   onChange={(e) =>
                     setFormData({ ...formData, phoneNumber: e.target.value })
                   }
-                  className="flex-1 bg-white/10 border-white/30 text-white placeholder:text-gray-400 focus:border-white/50 focus:ring-white/50"
+                  className="flex-1 bg-white border-gray-300 text-black placeholder:text-gray-600 focus:border-blue-500 focus:ring-blue-500"
                   placeholder="Enter phone number"
                 />
               </div>
@@ -329,7 +392,7 @@ export function RegisterModal({ children }: RegisterModalProps) {
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
-                className="bg-white/10 border-white/30 text-white placeholder:text-gray-400 focus:border-white/50 focus:ring-white/50"
+                className="bg-white border-gray-300 text-black placeholder:text-gray-600 focus:border-blue-500 focus:ring-blue-500"
                 placeholder="Enter your email address"
               />
             </div>

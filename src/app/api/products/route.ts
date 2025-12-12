@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAllProducts, createProduct } from "@/lib/api/products";
-import { getSession } from "@/lib/auth";
+import { getSession } from "@/auth";
 
 export async function GET(request: NextRequest) {
   try {

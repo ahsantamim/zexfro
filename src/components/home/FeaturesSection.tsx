@@ -1,5 +1,4 @@
 import { Shield, Clock, Globe, CheckCircle, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export function FeaturesSection() {
@@ -107,17 +106,13 @@ export function FeaturesSection() {
 
         {/* CTA Button */}
         <div className="text-center">
-          <Button
-            asChild
-            variant="primary"
-            size="lg"
-            className="rounded-none group"
+          <Link
+            href="/about"
+            className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#0a4a9e] to-[#05306b] hover:from-[#0d5bbf] hover:to-[#0a4a9e] text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            <Link href="/about">
-              Learn More About Us
-              <ArrowRight className="w-5 h-5 group-hover:-rotate-45 transition-transform duration-300" />
-            </Link>
-          </Button>
+            Learn More About Us
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+          </Link>
         </div>
       </div>
     </section>

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Calendar, User } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export function BlogSection() {
   const blogPosts = [
@@ -134,17 +133,13 @@ export function BlogSection() {
 
         {/* View All Button */}
         <div className="text-center">
-          <Button
-            asChild
-            variant="primary"
-            size="lg"
-            className="group rounded-none"
+          <Link
+            href="/blog"
+            className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#0a4a9e] to-[#05306b] hover:from-[#0d5bbf] hover:to-[#0a4a9e] text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            <Link href="/blog">
-              View All Articles
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:rotate-[-45deg] transition-transform duration-300" />
-            </Link>
-          </Button>
+            View All Articles
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+          </Link>
         </div>
       </div>
     </section>
