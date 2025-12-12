@@ -8,16 +8,18 @@ export const metadata = {
 
 export default function RegisterPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen pt-60">
       <PageHeader
         title="Register"
         description="Join us today and get started"
       />
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-2xl mx-auto">
-          <RegistrationForm />
+      <section className="bg-white py-16 md:py-24">
+        <div className="container mx-auto max-w-7xl px-4">
+          <div className="max-w-2xl mx-auto">
+            <RegistrationForm />
+          </div>
         </div>
-      </div>
+      </section>
     </main>
   );
 }

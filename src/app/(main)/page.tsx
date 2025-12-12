@@ -10,8 +10,8 @@ export default function HomePage() {
   return (
     <main className="min-h-screen">
       <HeroSection />
-      <ProductCategoriesSection />
       <FeaturesSection />
+      <ProductCategoriesSection />
       <TestimonialsSection />
       <StatsSection />
       <BlogSection />

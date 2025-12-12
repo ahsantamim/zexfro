@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen pt-60">
       <PageHeader
         title="Our Services"
         description="Comprehensive solutions tailored to your business needs"

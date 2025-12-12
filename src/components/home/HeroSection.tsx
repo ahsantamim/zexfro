@@ -133,16 +133,29 @@ export function HeroSection() {
                   rounded-full whitespace-nowrap group
                 "
               >
-                <span
-                  className="
-                    bg-white text-transparent bg-clip-text  font-bold tracking-tight font-[Poppins]
-                    drop-shadow-[2px_2px_5px_rgba(0,0,0,0.45)]
-                    [text-shadow:0px_1px_0px_#fff,0px_3px_0px_#e5e5e5,0px_4px_4px_rgba(0,0,0,0.55)]
-                    text-[32px] sm:text-[30px] md:text-[32px] lg:text-[36px]
-                  "
-                >
-                  Register for Free
-                </span>
+<span
+  className="
+    font-bold tracking-tight font-[Poppins]
+    text-[32px] sm:text-[30px] md:text-[32px] lg:text-[36px]
+    text-transparent bg-clip-text
+    bg-gradient-to-b from-white via-[#e8e8e8] to-[#bfbfbf] text-yellow-50
+
+    /* Glossy highlight */
+    [text-shadow:
+      0px_1px_1px_rgba(255,255,255,0.9),
+      0px_3px_2px_rgba(255,255,255,0.5),
+
+      /* Deep layered shadow for 3D depth */
+      0px_4px_2px_rgba(0,0,0,0.25),
+      0px_6px_6px_rgba(0,0,0,0.40),
+      0px_10px_12px_rgba(0,0,0,0.50)
+    ]
+  "
+>
+  Register for Free
+</span>
+
+
 
                 <ArrowRight
                   className="

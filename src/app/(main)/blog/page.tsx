@@ -10,22 +10,24 @@ export const metadata = {
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen pt-60">
       <PageHeader
         title="Blog"
         description="Insights, news, and updates from our team"
       />
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          <aside className="lg:col-span-1">
-            <BlogSearch />
-            <BlogCategories />
-          </aside>
-          <div className="lg:col-span-3">
-            <BlogGrid />
+      <section className="bg-white py-16 md:py-24">
+        <div className="container mx-auto max-w-7xl px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <aside className="lg:col-span-1">
+              <BlogSearch />
+              <BlogCategories />
+            </aside>
+            <div className="lg:col-span-3">
+              <BlogGrid />
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </main>
   );
 }

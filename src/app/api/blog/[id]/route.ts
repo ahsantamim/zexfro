@@ -4,7 +4,7 @@ import {
   updateBlogPost,
   deleteBlogPost,
 } from "@/lib/api/blog";
-import { getSession } from "@/lib/auth";
+import { getSession } from "@/auth";
 
 interface RouteContext {
   params: Promise<{ id: string }>;

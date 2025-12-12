@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 export function CTASection() {
@@ -44,16 +43,13 @@ export function CTASection() {
           Join thousands of satisfied customers and transform your global trade
           operations today
         </p>
-        <Button
-          asChild
-          size="lg"
-          className="bg-white text-[#0A4D96] hover:bg-white/90 rounded-none group"
+        <Link
+          href="/contact"
+          className="group inline-flex items-center gap-3 bg-white text-[#0A4D96] hover:bg-white/90 font-bold text-lg px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
         >
-          <Link href="/contact">
-            Contact Us Now
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:rotate-[-45deg] transition-transform duration-300" />
-          </Link>
-        </Button>
+          Contact Us Now
+          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+        </Link>
       </div>
     </section>
   );
