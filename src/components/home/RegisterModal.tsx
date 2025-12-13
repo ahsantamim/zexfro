@@ -32,39 +32,210 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Upload, CheckCircle2, Loader2, Check, ChevronsUpDown } from "lucide-react";
+import {
+  Upload,
+  CheckCircle2,
+  Loader2,
+  Check,
+  ChevronsUpDown,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Top 50 countries for selection
 const countries = [
-  "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Argentina", "Armenia", "Australia",
-  "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium",
-  "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil",
-  "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada",
-  "Cape Verde", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros",
-  "Congo", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti",
-  "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador",
-  "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Fiji", "Finland", "France",
-  "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala",
-  "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "India",
-  "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Ivory Coast", "Jamaica",
-  "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait", "Kyrgyzstan", "Laos",
-  "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania",
-  "Luxembourg", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali",
-  "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova",
-  "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia",
-  "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria",
-  "North Korea", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea",
-  "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia",
-  "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines",
-  "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia",
-  "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands",
-  "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan",
-  "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan",
-  "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey",
-  "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom",
-  "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela",
-  "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+  "Afghanistan",
+  "Albania",
+  "Algeria",
+  "Andorra",
+  "Angola",
+  "Argentina",
+  "Armenia",
+  "Australia",
+  "Austria",
+  "Azerbaijan",
+  "Bahamas",
+  "Bahrain",
+  "Bangladesh",
+  "Barbados",
+  "Belarus",
+  "Belgium",
+  "Belize",
+  "Benin",
+  "Bhutan",
+  "Bolivia",
+  "Bosnia and Herzegovina",
+  "Botswana",
+  "Brazil",
+  "Brunei",
+  "Bulgaria",
+  "Burkina Faso",
+  "Burundi",
+  "Cambodia",
+  "Cameroon",
+  "Canada",
+  "Cape Verde",
+  "Central African Republic",
+  "Chad",
+  "Chile",
+  "China",
+  "Colombia",
+  "Comoros",
+  "Congo",
+  "Costa Rica",
+  "Croatia",
+  "Cuba",
+  "Cyprus",
+  "Czech Republic",
+  "Denmark",
+  "Djibouti",
+  "Dominica",
+  "Dominican Republic",
+  "East Timor",
+  "Ecuador",
+  "Egypt",
+  "El Salvador",
+  "Equatorial Guinea",
+  "Eritrea",
+  "Estonia",
+  "Ethiopia",
+  "Fiji",
+  "Finland",
+  "France",
+  "Gabon",
+  "Gambia",
+  "Georgia",
+  "Germany",
+  "Ghana",
+  "Greece",
+  "Grenada",
+  "Guatemala",
+  "Guinea",
+  "Guinea-Bissau",
+  "Guyana",
+  "Haiti",
+  "Honduras",
+  "Hungary",
+  "Iceland",
+  "India",
+  "Indonesia",
+  "Iran",
+  "Iraq",
+  "Ireland",
+  "Israel",
+  "Italy",
+  "Ivory Coast",
+  "Jamaica",
+  "Japan",
+  "Jordan",
+  "Kazakhstan",
+  "Kenya",
+  "Kiribati",
+  "Kuwait",
+  "Kyrgyzstan",
+  "Laos",
+  "Latvia",
+  "Lebanon",
+  "Lesotho",
+  "Liberia",
+  "Libya",
+  "Liechtenstein",
+  "Lithuania",
+  "Luxembourg",
+  "Macedonia",
+  "Madagascar",
+  "Malawi",
+  "Malaysia",
+  "Maldives",
+  "Mali",
+  "Malta",
+  "Marshall Islands",
+  "Mauritania",
+  "Mauritius",
+  "Mexico",
+  "Micronesia",
+  "Moldova",
+  "Monaco",
+  "Mongolia",
+  "Montenegro",
+  "Morocco",
+  "Mozambique",
+  "Myanmar",
+  "Namibia",
+  "Nauru",
+  "Nepal",
+  "Netherlands",
+  "New Zealand",
+  "Nicaragua",
+  "Niger",
+  "Nigeria",
+  "North Korea",
+  "Norway",
+  "Oman",
+  "Pakistan",
+  "Palau",
+  "Panama",
+  "Papua New Guinea",
+  "Paraguay",
+  "Peru",
+  "Philippines",
+  "Poland",
+  "Portugal",
+  "Qatar",
+  "Romania",
+  "Russia",
+  "Rwanda",
+  "Saint Kitts and Nevis",
+  "Saint Lucia",
+  "Saint Vincent and the Grenadines",
+  "Samoa",
+  "San Marino",
+  "Sao Tome and Principe",
+  "Saudi Arabia",
+  "Senegal",
+  "Serbia",
+  "Seychelles",
+  "Sierra Leone",
+  "Singapore",
+  "Slovakia",
+  "Slovenia",
+  "Solomon Islands",
+  "Somalia",
+  "South Africa",
+  "South Korea",
+  "South Sudan",
+  "Spain",
+  "Sri Lanka",
+  "Sudan",
+  "Suriname",
+  "Swaziland",
+  "Sweden",
+  "Switzerland",
+  "Syria",
+  "Taiwan",
+  "Tajikistan",
+  "Tanzania",
+  "Thailand",
+  "Togo",
+  "Tonga",
+  "Trinidad and Tobago",
+  "Tunisia",
+  "Turkey",
+  "Turkmenistan",
+  "Tuvalu",
+  "Uganda",
+  "Ukraine",
+  "United Arab Emirates",
+  "United Kingdom",
+  "United States",
+  "Uruguay",
+  "Uzbekistan",
+  "Vanuatu",
+  "Vatican City",
+  "Venezuela",
+  "Vietnam",
+  "Yemen",
+  "Zambia",
+  "Zimbabwe",
 ];
 
 // Phone codes for top countries
@@ -174,7 +345,7 @@ export function RegisterModal({ children }: RegisterModalProps) {
               Registration Successful!
             </h3>
             <p className="text-gray-200 text-center">
-              We'll contact you shortly to complete your verification.
+              We&apos;ll contact you shortly to complete your verification.
             </p>
           </div>
         ) : (
@@ -213,14 +384,26 @@ export function RegisterModal({ children }: RegisterModalProps) {
                     <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent 
-                  className="p-0" 
+                <PopoverContent
+                  className="p-0"
                   style={{ width: "var(--radix-popover-trigger-width)" }}
                   align="start"
+                  onWheel={(e) => e.stopPropagation()}
                 >
                   <Command>
-                    <CommandInput placeholder="Search country..." className="h-9" />
-                    <CommandList>
+                    <CommandInput
+                      placeholder="Search country..."
+                      className="h-9"
+                    />
+                    <CommandList
+                      className="max-h-[300px] overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full"
+                      style={
+                        {
+                          overscrollBehavior: "contain",
+                          pointerEvents: "auto",
+                        } as React.CSSProperties
+                      }
+                    >
                       <CommandEmpty>No country found.</CommandEmpty>
                       <CommandGroup>
                         {countries.map((country) => (
@@ -228,7 +411,13 @@ export function RegisterModal({ children }: RegisterModalProps) {
                             key={country}
                             value={country}
                             onSelect={(currentValue: string) => {
-                              setFormData({ ...formData, country: currentValue === formData.country ? "" : currentValue });
+                              setFormData({
+                                ...formData,
+                                country:
+                                  currentValue === formData.country
+                                    ? ""
+                                    : currentValue,
+                              });
                               setCountryOpen(false);
                             }}
                           >
@@ -236,7 +425,9 @@ export function RegisterModal({ children }: RegisterModalProps) {
                             <Check
                               className={cn(
                                 "ml-auto h-4 w-4",
-                                formData.country === country ? "opacity-100" : "opacity-0"
+                                formData.country === country
+                                  ? "opacity-100"
+                                  : "opacity-0"
                               )}
                             />
                           </CommandItem>
@@ -332,14 +523,26 @@ export function RegisterModal({ children }: RegisterModalProps) {
                       <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                     </Button>
                   </PopoverTrigger>
-                  <PopoverContent 
-                    className="p-0" 
+                  <PopoverContent
+                    className="p-0"
                     style={{ width: "var(--radix-popover-trigger-width)" }}
                     align="start"
+                    onWheel={(e) => e.stopPropagation()}
                   >
                     <Command>
-                      <CommandInput placeholder="Search country code..." className="h-9" />
-                      <CommandList>
+                      <CommandInput
+                        placeholder="Search country code..."
+                        className="h-9"
+                      />
+                      <CommandList
+                        className="max-h-[300px] overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full"
+                        style={
+                          {
+                            overscrollBehavior: "contain",
+                            pointerEvents: "auto",
+                          } as React.CSSProperties
+                        }
+                      >
                         <CommandEmpty>No country code found.</CommandEmpty>
                         <CommandGroup>
                           {phoneCodes.map((item) => (
@@ -347,15 +550,22 @@ export function RegisterModal({ children }: RegisterModalProps) {
                               key={item.code}
                               value={`${item.code} ${item.country}`}
                               onSelect={() => {
-                                setFormData({ ...formData, phoneCode: item.code });
+                                setFormData({
+                                  ...formData,
+                                  phoneCode: item.code,
+                                });
                                 setPhoneCodeOpen(false);
                               }}
                             >
-                              <span className="text-sm">{item.code} {item.country}</span>
+                              <span className="text-sm">
+                                {item.code} {item.country}
+                              </span>
                               <Check
                                 className={cn(
                                   "ml-auto h-4 w-4",
-                                  formData.phoneCode === item.code ? "opacity-100" : "opacity-0"
+                                  formData.phoneCode === item.code
+                                    ? "opacity-100"
+                                    : "opacity-0"
                                 )}
                               />
                             </CommandItem>
@@ -448,4 +658,3 @@ export function RegisterModal({ children }: RegisterModalProps) {
     </Dialog>
   );
 }
-
