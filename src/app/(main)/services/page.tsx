@@ -6,7 +6,8 @@ import { ServicesCTA } from "@/components/services/ServicesCTA";
 
 export const metadata = {
   title: "Our Services - Zexfro | Export-Import Solutions",
-  description: "Comprehensive export-import services including international shipping, customs clearance, trade compliance, warehousing, and supply chain optimization for global businesses.",
+  description:
+    "Comprehensive export-import services including international shipping, customs clearance, trade compliance, warehousing, and supply chain optimization for global businesses.",
 };
 
 export default function ServicesPage() {
