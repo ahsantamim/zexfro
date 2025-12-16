@@ -19,12 +19,12 @@ export function Navbar() {
   const [showStaticLogo, setShowStaticLogo] = useState(false);
 
   useEffect(() => {
-    // Continuously cycle between GIF and static logo
-    const interval = setInterval(() => {
-      setShowStaticLogo((prev) => !prev);
-    }, 4000); // Switch every 4 seconds
+    // Show GIF animation for 3 seconds, then switch to static PNG
+    const timer = setTimeout(() => {
+      setShowStaticLogo(true);
+    }, 3000);
 
-    return () => clearInterval(interval);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
