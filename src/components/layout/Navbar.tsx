@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import Image from "next/image";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { ZexfroLogo } from "@/components/ui/ZexfroLogo";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -16,9 +16,19 @@ const navLinks = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showStaticLogo, setShowStaticLogo] = useState(false);
+
+  useEffect(() => {
+    // Show GIF animation for 3 seconds, then switch to static PNG
+    const timer = setTimeout(() => {
+      setShowStaticLogo(true);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <nav className="fixed h-60 top-0 left-0 right-0 z-50 bg-gradient-to-br from-[#0a4a9e]/95 via-[#05306b]/95 to-[#041f3f]/95 backdrop-blur-md shadow-lg border-b border-white/10" style={{ boxShadow: '0 8px 32px 0 rgba(5, 48, 107, 0.37)' }}>
+    <nav className="fixed h-60 top-0 left-0 right-0 z-50 bg-[#001a3d] backdrop-blur-md shadow-lg border-b border-white/10" style={{ boxShadow: '0 8px 32px 0 rgba(5, 48, 107, 0.37)' }}>
       <div className="container mx-auto max-w-7xl h-full">
         {/* BOTTOM LAYER CONTENT */}
         <div className="flex items-end justify-between h-full pb-4">
@@ -27,8 +37,29 @@ export function Navbar() {
             href="/"
             className="flex flex-col justify-center items-center h-full"
           >
-            <div className="flex items-center gap-2 scale-125">
-              <ZexfroLogo />
+            <div className="flex items-center justify-center relative w-[400px] h-[400px]">
+              {/* GIF Animation - Bigger */}
+              <Image 
+                src="/zex.gif" 
+                alt="Zexfro Logo Animation" 
+                width={300} 
+                height={300}
+                className={`object-cover absolute transition-all duration-1000 ${
+                  showStaticLogo ? 'opacity-0 scale-90' : 'opacity-100 scale-100'
+                }`}
+                priority
+              />
+              {/* Static PNG Logo - Smaller */}
+              <Image 
+                src="/Logo.png" 
+                alt="Zexfro Logo" 
+                width={240} 
+                height={240}
+                className={`object-cover absolute transition-all duration-1000 ${
+                  showStaticLogo ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
+                }`}
+                priority
+              />
             </div>
           </Link>
 

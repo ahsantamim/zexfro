@@ -74,8 +74,7 @@ const importProducts = [
     subtitle: "Daily essentials",
     image:
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
-    description:
-      "Wide range of consumer goods and daily essential products.",
+    description: "Wide range of consumer goods and daily essential products.",
   },
   {
     id: 9,
@@ -329,8 +328,7 @@ const exportProducts = [
     subtitle: "Eco-friendly bamboo",
     image:
       "https://images.unsplash.com/photo-1601048869889-4cc17f7a9c2d?w=800&q=80",
-    description:
-      "Sustainable bamboo products for various applications.",
+    description: "Sustainable bamboo products for various applications.",
   },
   {
     id: 17,
@@ -365,8 +363,7 @@ const exportProducts = [
     subtitle: "Long shelf-life products",
     image:
       "https://images.unsplash.com/photo-1587048181999-5cfa1e4229d8?w=800&q=80",
-    description:
-      "Canned and preserved food products with extended shelf life.",
+    description: "Canned and preserved food products with extended shelf life.",
   },
 ];
 
@@ -445,9 +442,7 @@ export function ProductsGrid({
                 <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-white transition-colors">
                   {product.name}
                 </h3>
-                <p className="text-sm text-gray-200 mb-2">
-                  {product.subtitle}
-                </p>
+                <p className="text-sm text-gray-200 mb-2">{product.subtitle}</p>
                 <p className="text-sm text-gray-300 line-clamp-2">
                   {product.description}
                 </p>
