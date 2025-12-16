@@ -28,7 +28,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed h-60 top-0 left-0 right-0 z-50 bg-[#001a3d] backdrop-blur-md shadow-lg border-b border-white/10" style={{ boxShadow: '0 8px 32px 0 rgba(5, 48, 107, 0.37)' }}>
+    <nav className="fixed h-60 top-0 left-0 right-0 z-50 bg-[#1800ad] backdrop-blur-md shadow-lg border-b border-white/10" style={{ boxShadow: '0 8px 32px 0 rgba(5, 48, 107, 0.37)' }}>
       <div className="container mx-auto max-w-7xl h-full">
         {/* BOTTOM LAYER CONTENT */}
         <div className="flex items-end justify-between h-full pb-4">
