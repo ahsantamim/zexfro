@@ -112,8 +112,8 @@ export function ProductsFilter({
             className="w-full md:w-64 pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 font-medium focus:border-[#0a4a9e] focus:ring-2 focus:ring-[#0a4a9e]/20 outline-none transition-all appearance-none cursor-pointer"
             style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'right 1rem center',
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "right 1rem center",
             }}
           >
             {categories.map((category) => (
