@@ -28,8 +28,20 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed h-60 top-0 left-0 right-0 z-50 bg-[#1800ad] backdrop-blur-md shadow-lg border-b border-white/10" style={{ boxShadow: '0 8px 32px 0 rgba(5, 48, 107, 0.37)' }}>
-      <div className="container mx-auto max-w-7xl h-full">
+    <nav className="fixed h-60 top-0 left-0 right-0 z-50 bg-[#1800ad] backdrop-blur-md shadow-lg border-b border-white/10 overflow-hidden" style={{ boxShadow: '0 8px 32px 0 rgba(5, 48, 107, 0.37)' }}>
+      {/* World Map Blueprint Background */}
+      <div 
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: 'url(/world%20map.png)',
+          backgroundSize: '50%',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'repeat',
+          filter: 'brightness(1.5) contrast(2.2)',
+          mixBlendMode: 'overlay'
+        }}
+      />
+      <div className="container mx-auto max-w-7xl h-full relative z-10">
         {/* BOTTOM LAYER CONTENT */}
         <div className="flex items-end justify-between h-full pb-4">
           {/* LOGO + TITLE */}
