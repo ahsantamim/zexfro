@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export function CTASection() {
   return (
-    <section className="py-20 bg-[#0A4D96] text-white relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-[#0A4D96] text-white relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 opacity-[0.05]">
         <svg
@@ -35,7 +35,7 @@ export function CTASection() {
         </svg>
       </div>
 
-      <div className="container mx-auto max-w-7xl px-4 text-center relative z-10">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
           Ready to Get Started?
         </h2>

@@ -32,7 +32,7 @@ export function ProductCategoriesSection() {
   const [activeTab, setActiveTab] = useState<"import" | "export">("import");
   const products = activeTab === "import" ? importProducts : exportProducts;
   return (
-    <section className="py-16 md:py-24 bg-gray-50 relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 relative overflow-hidden">
       {/* Decorative Angled Grid Pattern - Left Side */}
       <div className="absolute -left-32 top-0 bottom-0 w-96 pointer-events-none transform -skew-y-12">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -101,7 +101,7 @@ export function ProductCategoriesSection() {
         </svg>
       </div>
 
-      <div className="container mx-auto max-w-7xl relative z-10 px-4">
+      <div className="container mx-auto max-w-7xl relative z-10 px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-8 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
@@ -164,20 +164,20 @@ export function ProductCategoriesSection() {
                 </div>
 
                 {/* Content */}
-                <div className="relative h-full flex flex-col p-6">
+                <div className="relative h-full flex flex-col p-4 sm:p-6">
                   {/* Title & Subtitle - Bottom Left */}
                   <div className="flex-1" />
-                  <div className="flex items-end justify-between gap-4">
-                    <div className="space-y-2 flex-1 pr-2">
-                      <h3 className="text-2xl font-bold text-white">
+                  <div className="flex items-end justify-between gap-2 sm:gap-4">
+                    <div className="space-y-1 sm:space-y-2 flex-1 min-w-0">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white line-clamp-2">
                         {product.name}
                       </h3>
-                      <p className="text-sm text-gray-200">
+                      <p className="text-xs sm:text-sm text-gray-200 line-clamp-1">
                         {product.subtitle}
                       </p>
                     </div>
                     {/* Arrow Button - Bottom Right */}
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 self-end mb-1">
                       <ArrowButton />
                     </div>
                   </div>
