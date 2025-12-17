@@ -55,7 +55,7 @@ const Stat = ({
 
 export function StatsSection() {
   return (
-    <section className="relative border-y border-[#0A4D96]/20 py-8 sm:py-10 bg-[#0A4D96]">
+    <section className="relative border-y border-[#0A4D96]/20 py-12 sm:py-16 md:py-20 bg-[#0A4D96]">
       {/* Enhanced background shapes */}
       <div className="absolute inset-0 opacity-[0.05]">
         <svg
@@ -85,7 +85,7 @@ export function StatsSection() {
         </svg>
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="mb-8 sm:mb-4 text-center text-2xl font-semibold tracking-widest text-white">
           Trusted by industry leaders with
           <span className="inline ml-1 text-white">proven results</span>

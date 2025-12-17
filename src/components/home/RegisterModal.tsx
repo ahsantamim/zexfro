@@ -41,230 +41,116 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-// Top 50 countries for selection
+// Countries with flags
 const countries = [
-  "Afghanistan",
-  "Albania",
-  "Algeria",
-  "Andorra",
-  "Angola",
-  "Argentina",
-  "Armenia",
-  "Australia",
-  "Austria",
-  "Azerbaijan",
-  "Bahamas",
-  "Bahrain",
-  "Bangladesh",
-  "Barbados",
-  "Belarus",
-  "Belgium",
-  "Belize",
-  "Benin",
-  "Bhutan",
-  "Bolivia",
-  "Bosnia and Herzegovina",
-  "Botswana",
-  "Brazil",
-  "Brunei",
-  "Bulgaria",
-  "Burkina Faso",
-  "Burundi",
-  "Cambodia",
-  "Cameroon",
-  "Canada",
-  "Cape Verde",
-  "Central African Republic",
-  "Chad",
-  "Chile",
-  "China",
-  "Colombia",
-  "Comoros",
-  "Congo",
-  "Costa Rica",
-  "Croatia",
-  "Cuba",
-  "Cyprus",
-  "Czech Republic",
-  "Denmark",
-  "Djibouti",
-  "Dominica",
-  "Dominican Republic",
-  "East Timor",
-  "Ecuador",
-  "Egypt",
-  "El Salvador",
-  "Equatorial Guinea",
-  "Eritrea",
-  "Estonia",
-  "Ethiopia",
-  "Fiji",
-  "Finland",
-  "France",
-  "Gabon",
-  "Gambia",
-  "Georgia",
-  "Germany",
-  "Ghana",
-  "Greece",
-  "Grenada",
-  "Guatemala",
-  "Guinea",
-  "Guinea-Bissau",
-  "Guyana",
-  "Haiti",
-  "Honduras",
-  "Hungary",
-  "Iceland",
-  "India",
-  "Indonesia",
-  "Iran",
-  "Iraq",
-  "Ireland",
-  "Israel",
-  "Italy",
-  "Ivory Coast",
-  "Jamaica",
-  "Japan",
-  "Jordan",
-  "Kazakhstan",
-  "Kenya",
-  "Kiribati",
-  "Kuwait",
-  "Kyrgyzstan",
-  "Laos",
-  "Latvia",
-  "Lebanon",
-  "Lesotho",
-  "Liberia",
-  "Libya",
-  "Liechtenstein",
-  "Lithuania",
-  "Luxembourg",
-  "Macedonia",
-  "Madagascar",
-  "Malawi",
-  "Malaysia",
-  "Maldives",
-  "Mali",
-  "Malta",
-  "Marshall Islands",
-  "Mauritania",
-  "Mauritius",
-  "Mexico",
-  "Micronesia",
-  "Moldova",
-  "Monaco",
-  "Mongolia",
-  "Montenegro",
-  "Morocco",
-  "Mozambique",
-  "Myanmar",
-  "Namibia",
-  "Nauru",
-  "Nepal",
-  "Netherlands",
-  "New Zealand",
-  "Nicaragua",
-  "Niger",
-  "Nigeria",
-  "North Korea",
-  "Norway",
-  "Oman",
-  "Pakistan",
-  "Palau",
-  "Panama",
-  "Papua New Guinea",
-  "Paraguay",
-  "Peru",
-  "Philippines",
-  "Poland",
-  "Portugal",
-  "Qatar",
-  "Romania",
-  "Russia",
-  "Rwanda",
-  "Saint Kitts and Nevis",
-  "Saint Lucia",
-  "Saint Vincent and the Grenadines",
-  "Samoa",
-  "San Marino",
-  "Sao Tome and Principe",
-  "Saudi Arabia",
-  "Senegal",
-  "Serbia",
-  "Seychelles",
-  "Sierra Leone",
-  "Singapore",
-  "Slovakia",
-  "Slovenia",
-  "Solomon Islands",
-  "Somalia",
-  "South Africa",
-  "South Korea",
-  "South Sudan",
-  "Spain",
-  "Sri Lanka",
-  "Sudan",
-  "Suriname",
-  "Swaziland",
-  "Sweden",
-  "Switzerland",
-  "Syria",
-  "Taiwan",
-  "Tajikistan",
-  "Tanzania",
-  "Thailand",
-  "Togo",
-  "Tonga",
-  "Trinidad and Tobago",
-  "Tunisia",
-  "Turkey",
-  "Turkmenistan",
-  "Tuvalu",
-  "Uganda",
-  "Ukraine",
-  "United Arab Emirates",
-  "United Kingdom",
-  "United States",
-  "Uruguay",
-  "Uzbekistan",
-  "Vanuatu",
-  "Vatican City",
-  "Venezuela",
-  "Vietnam",
-  "Yemen",
-  "Zambia",
-  "Zimbabwe",
+  { name: "Afghanistan", flag: "🇦🇫" },
+  { name: "Albania", flag: "🇦🇱" },
+  { name: "Algeria", flag: "🇩🇿" },
+  { name: "Argentina", flag: "🇦🇷" },
+  { name: "Australia", flag: "🇦🇺" },
+  { name: "Austria", flag: "🇦🇹" },
+  { name: "Bangladesh", flag: "🇧🇩" },
+  { name: "Belgium", flag: "🇧🇪" },
+  { name: "Brazil", flag: "🇧🇷" },
+  { name: "Bulgaria", flag: "🇧🇬" },
+  { name: "Canada", flag: "🇨🇦" },
+  { name: "Chile", flag: "🇨🇱" },
+  { name: "China", flag: "🇨🇳" },
+  { name: "Colombia", flag: "🇨🇴" },
+  { name: "Croatia", flag: "🇭🇷" },
+  { name: "Czech Republic", flag: "🇨🇿" },
+  { name: "Denmark", flag: "🇩🇰" },
+  { name: "Egypt", flag: "🇪🇬" },
+  { name: "Estonia", flag: "🇪🇪" },
+  { name: "Finland", flag: "🇫🇮" },
+  { name: "France", flag: "🇫🇷" },
+  { name: "Germany", flag: "🇩🇪" },
+  { name: "Greece", flag: "🇬🇷" },
+  { name: "Hong Kong", flag: "🇭🇰" },
+  { name: "Hungary", flag: "🇭🇺" },
+  { name: "Iceland", flag: "🇮🇸" },
+  { name: "India", flag: "🇮🇳" },
+  { name: "Indonesia", flag: "🇮🇩" },
+  { name: "Iran", flag: "🇮🇷" },
+  { name: "Iraq", flag: "🇮🇶" },
+  { name: "Ireland", flag: "🇮🇪" },
+  { name: "Israel", flag: "🇮🇱" },
+  { name: "Italy", flag: "🇮🇹" },
+  { name: "Japan", flag: "🇯🇵" },
+  { name: "Jordan", flag: "🇯🇴" },
+  { name: "Kenya", flag: "🇰🇪" },
+  { name: "Kuwait", flag: "🇰🇼" },
+  { name: "Latvia", flag: "🇱🇻" },
+  { name: "Lebanon", flag: "🇱🇧" },
+  { name: "Lithuania", flag: "🇱🇹" },
+  { name: "Luxembourg", flag: "🇱🇺" },
+  { name: "Malaysia", flag: "🇲🇾" },
+  { name: "Mexico", flag: "🇲🇽" },
+  { name: "Morocco", flag: "🇲🇦" },
+  { name: "Netherlands", flag: "🇳🇱" },
+  { name: "New Zealand", flag: "🇳🇿" },
+  { name: "Nigeria", flag: "🇳🇬" },
+  { name: "Norway", flag: "🇳🇴" },
+  { name: "Pakistan", flag: "🇵🇰" },
+  { name: "Philippines", flag: "🇵🇭" },
+  { name: "Poland", flag: "🇵🇱" },
+  { name: "Portugal", flag: "🇵🇹" },
+  { name: "Qatar", flag: "🇶🇦" },
+  { name: "Romania", flag: "🇷🇴" },
+  { name: "Russia", flag: "🇷🇺" },
+  { name: "Saudi Arabia", flag: "🇸🇦" },
+  { name: "Serbia", flag: "🇷🇸" },
+  { name: "Singapore", flag: "🇸🇬" },
+  { name: "Slovakia", flag: "🇸🇰" },
+  { name: "Slovenia", flag: "🇸🇮" },
+  { name: "South Africa", flag: "🇿🇦" },
+  { name: "South Korea", flag: "🇰🇷" },
+  { name: "Spain", flag: "🇪🇸" },
+  { name: "Sri Lanka", flag: "🇱🇰" },
+  { name: "Sweden", flag: "🇸🇪" },
+  { name: "Switzerland", flag: "🇨🇭" },
+  { name: "Taiwan", flag: "🇹🇼" },
+  { name: "Thailand", flag: "🇹🇭" },
+  { name: "Turkey", flag: "🇹🇷" },
+  { name: "Ukraine", flag: "🇺🇦" },
+  { name: "United Arab Emirates", flag: "🇦🇪" },
+  { name: "United Kingdom", flag: "🇬🇧" },
+  { name: "United States", flag: "🇺🇸" },
+  { name: "Vietnam", flag: "🇻🇳" },
 ];
 
-// Phone codes for top countries
+// Phone codes with flags
 const phoneCodes = [
-  { country: "United States", code: "+1" },
-  { country: "United Kingdom", code: "+44" },
-  { country: "Canada", code: "+1" },
-  { country: "Australia", code: "+61" },
-  { country: "Germany", code: "+49" },
-  { country: "France", code: "+33" },
-  { country: "Italy", code: "+39" },
-  { country: "Spain", code: "+34" },
-  { country: "China", code: "+86" },
-  { country: "Japan", code: "+81" },
-  { country: "India", code: "+91" },
-  { country: "Bangladesh", code: "+880" },
-  { country: "Pakistan", code: "+92" },
-  { country: "Brazil", code: "+55" },
-  { country: "Mexico", code: "+52" },
-  { country: "Russia", code: "+7" },
-  { country: "South Korea", code: "+82" },
-  { country: "Indonesia", code: "+62" },
-  { country: "Turkey", code: "+90" },
-  { country: "Saudi Arabia", code: "+966" },
-  { country: "United Arab Emirates", code: "+971" },
-  { country: "Netherlands", code: "+31" },
-  { country: "Switzerland", code: "+41" },
-  { country: "Singapore", code: "+65" },
-  { country: "Malaysia", code: "+60" },
+  { country: "United States", code: "+1", flag: "🇺🇸" },
+  { country: "United Kingdom", code: "+44", flag: "🇬🇧" },
+  { country: "Canada", code: "+1", flag: "🇨🇦" },
+  { country: "Australia", code: "+61", flag: "🇦🇺" },
+  { country: "Germany", code: "+49", flag: "🇩🇪" },
+  { country: "France", code: "+33", flag: "🇫🇷" },
+  { country: "Italy", code: "+39", flag: "🇮🇹" },
+  { country: "Spain", code: "+34", flag: "🇪🇸" },
+  { country: "China", code: "+86", flag: "🇨🇳" },
+  { country: "Japan", code: "+81", flag: "🇯🇵" },
+  { country: "India", code: "+91", flag: "🇮🇳" },
+  { country: "Bangladesh", code: "+880", flag: "🇧🇩" },
+  { country: "Pakistan", code: "+92", flag: "🇵🇰" },
+  { country: "Brazil", code: "+55", flag: "🇧🇷" },
+  { country: "Mexico", code: "+52", flag: "🇲🇽" },
+  { country: "Russia", code: "+7", flag: "🇷🇺" },
+  { country: "South Korea", code: "+82", flag: "🇰🇷" },
+  { country: "Indonesia", code: "+62", flag: "🇮🇩" },
+  { country: "Turkey", code: "+90", flag: "🇹🇷" },
+  { country: "Saudi Arabia", code: "+966", flag: "🇸🇦" },
+  { country: "United Arab Emirates", code: "+971", flag: "🇦🇪" },
+  { country: "Netherlands", code: "+31", flag: "🇳🇱" },
+  { country: "Switzerland", code: "+41", flag: "🇨🇭" },
+  { country: "Singapore", code: "+65", flag: "🇸🇬" },
+  { country: "Malaysia", code: "+60", flag: "🇲🇾" },
+  { country: "Thailand", code: "+66", flag: "🇹🇭" },
+  { country: "Vietnam", code: "+84", flag: "🇻🇳" },
+  { country: "Philippines", code: "+63", flag: "🇵🇭" },
+  { country: "Egypt", code: "+20", flag: "🇪🇬" },
+  { country: "South Africa", code: "+27", flag: "🇿🇦" },
 ];
 
 interface RegisterModalProps {
@@ -282,10 +168,12 @@ export function RegisterModal({ children }: RegisterModalProps) {
   const [formData, setFormData] = useState({
     name: "",
     country: "",
+    countryFlag: "",
     companyName: "",
     designation: "",
     productType: "",
     phoneCode: "+1",
+    phoneFlag: "🇺🇸",
     phoneNumber: "",
     email: "",
   });
@@ -314,10 +202,12 @@ export function RegisterModal({ children }: RegisterModalProps) {
       setFormData({
         name: "",
         country: "",
+        countryFlag: "",
         companyName: "",
         designation: "",
         productType: "",
         phoneCode: "+1",
+        phoneFlag: "🇺🇸",
         phoneNumber: "",
         email: "",
       });
@@ -328,7 +218,7 @@ export function RegisterModal({ children }: RegisterModalProps) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-[#0a4a9e]/98 via-[#05306b]/98 to-[#041f3f]/98 backdrop-blur-xl border-2 border-white/20 text-white [&::-webkit-scrollbar]:w-3 [&::-webkit-scrollbar-track]:bg-white/10 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gradient-to-b [&::-webkit-scrollbar-thumb]:from-[#0a4a9e] [&::-webkit-scrollbar-thumb]:to-[#05306b] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:border-2 [&::-webkit-scrollbar-thumb]:border-white/20 hover:[&::-webkit-scrollbar-thumb]:from-[#0d5bbf] hover:[&::-webkit-scrollbar-thumb]:to-[#0a4a9e]">
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-[#0a4a9e]/98 via-[#05306b]/98 to-[#041f3f]/98 backdrop-blur-xl border-2 border-white/20 text-white p-4 sm:p-6 md:p-8 [&::-webkit-scrollbar]:w-3 [&::-webkit-scrollbar-track]:bg-white/10 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gradient-to-b [&::-webkit-scrollbar-thumb]:from-[#0a4a9e] [&::-webkit-scrollbar-thumb]:to-[#05306b] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:border-2 [&::-webkit-scrollbar-thumb]:border-white/20 hover:[&::-webkit-scrollbar-thumb]:from-[#0d5bbf] hover:[&::-webkit-scrollbar-thumb]:to-[#0a4a9e]">
         <DialogHeader>
           <DialogTitle className="text-3xl font-bold text-white text-center">
             Register Now
@@ -349,7 +239,7 @@ export function RegisterModal({ children }: RegisterModalProps) {
             </p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 mt-4">
             {/* Name */}
             <div className="space-y-2">
               <Label htmlFor="name" className="text-white font-semibold">
@@ -378,10 +268,17 @@ export function RegisterModal({ children }: RegisterModalProps) {
                     variant="outline"
                     role="combobox"
                     aria-expanded={countryOpen}
-                    className="w-full justify-between bg-white border-gray-300 text-black hover:bg-gray-50 hover:text-black"
+                    className="w-full justify-start bg-white border-gray-300 text-black hover:bg-gray-50 hover:text-black"
                   >
-                    {formData.country || "Select your country"}
-                    <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                    <ChevronsUpDown className="mr-2 h-4 w-4 shrink-0 opacity-50" />
+                    {formData.country ? (
+                      <span className="flex items-center gap-2">
+                        <span className="text-xl" style={{ fontFamily: 'Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif' }}>{formData.countryFlag}</span>
+                        <span>{formData.country}</span>
+                      </span>
+                    ) : (
+                      "Select your country"
+                    )}
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent
@@ -408,24 +305,26 @@ export function RegisterModal({ children }: RegisterModalProps) {
                       <CommandGroup>
                         {countries.map((country) => (
                           <CommandItem
-                            key={country}
-                            value={country}
+                            key={country.name}
+                            value={country.name}
                             onSelect={(currentValue: string) => {
+                              const selected = countries.find(c => c.name.toLowerCase() === currentValue.toLowerCase());
                               setFormData({
                                 ...formData,
-                                country:
-                                  currentValue === formData.country
-                                    ? ""
-                                    : currentValue,
+                                country: selected ? selected.name : "",
+                                countryFlag: selected ? selected.flag : "",
                               });
                               setCountryOpen(false);
                             }}
                           >
-                            {country}
+                            <span className="flex items-center gap-2 flex-1">
+                              <span className="text-xl" style={{ fontFamily: 'Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif' }}>{country.flag}</span>
+                              <span>{country.name}</span>
+                            </span>
                             <Check
                               className={cn(
                                 "ml-auto h-4 w-4",
-                                formData.country === country
+                                formData.country === country.name
                                   ? "opacity-100"
                                   : "opacity-0"
                               )}
@@ -517,10 +416,13 @@ export function RegisterModal({ children }: RegisterModalProps) {
                       variant="outline"
                       role="combobox"
                       aria-expanded={phoneCodeOpen}
-                      className="w-[200px] justify-between bg-white border-gray-300 text-black hover:bg-gray-50 hover:text-black"
+                      className="w-[140px] sm:w-[160px] justify-start bg-white border-gray-300 text-black hover:bg-gray-50 hover:text-black"
                     >
-                      {formData.phoneCode}
-                      <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                      <ChevronsUpDown className="mr-2 h-4 w-4 shrink-0 opacity-50" />
+                      <span className="flex items-center gap-1.5">
+                        <span className="text-lg" style={{ fontFamily: 'Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif' }}>{formData.phoneFlag}</span>
+                        <span>{formData.phoneCode}</span>
+                      </span>
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent
@@ -547,18 +449,21 @@ export function RegisterModal({ children }: RegisterModalProps) {
                         <CommandGroup>
                           {phoneCodes.map((item) => (
                             <CommandItem
-                              key={item.code}
+                              key={`${item.code}-${item.country}`}
                               value={`${item.code} ${item.country}`}
                               onSelect={() => {
                                 setFormData({
                                   ...formData,
                                   phoneCode: item.code,
+                                  phoneFlag: item.flag,
                                 });
                                 setPhoneCodeOpen(false);
                               }}
                             >
-                              <span className="text-sm">
-                                {item.code} {item.country}
+                              <span className="flex items-center gap-2 flex-1 text-sm">
+                                <span className="text-lg" style={{ fontFamily: 'Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif' }}>{item.flag}</span>
+                                <span className="font-medium">{item.code}</span>
+                                <span className="text-gray-500">{item.country}</span>
                               </span>
                               <Check
                                 className={cn(

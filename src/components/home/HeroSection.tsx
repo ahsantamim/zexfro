@@ -73,8 +73,8 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative flex flex-col justify-center text-white"
-      style={{ minHeight: "100vh", paddingTop: "240px" }}
+      className="relative flex flex-col justify-center text-white pt-20 md:pt-60"
+      style={{ minHeight: "100vh" }}
     >
       {/* Background */}
       <div
@@ -92,10 +92,10 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black/20" />
 
       {/* MAIN HERO CONTENT (perfect centered) */}
-      <div className="container mx-auto max-w-7xl relative z-10 px-4 flex flex-col items-center justify-center text-center">
+      <div className="container mx-auto max-w-7xl relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-16 flex flex-col items-center justify-center text-center">
         <div className="max-w-4xl animate-fade-in">
           {/* TITLE */}
-          <h1 className="font-bold leading-[1.2] mb-6 text-[28px] sm:text-[36px] md:text-[42px] lg:text-[72px] drop-shadow-lg">
+          <h1 className="font-bold leading-[1.2] mb-6 text-[36px] sm:text-[40px] md:text-[48px] lg:text-[72px] drop-shadow-lg">
             Secure. Compliant.
             <br className="sm:hidden" />
             <span className="text-white  px-2 rounded">Global Trade</span> Made
@@ -115,8 +115,8 @@ export function HeroSection() {
               <MovingBorderButton
                 borderRadius="9999px"
                 containerClassName="
-                  h-[56px] sm:h-[64px] md:h-[72px] lg:h-[90px]
-                  min-w-[240px] sm:min-w-[260px] md:min-w-[300px] lg:min-w-[360px]
+                  h-[72px] sm:h-[64px] md:h-[72px] lg:h-[90px]
+                  min-w-[280px] sm:min-w-[260px] md:min-w-[300px] lg:min-w-[360px]
                 "
                 borderClassName="
                   bg-[radial-gradient(#7BE0A5_40%,transparent_60%)]
@@ -129,7 +129,7 @@ export function HeroSection() {
                   hover:from-[#0AFF72] hover:via-[#15E67C] hover:to-[#7BE0A5]
                
                   transition-all duration-500 ease-in-out
-                  px-10 py-5 flex items-center justify-center gap-4
+                  px-12 py-6 sm:px-10 sm:py-5 flex items-center justify-center gap-4
                   rounded-full whitespace-nowrap group
                 "
               >
