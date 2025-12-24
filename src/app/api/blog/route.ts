@@ -7,8 +7,9 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const category = searchParams.get("category");
     const search = searchParams.get("search");
+    const publishedOnly = searchParams.get("publishedOnly") !== "false";
 
-    const posts = await getAllBlogPosts({ category, search });
+    const posts = await getAllBlogPosts({ category, search, publishedOnly });
 
     return NextResponse.json({ posts }, { status: 200 });
   } catch (error) {

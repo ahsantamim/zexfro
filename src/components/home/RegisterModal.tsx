@@ -40,117 +40,135 @@ import {
   ChevronsUpDown,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  CountryDropdown,
+  type Country,
+} from "@/components/ui/country-dropdown";
 
-// Countries with flags
+// Flag component using CDN
+const CountryFlag = ({ countryCode }: { countryCode: string }) => {
+  return (
+    <img
+      src={`https://flagcdn.com/w20/${countryCode.toLowerCase()}.png`}
+      srcSet={`https://flagcdn.com/w40/${countryCode.toLowerCase()}.png 2x`}
+      width="20"
+      height="15"
+      alt={`${countryCode} flag`}
+      className="rounded"
+    />
+  );
+};
+
+// Countries with flag codes (ISO 3166-1 alpha-2)
 const countries = [
-  { name: "Afghanistan", flag: "🇦🇫" },
-  { name: "Albania", flag: "🇦🇱" },
-  { name: "Algeria", flag: "🇩🇿" },
-  { name: "Argentina", flag: "🇦🇷" },
-  { name: "Australia", flag: "🇦🇺" },
-  { name: "Austria", flag: "🇦🇹" },
-  { name: "Bangladesh", flag: "🇧🇩" },
-  { name: "Belgium", flag: "🇧🇪" },
-  { name: "Brazil", flag: "🇧🇷" },
-  { name: "Bulgaria", flag: "🇧🇬" },
-  { name: "Canada", flag: "🇨🇦" },
-  { name: "Chile", flag: "🇨🇱" },
-  { name: "China", flag: "🇨🇳" },
-  { name: "Colombia", flag: "🇨🇴" },
-  { name: "Croatia", flag: "🇭🇷" },
-  { name: "Czech Republic", flag: "🇨🇿" },
-  { name: "Denmark", flag: "🇩🇰" },
-  { name: "Egypt", flag: "🇪🇬" },
-  { name: "Estonia", flag: "🇪🇪" },
-  { name: "Finland", flag: "🇫🇮" },
-  { name: "France", flag: "🇫🇷" },
-  { name: "Germany", flag: "🇩🇪" },
-  { name: "Greece", flag: "🇬🇷" },
-  { name: "Hong Kong", flag: "🇭🇰" },
-  { name: "Hungary", flag: "🇭🇺" },
-  { name: "Iceland", flag: "🇮🇸" },
-  { name: "India", flag: "🇮🇳" },
-  { name: "Indonesia", flag: "🇮🇩" },
-  { name: "Iran", flag: "🇮🇷" },
-  { name: "Iraq", flag: "🇮🇶" },
-  { name: "Ireland", flag: "🇮🇪" },
-  { name: "Israel", flag: "🇮🇱" },
-  { name: "Italy", flag: "🇮🇹" },
-  { name: "Japan", flag: "🇯🇵" },
-  { name: "Jordan", flag: "🇯🇴" },
-  { name: "Kenya", flag: "🇰🇪" },
-  { name: "Kuwait", flag: "🇰🇼" },
-  { name: "Latvia", flag: "🇱🇻" },
-  { name: "Lebanon", flag: "🇱🇧" },
-  { name: "Lithuania", flag: "🇱🇹" },
-  { name: "Luxembourg", flag: "🇱🇺" },
-  { name: "Malaysia", flag: "🇲🇾" },
-  { name: "Mexico", flag: "🇲🇽" },
-  { name: "Morocco", flag: "🇲🇦" },
-  { name: "Netherlands", flag: "🇳🇱" },
-  { name: "New Zealand", flag: "🇳🇿" },
-  { name: "Nigeria", flag: "🇳🇬" },
-  { name: "Norway", flag: "🇳🇴" },
-  { name: "Pakistan", flag: "🇵🇰" },
-  { name: "Philippines", flag: "🇵🇭" },
-  { name: "Poland", flag: "🇵🇱" },
-  { name: "Portugal", flag: "🇵🇹" },
-  { name: "Qatar", flag: "🇶🇦" },
-  { name: "Romania", flag: "🇷🇴" },
-  { name: "Russia", flag: "🇷🇺" },
-  { name: "Saudi Arabia", flag: "🇸🇦" },
-  { name: "Serbia", flag: "🇷🇸" },
-  { name: "Singapore", flag: "🇸🇬" },
-  { name: "Slovakia", flag: "🇸🇰" },
-  { name: "Slovenia", flag: "🇸🇮" },
-  { name: "South Africa", flag: "🇿🇦" },
-  { name: "South Korea", flag: "🇰🇷" },
-  { name: "Spain", flag: "🇪🇸" },
-  { name: "Sri Lanka", flag: "🇱🇰" },
-  { name: "Sweden", flag: "🇸🇪" },
-  { name: "Switzerland", flag: "🇨🇭" },
-  { name: "Taiwan", flag: "🇹🇼" },
-  { name: "Thailand", flag: "🇹🇭" },
-  { name: "Turkey", flag: "🇹🇷" },
-  { name: "Ukraine", flag: "🇺🇦" },
-  { name: "United Arab Emirates", flag: "🇦🇪" },
-  { name: "United Kingdom", flag: "🇬🇧" },
-  { name: "United States", flag: "🇺🇸" },
-  { name: "Vietnam", flag: "🇻🇳" },
+  { name: "Afghanistan", flag: "af" },
+  { name: "Albania", flag: "al" },
+  { name: "Algeria", flag: "dz" },
+  { name: "Argentina", flag: "ar" },
+  { name: "Australia", flag: "au" },
+  { name: "Austria", flag: "at" },
+  { name: "Bangladesh", flag: "bd" },
+  { name: "Belgium", flag: "be" },
+  { name: "Brazil", flag: "br" },
+  { name: "Bulgaria", flag: "bg" },
+  { name: "Canada", flag: "ca" },
+  { name: "Chile", flag: "cl" },
+  { name: "China", flag: "cn" },
+  { name: "Colombia", flag: "co" },
+  { name: "Croatia", flag: "hr" },
+  { name: "Czech Republic", flag: "cz" },
+  { name: "Denmark", flag: "dk" },
+  { name: "Egypt", flag: "eg" },
+  { name: "Estonia", flag: "ee" },
+  { name: "Finland", flag: "fi" },
+  { name: "France", flag: "fr" },
+  { name: "Germany", flag: "de" },
+  { name: "Greece", flag: "gr" },
+  { name: "Hong Kong", flag: "hk" },
+  { name: "Hungary", flag: "hu" },
+  { name: "Iceland", flag: "is" },
+  { name: "India", flag: "in" },
+  { name: "Indonesia", flag: "id" },
+  { name: "Iran", flag: "ir" },
+  { name: "Iraq", flag: "iq" },
+  { name: "Ireland", flag: "ie" },
+  { name: "Israel", flag: "il" },
+  { name: "Italy", flag: "it" },
+  { name: "Japan", flag: "jp" },
+  { name: "Jordan", flag: "jo" },
+  { name: "Kenya", flag: "ke" },
+  { name: "Kuwait", flag: "kw" },
+  { name: "Latvia", flag: "lv" },
+  { name: "Lebanon", flag: "lb" },
+  { name: "Lithuania", flag: "lt" },
+  { name: "Luxembourg", flag: "lu" },
+  { name: "Malaysia", flag: "my" },
+  { name: "Mexico", flag: "mx" },
+  { name: "Morocco", flag: "ma" },
+  { name: "Netherlands", flag: "nl" },
+  { name: "New Zealand", flag: "nz" },
+  { name: "Nigeria", flag: "ng" },
+  { name: "Norway", flag: "no" },
+  { name: "Pakistan", flag: "pk" },
+  { name: "Philippines", flag: "ph" },
+  { name: "Poland", flag: "pl" },
+  { name: "Portugal", flag: "pt" },
+  { name: "Qatar", flag: "qa" },
+  { name: "Romania", flag: "ro" },
+  { name: "Russia", flag: "ru" },
+  { name: "Saudi Arabia", flag: "sa" },
+  { name: "Serbia", flag: "rs" },
+  { name: "Singapore", flag: "sg" },
+  { name: "Slovakia", flag: "sk" },
+  { name: "Slovenia", flag: "si" },
+  { name: "South Africa", flag: "za" },
+  { name: "South Korea", flag: "kr" },
+  { name: "Spain", flag: "es" },
+  { name: "Sri Lanka", flag: "lk" },
+  { name: "Sweden", flag: "se" },
+  { name: "Switzerland", flag: "ch" },
+  { name: "Taiwan", flag: "tw" },
+  { name: "Thailand", flag: "th" },
+  { name: "Turkey", flag: "tr" },
+  { name: "Ukraine", flag: "ua" },
+  { name: "United Arab Emirates", flag: "ae" },
+  { name: "United Kingdom", flag: "gb" },
+  { name: "United States", flag: "us" },
+  { name: "Vietnam", flag: "vn" },
 ];
 
-// Phone codes with flags
+// Phone codes with flag codes (ISO 3166-1 alpha-2)
 const phoneCodes = [
-  { country: "United States", code: "+1", flag: "🇺🇸" },
-  { country: "United Kingdom", code: "+44", flag: "🇬🇧" },
-  { country: "Canada", code: "+1", flag: "🇨🇦" },
-  { country: "Australia", code: "+61", flag: "🇦🇺" },
-  { country: "Germany", code: "+49", flag: "🇩🇪" },
-  { country: "France", code: "+33", flag: "🇫🇷" },
-  { country: "Italy", code: "+39", flag: "🇮🇹" },
-  { country: "Spain", code: "+34", flag: "🇪🇸" },
-  { country: "China", code: "+86", flag: "🇨🇳" },
-  { country: "Japan", code: "+81", flag: "🇯🇵" },
-  { country: "India", code: "+91", flag: "🇮🇳" },
-  { country: "Bangladesh", code: "+880", flag: "🇧🇩" },
-  { country: "Pakistan", code: "+92", flag: "🇵🇰" },
-  { country: "Brazil", code: "+55", flag: "🇧🇷" },
-  { country: "Mexico", code: "+52", flag: "🇲🇽" },
-  { country: "Russia", code: "+7", flag: "🇷🇺" },
-  { country: "South Korea", code: "+82", flag: "🇰🇷" },
-  { country: "Indonesia", code: "+62", flag: "🇮🇩" },
-  { country: "Turkey", code: "+90", flag: "🇹🇷" },
-  { country: "Saudi Arabia", code: "+966", flag: "🇸🇦" },
-  { country: "United Arab Emirates", code: "+971", flag: "🇦🇪" },
-  { country: "Netherlands", code: "+31", flag: "🇳🇱" },
-  { country: "Switzerland", code: "+41", flag: "🇨🇭" },
-  { country: "Singapore", code: "+65", flag: "🇸🇬" },
-  { country: "Malaysia", code: "+60", flag: "🇲🇾" },
-  { country: "Thailand", code: "+66", flag: "🇹🇭" },
-  { country: "Vietnam", code: "+84", flag: "🇻🇳" },
-  { country: "Philippines", code: "+63", flag: "🇵🇭" },
-  { country: "Egypt", code: "+20", flag: "🇪🇬" },
-  { country: "South Africa", code: "+27", flag: "🇿🇦" },
+  { country: "United States", code: "+1", flag: "us" },
+  { country: "United Kingdom", code: "+44", flag: "gb" },
+  { country: "Canada", code: "+1", flag: "ca" },
+  { country: "Australia", code: "+61", flag: "au" },
+  { country: "Germany", code: "+49", flag: "de" },
+  { country: "France", code: "+33", flag: "fr" },
+  { country: "Italy", code: "+39", flag: "it" },
+  { country: "Spain", code: "+34", flag: "es" },
+  { country: "China", code: "+86", flag: "cn" },
+  { country: "Japan", code: "+81", flag: "jp" },
+  { country: "India", code: "+91", flag: "in" },
+  { country: "Bangladesh", code: "+880", flag: "bd" },
+  { country: "Pakistan", code: "+92", flag: "pk" },
+  { country: "Brazil", code: "+55", flag: "br" },
+  { country: "Mexico", code: "+52", flag: "mx" },
+  { country: "Russia", code: "+7", flag: "ru" },
+  { country: "South Korea", code: "+82", flag: "kr" },
+  { country: "Indonesia", code: "+62", flag: "id" },
+  { country: "Turkey", code: "+90", flag: "tr" },
+  { country: "Saudi Arabia", code: "+966", flag: "sa" },
+  { country: "United Arab Emirates", code: "+971", flag: "ae" },
+  { country: "Netherlands", code: "+31", flag: "nl" },
+  { country: "Switzerland", code: "+41", flag: "ch" },
+  { country: "Singapore", code: "+65", flag: "sg" },
+  { country: "Malaysia", code: "+60", flag: "my" },
+  { country: "Thailand", code: "+66", flag: "th" },
+  { country: "Vietnam", code: "+84", flag: "vn" },
+  { country: "Philippines", code: "+63", flag: "ph" },
+  { country: "Egypt", code: "+20", flag: "eg" },
+  { country: "South Africa", code: "+27", flag: "za" },
 ];
 
 interface RegisterModalProps {
@@ -161,7 +179,9 @@ export function RegisterModal({ children }: RegisterModalProps) {
   const [open, setOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState("");
   const [fileName, setFileName] = useState<string>("");
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [countryOpen, setCountryOpen] = useState(false);
   const [phoneCodeOpen, setPhoneCodeOpen] = useState(false);
 
@@ -173,46 +193,83 @@ export function RegisterModal({ children }: RegisterModalProps) {
     designation: "",
     productType: "",
     phoneCode: "+1",
-    phoneFlag: "🇺🇸",
+    phoneFlag: "us",
     phoneNumber: "",
     email: "",
+    telephone: "",
+    password: "",
   });
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       setFileName(file.name);
+      setSelectedFile(file);
     }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError("");
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    try {
+      const submitFormData = new FormData();
+      submitFormData.append("name", formData.name);
+      submitFormData.append("email", formData.email);
+      submitFormData.append("password", formData.password);
+      submitFormData.append("country", formData.country);
+      submitFormData.append("company", formData.companyName);
+      submitFormData.append("designation", formData.designation);
+      submitFormData.append("clientType", formData.productType);
+      submitFormData.append("phoneCode", formData.phoneCode);
+      submitFormData.append("phoneNumber", formData.phoneNumber);
+      if (formData.telephone) {
+        submitFormData.append("telephone", formData.telephone);
+      }
+      if (selectedFile) {
+        submitFormData.append("file", selectedFile);
+      }
 
-    setIsSubmitting(false);
-    setIsSuccess(true);
-
-    // Reset after 3 seconds
-    setTimeout(() => {
-      setIsSuccess(false);
-      setOpen(false);
-      setFormData({
-        name: "",
-        country: "",
-        countryFlag: "",
-        companyName: "",
-        designation: "",
-        productType: "",
-        phoneCode: "+1",
-        phoneFlag: "🇺🇸",
-        phoneNumber: "",
-        email: "",
+      const response = await fetch("/api/register", {
+        method: "POST",
+        body: submitFormData,
       });
-      setFileName("");
-    }, 3000);
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Registration failed");
+      }
+
+      setIsSuccess(true);
+
+      // Reset after 3 seconds
+      setTimeout(() => {
+        setIsSuccess(false);
+        setOpen(false);
+        setFormData({
+          name: "",
+          country: "",
+          countryFlag: "",
+          companyName: "",
+          designation: "",
+          productType: "",
+          phoneCode: "+1",
+          phoneFlag: "us",
+          phoneNumber: "",
+          email: "",
+          telephone: "",
+          password: "",
+        });
+        setFileName("");
+        setSelectedFile(null);
+        setError("");
+      }, 3000);
+    } catch (err: any) {
+      setError(err.message || "Failed to register. Please try again.");
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -273,7 +330,7 @@ export function RegisterModal({ children }: RegisterModalProps) {
                     <ChevronsUpDown className="mr-2 h-4 w-4 shrink-0 opacity-50" />
                     {formData.country ? (
                       <span className="flex items-center gap-2">
-                        <span className="text-xl" style={{ fontFamily: 'Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif' }}>{formData.countryFlag}</span>
+                        <CountryFlag countryCode={formData.countryFlag} />
                         <span>{formData.country}</span>
                       </span>
                     ) : (
@@ -308,7 +365,11 @@ export function RegisterModal({ children }: RegisterModalProps) {
                             key={country.name}
                             value={country.name}
                             onSelect={(currentValue: string) => {
-                              const selected = countries.find(c => c.name.toLowerCase() === currentValue.toLowerCase());
+                              const selected = countries.find(
+                                (c) =>
+                                  c.name.toLowerCase() ===
+                                  currentValue.toLowerCase()
+                              );
                               setFormData({
                                 ...formData,
                                 country: selected ? selected.name : "",
@@ -318,7 +379,7 @@ export function RegisterModal({ children }: RegisterModalProps) {
                             }}
                           >
                             <span className="flex items-center gap-2 flex-1">
-                              <span className="text-xl" style={{ fontFamily: 'Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif' }}>{country.flag}</span>
+                              <CountryFlag countryCode={country.flag} />
                               <span>{country.name}</span>
                             </span>
                             <Check
@@ -420,7 +481,7 @@ export function RegisterModal({ children }: RegisterModalProps) {
                     >
                       <ChevronsUpDown className="mr-2 h-4 w-4 shrink-0 opacity-50" />
                       <span className="flex items-center gap-1.5">
-                        <span className="text-lg" style={{ fontFamily: 'Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif' }}>{formData.phoneFlag}</span>
+                        <CountryFlag countryCode={formData.phoneFlag} />
                         <span>{formData.phoneCode}</span>
                       </span>
                     </Button>
@@ -461,9 +522,11 @@ export function RegisterModal({ children }: RegisterModalProps) {
                               }}
                             >
                               <span className="flex items-center gap-2 flex-1 text-sm">
-                                <span className="text-lg" style={{ fontFamily: 'Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif' }}>{item.flag}</span>
+                                <CountryFlag countryCode={item.flag} />
                                 <span className="font-medium">{item.code}</span>
-                                <span className="text-gray-500">{item.country}</span>
+                                <span className="text-gray-500">
+                                  {item.country}
+                                </span>
                               </span>
                               <Check
                                 className={cn(
@@ -512,6 +575,42 @@ export function RegisterModal({ children }: RegisterModalProps) {
               />
             </div>
 
+            {/* Password */}
+            <div className="space-y-2">
+              <Label htmlFor="password" className="text-white font-semibold">
+                Password *
+              </Label>
+              <Input
+                id="password"
+                required
+                type="password"
+                value={formData.password}
+                onChange={(e) =>
+                  setFormData({ ...formData, password: e.target.value })
+                }
+                className="bg-white border-gray-300 text-black placeholder:text-gray-600 focus:border-blue-500 focus:ring-blue-500"
+                placeholder="Create a password"
+                minLength={6}
+              />
+            </div>
+
+            {/* Telephone Number (Optional) */}
+            <div className="space-y-2">
+              <Label htmlFor="telephone" className="text-white font-semibold">
+                Telephone Number (Optional)
+              </Label>
+              <Input
+                id="telephone"
+                type="tel"
+                value={formData.telephone}
+                onChange={(e) =>
+                  setFormData({ ...formData, telephone: e.target.value })
+                }
+                placeholder="Enter phone number"
+                className="w-full bg-white border-gray-300 text-black placeholder:text-gray-600 focus:border-blue-500 focus:ring-blue-500"
+              />
+            </div>
+
             {/* File Upload */}
             <div className="space-y-2">
               <Label htmlFor="file" className="text-white font-semibold">
@@ -541,6 +640,13 @@ export function RegisterModal({ children }: RegisterModalProps) {
                 )}
               </div>
             </div>
+
+            {/* Error Message */}
+            {error && (
+              <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-3 text-center">
+                <p className="text-red-200 text-sm">{error}</p>
+              </div>
+            )}
 
             {/* Submit Button */}
             <Button

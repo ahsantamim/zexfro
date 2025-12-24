@@ -2,17 +2,38 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import {
+  CountryDropdown,
+  type Country,
+} from "@/components/ui/country-dropdown";
+
+// Flag component using CDN
+const CountryFlag = ({ countryCode }: { countryCode: string }) => {
+  return (
+    <img
+      src={`https://flagcdn.com/w20/${countryCode.toLowerCase()}.png`}
+      srcSet={`https://flagcdn.com/w40/${countryCode.toLowerCase()}.png 2x`}
+      width="20"
+      height="15"
+      alt={`${countryCode} flag`}
+      className="rounded"
+    />
+  );
+};
 
 export function RegistrationForm() {
   const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    telephone: "",
+    countryCode: "+1",
     password: "",
     confirmPassword: "",
     phone: "",
     company: "",
   });
+  const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
 
@@ -72,6 +93,44 @@ export function RegistrationForm() {
             }
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600"
           />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium mb-2">
+            Telephone Number (Optional)
+          </label>
+          <div className="flex gap-2">
+            <div className="w-32">
+              <CountryDropdown
+                slim={false}
+                placeholder="Country"
+                onChange={(country: Country) => {
+                  setSelectedCountry(country);
+                  const countryCode = country.countryCallingCodes?.[0] || "+1";
+                  setFormData({ ...formData, countryCode });
+                }}
+              />
+            </div>
+            <div className="flex-1 flex items-center gap-2">
+              {selectedCountry && (
+                <div className="flex items-center gap-1 px-3 py-2 border border-gray-300 rounded-lg bg-gray-50">
+                  <CountryFlag countryCode={selectedCountry.alpha2} />
+                  <span className="text-sm font-medium">
+                    {selectedCountry.countryCallingCodes?.[0] || "+1"}
+                  </span>
+                </div>
+              )}
+              <input
+                type="tel"
+                value={formData.telephone}
+                onChange={(e) =>
+                  setFormData({ ...formData, telephone: e.target.value })
+                }
+                placeholder="Enter phone number"
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600"
+              />
+            </div>
+          </div>
         </div>
 
         <div>

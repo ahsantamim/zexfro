@@ -1,14 +1,16 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { authConfig } from "./auth.config";
+import bcrypt from "bcryptjs";
 
-// Dummy admin user
-const ADMIN_USER = {
-  id: "1",
-  name: "admin",
+// Fallback credentials for development (while database issues are resolved)
+const FALLBACK_ADMIN = {
+  id: "zexfro-admin-001",
+  name: "zexfro-admin",
   email: "admin@zexfro.com",
-  password: "1234",
-  role: "admin" as const,
+  role: "admin",
+  // Password: zexfro12341234
+  passwordHash: "$2b$10$YixZaYV8fNMfzU8Z.HXlrOHnM6K4VzTZJSevJ4n.R5w1uLjAKs6tG",
 };
 
 export const { auth, signIn, signOut, handlers } = NextAuth({
@@ -26,20 +28,69 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
           return null;
         }
 
-        // Check against dummy admin user
-        if (
-          credentials.username === ADMIN_USER.name &&
-          credentials.password === ADMIN_USER.password
-        ) {
-          return {
-            id: ADMIN_USER.id,
-            name: ADMIN_USER.name,
-            email: ADMIN_USER.email,
-            role: ADMIN_USER.role,
-          };
-        }
+        try {
+          // Check if it's the fallback admin user
+          if (
+            (credentials.username === FALLBACK_ADMIN.name ||
+              credentials.username === FALLBACK_ADMIN.email) &&
+            credentials.password === "zexfro12341234"
+          ) {
+            return {
+              id: FALLBACK_ADMIN.id,
+              name: FALLBACK_ADMIN.name,
+              email: FALLBACK_ADMIN.email,
+              role: FALLBACK_ADMIN.role,
+            };
+          }
 
-        return null;
+          // Try to connect to database if available
+          let user = null;
+          try {
+            const { PrismaClient } = await import("@prisma/client");
+            const prisma = new PrismaClient({
+              errorFormat: "minimal",
+            });
+
+            user = await prisma.user.findFirst({
+              where: {
+                OR: [
+                  { name: credentials.username },
+                  { email: credentials.username },
+                ],
+              },
+            });
+
+            await prisma.$disconnect();
+          } catch (dbError) {
+            console.warn("Database connection failed, using fallback only:", dbError);
+            // Continue with fallback user only
+          }
+
+          if (!user) {
+            return null;
+          }
+
+          // Compare password with hashed password in database
+          const passwordMatch = await bcrypt.compare(
+            credentials.password as string,
+            user.password
+          );
+
+          if (!passwordMatch) {
+            return null;
+          }
+
+          // Return user object for session
+          return {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            role: user.role,
+          };
+        } catch (error) {
+          console.error("Auth error:", error);
+          return null;
+        }
       },
     }),
   ],

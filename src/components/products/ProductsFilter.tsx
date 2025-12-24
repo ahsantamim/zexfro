@@ -1,7 +1,14 @@
 "use client";
 
-import { useState } from "react";
-import { Search, SlidersHorizontal } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Search, SlidersHorizontal, Loader2 } from "lucide-react";
+
+interface Category {
+  id: string;
+  slug: string;
+  name: string;
+  type: string | null;
+}
 
 interface ProductsFilterProps {
   activeTab: "import" | "export";
@@ -20,56 +27,29 @@ export function ProductsFilter({
   selectedCategory,
   onCategoryChange,
 }: ProductsFilterProps) {
-  const importCategories = [
-    "All Categories",
-    "Agriculture Equipment",
-    "Garment Products",
-    "Electronics",
-    "Medical Equipment",
-    "Veterinary Medicine",
-    "Spices",
-    "Cosmetics",
-    "Consumer Products",
-    "Sport Products",
-    "Industrial Machinery",
-    "Pharmaceutical Products",
-    "Automotive Parts",
-    "Construction Materials",
-    "Chemical Products",
-    "Food & Beverages",
-    "Furniture & Fixtures",
-    "Toys & Games",
-    "Office Supplies",
-    "Renewable Energy Equipment",
-    "Others",
-  ];
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const exportCategories = [
-    "All Categories",
-    "Readymade Garments",
-    "Leather Products",
-    "Jute Products",
-    "Frozen Food",
-    "Agricultural Products",
-    "Cottage Industry Products",
-    "Tea & Coffee",
-    "Seafood Products",
-    "Handicrafts",
-    "Textiles & Fabrics",
-    "Footwear",
-    "Ceramic Products",
-    "Processed Foods",
-    "Spices & Herbs",
-    "Home Textiles",
-    "Bamboo Products",
-    "Jewelry & Accessories",
-    "Organic Products",
-    "Wood Products",
-    "Canned & Preserved Foods",
-  ];
+  // Fetch categories from backend
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(`/api/categories?type=${activeTab}`);
+        const data = await response.json();
 
-  const categories =
-    activeTab === "import" ? importCategories : exportCategories;
+        if (data.success) {
+          setCategories(data.data);
+        }
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCategories();
+  }, [activeTab]);
 
   return (
     <div className="space-y-6">
@@ -109,18 +89,24 @@ export function ProductsFilter({
           <select
             value={selectedCategory}
             onChange={(e) => onCategoryChange(e.target.value)}
-            className="w-full md:w-64 pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 font-medium focus:border-[#0a4a9e] focus:ring-2 focus:ring-[#0a4a9e]/20 outline-none transition-all appearance-none cursor-pointer"
+            disabled={loading}
+            className="w-full md:w-64 pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 font-medium focus:border-[#0a4a9e] focus:ring-2 focus:ring-[#0a4a9e]/20 outline-none transition-all appearance-none cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
               backgroundRepeat: "no-repeat",
               backgroundPosition: "right 1rem center",
             }}
           >
-            {categories.map((category) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
+            <option value="">All Categories</option>
+            {loading ? (
+              <option disabled>Loading categories...</option>
+            ) : (
+              categories.map((category) => (
+                <option key={category.id} value={category.slug}>
+                  {category.name}
+                </option>
+              ))
+            )}
           </select>
         </div>
 

@@ -28,28 +28,31 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed h-20 md:h-60 top-0 left-0 right-0 z-50 bg-[#1800ad] backdrop-blur-md shadow-lg border-b border-white/10 md:overflow-hidden" style={{ boxShadow: '0 8px 32px 0 rgba(5, 48, 107, 0.37)' }}>
+    <nav
+      className="fixed h-20 md:h-60 top-0 left-0 right-0 z-50 bg-[#1800ad] backdrop-blur-md shadow-lg border-b border-white/10 md:overflow-hidden"
+      style={{ boxShadow: "0 8px 32px 0 rgba(5, 48, 107, 0.37)" }}
+    >
       {/* World Map Blueprint Background */}
-      <div 
+      <div
         className="absolute inset-0 opacity-20"
         style={{
-          backgroundImage: 'url(/world%20map.png)',
-          backgroundSize: '50%',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'repeat',
-          filter: 'brightness(1.5) contrast(2.2)',
-          mixBlendMode: 'overlay'
+          backgroundImage: "url(/world%20map.png)",
+          backgroundSize: "50%",
+          backgroundPosition: "center",
+          backgroundRepeat: "repeat",
+          filter: "brightness(1.5) contrast(2.2)",
+          mixBlendMode: "overlay",
         }}
       />
-      <div className="container mx-auto max-w-7xl h-full relative z-10 md:px-0 px-4">
+      <div className="container mx-auto max-w-9xl h-full relative z-10 md:px-0 px-4">
         {/* MOBILE/TABLET LAYOUT - Industry Standard */}
         <div className="md:hidden flex items-center justify-between h-full">
           {/* Mobile Logo */}
           <Link href="/" className="flex items-center">
-            <Image 
-              src="/Logo.png" 
-              alt="Zexfro Logo" 
-              width={80} 
+            <Image
+              src="/Logo.png"
+              alt="Zexfro Logo"
+              width={80}
               height={80}
               className="object-contain"
               priority
@@ -69,30 +72,31 @@ export function Navbar() {
         {/* DESKTOP LAYOUT - Custom Client Design */}
         <div className="hidden md:flex items-end justify-between h-full">
           {/* Desktop Logo with Animation */}
-          <Link
-            href="/"
-            className="flex flex-col items-start h-full pl-0"
-          >
+          <Link href="/" className="flex flex-col items-start h-full pl-0">
             <div className="flex items-center relative w-[400px] h-[400px]">
               {/* GIF Animation - Bigger */}
-              <Image 
-                src="/zex.gif" 
-                alt="Zexfro Logo Animation" 
-                width={300} 
+              <Image
+                src="/zex.gif"
+                alt="Zexfro Logo Animation"
+                width={300}
                 height={300}
                 className={`object-cover absolute transition-all duration-1000 ${
-                  showStaticLogo ? 'opacity-0 scale-90' : 'opacity-100 scale-100'
+                  showStaticLogo
+                    ? "opacity-0 scale-90"
+                    : "opacity-100 scale-100"
                 }`}
                 priority
               />
               {/* Static PNG Logo - Smaller */}
-              <Image 
-                src="/Logo.png" 
-                alt="Zexfro Logo" 
-                width={240} 
+              <Image
+                src="/Logo.png"
+                alt="Zexfro Logo"
+                width={240}
                 height={240}
                 className={`object-cover absolute transition-all duration-1000 ${
-                  showStaticLogo ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
+                  showStaticLogo
+                    ? "opacity-100 scale-100"
+                    : "opacity-0 scale-110"
                 }`}
                 priority
               />
@@ -116,7 +120,6 @@ export function Navbar() {
             ))}
           </div>
         </div>
-
       </div>
 
       {/* MOBILE DROPDOWN MENU */}

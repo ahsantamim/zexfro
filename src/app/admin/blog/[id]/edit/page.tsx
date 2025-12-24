@@ -1,18 +1,24 @@
+"use client";
+
+import { use } from "react";
 import { notFound } from "next/navigation";
 import { BlogPostForm } from "@/components/admin/forms/BlogPostForm";
-import { getBlogPostById } from "@/lib/api/blog";
+import { useBlogPost } from "@/lib/hooks/useBlog";
+import { PageLoader } from "@/components/ui/LoadingSpinner";
 
 interface EditBlogPostPageProps {
   params: Promise<{ id: string }>;
 }
 
-export default async function EditBlogPostPage({
-  params,
-}: EditBlogPostPageProps) {
-  const { id } = await params;
-  const post = await getBlogPostById(id);
+export default function EditBlogPostPage({ params }: EditBlogPostPageProps) {
+  const { id } = use(params);
+  const { data: post, isLoading, error } = useBlogPost(id);
 
-  if (!post) {
+  if (isLoading) {
+    return <PageLoader />;
+  }
+
+  if (error || !post) {
     notFound();
   }
 

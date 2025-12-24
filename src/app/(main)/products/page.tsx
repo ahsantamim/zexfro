@@ -10,12 +10,12 @@ import { ArrowRight } from "lucide-react";
 export default function ProductsPage() {
   const [activeTab, setActiveTab] = useState<"import" | "export">("import");
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("All Categories");
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   // Reset category when switching tabs
   const handleTabChange = (tab: "import" | "export") => {
     setActiveTab(tab);
-    setSelectedCategory("All Categories");
+    setSelectedCategory("");
     setSearchQuery("");
   };
 

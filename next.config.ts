@@ -9,8 +9,17 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
+      {
+        protocol: "https",
+        hostname: "jjkczpvsxzglqursnhya.supabase.co",
+      },
+      {
+        protocol: "https",
+        hostname: "flagcdn.com",
+      },
     ],
   },
+  transpilePackages: ["react-circle-flags", "country-data-list"],
 };
 
 export default nextConfig;
