@@ -1,10 +1,10 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
 import {
   getTradeType,
   updateTradeType,
   deleteTradeType,
   type UpdateTradeTypeInput,
-} from '@/lib/supabase/trade-types.service';
+} from "@/lib/supabase/trade-types.service";
 
 /**
  * GET /api/admin/trade-types/:id
@@ -20,10 +20,7 @@ export async function GET(
     const { tradeType, error } = await getTradeType(id);
 
     if (error) {
-      return NextResponse.json(
-        { success: false, error },
-        { status: 404 }
-      );
+      return NextResponse.json({ success: false, error }, { status: 404 });
     }
 
     return NextResponse.json({
@@ -31,9 +28,9 @@ export async function GET(
       data: tradeType,
     });
   } catch (error) {
-    console.error('GET /api/admin/trade-types/:id error:', error);
+    console.error("GET /api/admin/trade-types/:id error:", error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: "Internal server error" },
       { status: 500 }
     );
   }
@@ -56,7 +53,11 @@ export async function PUT(
       const slugRegex = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
       if (!slugRegex.test(body.slug)) {
         return NextResponse.json(
-          { success: false, error: 'Slug must be lowercase with hyphens only (e.g., "import-export")' },
+          {
+            success: false,
+            error:
+              'Slug must be lowercase with hyphens only (e.g., "import-export")',
+          },
           { status: 400 }
         );
       }
@@ -71,10 +72,7 @@ export async function PUT(
     const { tradeType, error } = await updateTradeType(id, input);
 
     if (error) {
-      return NextResponse.json(
-        { success: false, error },
-        { status: 400 }
-      );
+      return NextResponse.json({ success: false, error }, { status: 400 });
     }
 
     return NextResponse.json({
@@ -82,9 +80,9 @@ export async function PUT(
       data: tradeType,
     });
   } catch (error) {
-    console.error('PUT /api/admin/trade-types/:id error:', error);
+    console.error("PUT /api/admin/trade-types/:id error:", error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: "Internal server error" },
       { status: 500 }
     );
   }
@@ -107,7 +105,11 @@ export async function PATCH(
       const slugRegex = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
       if (!slugRegex.test(body.slug)) {
         return NextResponse.json(
-          { success: false, error: 'Slug must be lowercase with hyphens only (e.g., "import-export")' },
+          {
+            success: false,
+            error:
+              'Slug must be lowercase with hyphens only (e.g., "import-export")',
+          },
           { status: 400 }
         );
       }
@@ -116,10 +118,7 @@ export async function PATCH(
     const { tradeType, error } = await updateTradeType(id, body);
 
     if (error) {
-      return NextResponse.json(
-        { success: false, error },
-        { status: 400 }
-      );
+      return NextResponse.json({ success: false, error }, { status: 400 });
     }
 
     return NextResponse.json({
@@ -127,9 +126,9 @@ export async function PATCH(
       data: tradeType,
     });
   } catch (error) {
-    console.error('PATCH /api/admin/trade-types/:id error:', error);
+    console.error("PATCH /api/admin/trade-types/:id error:", error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: "Internal server error" },
       { status: 500 }
     );
   }
@@ -150,21 +149,20 @@ export async function DELETE(
 
     if (error || !success) {
       return NextResponse.json(
-        { success: false, error: error || 'Failed to delete trade type' },
+        { success: false, error: error || "Failed to delete trade type" },
         { status: 400 }
       );
     }
 
     return NextResponse.json({
       success: true,
-      message: 'Trade type deleted successfully',
+      message: "Trade type deleted successfully",
     });
   } catch (error) {
-    console.error('DELETE /api/admin/trade-types/:id error:', error);
+    console.error("DELETE /api/admin/trade-types/:id error:", error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: "Internal server error" },
       { status: 500 }
     );
   }
 }
-

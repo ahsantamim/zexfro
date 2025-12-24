@@ -1,4 +1,4 @@
-import { supabase } from './client';
+import { supabase } from "./client";
 
 export interface Category {
   id: string;
@@ -61,35 +61,36 @@ export async function getCategories(params?: {
     const limit = params?.limit || 10;
     const offset = (page - 1) * limit;
 
-    let query = supabase
-      .from('categories')
-      .select(`
+    let query = supabase.from("categories").select(
+      `
         *,
         parent:categories!parent_id(id, name, slug),
         trade_type:trade_types!type(id, name, slug)
-      `, { count: 'exact' });
+      `,
+      { count: "exact" }
+    );
 
     // Apply filters
     if (params?.parent_id !== undefined) {
       if (params.parent_id === null) {
-        query = query.is('parent_id', null);
+        query = query.is("parent_id", null);
       } else {
-        query = query.eq('parent_id', params.parent_id);
+        query = query.eq("parent_id", params.parent_id);
       }
     }
 
     if (params?.status !== undefined) {
-      query = query.eq('status', params.status);
+      query = query.eq("status", params.status);
     }
 
     if (params?.search) {
-      query = query.or(`name.ilike.%${params.search}%,description.ilike.%${params.search}%`);
+      query = query.or(
+        `name.ilike.%${params.search}%,description.ilike.%${params.search}%`
+      );
     }
 
     // Apply pagination
-    query = query
-      .order('name')
-      .range(offset, offset + limit - 1);
+    query = query.order("name").range(offset, offset + limit - 1);
 
     const { data, error, count } = await query;
 
@@ -101,9 +102,9 @@ export async function getCategories(params?: {
     const categoriesWithCounts = await Promise.all(
       (data || []).map(async (category: any) => {
         const { count: productsCount } = await supabase
-          .from('products')
-          .select('*', { count: 'exact', head: true })
-          .eq('category_id', category.id);
+          .from("products")
+          .select("*", { count: "exact", head: true })
+          .eq("category_id", category.id);
 
         return {
           ...category,
@@ -116,37 +117,46 @@ export async function getCategories(params?: {
 
     return { categories: categoriesWithCounts, total: count || 0, error: null };
   } catch (error) {
-    console.error('Get categories error:', error);
-    return { categories: [], total: 0, error: 'An error occurred while fetching categories' };
+    console.error("Get categories error:", error);
+    return {
+      categories: [],
+      total: 0,
+      error: "An error occurred while fetching categories",
+    };
   }
 }
 
 /**
  * Get single category by ID or slug
  */
-export async function getCategory(identifier: string, by: 'id' | 'slug' = 'id'): Promise<{ category: Category | null; error: string | null }> {
+export async function getCategory(
+  identifier: string,
+  by: "id" | "slug" = "id"
+): Promise<{ category: Category | null; error: string | null }> {
   try {
     const query = supabase
-      .from('categories')
-      .select(`
+      .from("categories")
+      .select(
+        `
         *,
         parent:categories!parent_id(id, name, slug),
         trade_type:trade_types!type(id, name, slug)
-      `)
+      `
+      )
       .eq(by, identifier)
       .single();
 
     const { data, error } = await query;
 
     if (error || !data) {
-      return { category: null, error: 'Category not found' };
+      return { category: null, error: "Category not found" };
     }
 
     // Get children count
     const { count: productsCount } = await supabase
-      .from('products')
-      .select('*', { count: 'exact', head: true })
-      .eq('category_id', (data as any).id);
+      .from("products")
+      .select("*", { count: "exact", head: true })
+      .eq("category_id", (data as any).id);
 
     return {
       category: {
@@ -158,21 +168,27 @@ export async function getCategory(identifier: string, by: 'id' | 'slug' = 'id'):
       error: null,
     };
   } catch (error) {
-    console.error('Get category error:', error);
-    return { category: null, error: 'An error occurred while fetching category' };
+    console.error("Get category error:", error);
+    return {
+      category: null,
+      error: "An error occurred while fetching category",
+    };
   }
 }
 
 /**
  * Get category hierarchy (tree structure)
  */
-export async function getCategoryTree(): Promise<{ categories: Category[]; error: string | null }> {
+export async function getCategoryTree(): Promise<{
+  categories: Category[];
+  error: string | null;
+}> {
   try {
     // Get all categories
     const { data, error } = await supabase
-      .from('categories')
-      .select('*')
-      .order('name');
+      .from("categories")
+      .select("*")
+      .order("name");
 
     if (error) {
       return { categories: [], error: error.message };
@@ -203,30 +219,35 @@ export async function getCategoryTree(): Promise<{ categories: Category[]; error
 
     return { categories: rootCategories, error: null };
   } catch (error) {
-    console.error('Get category tree error:', error);
-    return { categories: [], error: 'An error occurred while fetching category tree' };
+    console.error("Get category tree error:", error);
+    return {
+      categories: [],
+      error: "An error occurred while fetching category tree",
+    };
   }
 }
 
 /**
  * Create new category
  */
-export async function createCategory(input: CreateCategoryInput): Promise<{ category: Category | null; error: string | null }> {
+export async function createCategory(
+  input: CreateCategoryInput
+): Promise<{ category: Category | null; error: string | null }> {
   try {
     // Check if slug already exists
     const { data: existingCategory } = await supabase
-      .from('categories')
-      .select('id')
-      .eq('slug', input.slug)
+      .from("categories")
+      .select("id")
+      .eq("slug", input.slug)
       .single();
 
     if (existingCategory) {
-      return { category: null, error: 'Slug already exists' };
+      return { category: null, error: "Slug already exists" };
     }
 
     // Insert category
     const { data: category, error } = await supabase
-      .from('categories')
+      .from("categories")
       // @ts-ignore - Supabase type inference issue
       .insert({
         parent_id: input.parent_id,
@@ -241,33 +262,42 @@ export async function createCategory(input: CreateCategoryInput): Promise<{ cate
       .single();
 
     if (error || !category) {
-      return { category: null, error: error?.message || 'Failed to create category' };
+      return {
+        category: null,
+        error: error?.message || "Failed to create category",
+      };
     }
 
     // Fetch complete category with relations
     return await getCategory((category as any).id);
   } catch (error) {
-    console.error('Create category error:', error);
-    return { category: null, error: 'An error occurred while creating category' };
+    console.error("Create category error:", error);
+    return {
+      category: null,
+      error: "An error occurred while creating category",
+    };
   }
 }
 
 /**
  * Update category
  */
-export async function updateCategory(id: string, input: UpdateCategoryInput): Promise<{ category: Category | null; error: string | null }> {
+export async function updateCategory(
+  id: string,
+  input: UpdateCategoryInput
+): Promise<{ category: Category | null; error: string | null }> {
   try {
     // Check if slug already exists (excluding current category)
     if (input.slug) {
       const { data: existingCategory } = await supabase
-        .from('categories')
-        .select('id')
-        .eq('slug', input.slug)
-        .neq('id', id)
+        .from("categories")
+        .select("id")
+        .eq("slug", input.slug)
+        .neq("id", id)
         .single();
 
       if (existingCategory) {
-        return { category: null, error: 'Slug already exists' };
+        return { category: null, error: "Slug already exists" };
       }
     }
 
@@ -275,59 +305,73 @@ export async function updateCategory(id: string, input: UpdateCategoryInput): Pr
     if (input.parent_id) {
       const isCircular = await checkCircularReference(id, input.parent_id);
       if (isCircular) {
-        return { category: null, error: 'Cannot set parent to a child category (circular reference)' };
+        return {
+          category: null,
+          error: "Cannot set parent to a child category (circular reference)",
+        };
       }
     }
 
     const { data: category, error } = await supabase
-      .from('categories')
+      .from("categories")
       // @ts-ignore - Supabase type inference issue
       .update(input)
-      .eq('id', id)
+      .eq("id", id)
       .select()
       .single();
 
     if (error || !category) {
-      return { category: null, error: error?.message || 'Failed to update category' };
+      return {
+        category: null,
+        error: error?.message || "Failed to update category",
+      };
     }
 
     // Fetch complete category with relations
     return await getCategory(id);
   } catch (error) {
-    console.error('Update category error:', error);
-    return { category: null, error: 'An error occurred while updating category' };
+    console.error("Update category error:", error);
+    return {
+      category: null,
+      error: "An error occurred while updating category",
+    };
   }
 }
 
 /**
  * Delete category
  */
-export async function deleteCategory(id: string): Promise<{ success: boolean; error: string | null }> {
+export async function deleteCategory(
+  id: string
+): Promise<{ success: boolean; error: string | null }> {
   try {
     // Check if category has products
     const { count: productsCount } = await supabase
-      .from('products')
-      .select('*', { count: 'exact', head: true })
-      .eq('category_id', id);
+      .from("products")
+      .select("*", { count: "exact", head: true })
+      .eq("category_id", id);
 
     if (productsCount && productsCount > 0) {
-      return { success: false, error: `Cannot delete category with ${productsCount} products. Please reassign or delete products first.` };
+      return {
+        success: false,
+        error: `Cannot delete category with ${productsCount} products. Please reassign or delete products first.`,
+      };
     }
 
     // Check if category has children
     const { count: childrenCount } = await supabase
-      .from('categories')
-      .select('*', { count: 'exact', head: true })
-      .eq('parent_id', id);
+      .from("categories")
+      .select("*", { count: "exact", head: true })
+      .eq("parent_id", id);
 
     if (childrenCount && childrenCount > 0) {
-      return { success: false, error: `Cannot delete category with ${childrenCount} sub-categories. Please delete or reassign sub-categories first.` };
+      return {
+        success: false,
+        error: `Cannot delete category with ${childrenCount} sub-categories. Please delete or reassign sub-categories first.`,
+      };
     }
 
-    const { error } = await supabase
-      .from('categories')
-      .delete()
-      .eq('id', id);
+    const { error } = await supabase.from("categories").delete().eq("id", id);
 
     if (error) {
       return { success: false, error: error.message };
@@ -335,15 +379,21 @@ export async function deleteCategory(id: string): Promise<{ success: boolean; er
 
     return { success: true, error: null };
   } catch (error) {
-    console.error('Delete category error:', error);
-    return { success: false, error: 'An error occurred while deleting category' };
+    console.error("Delete category error:", error);
+    return {
+      success: false,
+      error: "An error occurred while deleting category",
+    };
   }
 }
 
 /**
  * Check for circular reference in category hierarchy
  */
-async function checkCircularReference(categoryId: string, newParentId: string): Promise<boolean> {
+async function checkCircularReference(
+  categoryId: string,
+  newParentId: string
+): Promise<boolean> {
   if (categoryId === newParentId) {
     return true; // Direct circular reference
   }
@@ -356,9 +406,9 @@ async function checkCircularReference(categoryId: string, newParentId: string): 
     }
 
     const { data }: any = await supabase
-      .from('categories')
-      .select('parent_id')
-      .eq('id', currentParentId)
+      .from("categories")
+      .select("parent_id")
+      .eq("id", currentParentId)
       .single();
 
     currentParentId = data?.parent_id || null;
@@ -370,14 +420,17 @@ async function checkCircularReference(categoryId: string, newParentId: string): 
 /**
  * Get root categories (no parent)
  */
-export async function getRootCategories(): Promise<{ categories: Category[]; error: string | null }> {
+export async function getRootCategories(): Promise<{
+  categories: Category[];
+  error: string | null;
+}> {
   try {
     const { data, error } = await supabase
-      .from('categories')
-      .select('*')
-      .is('parent_id', null)
-      .eq('status', true)
-      .order('name');
+      .from("categories")
+      .select("*")
+      .is("parent_id", null)
+      .eq("status", true)
+      .order("name");
 
     if (error) {
       return { categories: [], error: error.message };
@@ -385,8 +438,10 @@ export async function getRootCategories(): Promise<{ categories: Category[]; err
 
     return { categories: data || [], error: null };
   } catch (error) {
-    console.error('Get root categories error:', error);
-    return { categories: [], error: 'An error occurred while fetching root categories' };
+    console.error("Get root categories error:", error);
+    return {
+      categories: [],
+      error: "An error occurred while fetching root categories",
+    };
   }
 }
-

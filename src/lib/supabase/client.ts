@@ -15,7 +15,7 @@ export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey, {
     autoRefreshToken: true,
   },
   db: {
-    schema: 'public',
+    schema: "public",
   },
 });
 

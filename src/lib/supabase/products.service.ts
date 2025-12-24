@@ -236,7 +236,8 @@ export async function getProduct(
     // Transform the data to flatten trade_types
     const product = {
       ...(data as any),
-      trade_types: (data as any).trade_types?.map((tt: any) => tt.trade_type) || [],
+      trade_types:
+        (data as any).trade_types?.map((tt: any) => tt.trade_type) || [],
     };
 
     return { product, error: null };

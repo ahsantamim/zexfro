@@ -42,7 +42,9 @@ interface BlogPostsTableProps {
   loading?: boolean;
 }
 
-export function BlogPostsTable({ loading: initialLoading = false }: BlogPostsTableProps) {
+export function BlogPostsTable({
+  loading: initialLoading = false,
+}: BlogPostsTableProps) {
   const router = useRouter();
   const queryClient = useQueryClient();
 
