@@ -1,10 +1,12 @@
-import { supabase } from './client';
-import bcrypt from 'bcryptjs';
-import type { Database } from '@/types/supabase';
+import { supabase } from "./client";
+import bcrypt from "bcryptjs";
+import type { Database } from "@/types/supabase";
 
-type UserProfileRow = Database['public']['Tables']['user_profiles']['Row'];
-type UserProfileInsert = Database['public']['Tables']['user_profiles']['Insert'];
-type UserProfileUpdate = Database['public']['Tables']['user_profiles']['Update'];
+type UserProfileRow = Database["public"]["Tables"]["user_profiles"]["Row"];
+type UserProfileInsert =
+  Database["public"]["Tables"]["user_profiles"]["Insert"];
+type UserProfileUpdate =
+  Database["public"]["Tables"]["user_profiles"]["Update"];
 
 export interface LoginCredentials {
   email: string;
@@ -15,32 +17,37 @@ export interface AuthUser {
   id: string;
   email: string;
   full_name: string;
-  role: 'admin' | 'editor';
+  role: "admin" | "editor";
 }
 
 /**
  * Login user with email and password
  */
-export async function loginUser(credentials: LoginCredentials): Promise<{ user: AuthUser | null; error: string | null }> {
+export async function loginUser(
+  credentials: LoginCredentials
+): Promise<{ user: AuthUser | null; error: string | null }> {
   try {
     const { email, password } = credentials;
 
     // Query user from database
     const { data: user, error: queryError } = await supabase
-      .from('user_profiles')
-      .select('id, email, password_hash, full_name, role')
-      .eq('email', email)
+      .from("user_profiles")
+      .select("id, email, password_hash, full_name, role")
+      .eq("email", email)
       .single();
 
     if (queryError || !user) {
-      return { user: null, error: 'Invalid email or password' };
+      return { user: null, error: "Invalid email or password" };
     }
 
     // Verify password - user is typed as UserProfileRow
-    const passwordMatch = await bcrypt.compare(password, (user as UserProfileRow).password_hash);
+    const passwordMatch = await bcrypt.compare(
+      password,
+      (user as UserProfileRow).password_hash
+    );
 
     if (!passwordMatch) {
-      return { user: null, error: 'Invalid email or password' };
+      return { user: null, error: "Invalid email or password" };
     }
 
     // Return user without password hash
@@ -54,30 +61,32 @@ export async function loginUser(credentials: LoginCredentials): Promise<{ user: 
 
     return { user: authUser, error: null };
   } catch (error) {
-    console.error('Login error:', error);
-    return { user: null, error: 'An error occurred during login' };
+    console.error("Login error:", error);
+    return { user: null, error: "An error occurred during login" };
   }
 }
 
 /**
  * Get user by ID
  */
-export async function getUserById(id: string): Promise<{ user: AuthUser | null; error: string | null }> {
+export async function getUserById(
+  id: string
+): Promise<{ user: AuthUser | null; error: string | null }> {
   try {
     const { data: user, error } = await supabase
-      .from('user_profiles')
-      .select('id, email, full_name, role')
-      .eq('id', id)
+      .from("user_profiles")
+      .select("id, email, full_name, role")
+      .eq("id", id)
       .single();
 
     if (error || !user) {
-      return { user: null, error: 'User not found' };
+      return { user: null, error: "User not found" };
     }
 
     return { user: user as AuthUser, error: null };
   } catch (error) {
-    console.error('Get user error:', error);
-    return { user: null, error: 'An error occurred while fetching user' };
+    console.error("Get user error:", error);
+    return { user: null, error: "An error occurred while fetching user" };
   }
 }
 
@@ -88,7 +97,7 @@ export async function createUser(data: {
   email: string;
   password: string;
   full_name: string;
-  role: 'admin' | 'editor';
+  role: "admin" | "editor";
 }): Promise<{ user: AuthUser | null; error: string | null }> {
   try {
     // Hash password
@@ -103,10 +112,10 @@ export async function createUser(data: {
     };
 
     const { data: user, error } = await supabase
-      .from('user_profiles')
+      .from("user_profiles")
       // @ts-ignore - Supabase type inference issue
       .insert(insertData)
-      .select('id, email, full_name, role')
+      .select("id, email, full_name, role")
       .single();
 
     if (error) {
@@ -115,8 +124,8 @@ export async function createUser(data: {
 
     return { user: user as AuthUser, error: null };
   } catch (error) {
-    console.error('Create user error:', error);
-    return { user: null, error: 'An error occurred while creating user' };
+    console.error("Create user error:", error);
+    return { user: null, error: "An error occurred while creating user" };
   }
 }
 
@@ -129,7 +138,7 @@ export async function updateUser(
     email?: string;
     password?: string;
     full_name?: string;
-    role?: 'admin' | 'editor';
+    role?: "admin" | "editor";
   }
 ): Promise<{ user: AuthUser | null; error: string | null }> {
   try {
@@ -145,11 +154,11 @@ export async function updateUser(
     }
 
     const { data: user, error } = await supabase
-      .from('user_profiles')
+      .from("user_profiles")
       // @ts-ignore - Supabase type inference issue
       .update(updateData)
-      .eq('id', id)
-      .select('id, email, full_name, role')
+      .eq("id", id)
+      .select("id, email, full_name, role")
       .single();
 
     if (error) {
@@ -158,20 +167,22 @@ export async function updateUser(
 
     return { user: user as AuthUser, error: null };
   } catch (error) {
-    console.error('Update user error:', error);
-    return { user: null, error: 'An error occurred while updating user' };
+    console.error("Update user error:", error);
+    return { user: null, error: "An error occurred while updating user" };
   }
 }
 
 /**
  * Delete user
  */
-export async function deleteUser(id: string): Promise<{ success: boolean; error: string | null }> {
+export async function deleteUser(
+  id: string
+): Promise<{ success: boolean; error: string | null }> {
   try {
     const { error } = await supabase
-      .from('user_profiles')
+      .from("user_profiles")
       .delete()
-      .eq('id', id);
+      .eq("id", id);
 
     if (error) {
       return { success: false, error: error.message };
@@ -179,8 +190,7 @@ export async function deleteUser(id: string): Promise<{ success: boolean; error:
 
     return { success: true, error: null };
   } catch (error) {
-    console.error('Delete user error:', error);
-    return { success: false, error: 'An error occurred while deleting user' };
+    console.error("Delete user error:", error);
+    return { success: false, error: "An error occurred while deleting user" };
   }
 }
-

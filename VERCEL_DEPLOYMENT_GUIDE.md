@@ -5,13 +5,16 @@ Complete guide for deploying your Next.js application to Vercel.
 ## 📋 Required Environment Variables
 
 ### **Database (Prisma)**
+
 ```bash
 DATABASE_URL="postgresql://user:password@host:5432/database?schema=public"
 ```
+
 - Must be publicly accessible (not localhost)
 - Get from your PostgreSQL hosting provider (Supabase, Railway, Neon, etc.)
 
 ### **Supabase (Required)**
+
 ```bash
 NEXT_PUBLIC_SUPABASE_URL="https://your-project-id.supabase.co"
 NEXT_PUBLIC_SUPABASE_ANON_KEY="your-anon-public-key"
@@ -19,6 +22,7 @@ SUPABASE_SERVICE_ROLE_KEY="your-service-role-key"
 ```
 
 **How to get these:**
+
 1. Go to [supabase.com](https://supabase.com/dashboard)
 2. Select your project
 3. Go to **Settings** → **API**
@@ -28,23 +32,27 @@ SUPABASE_SERVICE_ROLE_KEY="your-service-role-key"
    - **service_role** key → `SUPABASE_SERVICE_ROLE_KEY` (⚠️ Keep secret!)
 
 ### **NextAuth Authentication**
+
 ```bash
 NEXTAUTH_URL="https://your-domain.vercel.app"
 NEXTAUTH_SECRET="your-generated-secret-32-chars-minimum"
 ```
 
 **Generate NEXTAUTH_SECRET:**
+
 ```powershell
 # Run this in PowerShell
 node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
 ```
 
 **NEXTAUTH_URL values:**
+
 - Production: `https://your-domain.vercel.app`
 - Preview: Vercel auto-sets this
 - Development: `http://localhost:3000`
 
 ### **Email Configuration (Optional)**
+
 ```bash
 CARBONIO_HOST="mail.yourcompany.com"
 CARBONIO_PORT="587"
@@ -56,23 +64,27 @@ CONTACT_EMAIL="contact@yourcompany.com"
 ```
 
 ### **Supabase Storage (Optional - Has Defaults)**
+
 ```bash
 NEXT_PUBLIC_SUPABASE_BUCKET_PRODUCTS="product-images"
 NEXT_PUBLIC_SUPABASE_BUCKET_BLOG="blog-images"
 NEXT_PUBLIC_SUPABASE_S3_REGION="eu-central-1"
 ```
-*Note: These have default values in your code. Only set if you need different values.*
+
+_Note: These have default values in your code. Only set if you need different values._
 
 ---
 
 ## 🚀 Deployment Steps
 
 ### **Step 1: Push Code to GitHub**
+
 ```powershell
 git add .
 git commit -m "Ready for deployment"
 git push -u origin main
 ```
+
 ✅ **You've already done this!**
 
 ### **Step 2: Connect Repository to Vercel**
@@ -87,6 +99,7 @@ git push -u origin main
 ### **Step 3: Configure Build Settings**
 
 Vercel should auto-detect:
+
 ```
 Framework Preset: Next.js
 Build Command: next build
@@ -105,6 +118,7 @@ In the Vercel import screen:
 3. Select environments: **Production**, **Preview**, and **Development**
 
 **Minimum required variables:**
+
 ```bash
 DATABASE_URL=your-postgresql-connection-string
 NEXT_PUBLIC_SUPABASE_URL=https://xxxxx.supabase.co
@@ -115,6 +129,7 @@ NEXTAUTH_SECRET=your-generated-secret
 ```
 
 **Optional but recommended:**
+
 ```bash
 CARBONIO_HOST=mail.yourcompany.com
 CARBONIO_PORT=587
@@ -139,11 +154,13 @@ CONTACT_EMAIL=contact@yourcompany.com
 3. Add these URLs:
 
 **Site URL:**
+
 ```
 https://your-app.vercel.app
 ```
 
 **Redirect URLs (add all):**
+
 ```
 https://your-app.vercel.app/api/auth/callback/*
 https://your-app.vercel.app/api/auth/callback/credentials
@@ -178,11 +195,13 @@ http://localhost:3000/api/auth/callback/*
 ### **Build Fails**
 
 **Check build logs in Vercel:**
+
 - Look for TypeScript errors
 - Check for missing dependencies
 - Verify environment variables are set
 
 **Common fixes:**
+
 ```powershell
 # Run locally first to catch errors
 npm run build
@@ -233,6 +252,7 @@ npm run type-check
 6. Update `NEXTAUTH_URL` to your custom domain
 
 **DNS Records (example):**
+
 ```
 Type: A
 Name: @
@@ -248,19 +268,23 @@ Value: cname.vercel-dns.com
 ## 🔐 Security Best Practices
 
 1. **Never commit secrets to Git**
+
    - `.env.local` is in `.gitignore`
    - Use Vercel environment variables
 
 2. **Rotate sensitive keys periodically**
+
    - Database passwords
    - API keys
    - NEXTAUTH_SECRET
 
 3. **Use different credentials per environment**
+
    - Production vs Preview vs Development
    - Separate database for testing
 
 4. **Protect service role keys**
+
    - `SUPABASE_SERVICE_ROLE_KEY` has full database access
    - Only use in API routes, never in client code
    - Never prefix with `NEXT_PUBLIC_`
@@ -284,6 +308,7 @@ Value: cname.vercel-dns.com
 ## 🎯 Quick Reference: Environment Variables by Location
 
 ### **Required in Vercel (Production)**
+
 ```bash
 DATABASE_URL
 NEXT_PUBLIC_SUPABASE_URL
@@ -294,6 +319,7 @@ NEXTAUTH_SECRET
 ```
 
 ### **Optional in Vercel**
+
 ```bash
 CARBONIO_HOST
 CARBONIO_PORT
@@ -309,14 +335,17 @@ NEXT_PUBLIC_SUPABASE_BUCKET_BLOG
 ### **Used in Code Locations**
 
 **Client-side (src/lib/supabase/client.ts):**
+
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 
 **Server-side API Routes:**
+
 - `SUPABASE_SERVICE_ROLE_KEY` (src/app/api/upload/route.ts)
 - `DATABASE_URL` (via Prisma)
 
 **Storage Configuration (src/config/storage.ts):**
+
 - `NEXT_PUBLIC_SUPABASE_BUCKET_PRODUCTS`
 - `NEXT_PUBLIC_SUPABASE_BUCKET_BLOG`
 - `NEXT_PUBLIC_SUPABASE_S3_REGION`
@@ -326,6 +355,7 @@ NEXT_PUBLIC_SUPABASE_BUCKET_BLOG
 ## ✨ Success!
 
 Once deployed, your app will be live at:
+
 ```
 https://your-project.vercel.app
 ```

@@ -15,7 +15,8 @@ const FALLBACK_ADMIN = {
 
 export const { auth, signIn, signOut, handlers } = NextAuth({
   ...authConfig,
-  secret: process.env.AUTH_SECRET || "FpUXYnvm6XWpT4ul6Q2g9Lfhax7GuZtwvfNIKaxM6Ww=",
+  secret:
+    process.env.AUTH_SECRET || "FpUXYnvm6XWpT4ul6Q2g9Lfhax7GuZtwvfNIKaxM6Ww=",
   providers: [
     Credentials({
       name: "Credentials",
@@ -62,7 +63,10 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
 
             await prisma.$disconnect();
           } catch (dbError) {
-            console.warn("Database connection failed, using fallback only:", dbError);
+            console.warn(
+              "Database connection failed, using fallback only:",
+              dbError
+            );
             // Continue with fallback user only
           }
 
@@ -108,7 +112,7 @@ export interface Session {
 
 export async function getSession(): Promise<Session | null> {
   const session = await auth();
-  
+
   if (!session?.user) {
     return null;
   }
@@ -120,4 +124,3 @@ export async function getSession(): Promise<Session | null> {
     role: (session.user as any).role || "user",
   };
 }
-
