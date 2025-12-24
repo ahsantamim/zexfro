@@ -1,63 +1,64 @@
 "use client";
 
-import { Package, FileText, UserCheck, Mail, TrendingUp, ArrowUp, ArrowDown } from "lucide-react";
+import { Package, FileText, UserCheck, FolderTree } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { StatsGridSkeleton } from "./loading";
+import { DashboardStats as DashboardStatsType } from "@/lib/hooks/useDashboard";
 
 interface DashboardStatsProps {
+  stats?: DashboardStatsType;
   loading?: boolean;
 }
 
-export function DashboardStats({ loading = false }: DashboardStatsProps) {
-  if (loading) {
+export function DashboardStats({
+  stats,
+  loading = false,
+}: DashboardStatsProps) {
+  if (loading || !stats) {
     return <StatsGridSkeleton count={4} />;
   }
-  const stats = [
-    { 
-      label: "Total Products", 
-      value: "124", 
-      icon: Package, 
+
+  const statCards = [
+    {
+      label: "Total Products",
+      value: stats.totalProducts.toString(),
+      icon: Package,
       color: "bg-blue-500",
-      trend: "+12%",
-      trendUp: true,
-      description: "vs last month"
+      description: "Active products",
     },
-    { 
-      label: "Blog Posts", 
-      value: "48", 
-      icon: FileText, 
+    {
+      label: "Blog Posts",
+      value: stats.totalBlogPosts.toString(),
+      icon: FileText,
       color: "bg-green-500",
-      trend: "+8%",
-      trendUp: true,
-      description: "vs last month"
+      description: `${stats.publishedBlogPosts} published, ${stats.draftBlogPosts} drafts`,
     },
-    { 
-      label: "Registrations", 
-      value: "1,234", 
-      icon: UserCheck, 
+    {
+      label: "Categories",
+      value: stats.totalCategories.toString(),
+      icon: FolderTree,
       color: "bg-purple-500",
-      trend: "+24%",
-      trendUp: true,
-      description: "vs last month"
+      description: "Product categories",
     },
-    { 
-      label: "Emails Sent", 
-      value: "3,567", 
-      icon: Mail, 
+    {
+      label: "Registrations",
+      value: stats.totalRegistrations.toString(),
+      icon: UserCheck,
       color: "bg-orange-500",
-      trend: "-3%",
-      trendUp: false,
-      description: "vs last month"
+      description: "Total user registrations",
     },
   ];
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {stats.map((stat, index) => {
+      {statCards.map((stat, index) => {
         const Icon = stat.icon;
         return (
-          <Card key={index} className="border-none shadow-sm hover:shadow-md transition-shadow duration-300 rounded-none">
+          <Card
+            key={index}
+            className="border-none shadow-sm hover:shadow-md transition-shadow duration-300 rounded-lg"
+          >
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-gray-600">
                 {stat.label}
@@ -70,24 +71,7 @@ export function DashboardStats({ loading = false }: DashboardStatsProps) {
               <div className="text-3xl font-bold text-gray-900 mb-2">
                 {stat.value}
               </div>
-              <div className="flex items-center gap-2">
-                <Badge 
-                  variant="secondary" 
-                  className={`${
-                    stat.trendUp 
-                      ? "bg-green-50 text-green-700 hover:bg-green-50" 
-                      : "bg-red-50 text-red-700 hover:bg-red-50"
-                  } font-semibold`}
-                >
-                  {stat.trendUp ? (
-                    <ArrowUp className="w-3 h-3 mr-1" />
-                  ) : (
-                    <ArrowDown className="w-3 h-3 mr-1" />
-                  )}
-                  {stat.trend}
-                </Badge>
-                <span className="text-xs text-gray-500">{stat.description}</span>
-              </div>
+              <p className="text-xs text-gray-500">{stat.description}</p>
             </CardContent>
           </Card>
         );

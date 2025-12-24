@@ -1,36 +1,48 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Loader2 } from "lucide-react";
 import { ArrowButton } from "@/components/ui/ArrowButton";
 
-const importProducts = [
-  { id: 1, name: "Agriculture Equipment", subtitle: "Farming machinery & tools", image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80" },
-  { id: 2, name: "Garment Products", subtitle: "Clothing & textiles", image: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=800&q=80" },
-  { id: 3, name: "Electronics", subtitle: "Latest tech & gadgets", image: "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=800&q=80" },
-  { id: 4, name: "Medical Equipment", subtitle: "Healthcare devices", image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&q=80" },
-  { id: 5, name: "Veterinary Medicine", subtitle: "Animal healthcare", image: "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=800&q=80" },
-  { id: 6, name: "Spices", subtitle: "Quality seasonings", image: "https://images.unsplash.com/photo-1596040033229-a0b3b83c9dd3?w=800&q=80" },
-  { id: 7, name: "Cosmetics", subtitle: "Beauty products", image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80" },
-  { id: 8, name: "Consumer Products", subtitle: "Daily essentials", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" },
-  { id: 9, name: "Sport Products", subtitle: "Athletic gear", image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80" },
-  { id: 10, name: "Others", subtitle: "Various products", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80" },
-];
-
-const exportProducts = [
-  { id: 1, name: "Readymade Garments", subtitle: "Fashion & apparel", image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&q=80" },
-  { id: 2, name: "Leather Products", subtitle: "Quality leather goods", image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&q=80" },
-  { id: 3, name: "Jute Products", subtitle: "Eco-friendly items", image: "https://images.unsplash.com/photo-1625887291775-b45b0bcac0fa?w=800&q=80" },
-  { id: 4, name: "Frozen Food", subtitle: "Preserved goods", image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&q=80" },
-  { id: 5, name: "Agricultural Products", subtitle: "Farm produce", image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=80" },
-  { id: 6, name: "Cottage Industry Products", subtitle: "Handcrafted items", image: "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=800&q=80" },
-];
+interface Category {
+  id: string;
+  slug: string;
+  name: string;
+  description: string | null;
+  type: string | null;
+  image?: {
+    image_url: string;
+    alt_text: string | null;
+  } | null;
+}
 
 export function ProductCategoriesSection() {
   const [activeTab, setActiveTab] = useState<"import" | "export">("import");
-  const products = activeTab === "import" ? importProducts : exportProducts;
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(`/api/categories?type=${activeTab}`);
+        const data = await response.json();
+
+        if (data.success) {
+          // Show only first 8 categories
+          setCategories(data.data.slice(0, 8));
+        }
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCategories();
+  }, [activeTab]);
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 relative overflow-hidden">
       {/* Decorative Angled Grid Pattern - Left Side */}
@@ -110,7 +122,7 @@ export function ProductCategoriesSection() {
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
             Explore our approved categories for secure and compliant trade
           </p>
-          
+
           {/* Tab Toggle */}
           <div className="inline-flex rounded-lg bg-white shadow-md p-1 border border-gray-200">
             <button
@@ -137,55 +149,72 @@ export function ProductCategoriesSection() {
         </div>
 
         {/* Product Grid with smooth fade transition */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 transition-all duration-500 ease-in-out">
-          {products.map((product, index) => (
-            <div 
-              key={`${activeTab}-${product.id}`} 
-              className="relative group animate-fade-in"
-              style={{ 
-                animationDelay: `${index * 50}ms`,
-                animationFillMode: 'backwards'
-              }}
-            >
-              <Link
-                href={`/products/${activeTab}/${product.id}`}
-                className="relative rounded-none aspect-[4/3] block transition-transform duration-300 hover:scale-[1.02]"
-              >
-                {/* Background Image */}
-                <div className="absolute inset-0 overflow-hidden rounded-none">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-cover"
-                  />
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                </div>
-
-                {/* Content */}
-                <div className="relative h-full flex flex-col p-4 sm:p-6">
-                  {/* Title & Subtitle - Bottom Left */}
-                  <div className="flex-1" />
-                  <div className="flex items-end justify-between gap-2 sm:gap-4">
-                    <div className="space-y-1 sm:space-y-2 flex-1 min-w-0">
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white line-clamp-2">
-                        {product.name}
-                      </h3>
-                      <p className="text-xs sm:text-sm text-gray-200 line-clamp-1">
-                        {product.subtitle}
-                      </p>
-                    </div>
-                    {/* Arrow Button - Bottom Right */}
-                    <div className="flex-shrink-0 self-end mb-1">
-                      <ArrowButton />
-                    </div>
-                  </div>
-                </div>
-              </Link>
+        {loading ? (
+          <div className="flex items-center justify-center py-20">
+            <div className="text-center space-y-4">
+              <Loader2 className="w-12 h-12 animate-spin text-[#0a4a9e] mx-auto" />
+              <p className="text-gray-600">Loading categories...</p>
             </div>
-          ))}
-        </div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 transition-all duration-500 ease-in-out">
+            {categories.map((category, index) => {
+              const imageUrl =
+                category.image?.image_url ||
+                "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80";
+
+              return (
+                <div
+                  key={`${activeTab}-${category.id}`}
+                  className="relative group animate-fade-in"
+                  style={{
+                    animationDelay: `${index * 50}ms`,
+                    animationFillMode: "backwards",
+                  }}
+                >
+                  <Link
+                    href={`/products/categories/${category.slug}`}
+                    className="relative rounded-none aspect-[4/3] block transition-transform duration-300 hover:scale-[1.02]"
+                  >
+                    {/* Background Image */}
+                    <div className="absolute inset-0 overflow-hidden rounded-none">
+                      <Image
+                        src={imageUrl}
+                        alt={category.image?.alt_text || category.name}
+                        fill
+                        className="object-cover"
+                      />
+                      {/* Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                    </div>
+
+                    {/* Content */}
+                    <div className="relative h-full flex flex-col p-4 sm:p-6">
+                      {/* Title & Subtitle - Bottom Left */}
+                      <div className="flex-1" />
+                      <div className="flex items-end justify-between gap-2 sm:gap-4">
+                        <div className="space-y-1 sm:space-y-2 flex-1 min-w-0">
+                          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white line-clamp-2">
+                            {category.name}
+                          </h3>
+                          {category.description && (
+                            <p className="text-xs sm:text-sm text-gray-200 line-clamp-1">
+                              {category.description}
+                            </p>
+                          )}
+                        </div>
+                        {/* Arrow Button - Bottom Right */}
+                        <div className="flex-shrink-0 self-end mb-1">
+                          <ArrowButton />
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        )}
 
         {/* View All Products Button */}
         <div className="mt-12 flex justify-center">
@@ -198,7 +227,7 @@ export function ProductCategoriesSection() {
           </Link>
         </div>
       </div>
-      
+
       <style jsx>{`
         @keyframes fade-in {
           from {
@@ -210,7 +239,7 @@ export function ProductCategoriesSection() {
             transform: translateY(0);
           }
         }
-        
+
         .animate-fade-in {
           animation: fade-in 0.5s ease-out;
         }
