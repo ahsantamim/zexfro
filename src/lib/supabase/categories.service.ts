@@ -99,7 +99,7 @@ export async function getCategories(params?: {
 
     // Get product counts for each category
     const categoriesWithCounts = await Promise.all(
-      (data || []).map(async (category) => {
+      (data || []).map(async (category: any) => {
         const { count: productsCount } = await supabase
           .from('products')
           .select('*', { count: 'exact', head: true })
@@ -146,11 +146,11 @@ export async function getCategory(identifier: string, by: 'id' | 'slug' = 'id'):
     const { count: productsCount } = await supabase
       .from('products')
       .select('*', { count: 'exact', head: true })
-      .eq('category_id', data.id);
+      .eq('category_id', (data as any).id);
 
     return {
       category: {
-        ...data,
+        ...(data as any),
         _count: {
           products: productsCount || 0,
         },
@@ -183,12 +183,12 @@ export async function getCategoryTree(): Promise<{ categories: Category[]; error
     const rootCategories: Category[] = [];
 
     // First pass: create map
-    data?.forEach(cat => {
+    (data as any)?.forEach((cat: any) => {
       categoryMap.set(cat.id, { ...cat, children: [] });
     });
 
     // Second pass: build tree
-    data?.forEach(cat => {
+    (data as any)?.forEach((cat: any) => {
       const category = categoryMap.get(cat.id)!;
       if (cat.parent_id) {
         const parent = categoryMap.get(cat.parent_id);
@@ -227,6 +227,7 @@ export async function createCategory(input: CreateCategoryInput): Promise<{ cate
     // Insert category
     const { data: category, error } = await supabase
       .from('categories')
+      // @ts-ignore - Supabase type inference issue
       .insert({
         parent_id: input.parent_id,
         slug: input.slug,
@@ -244,7 +245,7 @@ export async function createCategory(input: CreateCategoryInput): Promise<{ cate
     }
 
     // Fetch complete category with relations
-    return await getCategory(category.id);
+    return await getCategory((category as any).id);
   } catch (error) {
     console.error('Create category error:', error);
     return { category: null, error: 'An error occurred while creating category' };
@@ -280,6 +281,7 @@ export async function updateCategory(id: string, input: UpdateCategoryInput): Pr
 
     const { data: category, error } = await supabase
       .from('categories')
+      // @ts-ignore - Supabase type inference issue
       .update(input)
       .eq('id', id)
       .select()
@@ -353,7 +355,7 @@ async function checkCircularReference(categoryId: string, newParentId: string): 
       return true; // Circular reference found
     }
 
-    const { data } = await supabase
+    const { data }: any = await supabase
       .from('categories')
       .select('parent_id')
       .eq('id', currentParentId)

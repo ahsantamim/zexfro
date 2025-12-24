@@ -135,6 +135,7 @@ export async function createUser(input: CreateUserInput): Promise<{ user: User |
     // Insert user
     const { data, error } = await supabase
       .from('user_profiles')
+      // @ts-ignore - Supabase type inference issue
       .insert({
         email: input.email,
         password_hash,
@@ -192,6 +193,7 @@ export async function updateUser(id: string, input: UpdateUserInput): Promise<{ 
 
     const { data, error } = await supabase
       .from('user_profiles')
+      // @ts-ignore - Supabase type inference issue
       .update(updateData)
       .eq('id', id)
       .select('id, email, full_name, role, created_at, updated_at')

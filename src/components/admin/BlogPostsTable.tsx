@@ -38,7 +38,11 @@ async function deleteBlogPost(id: string): Promise<void> {
   if (!response.ok) throw new Error("Failed to delete blog post");
 }
 
-export function BlogPostsTable() {
+interface BlogPostsTableProps {
+  loading?: boolean;
+}
+
+export function BlogPostsTable({ loading: initialLoading = false }: BlogPostsTableProps) {
   const router = useRouter();
   const queryClient = useQueryClient();
 

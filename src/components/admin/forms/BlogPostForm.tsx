@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { BlogPost } from "@/lib/api/blog";
+import { BlogPost } from "@/lib/hooks/useBlog";
 import { Upload, X, Loader2 } from "lucide-react";
 import Image from "next/image";
 import {

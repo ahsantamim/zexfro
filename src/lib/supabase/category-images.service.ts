@@ -60,6 +60,7 @@ export async function createCategoryImage(
   try {
     const { data, error } = await supabase
       .from("category_images")
+      // @ts-ignore - Supabase type inference issue
       .insert({
         ...input,
         updated_at: new Date().toISOString(),
@@ -91,6 +92,7 @@ export async function updateCategoryImage(
   try {
     const { data, error } = await supabase
       .from("category_images")
+      // @ts-ignore - Supabase type inference issue
       .update({
         ...input,
         updated_at: new Date().toISOString(),

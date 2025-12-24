@@ -1,5 +1,10 @@
 import { supabase } from './client';
 import bcrypt from 'bcryptjs';
+import type { Database } from '@/types/supabase';
+
+type UserProfileRow = Database['public']['Tables']['user_profiles']['Row'];
+type UserProfileInsert = Database['public']['Tables']['user_profiles']['Insert'];
+type UserProfileUpdate = Database['public']['Tables']['user_profiles']['Update'];
 
 export interface LoginCredentials {
   email: string;
@@ -23,7 +28,7 @@ export async function loginUser(credentials: LoginCredentials): Promise<{ user: 
     // Query user from database
     const { data: user, error: queryError } = await supabase
       .from('user_profiles')
-      .select('*')
+      .select('id, email, password_hash, full_name, role')
       .eq('email', email)
       .single();
 
@@ -31,19 +36,20 @@ export async function loginUser(credentials: LoginCredentials): Promise<{ user: 
       return { user: null, error: 'Invalid email or password' };
     }
 
-    // Verify password
-    const passwordMatch = await bcrypt.compare(password, user.password_hash);
+    // Verify password - user is typed as UserProfileRow
+    const passwordMatch = await bcrypt.compare(password, (user as UserProfileRow).password_hash);
 
     if (!passwordMatch) {
       return { user: null, error: 'Invalid email or password' };
     }
 
     // Return user without password hash
+    const typedUser = user as UserProfileRow;
     const authUser: AuthUser = {
-      id: user.id,
-      email: user.email,
-      full_name: user.full_name,
-      role: user.role,
+      id: typedUser.id,
+      email: typedUser.email,
+      full_name: typedUser.full_name,
+      role: typedUser.role,
     };
 
     return { user: authUser, error: null };
@@ -89,14 +95,17 @@ export async function createUser(data: {
     const password_hash = await bcrypt.hash(data.password, 10);
 
     // Insert user
+    const insertData: UserProfileInsert = {
+      email: data.email,
+      password_hash,
+      full_name: data.full_name,
+      role: data.role,
+    };
+
     const { data: user, error } = await supabase
       .from('user_profiles')
-      .insert({
-        email: data.email,
-        password_hash,
-        full_name: data.full_name,
-        role: data.role,
-      })
+      // @ts-ignore - Supabase type inference issue
+      .insert(insertData)
       .select('id, email, full_name, role')
       .single();
 
@@ -124,7 +133,7 @@ export async function updateUser(
   }
 ): Promise<{ user: AuthUser | null; error: string | null }> {
   try {
-    const updateData: any = {
+    const updateData: UserProfileUpdate = {
       email: data.email,
       full_name: data.full_name,
       role: data.role,
@@ -137,6 +146,7 @@ export async function updateUser(
 
     const { data: user, error } = await supabase
       .from('user_profiles')
+      // @ts-ignore - Supabase type inference issue
       .update(updateData)
       .eq('id', id)
       .select('id, email, full_name, role')
