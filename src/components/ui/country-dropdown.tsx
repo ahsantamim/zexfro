@@ -136,7 +136,7 @@ const CountryDropdownComponent = (
         ) : (
           <span>
             {slim === false ? (
-              placeholder || selectedCountry?.name
+              placeholder
             ) : (
               <Globe size={20} />
             )}

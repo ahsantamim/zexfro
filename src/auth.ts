@@ -39,7 +39,7 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
               id: FALLBACK_ADMIN.id,
               name: FALLBACK_ADMIN.name,
               email: FALLBACK_ADMIN.email,
-              role: FALLBACK_ADMIN.role,
+              role: FALLBACK_ADMIN.role as "user" | "admin",
             };
           }
 
@@ -85,7 +85,7 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
             id: user.id,
             name: user.name,
             email: user.email,
-            role: user.role,
+            role: user.role as "user" | "admin",
           };
         } catch (error) {
           console.error("Auth error:", error);

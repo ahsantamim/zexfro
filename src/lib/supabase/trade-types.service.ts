@@ -87,11 +87,11 @@ export async function getTradeType(identifier: string, by: 'id' | 'slug' = 'id')
     const { count: productsCount } = await supabase
       .from('product_trade_types')
       .select('*', { count: 'exact', head: true })
-      .eq('trade_type_id', data.id);
+      .eq('trade_type_id', (data as any).id);
 
     return {
       tradeType: {
-        ...data,
+        ...(data as any),
         _count: {
           products: productsCount || 0,
         },
@@ -123,6 +123,7 @@ export async function createTradeType(input: CreateTradeTypeInput): Promise<{ tr
     // Insert trade type
     const { data: tradeType, error } = await supabase
       .from('trade_types')
+      // @ts-ignore - Supabase type inference issue
       .insert({
         slug: input.slug,
         name: input.name,
@@ -136,7 +137,7 @@ export async function createTradeType(input: CreateTradeTypeInput): Promise<{ tr
     }
 
     // Fetch complete trade type with counts
-    return await getTradeType(tradeType.id);
+    return await getTradeType((tradeType as any).id);
   } catch (error) {
     console.error('Create trade type error:', error);
     return { tradeType: null, error: 'An error occurred while creating trade type' };
@@ -164,6 +165,7 @@ export async function updateTradeType(id: string, input: UpdateTradeTypeInput): 
 
     const { data: tradeType, error } = await supabase
       .from('trade_types')
+      // @ts-ignore - Supabase type inference issue
       .update(input)
       .eq('id', id)
       .select()

@@ -15,7 +15,9 @@ export interface BlogPost {
   content: string;
   coverImage: string | null;
   author: string;
+  authorImage: string | null;
   published: boolean;
+  publishedAt: Date | null;
   createdAt: string;
   updatedAt: string;
 }
