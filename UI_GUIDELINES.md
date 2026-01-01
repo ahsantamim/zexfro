@@ -270,18 +270,18 @@ font-family: 'Poppins'
 
 **Structure:**
 - Fixed position, top of viewport, z-index: 50
-- Height: `h-20` mobile, `h-60` desktop (240px)
+- Height: `h-16` mobile (64px), `h-20` desktop (80px) - Industry Standard
 - Background: Navy Blue `#1800ad` with backdrop blur
 - World map pattern overlay at 20% opacity
 
 **Desktop Layout:**
-- Large animated logo (GIF → PNG transition after 3 seconds)
-- Logo dimensions: 300px → 240px
-- Right-aligned navigation links
-- Large text: `text-3xl` (30px), font-bold
+- Animated logo (GIF → PNG transition after 3 seconds)
+- Logo dimensions: 60px → 50px (industry standard)
+- Right-aligned navigation links with proper spacing
+- Text size: `text-base lg:text-lg` (16-18px), font-semibold
 
 **Mobile Layout:**
-- Small logo: 80px
+- Logo: 48px (industry standard)
 - Hamburger menu icon
 - Dropdown menu below navbar
 
@@ -294,9 +294,9 @@ Home, About, Services, Products, Blog, Contact
 ```css
 /* Navigation Link */
 .nav-link {
-  padding: 2rem 1rem;
-  font-size: 1.875rem;      /* 30px desktop */
-  font-weight: 700;
+  padding: 0.5rem 1rem;    /* py-2 px-4 */
+  font-size: 1rem;          /* 16px base, 18px lg */
+  font-weight: 600;         /* semibold */
   color: white;
   border-radius: 0.375rem;
   transition: background-color 200ms;
@@ -312,6 +312,12 @@ Home, About, Services, Products, Blog, Contact
   backdrop-filter: blur(4px);
 }
 ```
+
+**Logo Animation:**
+- GIF shows for 3 seconds on page load
+- Smooth crossfade to static PNG
+- Scale animation: 60px → 50px
+- Duration: 1000ms with opacity transition
 
 ---
 
@@ -710,10 +716,148 @@ Home, About, Services, Products, Blog, Contact
 
 **Background Effects:**
 - World map image at `/footer/world-map.webp`
-- Opacity: 10% for subtle appearance
-- Filter: `brightness(0.8) contrast(1.2)` for better definition
+- Opacity: 60% (customizable based on design preference)
+- Background size: `contain` with repeat for pattern effect
+- Filter: `brightness(1.8) contrast(0.7)` for lighter, softer appearance
 - Mix blend mode: overlay for integration with dark background
 - Gradient overlay for depth and shadow effect
+
+**Note:** Footer background opacity and filter settings can be adjusted based on visual preference. Current settings create a more visible, patterned world map effect.
+
+---
+
+### 11. Documentation Layout (DocLayout)
+
+**Usage:** Long-form content pages with scrollspy navigation
+
+**Components:**
+1. `DocLayout` - Main layout wrapper with sidebar and content area
+2. `DocSection` - Individual content sections with anchor IDs
+
+**Full Implementation:**
+
+```jsx
+import { DocLayout, DocSection } from "@/components/ui/DocLayout";
+
+const sections = [
+  { id: "section-1", title: "Section One" },
+  { id: "section-2", title: "Section Two" },
+  { id: "section-3", title: "Section Three" },
+];
+
+export default function Page() {
+  return (
+    <DocLayout
+      sections={sections}
+      pageTitle="Page Title"
+      pageDescription="Detailed description"
+    >
+      <DocSection id="section-1" title="Section One">
+        <p>Content goes here...</p>
+      </DocSection>
+      
+      <DocSection id="section-2" title="Section Two">
+        <p>Content goes here...</p>
+      </DocSection>
+      
+      <DocSection id="section-3" title="Section Three">
+        <p>Content goes here...</p>
+      </DocSection>
+    </DocLayout>
+  );
+}
+```
+
+**Layout Breakdown:**
+
+**Page Header:**
+- Blue gradient background (from-[#0a4a9e] via-[#05306b] to-[#041f3f])
+- White text with page title and description
+- Padding: py-12 md:py-16
+
+**Sidebar Navigation:**
+- Width: 256px (lg:w-64)
+- Sticky positioning: top-28 (clears navbar)
+- White background with rounded corners
+- Shadow and border styling
+- Active link: Blue background (#0a4a9e), white text
+- Inactive link: Gray text, hover blue background
+
+**Content Area:**
+- Flexible width (flex-1)
+- White background card with padding
+- Border and shadow for depth
+- Responsive padding: p-6 md:p-8 lg:p-10
+
+**Scrollspy Behavior:**
+- Uses IntersectionObserver pattern
+- Automatically highlights active section
+- Smooth scroll on click
+- 100px offset for navbar clearance (80px navbar + 20px buffer)
+
+**Spacing & Positioning:**
+- Main padding: `pt-16 md:pt-20` (matches navbar height exactly)
+- Sidebar sticky position: `top-24` (96px from top)
+- Section scroll margin: `scroll-mt-24` (prevents navbar overlap)
+- Click scroll offset: -90px (80px navbar + 10px spacing)
+
+**Content Styling Elements:**
+
+```jsx
+// Icon container (used in section headers)
+<div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+  <Icon className="w-6 h-6 text-[#0a4a9e]" />
+</div>
+
+// Highlighted info box
+<div className="bg-blue-50 border-l-4 border-[#0a4a9e] p-6 my-6">
+  <h4 className="font-bold text-gray-900 mb-3">Title</h4>
+  <ul className="space-y-3 text-gray-700">
+    <li>• List item</li>
+  </ul>
+</div>
+
+// Statistics grid
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+  <div className="bg-white border border-gray-200 rounded-lg p-4 text-center">
+    <div className="text-3xl font-bold text-[#0a4a9e] mb-2">99%</div>
+    <div className="text-sm text-gray-600">Statistic Label</div>
+  </div>
+</div>
+
+// CTA box
+<div className="bg-gradient-to-r from-[#0a4a9e] to-[#05306b] rounded-lg p-8 text-white">
+  <h4 className="text-2xl font-bold mb-4">CTA Title</h4>
+  <p className="mb-6 text-white/90">Description</p>
+  <a href="/contact" className="inline-block bg-white text-[#0a4a9e] font-bold px-8 py-3 rounded-full">
+    Button Text
+  </a>
+</div>
+```
+
+**Quick Contact Card (Desktop Only):**
+```jsx
+<div className="hidden lg:block mt-6 bg-gradient-to-br from-[#0a4a9e] to-[#05306b] rounded-lg shadow-sm p-6 text-white">
+  <h3 className="text-lg font-bold mb-2">Need Help?</h3>
+  <p className="text-sm text-white/90 mb-4">Our team is ready to assist you</p>
+  <Link href="/contact" className="block w-full text-center bg-white text-[#0a4a9e] hover:bg-white/90 font-semibold py-2 px-4 rounded-md">
+    Contact Us
+  </Link>
+</div>
+```
+
+**Responsive Behavior:**
+- Mobile/Tablet: Sidebar above content, full width
+- Desktop (lg+): Sidebar left, content right, two columns
+- Contact card: Hidden below lg breakpoint
+
+**Usage Examples:**
+- Competitive Advantages
+- Quality Assurance
+- Logistics Support
+- Compliance & Standards
+- Documentation & Compliance
+- Any long-form informational page
 
 ---
 
@@ -865,7 +1009,7 @@ window.addEventListener('scroll', () => {
 ### 2. About Page
 
 ```jsx
-<main className="pt-60">      // Account for fixed navbar
+<main className="pt-16 md:pt-20">  // Matches navbar height exactly (no gap)
   <PageHeader />              // Blue gradient header
   <MissionSection />          // White, 2-column grid for mission/vision
   <AboutStatsSection />       // Similar to home stats
@@ -879,7 +1023,7 @@ window.addEventListener('scroll', () => {
 ### 3. Services Page
 
 ```jsx
-<main className="pt-60">
+<main className="pt-16 md:pt-20">  // Matches navbar height exactly (no gap)
   <PageHeader />              // Blue gradient header
   <ServicesGrid />            // 3-column grid of service cards
   <HowItWorks />              // 4-step process with connection line
@@ -889,6 +1033,142 @@ window.addEventListener('scroll', () => {
 ```
 
 **Pattern:** Header + grid + process + CTA
+
+### 4. Documentation-Style Pages (New Pattern)
+
+**Usage:** Long-form content pages like Competitive Advantages, Quality Assurance, Compliance, Logistics Support, etc.
+
+```jsx
+<DocLayout
+  sections={sections}
+  pageTitle="Page Title"
+  pageDescription="Page description"
+>
+  <DocSection id="section-1" title="Section Title">
+    {/* Section content */}
+  </DocSection>
+  <DocSection id="section-2" title="Section Title">
+    {/* Section content */}
+  </DocSection>
+  {/* More sections... */}
+</DocLayout>
+```
+
+**Structure:**
+```
+┌─────────────────────────────────────────────────┐
+│         Page Header (Blue Gradient)             │
+├──────────────┬──────────────────────────────────┤
+│              │                                  │
+│   SIDEBAR    │         MAIN CONTENT            │
+│   (Fixed)    │        (Scrollable)             │
+│              │                                  │
+│ • Section 1  │  ┌──────────────────────┐       │
+│ • Section 2  │  │  Section 1 Content   │       │
+│ • Section 3  │  └──────────────────────┘       │
+│ • Section 4  │                                  │
+│ • Section 5  │  ┌──────────────────────┐       │
+│              │  │  Section 2 Content   │       │
+│ [Contact CTA]│  └──────────────────────┘       │
+│              │                                  │
+└──────────────┴──────────────────────────────────┘
+```
+
+**Key Features:**
+
+1. **Two-Column Layout**
+   - Left sidebar: 256px (lg:w-64), fixed on scroll
+   - Right content: Flexible width (flex-1)
+   - Gray-50 background for page, white cards for content
+
+2. **Scrollspy Navigation**
+   - Active section automatically highlighted as user scrolls
+   - Smooth scroll to sections on click
+   - Sticky positioning (top-28) for navbar clearance
+
+3. **Sidebar Components**
+   - Section navigation with active state
+   - Quick contact card (desktop only)
+   - White background with border and shadow
+
+4. **Content Sections**
+   - Each section has unique ID for navigation
+   - Border-bottom on titles (2px, primary blue)
+   - Consistent spacing (mb-16 between sections)
+   - Scroll margin (scroll-mt-28) for proper anchor positioning
+
+5. **Responsive Behavior**
+   - Mobile: Single column, sidebar above content
+   - Desktop (lg): Two columns, fixed sidebar
+   - Contact card hidden on mobile/tablet
+
+**Component Structure:**
+
+```jsx
+// DocLayout.tsx - Reusable layout component
+interface Section {
+  id: string;      // Unique identifier for anchor links
+  title: string;   // Display name in sidebar
+}
+
+interface DocLayoutProps {
+  sections: Section[];
+  children: React.ReactNode;
+  pageTitle: string;
+  pageDescription: string;
+}
+
+// DocSection.tsx - Individual content section
+interface DocSectionProps {
+  id: string;      // Must match section id in navigation
+  title: string;
+  children: React.ReactNode;
+}
+```
+
+**Styling Details:**
+
+```css
+/* Sidebar Navigation */
+.sidebar-link-active {
+  background: #0a4a9e;
+  color: white;
+  font-weight: 600;
+}
+
+.sidebar-link-inactive {
+  color: #4b5563;
+  hover: {
+    color: #0a4a9e;
+    background: #eff6ff;
+  }
+}
+
+/* Section Title */
+.section-title {
+  font-size: 1.5rem (md: 1.875rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #0a4a9e;
+}
+
+/* Content Area */
+.content-container {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1.5rem (md: 2rem, lg: 2.5rem);
+}
+```
+
+**Pattern Benefits:**
+- ✅ Easy navigation for long-form content
+- ✅ Clear visual hierarchy
+- ✅ Professional documentation feel
+- ✅ Reusable across multiple pages
+- ✅ Mobile-friendly responsive design
+- ✅ SEO-friendly with proper heading structure
 
 ### Common Elements Across All Pages:
 
@@ -964,15 +1244,19 @@ gap-6 md:gap-8 lg:gap-10
 ### Navigation Responsive Behavior
 
 **Desktop (md and up):**
-- Large logo with animation
+- Height: 80px (h-20) - Industry standard
+- Logo with animation: 60px → 50px
 - Horizontal navigation links
-- Large text size (3xl)
+- Text size: text-base lg:text-lg (16-18px)
+- Items centered vertically
 
 **Mobile (below md):**
-- Small logo
-- Hamburger menu
-- Dropdown overlay menu
+- Height: 64px (h-16) - Industry standard
+- Logo: 48px
+- Hamburger menu icon (24x24px)
+- Dropdown overlay menu below navbar
 - Full-width mobile menu items
+- Mobile dropdown appears at `top-16` (64px)
 
 ### Container Responsive Padding
 
@@ -1248,6 +1532,10 @@ export function SectionHeader({
 --white: #ffffff
 
 /* Spacing */
+--navbar-height-mobile: 4rem (64px)
+--navbar-height-desktop: 5rem (80px)
+--page-padding-top-mobile: 4rem (64px) /* matches navbar exactly */
+--page-padding-top-desktop: 5rem (80px) /* matches navbar exactly */
 --section-padding: 5rem (80px desktop)
 --card-padding: 1.5rem (24px)
 --container-padding: 2rem (32px desktop)

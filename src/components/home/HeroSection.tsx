@@ -73,7 +73,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative flex flex-col justify-center text-white pt-20 md:pt-60"
+      className="relative flex flex-col justify-center text-white pt-16 md:pt-20"
       style={{ minHeight: "100vh" }}
     >
       {/* Background */}

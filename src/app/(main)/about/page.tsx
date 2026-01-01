@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen pt-60">
+    <main className="min-h-screen pt-16 md:pt-20">
       <PageHeader
         title="About Zexfro"
         description="Revolutionizing global trade through innovation, security, and unwavering commitment to our clients"

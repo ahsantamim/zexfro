@@ -29,7 +29,7 @@ export function Navbar() {
 
   return (
     <nav
-      className="fixed h-20 md:h-60 top-0 left-0 right-0 z-50 bg-[#1800ad] backdrop-blur-md shadow-lg border-b border-white/10 md:overflow-hidden"
+      className="fixed h-16 md:h-20 top-0 left-0 right-0 z-50 bg-[#1800ad] backdrop-blur-md shadow-lg border-b border-white/10"
       style={{ boxShadow: "0 8px 32px 0 rgba(5, 48, 107, 0.37)" }}
     >
       {/* World Map Blueprint Background */}
@@ -44,7 +44,7 @@ export function Navbar() {
           mixBlendMode: "overlay",
         }}
       />
-      <div className="container mx-auto max-w-9xl h-full relative z-10 md:px-0 px-4">
+      <div className="container mx-auto max-w-7xl h-full relative z-10 px-4 sm:px-6 lg:px-8">
         {/* MOBILE/TABLET LAYOUT - Industry Standard */}
         <div className="md:hidden flex items-center justify-between h-full">
           {/* Mobile Logo */}
@@ -52,8 +52,8 @@ export function Navbar() {
             <Image
               src="/Logo.png"
               alt="Zexfro Logo"
-              width={80}
-              height={80}
+              width={68}
+              height={68}
               className="object-contain"
               priority
             />
@@ -69,31 +69,31 @@ export function Navbar() {
           </button>
         </div>
 
-        {/* DESKTOP LAYOUT - Custom Client Design */}
-        <div className="hidden md:flex items-end justify-between h-full">
+        {/* DESKTOP LAYOUT - Industry Standard */}
+        <div className="hidden md:flex items-center justify-between h-full">
           {/* Desktop Logo with Animation */}
-          <Link href="/" className="flex flex-col items-start h-full pl-0">
-            <div className="flex items-center relative w-[400px] h-[400px]">
-              {/* GIF Animation - Bigger */}
+          <Link href="/" className="flex items-center">
+            <div className="relative w-[60px] h-[60px]">
+              {/* GIF Animation */}
               <Image
                 src="/zex.gif"
                 alt="Zexfro Logo Animation"
-                width={300}
-                height={300}
-                className={`object-cover absolute transition-all duration-1000 ${
+                width={60}
+                height={60}
+                className={`object-contain absolute scale-190 transition-all duration-1000 ${
                   showStaticLogo
                     ? "opacity-0 scale-90"
                     : "opacity-100 scale-100"
                 }`}
                 priority
               />
-              {/* Static PNG Logo - Smaller */}
+              {/* Static PNG Logo */}
               <Image
                 src="/Logo.png"
                 alt="Zexfro Logo"
-                width={240}
-                height={240}
-                className={`object-cover absolute transition-all duration-1000 ${
+                width={120}
+                height={120}
+                className={`object-contain absolute scale-190 transition-all duration-1000 ${
                   showStaticLogo
                     ? "opacity-100 scale-100"
                     : "opacity-0 scale-110"
@@ -104,12 +104,12 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav Links */}
-          <div className="flex items-end space-x-1 lg:space-x-2 pr-4">
+          <div className="flex items-center space-x-1 lg:space-x-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-3 lg:px-4 py-8 text-base lg:text-3xl font-bold text-white transition-colors duration-200 rounded-md ${
+                className={`px-4 lg:px-5 py-2 text-base lg:text-lg font-semibold text-white transition-colors duration-200 rounded-md ${
                   link.href === "/contact"
                     ? "bg-white/10 backdrop-blur-sm hover:bg-white/20"
                     : "hover:bg-white/20"
@@ -124,14 +124,14 @@ export function Navbar() {
 
       {/* MOBILE DROPDOWN MENU */}
       {isOpen && (
-        <div className="md:hidden absolute top-20 left-0 right-0 bg-[#1800ad] border-t border-white/10 shadow-lg backdrop-blur-md">
+        <div className="md:hidden absolute top-16 left-0 right-0 bg-[#1800ad] border-t border-white/10 shadow-lg backdrop-blur-md">
           <div className="container mx-auto max-w-7xl px-4 py-4 space-y-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`block px-4 py-3 text-lg font-bold text-white transition-colors rounded-md ${
+                className={`block px-4 py-3 text-base font-semibold text-white transition-colors rounded-md ${
                   link.href === "/contact"
                     ? "bg-white/10 backdrop-blur-sm hover:bg-white/20"
                     : "hover:bg-white/20"
