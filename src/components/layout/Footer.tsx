@@ -31,8 +31,24 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-14 md:py-16 lg:py-20">
+    <footer className="bg-gray-900 text-gray-300 relative overflow-hidden">
+      {/* World Map Background */}
+      <div
+        className="absolute inset-0 opacity-60"
+        style={{
+          backgroundImage: "url('/footer/world-map.webp')",
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          backgroundRepeat: "repeat",
+          filter: "brightness(1.8) contrast(0.7)",
+          mixBlendMode: "overlay",
+        }}
+      />
+      
+      {/* Subtle Shadow Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 via-transparent to-gray-900/80" />
+      
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-14 md:py-16 lg:py-20 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
           {/* Brand Section */}
           <div className="space-y-4">

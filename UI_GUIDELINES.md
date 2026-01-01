@@ -636,8 +636,20 @@ Home, About, Services, Products, Blog, Contact
 
 **Structure:**
 ```jsx
-<footer className="bg-gray-900 text-gray-300">
-  <div className="container py-12 sm:py-14 md:py-16 lg:py-20">
+<footer className="bg-gray-900 text-gray-300 relative overflow-hidden">
+  {/* World Map Background */}
+  <div className="absolute inset-0 opacity-10" style={{ 
+    backgroundImage: "url('/footer/world-map.webp')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    filter: "brightness(0.8) contrast(1.2)",
+    mixBlendMode: "overlay"
+  }} />
+  
+  {/* Subtle Shadow Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 via-transparent to-gray-900/80" />
+  
+  <div className="container py-12 sm:py-14 md:py-16 lg:py-20 relative z-10">
     {/* 4-column grid: Brand, Company, Resources, Services */}
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
       {/* Brand Section with contact info */}
@@ -686,13 +698,22 @@ Home, About, Services, Products, Blog, Contact
    - Documentation & Compliance
 
 **Styling:**
-- Background: Dark gray (gray-900)
+- Background: Dark gray (gray-900) with world map overlay
+- World Map Pattern: 10% opacity with overlay blend mode
+- Gradient Shadow: Top to bottom (gray-900/50 → transparent → gray-900/80)
 - Text: Light gray (gray-300)
 - Headings: White, semibold
 - Links: Hover to white
 - Icons: Lucide React (MapPin, Phone, Mail)
 - Column headers: Bold, white
 - Link spacing: space-y-2 (8px between links)
+
+**Background Effects:**
+- World map image at `/footer/world-map.webp`
+- Opacity: 10% for subtle appearance
+- Filter: `brightness(0.8) contrast(1.2)` for better definition
+- Mix blend mode: overlay for integration with dark background
+- Gradient overlay for depth and shadow effect
 
 ---
 
