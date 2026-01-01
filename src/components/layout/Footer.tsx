@@ -3,19 +3,29 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 const footerLinks = {
   company: [
-    { href: "/about", label: "About Us" },
-    { href: "/services", label: "Services" },
-    { href: "/products", label: "Products" },
-    { href: "/blog", label: "Blog" },
+    { href: "/payment-methods", label: "Payment Method" },
+    { href: "/portfolio", label: "Case Studies / Portfolio" },
+    { href: "/careers", label: "Careers" },
+    { href: "/partner", label: "Partner With Us" },
+    { href: "/quote", label: "Request a Quote" },
+    { href: "/mission", label: "Mission" },
+    { href: "/vision", label: "Vision & Values" },
+    { href: "/social", label: "Social Media Links" },
   ],
-  support: [
+  resources: [
+    { href: "/blog", label: "Blog / News" },
+    { href: "/faq", label: "FAQ" },
     { href: "/contact", label: "Contact Us" },
-    { href: "/register", label: "Register" },
-    { href: "/admin", label: "Admin Login" },
-  ],
-  legal: [
+    { href: "/logistics", label: "Logistics & Supply Chain" },
     { href: "/privacy", label: "Privacy Policy" },
-    { href: "/terms", label: "Terms of Service" },
+    { href: "/terms", label: "Terms & Conditions" },
+  ],
+  services: [
+    { href: "/advantages", label: "Competitive Advantages" },
+    { href: "/logistics-support", label: "Logistics Support" },
+    { href: "/quality-assurance", label: "Quality Assurance" },
+    { href: "/compliance-standards", label: "Compliance & Standards" },
+    { href: "/documentation", label: "Documentation & Compliance" },
   ],
 };
 
@@ -63,11 +73,11 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Support Links */}
+          {/* Resources Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Support</h4>
+            <h4 className="text-white font-semibold mb-4">Resources</h4>
             <ul className="space-y-2">
-              {footerLinks.support.map((link) => (
+              {footerLinks.resources.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -80,11 +90,11 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Legal Links */}
+          {/* Services Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Legal</h4>
+            <h4 className="text-white font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
-              {footerLinks.legal.map((link) => (
+              {footerLinks.services.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
