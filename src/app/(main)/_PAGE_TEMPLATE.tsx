@@ -19,7 +19,7 @@
  */
 
 import { DocLayout, DocSection } from "@/components/ui/DocLayout";
-import { Icon1, Icon2, Icon3, Icon4, Icon5 } from "lucide-react"; // Import icons you need
+import { Shield, Package, Globe, Award, TrendingUp } from "lucide-react"; // Import icons you need
 import Image from "next/image"; // Import for adding images
 
 export const metadata = {
@@ -49,7 +49,7 @@ export default function YourPageName() {
         {/* Optional: Icon header for visual interest */}
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-            <Icon1 className="w-6 h-6 text-[#0a4a9e]" />
+            <Shield className="w-6 h-6 text-[#0a4a9e]" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -69,7 +69,7 @@ export default function YourPageName() {
 
         <p>
           Add multiple paragraphs as needed. Each paragraph should be wrapped in
-          a <p> tag for proper spacing.
+          a &lt;p&gt; tag for proper spacing.
         </p>
 
         {/* Optional: Add an image after introduction - great for visual appeal */}
@@ -128,7 +128,7 @@ export default function YourPageName() {
       <DocSection id="section-2" title="Second Section Title">
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-            <Icon2 className="w-6 h-6 text-green-600" />
+            <Package className="w-6 h-6 text-green-600" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -166,7 +166,7 @@ export default function YourPageName() {
       <DocSection id="section-3" title="Third Section Title">
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
-            <Icon3 className="w-6 h-6 text-yellow-600" />
+            <Globe className="w-6 h-6 text-yellow-600" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -203,7 +203,7 @@ export default function YourPageName() {
       <DocSection id="section-4" title="Fourth Section Title">
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-            <Icon4 className="w-6 h-6 text-purple-600" />
+            <Award className="w-6 h-6 text-purple-600" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -220,7 +220,7 @@ export default function YourPageName() {
       <DocSection id="section-5" title="Fifth Section Title">
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-            <Icon5 className="w-6 h-6 text-red-600" />
+            <TrendingUp className="w-6 h-6 text-red-600" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
