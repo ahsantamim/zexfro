@@ -124,10 +124,10 @@ export function ProductCategoriesSection() {
           </p>
 
           {/* Tab Toggle */}
-          <div className="inline-flex rounded-lg bg-white shadow-md p-1 border border-gray-200">
+          <div className="inline-flex rounded-full bg-white gap-2 shadow-md p-1 border border-gray-200">
             <button
               onClick={() => setActiveTab("import")}
-              className={`px-8 py-3 rounded-lg font-semibold text-base md:text-lg transition-all duration-300 ${
+              className={`px-8 py-3 rounded-full font-semibold text-base md:text-lg transition-all duration-300 ${
                 activeTab === "import"
                   ? "bg-gradient-to-r from-[#0a4a9e] to-[#05306b] text-white shadow-lg"
                   : "text-gray-700 hover:bg-gray-100"
@@ -137,7 +137,7 @@ export function ProductCategoriesSection() {
             </button>
             <button
               onClick={() => setActiveTab("export")}
-              className={`px-8 py-3 rounded-lg font-semibold text-base md:text-lg transition-all duration-300 ${
+              className={`px-8 py-3 rounded-full font-semibold text-base md:text-lg transition-all duration-300 ${
                 activeTab === "export"
                   ? "bg-gradient-to-r from-[#0a4a9e] to-[#05306b] text-white shadow-lg"
                   : "text-gray-700 hover:bg-gray-100"
