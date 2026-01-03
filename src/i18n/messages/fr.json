@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "services": "Services",
+    "products": "Produits",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": {
+      "line1": "Sécurisé. Conforme.",
+      "line2": "Commerce Mondial",
+      "line3": "Simplifié."
+    },
+    "subtitle": "Connectez-vous avec des partenaires vérifiés en Europe. Accédez aux catégories de produits approuvées, gérez les commandes en toute transparence et développez votre entreprise en toute confiance.",
+    "cta": "S'inscrire Gratuitement",
+    "registerAs": "S'inscrire en tant que",
+    "here": "ici",
+    "importProducts": "Importer des Produits",
+    "exportProducts": "Exporter des Produits",
+    "trustedBy": "Approuvé par",
+    "trustedByCount": "100+",
+    "trustedByText": "importateurs et exportateurs dans le monde",
+    "typewriter": {
+      "importer": "Importateur",
+      "exporter": "Exportateur"
+    }
+  },
+  "features": {
+    "title": "Pourquoi Choisir Zexfro",
+    "subtitle": "Votre partenaire de confiance pour un commerce mondial sécurisé, conforme et efficace",
+    "learnMore": "En Savoir Plus Sur Nous",
+    "items": {
+      "secure": {
+        "title": "Sécurisé et Conforme",
+        "description": "Chiffrement de bout en bout et conformité réglementaire complète à toutes",
+        "highlight": "les réglementations commerciales de l'UE"
+      },
+      "tracking": {
+        "title": "Suivi en Temps Réel",
+        "description": "Surveillez vos expéditions et commandes",
+        "highlight": "24/7 avec des mises à jour en direct",
+        "secondDescription": "et des notifications automatisées"
+      },
+      "network": {
+        "title": "Réseau Mondial",
+        "description": "Connectez-vous avec",
+        "highlight": "plus de 100 importateurs et exportateurs vérifiés",
+        "secondDescription": "en Europe et au-delà"
+      },
+      "quality": {
+        "title": "Assurance Qualité",
+        "description": "Tous les partenaires sont vérifiés et les produits répondent",
+        "highlight": "aux normes de qualité internationales"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Ce Que Disent Nos Partenaires",
+    "subtitle": "Rejoignez des milliers d'importateurs et exportateurs satisfaits"
+  },
+  "stats": {
+    "title": "Approuvé par les leaders de l'industrie avec",
+    "subtitle": "des résultats prouvés",
+    "clientSatisfaction": "Taux de satisfaction client",
+    "shipmentCompleted": "Expédition terminée",
+    "revenueGenerated": "Revenus générés",
+    "yearsExperience": "Années d'expérience"
+  },
+  "cta": {
+    "title": "Prêt à Transformer Votre Commerce?",
+    "subtitle": "Rejoignez notre réseau croissant d'importateurs et exportateurs vérifiés",
+    "button": "Commencer Aujourd'hui"
+  },
+  "productCategories": {
+    "title": "Catégories de Produits",
+    "subtitle": "Explorez nos catégories approuvées pour un commerce sécurisé et conforme",
+    "import": "Importer",
+    "export": "Exporter",
+    "loading": "Chargement des catégories...",
+    "viewAll": "Voir Tous les Produits"
+  },
+  "blog": {
+    "title": "Dernières Actualités et Mises à Jour",
+    "subtitle": "Restez informé des tendances de l'industrie, des réglementations commerciales et des conseils d'experts",
+    "read": "Lire",
+    "viewAll": "Voir Tous les Articles"
+  }
+}
+

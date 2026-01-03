@@ -1,19 +1,20 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button as MovingBorderButton } from "@/components/ui/moving-border";
 import { useEffect, useRef, useState } from "react";
 import { ProductDrawer } from "@/components/home/ProductDrawer";
 import { RegisterModal } from "@/components/home/RegisterModal";
+import { useTranslations } from "next-intl";
 
 export function HeroSection() {
+  const t = useTranslations("hero");
   const bgRef = useRef<HTMLDivElement>(null);
   const [typewriterText, setTypewriterText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [textIndex, setTextIndex] = useState(0);
 
-  const texts = ["Importer", "Exporter"];
+  const texts = [t("typewriter.importer"), t("typewriter.exporter")];
 
   // ★ Ultra Smooth Typewriter
   useEffect(() => {
@@ -96,17 +97,14 @@ export function HeroSection() {
         <div className="max-w-4xl animate-fade-in">
           {/* TITLE */}
           <h1 className="font-bold leading-[1.2] mb-6 text-[36px] sm:text-[40px] md:text-[48px] lg:text-[72px] drop-shadow-lg">
-            Secure. Compliant.
+            {t("title.line1")}
             <br className="sm:hidden" />
-            <span className="text-white  px-2 rounded">Global Trade</span> Made
-            Simple.
+            <span className="text-white  px-2 rounded">{t("title.line2")}</span> {t("title.line3")}
           </h1>
 
           {/* SUBTITLE */}
           <p className="font-normal leading-[1.4] md:leading-[1.5] mb-8 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-gray-200 mx-auto max-w-[60ch]">
-            Connect with verified partners in Europe. Access approved product
-            categories, manage orders seamlessly, and grow your business with
-            confidence.
+            {t("subtitle")}
           </p>
 
           {/* BUTTON */}
@@ -152,7 +150,7 @@ export function HeroSection() {
     ]
   "
 >
-  Register for Free
+  {t("cta")}
 </span>
 
 
@@ -170,25 +168,25 @@ export function HeroSection() {
 
             {/* TYPEWRITER */}
             <p className="text-[16px] sm:text-[18px] md:text-[20px] text-gray-200 min-h-[30px]">
-              Register as an{" "}
+              {t("registerAs")}{" "}
               <span className="font-semibold text-white bg-[#0A4D96]/40 backdrop-blur-sm rounded-full inline-block min-w-[120px] px-2">
                 {typewriterText}
                 <span className="animate-ping">|</span>
               </span>{" "}
-              here
+              {t("here")}
             </p>
 
             <div className="flex flex-row flex-wrap gap-y-4 gap-x-56 mt-12 justify-center">
               <ProductDrawer type="import">
                 <button className="px-8 py-3.5 bg-white font-bold cursor-pointer hover:bg-[#083a73] hover:text-white text-[#0A4D96] text-[18px] sm:text-[22px] rounded-full border border-[#0A4D96] transition-all duration-300 flex items-center gap-2 min-w-[200px] justify-center group whitespace-nowrap">
-                  Import Products
+                  {t("importProducts")}
                   <ArrowRight className="w-5 h-5 group-hover:-rotate-45 transition-transform duration-300" />
                 </button>
               </ProductDrawer>
 
               <ProductDrawer type="export">
                 <button className="px-8 py-3.5 bg-white font-bold cursor-pointer hover:bg-[#083a73] hover:text-white text-[#0A4D96] text-[18px] sm:text-[22px] rounded-full border border-[#0A4D96] transition-all duration-300 flex items-center gap-2 min-w-[200px] justify-center group whitespace-nowrap">
-                  Export Products
+                  {t("exportProducts")}
                   <ArrowRight className="w-5 h-5 group-hover:-rotate-45 transition-transform duration-300" />
                 </button>
               </ProductDrawer>
@@ -198,8 +196,8 @@ export function HeroSection() {
           {/* TRUST BADGE */}
           <div className="mt-10 pt-6 border-t border-gray-400/20 max-w-md mx-auto">
             <p className="text-[12px] sm:text-[13px] text-gray-300">
-              Trusted by <span className="font-bold text-white">100+</span>{" "}
-              importers and exporters worldwide
+              {t("trustedBy")} <span className="font-bold text-white">{t("trustedByCount")}</span>{" "}
+              {t("trustedByText")}
             </p>
           </div>
         </div>

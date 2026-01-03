@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { ArrowRight, Loader2 } from "lucide-react";
 import { ArrowButton } from "@/components/ui/ArrowButton";
+import { useTranslations } from "next-intl";
 
 interface Category {
   id: string;
@@ -19,6 +20,7 @@ interface Category {
 }
 
 export function ProductCategoriesSection() {
+  const t = useTranslations("productCategories");
   const [activeTab, setActiveTab] = useState<"import" | "export">("import");
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
@@ -117,10 +119,10 @@ export function ProductCategoriesSection() {
         {/* Section Header */}
         <div className="mb-8 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Product Categories
+            {t("title")}
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-            Explore our approved categories for secure and compliant trade
+            {t("subtitle")}
           </p>
 
           {/* Tab Toggle */}
@@ -133,7 +135,7 @@ export function ProductCategoriesSection() {
                   : "text-gray-700 hover:bg-gray-100"
               }`}
             >
-              Import
+              {t("import")}
             </button>
             <button
               onClick={() => setActiveTab("export")}
@@ -143,7 +145,7 @@ export function ProductCategoriesSection() {
                   : "text-gray-700 hover:bg-gray-100"
               }`}
             >
-              Export
+              {t("export")}
             </button>
           </div>
         </div>
@@ -153,7 +155,7 @@ export function ProductCategoriesSection() {
           <div className="flex items-center justify-center py-20">
             <div className="text-center space-y-4">
               <Loader2 className="w-12 h-12 animate-spin text-[#0a4a9e] mx-auto" />
-              <p className="text-gray-600">Loading categories...</p>
+              <p className="text-gray-600">{t("loading")}</p>
             </div>
           </div>
         ) : (
@@ -222,7 +224,7 @@ export function ProductCategoriesSection() {
             href={`/products?type=${activeTab}`}
             className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#0a4a9e] to-[#05306b] hover:from-[#0d5bbf] hover:to-[#0a4a9e] text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            View All Products
+            {t("viewAll")}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </div>

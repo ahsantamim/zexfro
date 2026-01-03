@@ -1,20 +1,23 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/products", label: "Products" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", key: "home" },
+  { href: "/about", key: "about" },
+  { href: "/services", key: "services" },
+  { href: "/products", key: "products" },
+  { href: "/blog", key: "blog" },
+  { href: "/contact", key: "contact" },
 ];
 
 export function Navbar() {
+  const t = useTranslations("nav");
   const [isOpen, setIsOpen] = useState(false);
   const [showStaticLogo, setShowStaticLogo] = useState(false);
 
@@ -115,9 +118,10 @@ export function Navbar() {
                     : "hover:bg-white/20"
                 }`}
               >
-                {link.label}
+                {t(link.key as any)}
               </Link>
             ))}
+            <LanguageSwitcher />
           </div>
         </div>
       </div>
@@ -137,9 +141,12 @@ export function Navbar() {
                     : "hover:bg-white/20"
                 }`}
               >
-                {link.label}
+                {t(link.key as any)}
               </Link>
             ))}
+            <div className="pt-2 border-t border-white/10">
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       )}

@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { ArrowRight, Calendar, User } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function BlogSection() {
+  const t = useTranslations("blog");
   const blogPosts = [
     {
       id: 1,
@@ -60,11 +64,10 @@ export function BlogSection() {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Latest Insights & Updates
+            {t("title")}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Stay informed with industry trends, trade regulations, and expert
-            advice
+            {t("subtitle")}
           </p>
         </div>
 
@@ -122,7 +125,7 @@ export function BlogSection() {
                     href={`/blog/${post.id}`}
                     className="flex items-center gap-1 text-[#0A4D96] text-sm font-semibold group-hover:gap-2 transition-all"
                   >
-                    Read
+                    {t("read")}
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -137,7 +140,7 @@ export function BlogSection() {
             href="/blog"
             className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#0a4a9e] to-[#05306b] hover:from-[#0d5bbf] hover:to-[#0a4a9e] text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            View All Articles
+            {t("viewAll")}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </div>

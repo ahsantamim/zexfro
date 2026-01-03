@@ -1,13 +1,15 @@
+"use client";
+
 import { Shield, Clock, Globe, CheckCircle, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 export function FeaturesSection() {
+  const t = useTranslations("features");
+  
   const features = [
     {
-      title: "Secure & Compliant",
-      description:
-        "End-to-end encryption and full regulatory compliance across all ",
-      highlight: "EU trade regulations",
+      key: "secure",
       icon: Shield,
       color: "text-blue-600",
       bgColor: "bg-blue-50",
@@ -16,10 +18,7 @@ export function FeaturesSection() {
       borderColor: "border-blue-200",
     },
     {
-      title: "Real-Time Tracking",
-      description: "Monitor your shipments and orders ",
-      highlight: "24/7 with live updates",
-      secondDescription: " and automated notifications",
+      key: "tracking",
       icon: Clock,
       color: "text-green-600",
       bgColor: "bg-green-50",
@@ -28,10 +27,7 @@ export function FeaturesSection() {
       borderColor: "border-green-200",
     },
     {
-      title: "Global Network",
-      description: "Connect with ",
-      highlight: "100+ verified importers and exporters",
-      secondDescription: " across Europe and beyond",
+      key: "network",
       icon: Globe,
       color: "text-yellow-600",
       bgColor: "bg-yellow-50",
@@ -40,9 +36,7 @@ export function FeaturesSection() {
       borderColor: "border-yellow-200",
     },
     {
-      title: "Quality Assurance",
-      description: "All partners are vetted and products meet ",
-      highlight: "international quality standards",
+      key: "quality",
       icon: CheckCircle,
       color: "text-red-600",
       bgColor: "bg-red-50",
@@ -58,11 +52,10 @@ export function FeaturesSection() {
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Why Choose Zexfro
+            {t("title")}
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            Your trusted partner for secure, compliant, and efficient global
-            trade
+            {t("subtitle")}
           </p>
         </div>
 
@@ -90,14 +83,14 @@ export function FeaturesSection() {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {feature.title}
+                  {t(`items.${feature.key}.title`)}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  {feature.description}
+                  {t(`items.${feature.key}.description`)}{" "}
                   <span className="bg-cyan-100 text-gray-900 px-1.5 py-0.5 font-medium">
-                    {feature.highlight}
+                    {t(`items.${feature.key}.highlight`)}
                   </span>
-                  {feature.secondDescription}
+                  {t.has(`items.${feature.key}.secondDescription`) && ` ${t(`items.${feature.key}.secondDescription`)}`}
                 </p>
               </div>
             );
@@ -110,7 +103,7 @@ export function FeaturesSection() {
             href="/about"
             className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#0a4a9e] to-[#05306b] hover:from-[#0d5bbf] hover:to-[#0a4a9e] text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            Learn More About Us
+            {t("learnMore")}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </div>

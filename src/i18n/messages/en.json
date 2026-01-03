@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "products": "Products",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": {
+      "line1": "Secure. Compliant.",
+      "line2": "Global Trade",
+      "line3": "Made Simple."
+    },
+    "subtitle": "Connect with verified partners in Europe. Access approved product categories, manage orders seamlessly, and grow your business with confidence.",
+    "cta": "Register for Free",
+    "registerAs": "Register as an",
+    "here": "here",
+    "importProducts": "Import Products",
+    "exportProducts": "Export Products",
+    "trustedBy": "Trusted by",
+    "trustedByCount": "100+",
+    "trustedByText": "importers and exporters worldwide",
+    "typewriter": {
+      "importer": "Importer",
+      "exporter": "Exporter"
+    }
+  },
+  "features": {
+    "title": "Why Choose Zexfro",
+    "subtitle": "Your trusted partner for secure, compliant, and efficient global trade",
+    "learnMore": "Learn More About Us",
+    "items": {
+      "secure": {
+        "title": "Secure & Compliant",
+        "description": "End-to-end encryption and full regulatory compliance across all",
+        "highlight": "EU trade regulations"
+      },
+      "tracking": {
+        "title": "Real-Time Tracking",
+        "description": "Monitor your shipments and orders",
+        "highlight": "24/7 with live updates",
+        "secondDescription": "and automated notifications"
+      },
+      "network": {
+        "title": "Global Network",
+        "description": "Connect with",
+        "highlight": "100+ verified importers and exporters",
+        "secondDescription": "across Europe and beyond"
+      },
+      "quality": {
+        "title": "Quality Assurance",
+        "description": "All partners are vetted and products meet",
+        "highlight": "international quality standards"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "What Our Partners Say",
+    "subtitle": "Join thousands of satisfied importers and exporters"
+  },
+  "stats": {
+    "title": "Trusted by industry leaders with",
+    "subtitle": "proven results",
+    "clientSatisfaction": "Client satisfaction rate",
+    "shipmentCompleted": "Shipment completed",
+    "revenueGenerated": "Revenue generated",
+    "yearsExperience": "Years of experience"
+  },
+  "cta": {
+    "title": "Ready to Transform Your Trade Business?",
+    "subtitle": "Join our growing network of verified importers and exporters",
+    "button": "Get Started Today"
+  },
+  "productCategories": {
+    "title": "Product Categories",
+    "subtitle": "Explore our approved categories for secure and compliant trade",
+    "import": "Import",
+    "export": "Export",
+    "loading": "Loading categories...",
+    "viewAll": "View All Products"
+  },
+  "blog": {
+    "title": "Latest Insights & Updates",
+    "subtitle": "Stay informed with industry trends, trade regulations, and expert advice",
+    "read": "Read",
+    "viewAll": "View All Articles"
+  }
+}
+

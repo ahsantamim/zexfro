@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "services": "Servicios",
+    "products": "Productos",
+    "blog": "Blog",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": {
+      "line1": "Seguro. Conforme.",
+      "line2": "Comercio Global",
+      "line3": "Hecho Simple."
+    },
+    "subtitle": "Conéctese con socios verificados en Europa. Acceda a categorías de productos aprobadas, gestione pedidos sin problemas y haga crecer su negocio con confianza.",
+    "cta": "Regístrese Gratis",
+    "registerAs": "Regístrese como",
+    "here": "aquí",
+    "importProducts": "Importar Productos",
+    "exportProducts": "Exportar Productos",
+    "trustedBy": "Confiado por",
+    "trustedByCount": "100+",
+    "trustedByText": "importadores y exportadores en todo el mundo",
+    "typewriter": {
+      "importer": "Importador",
+      "exporter": "Exportador"
+    }
+  },
+  "features": {
+    "title": "Por Qué Elegir Zexfro",
+    "subtitle": "Su socio de confianza para el comercio global seguro, conforme y eficiente",
+    "learnMore": "Más Información Sobre Nosotros",
+    "items": {
+      "secure": {
+        "title": "Seguro y Conforme",
+        "description": "Cifrado de extremo a extremo y cumplimiento normativo completo en todas",
+        "highlight": "las regulaciones comerciales de la UE"
+      },
+      "tracking": {
+        "title": "Seguimiento en Tiempo Real",
+        "description": "Monitoree sus envíos y pedidos",
+        "highlight": "24/7 con actualizaciones en vivo",
+        "secondDescription": "y notificaciones automatizadas"
+      },
+      "network": {
+        "title": "Red Global",
+        "description": "Conéctese con",
+        "highlight": "más de 100 importadores y exportadores verificados",
+        "secondDescription": "en Europa y más allá"
+      },
+      "quality": {
+        "title": "Garantía de Calidad",
+        "description": "Todos los socios son verificados y los productos cumplen",
+        "highlight": "estándares de calidad internacionales"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Lo Que Dicen Nuestros Socios",
+    "subtitle": "Únase a miles de importadores y exportadores satisfechos"
+  },
+  "stats": {
+    "title": "Confiado por líderes de la industria con",
+    "subtitle": "resultados probados",
+    "clientSatisfaction": "Tasa de satisfacción del cliente",
+    "shipmentCompleted": "Envío completado",
+    "revenueGenerated": "Ingresos generados",
+    "yearsExperience": "Años de experiencia"
+  },
+  "cta": {
+    "title": "¿Listo para Transformar Su Negocio Comercial?",
+    "subtitle": "Únase a nuestra creciente red de importadores y exportadores verificados",
+    "button": "Comience Hoy"
+  },
+  "productCategories": {
+    "title": "Categorías de Productos",
+    "subtitle": "Explore nuestras categorías aprobadas para un comercio seguro y conforme",
+    "import": "Importar",
+    "export": "Exportar",
+    "loading": "Cargando categorías...",
+    "viewAll": "Ver Todos los Productos"
+  },
+  "blog": {
+    "title": "Últimas Noticias y Actualizaciones",
+    "subtitle": "Manténgase informado con tendencias de la industria, regulaciones comerciales y asesoramiento experto",
+    "read": "Leer",
+    "viewAll": "Ver Todos los Artículos"
+  }
+}
+

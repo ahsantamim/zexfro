@@ -3,6 +3,7 @@
 import React from "react";
 import { animate, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
 
 const Stat = ({
   num,
@@ -54,6 +55,8 @@ const Stat = ({
 };
 
 export function StatsSection() {
+  const t = useTranslations("stats");
+  
   return (
     <section className="relative border-y border-[#0A4D96]/20 py-12 sm:py-16 md:py-20 bg-[#0A4D96]">
       {/* Enhanced background shapes */}
@@ -87,34 +90,34 @@ export function StatsSection() {
 
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="mb-8 sm:mb-4 text-center text-2xl font-semibold tracking-widest text-white">
-          Trusted by industry leaders with
-          <span className="inline ml-1 text-white">proven results</span>
+          {t("title")}
+          <span className="inline ml-1 text-white">{t("subtitle")}</span>
         </h2>
 
         <div className="flex flex-col sm:flex-row items-center justify-center divide-y sm:divide-y-0 sm:divide-x divide-white/20">
           <Stat
             num={92}
             suffix="%"
-            subheading="Client satisfaction rate"
+            subheading={t("clientSatisfaction")}
             lightMode={true}
           />
           <Stat
             num={1.5}
             decimals={1}
             suffix="k+"
-            subheading="Shipment completed"
+            subheading={t("shipmentCompleted")}
             lightMode={true}
           />
           <Stat
             num={150}
             suffix="M+"
-            subheading="Revenue generated"
+            subheading={t("revenueGenerated")}
             lightMode={true}
           />
           <Stat
             num={12}
             suffix="+"
-            subheading="Years of experience"
+            subheading={t("yearsExperience")}
             lightMode={true}
           />
         </div>

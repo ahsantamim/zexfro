@@ -1,7 +1,11 @@
+"use client";
+
 import { Quote, Star } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export function TestimonialsSection() {
+  const t = useTranslations("testimonials");
   const testimonials = [
     {
       id: 1,
@@ -44,10 +48,10 @@ export function TestimonialsSection() {
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            What Our Partners Say
+            {t("title")}
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            Trusted by importers and exporters across Europe
+            {t("subtitle")}
           </p>
         </div>
 

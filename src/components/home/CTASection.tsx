@@ -1,7 +1,11 @@
-import Link from "next/link";
+"use client";
+
+import { Link } from "@/i18n/routing";
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function CTASection() {
+  const t = useTranslations("cta");
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-[#0A4D96] text-white relative overflow-hidden">
       {/* Background decorations */}
@@ -37,17 +41,16 @@ export function CTASection() {
 
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
-          Ready to Get Started?
+          {t("title")}
         </h2>
         <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
-          Join thousands of satisfied customers and transform your global trade
-          operations today
+          {t("subtitle")}
         </p>
         <Link
           href="/contact"
           className="group inline-flex items-center gap-3 bg-white text-[#0A4D96] hover:bg-white/90 font-bold text-lg px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
         >
-          Contact Us Now
+          {t("button")}
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
         </Link>
       </div>
