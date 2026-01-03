@@ -1,31 +1,27 @@
-import Link from "next/link";
+"use client";
+
+import { Link } from "@/i18n/routing";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const footerLinks = {
   company: [
-    { href: "/payment-methods", label: "Payment Method" },
-    { href: "/portfolio", label: "Case Studies / Portfolio" },
-    { href: "/careers", label: "Careers" },
-    { href: "/partner", label: "Partner With Us" },
-    { href: "/quote", label: "Request a Quote" },
-    { href: "/mission", label: "Mission" },
-    { href: "/vision", label: "Vision & Values" },
-    { href: "/social", label: "Social Media Links" },
+    { href: "/about", label: "About Us" },
+    { href: "/payment-methods", label: "Payment Methods" },
+    { href: "/register", label: "Register" },
+    { href: "/contact", label: "Contact" },
   ],
   resources: [
     { href: "/blog", label: "Blog / News" },
-    { href: "/faq", label: "FAQ" },
+    { href: "/products", label: "Products" },
+    { href: "/services", label: "Services" },
     { href: "/contact", label: "Contact Us" },
-    { href: "/logistics", label: "Logistics & Supply Chain" },
-    { href: "/privacy", label: "Privacy Policy" },
-    { href: "/terms", label: "Terms & Conditions" },
   ],
   services: [
     { href: "/advantages", label: "Competitive Advantages" },
     { href: "/logistics-support", label: "Logistics Support" },
     { href: "/quality-assurance", label: "Quality Assurance" },
     { href: "/compliance-standards", label: "Compliance & Standards" },
-    { href: "/documentation", label: "Documentation & Compliance" },
+    { href: "/documentation-compliance", label: "Documentation & Compliance" },
   ],
 };
 
