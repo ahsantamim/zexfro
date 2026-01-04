@@ -2,6 +2,11 @@
   "nav": {
     "home": "Inicio",
     "about": "Acerca de",
+    "aboutUs": "Sobre Nosotros",
+    "boardOfDirectors": "Junta Directiva",
+    "visionMissionValues": "Visión, Misión y Valores",
+    "glossary": "Glosario",
+    "benefitsForSupplier": "Beneficios para Proveedores",
     "services": "Servicios",
     "products": "Productos",
     "blog": "Blog",
@@ -34,58 +39,201 @@
     "items": {
       "secure": {
         "title": "Seguro y Conforme",
-        "description": "Cifrado de extremo a extremo y cumplimiento normativo completo en todas",
-        "highlight": "las regulaciones comerciales de la UE"
+        "description": "Cifrado de extremo a extremo y total cumplimiento regulatorio en todas",
+        "highlight": "regulaciones comerciales de la UE"
       },
       "tracking": {
         "title": "Seguimiento en Tiempo Real",
         "description": "Monitoree sus envíos y pedidos",
         "highlight": "24/7 con actualizaciones en vivo",
-        "secondDescription": "y notificaciones automatizadas"
+        "secondDescription": "y notificaciones automáticas"
       },
       "network": {
         "title": "Red Global",
         "description": "Conéctese con",
-        "highlight": "más de 100 importadores y exportadores verificados",
+        "highlight": "100+ importadores y exportadores verificados",
         "secondDescription": "en Europa y más allá"
       },
       "quality": {
         "title": "Garantía de Calidad",
-        "description": "Todos los socios son verificados y los productos cumplen",
-        "highlight": "estándares de calidad internacionales"
+        "description": "Todos los socios están verificados y los productos cumplen",
+        "highlight": "estándares internacionales de calidad"
       }
     }
   },
-  "testimonials": {
-    "title": "Lo Que Dicen Nuestros Socios",
-    "subtitle": "Únase a miles de importadores y exportadores satisfechos"
-  },
-  "stats": {
-    "title": "Confiado por líderes de la industria con",
-    "subtitle": "resultados probados",
-    "clientSatisfaction": "Tasa de satisfacción del cliente",
-    "shipmentCompleted": "Envío completado",
-    "revenueGenerated": "Ingresos generados",
-    "yearsExperience": "Años de experiencia"
-  },
-  "cta": {
-    "title": "¿Listo para Transformar Su Negocio Comercial?",
-    "subtitle": "Únase a nuestra creciente red de importadores y exportadores verificados",
-    "button": "Comience Hoy"
-  },
   "productCategories": {
     "title": "Categorías de Productos",
-    "subtitle": "Explore nuestras categorías aprobadas para un comercio seguro y conforme",
+    "subtitle": "Explore nuestras categorías aprobadas para comercio seguro y conforme",
     "import": "Importar",
     "export": "Exportar",
     "loading": "Cargando categorías...",
     "viewAll": "Ver Todos los Productos"
   },
+  "testimonials": {
+    "title": "Lo Que Dicen Nuestros Socios",
+    "subtitle": "Confiado por importadores y exportadores en toda Europa"
+  },
+  "stats": {
+    "title": "Confiado por líderes de la industria con",
+    "subtitle": "resultados comprobados",
+    "clientSatisfaction": "Tasa de satisfacción del cliente",
+    "shipmentCompleted": "Envíos completados",
+    "revenueGenerated": "Ingresos generados",
+    "yearsExperience": "Años de experiencia"
+  },
   "blog": {
-    "title": "Últimas Noticias y Actualizaciones",
-    "subtitle": "Manténgase informado con tendencias de la industria, regulaciones comerciales y asesoramiento experto",
+    "title": "Últimas Perspectivas y Actualizaciones",
+    "subtitle": "Manténgase informado sobre tendencias de la industria, regulaciones comerciales y asesoramiento experto",
     "read": "Leer",
     "viewAll": "Ver Todos los Artículos"
+  },
+  "cta": {
+    "title": "¿Listo para Comenzar?",
+    "subtitle": "Únase a miles de clientes satisfechos y transforme sus operaciones de comercio global hoy",
+    "button": "Contáctenos Ahora"
+  },
+  "footer": {
+    "brandTitle": "Zexfro",
+    "brandDescription": "Seguro. Conforme. Comercio Global Hecho Simple.",
+    "address": "123 Trade Street, Business District",
+    "phone": "+1 (555) 123-4567",
+    "email": "info@zexfro.com",
+    "companyTitle": "Compañía",
+    "companyPaymentMethods": "Métodos de Pago",
+    "companyCaseStudies": "Casos de Estudio / Portafolio",
+    "companyCareers": "Carreras",
+    "companyPartner": "Asóciese con Nosotros",
+    "companyQuote": "Solicitar Cotización",
+    "companyMission": "Misión",
+    "companyVision": "Visión y Valores",
+    "companySocial": "Enlaces de Redes Sociales",
+    "resourcesTitle": "Recursos",
+    "resourcesBlog": "Blog / Noticias",
+    "resourcesFaq": "Preguntas Frecuentes",
+    "resourcesContact": "Contáctenos",
+    "resourcesLogistics": "Logística y Cadena de Suministro",
+    "resourcesPrivacy": "Política de Privacidad",
+    "resourcesTerms": "Términos y Condiciones",
+    "servicesTitle": "Servicios",
+    "servicesAdvantages": "Ventajas Competitivas",
+    "servicesLogisticsSupport": "Soporte Logístico",
+    "servicesQualityAssurance": "Garantía de Calidad",
+    "servicesComplianceStandards": "Cumplimiento y Estándares",
+    "servicesDocumentationCompliance": "Documentación y Cumplimiento",
+    "copyright": "© {year} Zexfro. Todos los derechos reservados."
+  },
+  "notFound": {
+    "title": "404 - Página No Encontrada",
+    "description": "La página que está buscando no existe.",
+    "goHome": "Ir al Inicio"
+  },
+  "faq": {
+    "metaTitle": "Preguntas Frecuentes - FAQ | Zexfro",
+    "metaDescription": "Encuentre respuestas a preguntas comunes sobre los servicios de importación-exportación, cumplimiento, envío y más de Zexfro International Ltd.",
+    "pageTitle": "Preguntas Frecuentes",
+    "pageDescription": "Todo lo que necesita saber sobre el comercio con Zexfro International Ltd. Encuentre respuestas a preguntas comunes sobre nuestros servicios, cumplimiento y procesos.",
+    "introTitle": "¿Cómo Podemos Ayudarlo?",
+    "introDescription": "Explore nuestras preguntas frecuentes para encontrar respuestas rápidas. ¿No encuentra lo que busca? Contacte a nuestro equipo de soporte.",
+    "homeSectionTitle": "Preguntas Frecuentes",
+    "homeSectionSubtitle": "Respuestas rápidas a preguntas comunes sobre nuestros servicios",
+    "viewAllFAQs": "Ver Todas las Preguntas Frecuentes",
+    "categories": {
+      "general": {
+        "title": "Información General"
+      },
+      "compliance": {
+        "title": "Cumplimiento y Documentación"
+      },
+      "shipping": {
+        "title": "Envío y Logística"
+      },
+      "safety": {
+        "title": "Seguridad y Protección Empresarial"
+      },
+      "business": {
+        "title": "Operaciones Comerciales"
+      }
+    },
+    "questions": {
+      "q1": {
+        "question": "¿Qué hace Zexfro International Ltd.?",
+        "answer": "Zexfro International Ltd. es una empresa comercial de importación-exportación con sede en Bangladesh que conecta proveedores y compradores globales. Importamos productos de calidad de mercados internacionales y exportamos productos de Bangladesh en todo el mundo, respaldados por servicios comerciales y logísticos integrales."
+      },
+      "q2": {
+        "question": "¿Dónde está ubicado Zexfro International Ltd.?",
+        "answer": "Nuestra oficina principal está ubicada en 9/B, Sector 8, Uttara, Dhaka-1230, Bangladesh. Operamos en la zona horaria estándar de Bangladesh (UTC +06:00)."
+      },
+      "q3": {
+        "question": "¿Es Zexfro una empresa registrada por el gobierno?",
+        "answer": "Sí. Estamos completamente registrados bajo el Registrador de Empresas y Firmas de Sociedades Anónimas (RJSC), Bangladesh, y operamos con una Licencia Comercial, IRC y ERC válidos."
+      },
+      "q4": {
+        "question": "¿Qué certificados de cumplimiento posee Zexfro International Ltd.?",
+        "answer": "Mantenemos todos los registros comerciales y fiscales obligatorios de Bangladesh, incluidos:<ul><li><strong>Licencia Comercial</strong> (DNCC)</li><li><strong>TIN</strong> (Número de Identificación Fiscal)</li><li><strong>IRC</strong> (Certificado de Registro de Importación)</li><li><strong>ERC</strong> (Certificado de Registro de Exportación)</li></ul>"
+      },
+      "q5": {
+        "question": "¿Cómo garantizan un despacho aduanero fluido?",
+        "answer": "Cada envío está respaldado con documentación completa como:<ul><li>Factura Comercial</li><li>Lista de Empaque</li><li>Conocimiento de Embarque / Guía Aérea</li><li>Certificado de Origen (COO) cuando sea necesario</li><li>Documentos de autorización de seguro y bancarios (p. ej., LC, LCAF)</li></ul>Esto elimina retrasos en el despacho y garantiza el cumplimiento legal."
+      },
+      "q6": {
+        "question": "¿Apoyan el comercio basado en LC (Carta de Crédito)?",
+        "answer": "Sí. Manejamos transacciones de importación y exportación basadas en LC siguiendo los estándares UCP 600 a través de bancos AD autorizados en Bangladesh."
+      },
+      "q7": {
+        "question": "¿Qué tan confiable es su proceso de envío?",
+        "answer": "Ofrecemos un Compromiso de Envío Más Rápido y Entrega Confiable, asegurando que las mercancías se muevan eficientemente a través del Puerto Marítimo de Chattogram, Dhaka ICD y la Carga del Aeropuerto Internacional Hazrat Shahjalal, según el modo de envío."
+      },
+      "q8": {
+        "question": "¿Qué Incoterms utilizan?",
+        "answer": "Seguimos los Incoterms 2020, incluidos FOB, CIF, CFR, EXW, DDP y otros según los acuerdos entre comprador y vendedor."
+      },
+      "q9": {
+        "question": "¿Cómo garantizan la calidad del producto?",
+        "answer": "Obtenemos de proveedores internacionales verificados y aseguramos que todos los productos importados/exportados cumplan con las especificaciones acordadas. Cuando sea necesario, apoyamos inspecciones de terceros y verificación de calidad antes del envío."
+      },
+      "q10": {
+        "question": "¿Qué tipos de productos comercializan?",
+        "answer": "Comercializamos una amplia gama de productos que incluyen:<ul><li>Productos agrícolas</li><li>Materias primas industriales</li><li>Productos de consumo</li><li>Maquinaria y repuestos</li></ul>(Los productos se comercializan según la demanda global y los requisitos de los socios.)"
+      },
+      "q11": {
+        "question": "¿Comercian con países o empresas sancionadas?",
+        "answer": "No. Mantenemos estrictamente el cumplimiento de AML (Anti-Lavado de Dinero) y comercio libre de sanciones. Todos los proveedores y compradores pasan por verificación KYC/KYB."
+      },
+      "q12": {
+        "question": "¿Cómo protegen la información de compradores y proveedores?",
+        "answer": "Mantenemos almacenamiento seguro de documentos digitales y físicos y nunca compartimos información de socios sin autorización."
+      },
+      "q13": {
+        "question": "¿Ofrecen atención al cliente?",
+        "answer": "Sí. Zexfro proporciona Comunicación y Atención al Cliente dedicadas para ayudar a compradores y proveedores durante todo el ciclo de vida comercial."
+      },
+      "q14": {
+        "question": "¿Pueden manejar pedidos al por mayor grandes?",
+        "answer": "Absolutamente. Nos especializamos en soluciones comerciales personalizadas y manejo de pedidos al por mayor para empresas globales."
+      },
+      "q15": {
+        "question": "¿Qué métodos de pago aceptan?",
+        "answer": "Apoyamos:<ul><li><strong>LC</strong> (Carta de Crédito)</li><li><strong>TT</strong> (Transferencia Telegráfica / Transferencia bancaria)</li><li>Otros términos de pago internacional seguros basados en acuerdos a través de bancos AD.</li></ul>"
+      },
+      "q16": {
+        "question": "¿Proporcionan una Factura Proforma antes de la confirmación del pedido?",
+        "answer": "Sí. Emitimos Facturas Proforma para definir detalles del producto, precio, Incoterms y términos de entrega antes de la confirmación final."
+      },
+      "q17": {
+        "question": "¿Por qué elegir Zexfro International Ltd.?",
+        "answer": "Porque proporcionamos:<ul><li>Red sólida de proveedores y compradores globales</li><li>Documentación comercial completa y cumplimiento</li><li>Logística rápida y confiable</li><li>Negocio ético y legalmente protegido</li><li>Asociaciones confiables en todo el mundo</li></ul>"
+      }
+    },
+    "stillHaveQuestions": {
+      "title": "¿Todavía Tiene Preguntas?",
+      "description": "Nuestro equipo está aquí para ayudar. Contáctenos y le responderemos lo antes posible.",
+      "contactButton": "Contáctenos",
+      "emailButton": "Envíenos un Correo"
+    },
+    "cta": {
+      "title": "¿Listo para Comenzar a Comerciar?",
+      "description": "Únase a Zexfro hoy y experimente el comercio internacional sin problemas con total cumplimiento y soporte.",
+      "button": "Regístrese Ahora"
+    }
   }
 }
-

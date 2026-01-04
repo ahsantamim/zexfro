@@ -4,6 +4,7 @@ import { FeaturesSection } from "@/components/home/FeaturesSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { StatsSection } from "@/components/home/StatsSection";
 import { BlogSection } from "@/components/home/BlogSection";
+import { FAQSection } from "@/components/home/FAQSection";
 import { CTASection } from "@/components/home/CTASection";
 
 export default function HomePage() {
@@ -15,6 +16,7 @@ export default function HomePage() {
       <TestimonialsSection />
       <StatsSection />
       <BlogSection />
+      <FAQSection />
       <CTASection />
     </main>
   );

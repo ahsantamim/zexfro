@@ -2,6 +2,11 @@
   "nav": {
     "home": "Home",
     "about": "About",
+    "aboutUs": "About Us",
+    "boardOfDirectors": "Board of Directors",
+    "visionMissionValues": "Vision, Mission & Values",
+    "glossary": "Glossary",
+    "benefitsForSupplier": "Benefits for Supplier",
     "services": "Services",
     "products": "Products",
     "blog": "Blog",
@@ -56,9 +61,17 @@
       }
     }
   },
+  "productCategories": {
+    "title": "Product Categories",
+    "subtitle": "Explore our approved categories for secure and compliant trade",
+    "import": "Import",
+    "export": "Export",
+    "loading": "Loading categories...",
+    "viewAll": "View All Products"
+  },
   "testimonials": {
     "title": "What Our Partners Say",
-    "subtitle": "Join thousands of satisfied importers and exporters"
+    "subtitle": "Trusted by importers and exporters across Europe"
   },
   "stats": {
     "title": "Trusted by industry leaders with",
@@ -68,24 +81,159 @@
     "revenueGenerated": "Revenue generated",
     "yearsExperience": "Years of experience"
   },
-  "cta": {
-    "title": "Ready to Transform Your Trade Business?",
-    "subtitle": "Join our growing network of verified importers and exporters",
-    "button": "Get Started Today"
-  },
-  "productCategories": {
-    "title": "Product Categories",
-    "subtitle": "Explore our approved categories for secure and compliant trade",
-    "import": "Import",
-    "export": "Export",
-    "loading": "Loading categories...",
-    "viewAll": "View All Products"
-  },
   "blog": {
     "title": "Latest Insights & Updates",
     "subtitle": "Stay informed with industry trends, trade regulations, and expert advice",
     "read": "Read",
     "viewAll": "View All Articles"
+  },
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Join thousands of satisfied customers and transform your global trade operations today",
+    "button": "Contact Us Now"
+  },
+  "footer": {
+    "brandTitle": "Zexfro",
+    "brandDescription": "Secure. Compliant. Global Trade Made Simple.",
+    "address": "123 Trade Street, Business District",
+    "phone": "+1 (555) 123-4567",
+    "email": "info@zexfro.com",
+    "companyTitle": "Company",
+    "companyPaymentMethods": "Payment Methods",
+    "companyCaseStudies": "Case Studies / Portfolio",
+    "companyCareers": "Careers",
+    "companyPartner": "Partner With Us",
+    "companyQuote": "Request a Quote",
+    "companyMission": "Mission",
+    "companyVision": "Vision & Values",
+    "companySocial": "Social Media Links",
+    "resourcesTitle": "Resources",
+    "resourcesBlog": "Blog / News",
+    "resourcesFaq": "FAQ",
+    "resourcesContact": "Contact Us",
+    "resourcesLogistics": "Logistics & Supply Chain",
+    "resourcesPrivacy": "Privacy Policy",
+    "resourcesTerms": "Terms & Conditions",
+    "servicesTitle": "Services",
+    "servicesAdvantages": "Competitive Advantages",
+    "servicesLogisticsSupport": "Logistics Support",
+    "servicesQualityAssurance": "Quality Assurance",
+    "servicesComplianceStandards": "Compliance & Standards",
+    "servicesDocumentationCompliance": "Documentation & Compliance",
+    "copyright": "© {year} Zexfro. All rights reserved."
+  },
+  "notFound": {
+    "title": "404 - Page Not Found",
+    "description": "The page you are looking for does not exist.",
+    "goHome": "Go to Home"
+  },
+  "faq": {
+    "metaTitle": "FAQ - Frequently Asked Questions | Zexfro",
+    "metaDescription": "Find answers to common questions about Zexfro International Ltd's import-export services, compliance, shipping, and more.",
+    "pageTitle": "Frequently Asked Questions",
+    "pageDescription": "Everything you need to know about trading with Zexfro International Ltd. Find answers to common questions about our services, compliance, and processes.",
+    "introTitle": "How Can We Help You?",
+    "introDescription": "Browse through our frequently asked questions to find quick answers. Can't find what you're looking for? Contact our support team.",
+    "homeSectionTitle": "Frequently Asked Questions",
+    "homeSectionSubtitle": "Quick answers to common questions about our services",
+    "viewAllFAQs": "View All FAQs",
+    "categories": {
+      "general": {
+        "title": "General Information"
+      },
+      "compliance": {
+        "title": "Compliance & Documentation"
+      },
+      "shipping": {
+        "title": "Shipping & Logistics"
+      },
+      "safety": {
+        "title": "Business Safety & Security"
+      },
+      "business": {
+        "title": "Business Operations"
+      }
+    },
+    "questions": {
+      "q1": {
+        "question": "What does Zexfro International Ltd. do?",
+        "answer": "Zexfro International Ltd. is a Bangladesh-based export-import trading company that connects global suppliers and buyers. We import quality products from international markets and export Bangladeshi goods worldwide, supported by end-to-end trade and logistics services."
+      },
+      "q2": {
+        "question": "Where is Zexfro International Ltd. located?",
+        "answer": "Our head office is located in 9/B, Sector 8, Uttara, Dhaka-1230, Bangladesh. We operate in the Bangladesh Standard Time zone (UTC +06:00)."
+      },
+      "q3": {
+        "question": "Is Zexfro a government-registered company?",
+        "answer": "Yes. We are fully registered under the Registrar of Joint Stock Companies & Firms (RJSC), Bangladesh, and operate with a valid Trade License, IRC, and ERC."
+      },
+      "q4": {
+        "question": "What compliance certificates does Zexfro International Ltd. hold?",
+        "answer": "We maintain all mandatory Bangladesh trade and tax registrations, including:<ul><li><strong>Trade License</strong> (DNCC)</li><li><strong>TIN</strong> (Tax Identification Number)</li><li><strong>IRC</strong> (Import Registration Certificate)</li><li><strong>ERC</strong> (Export Registration Certificate)</li></ul>"
+      },
+      "q5": {
+        "question": "How do you ensure smooth customs clearance?",
+        "answer": "Every consignment is supported with complete documentation such as:<ul><li>Commercial Invoice</li><li>Packing List</li><li>Bill of Lading / Airway Bill</li><li>Certificate of Origin (COO) when required</li><li>Insurance and banking authorization documents (e.g., LC, LCAF)</li></ul>This eliminates clearance delays and ensures legal compliance."
+      },
+      "q6": {
+        "question": "Do you support LC (Letter of Credit) based trade?",
+        "answer": "Yes. We handle LC-based import and export transactions following UCP 600 standards through authorized AD banks in Bangladesh."
+      },
+      "q7": {
+        "question": "How reliable is your shipping process?",
+        "answer": "We offer Faster Shipment & Reliable Delivery Commitment, ensuring goods move efficiently through Chattogram Sea Port, Dhaka ICD, and Hazrat Shahjalal International Airport Cargo, depending on the shipment mode."
+      },
+      "q8": {
+        "question": "Which Incoterms do you use?",
+        "answer": "We follow Incoterms 2020, including FOB, CIF, CFR, EXW, DDP, and others depending on buyer-seller agreements."
+      },
+      "q9": {
+        "question": "How do you ensure product quality?",
+        "answer": "We source from verified international suppliers and ensure all imported/exported goods meet the agreed specifications. When required, we support third-party inspections and quality verification before shipment."
+      },
+      "q10": {
+        "question": "What types of products do you trade?",
+        "answer": "We trade a wide range of products including:<ul><li>Agricultural goods</li><li>Industrial raw materials</li><li>Consumer products</li><li>Machinery and spare parts</li></ul>(Products are traded based on global demand and partner requirements.)"
+      },
+      "q11": {
+        "question": "Do you trade with sanctioned countries or companies?",
+        "answer": "No. We strictly maintain AML (Anti-Money Laundering) and Sanction-free trade compliance. All suppliers and buyers go through KYC/KYB verification."
+      },
+      "q12": {
+        "question": "How do you protect buyer and supplier information?",
+        "answer": "We maintain secure digital and physical document storage and never share partner information without authorization."
+      },
+      "q13": {
+        "question": "Do you offer customer support?",
+        "answer": "Yes. Zexfro provides dedicated Communication & Customer Support to assist buyers and suppliers throughout the trade lifecycle."
+      },
+      "q14": {
+        "question": "Can you handle large bulk orders?",
+        "answer": "Absolutely. We specialize in customized trade solutions and bulk order handling for global businesses."
+      },
+      "q15": {
+        "question": "What payment methods do you accept?",
+        "answer": "We support:<ul><li><strong>LC</strong> (Letter of Credit)</li><li><strong>TT</strong> (Telegraphic Transfer / Bank transfer)</li><li>Other secure international payment terms based on agreements through AD banks.</li></ul>"
+      },
+      "q16": {
+        "question": "Do you provide a Proforma Invoice before order confirmation?",
+        "answer": "Yes. We issue Proforma Invoices to define product details, price, Incoterms, and delivery terms before final confirmation."
+      },
+      "q17": {
+        "question": "Why choose Zexfro International Ltd.?",
+        "answer": "Because we provide:<ul><li>Strong global supplier-buyer network</li><li>Complete trade documentation and compliance</li><li>Fast and reliable logistics</li><li>Ethical and legally protected business</li><li>Trusted partnerships worldwide</li></ul>"
+      }
+    },
+    "stillHaveQuestions": {
+      "title": "Still Have Questions?",
+      "description": "Our team is here to help. Contact us and we'll get back to you as soon as possible.",
+      "contactButton": "Contact Us",
+      "emailButton": "Email Us"
+    },
+    "cta": {
+      "title": "Ready to Start Trading?",
+      "description": "Join Zexfro today and experience seamless international trade with full compliance and support.",
+      "button": "Register Now"
+    }
   }
 }
-

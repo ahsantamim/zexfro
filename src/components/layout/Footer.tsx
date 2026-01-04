@@ -2,30 +2,39 @@
 
 import { Link } from "@/i18n/routing";
 import { Mail, Phone, MapPin } from "lucide-react";
-
-const footerLinks = {
-  company: [
-    { href: "/about", label: "About Us" },
-    { href: "/payment-methods", label: "Payment Methods" },
-    { href: "/register", label: "Register" },
-    { href: "/contact", label: "Contact" },
-  ],
-  resources: [
-    { href: "/blog", label: "Blog / News" },
-    { href: "/products", label: "Products" },
-    { href: "/services", label: "Services" },
-    { href: "/contact", label: "Contact Us" },
-  ],
-  services: [
-    { href: "/advantages", label: "Competitive Advantages" },
-    { href: "/logistics-support", label: "Logistics Support" },
-    { href: "/quality-assurance", label: "Quality Assurance" },
-    { href: "/compliance-standards", label: "Compliance & Standards" },
-    { href: "/documentation-compliance", label: "Documentation & Compliance" },
-  ],
-};
+import { useTranslations } from "next-intl";
 
 export function Footer() {
+  const t = useTranslations("footer");
+
+  const footerLinks = {
+    company: [
+      { href: "/payment-methods", label: t("companyPaymentMethods") },
+      { href: "/contact", label: t("companyCaseStudies") },
+      { href: "/contact", label: t("companyCareers") },
+      { href: "/contact", label: t("companyPartner") },
+      { href: "/contact", label: t("companyQuote") },
+      { href: "/about", label: t("companyMission") },
+      { href: "/vision-mission-values", label: t("companyVision") },
+      { href: "/contact", label: t("companySocial") },
+    ],
+    resources: [
+      { href: "/blog", label: t("resourcesBlog") },
+      { href: "/faq", label: t("resourcesFaq") },
+      { href: "/contact", label: t("resourcesContact") },
+      { href: "/logistics-support", label: t("resourcesLogistics") },
+      { href: "/privacy-policy", label: t("resourcesPrivacy") },
+      { href: "/terms-conditions", label: t("resourcesTerms") },
+    ],
+    services: [
+      { href: "/advantages", label: t("servicesAdvantages") },
+      { href: "/logistics-support", label: t("servicesLogisticsSupport") },
+      { href: "/quality-assurance", label: t("servicesQualityAssurance") },
+      { href: "/compliance-standards", label: t("servicesComplianceStandards") },
+      { href: "/documentation-compliance", label: t("servicesDocumentationCompliance") },
+    ],
+  };
+
   return (
     <footer className="bg-gray-900 text-gray-300 relative overflow-hidden">
       {/* World Map Background */}
@@ -48,32 +57,32 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-white">Zexfro</h3>
+            <h3 className="text-2xl font-bold text-white">{t("brandTitle")}</h3>
             <p className="text-sm text-gray-400">
-              Secure. Compliant. Global Trade Made Simple.
+              {t("brandDescription")}
             </p>
             <div className="space-y-2 text-sm">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
-                <span>123 Trade Street, Business District</span>
+                <span>{t("address")}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>+1 (555) 123-4567</span>
+                <span>{t("phone")}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                <span>info@zexfro.com</span>
+                <span>{t("email")}</span>
               </div>
             </div>
           </div>
 
           {/* Company Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Company</h4>
+            <h4 className="text-white font-semibold mb-4">{t("companyTitle")}</h4>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link
                     href={link.href}
                     className="text-sm hover:text-white transition-colors"
@@ -87,10 +96,10 @@ export function Footer() {
 
           {/* Resources Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Resources</h4>
+            <h4 className="text-white font-semibold mb-4">{t("resourcesTitle")}</h4>
             <ul className="space-y-2">
               {footerLinks.resources.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link
                     href={link.href}
                     className="text-sm hover:text-white transition-colors"
@@ -104,10 +113,10 @@ export function Footer() {
 
           {/* Services Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Services</h4>
+            <h4 className="text-white font-semibold mb-4">{t("servicesTitle")}</h4>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link
                     href={link.href}
                     className="text-sm hover:text-white transition-colors"
@@ -122,7 +131,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-800 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Zexfro. All rights reserved.</p>
+          <p>{t("copyright", { year: new Date().getFullYear() })}</p>
         </div>
       </div>
     </footer>
