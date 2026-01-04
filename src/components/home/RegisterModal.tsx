@@ -197,7 +197,6 @@ export function RegisterModal({ children }: RegisterModalProps) {
     phoneNumber: "",
     email: "",
     telephone: "",
-    password: "",
   });
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -217,7 +216,6 @@ export function RegisterModal({ children }: RegisterModalProps) {
       const submitFormData = new FormData();
       submitFormData.append("name", formData.name);
       submitFormData.append("email", formData.email);
-      submitFormData.append("password", formData.password);
       submitFormData.append("country", formData.country);
       submitFormData.append("company", formData.companyName);
       submitFormData.append("designation", formData.designation);
@@ -260,7 +258,6 @@ export function RegisterModal({ children }: RegisterModalProps) {
           phoneNumber: "",
           email: "",
           telephone: "",
-          password: "",
         });
         setFileName("");
         setSelectedFile(null);
@@ -572,25 +569,6 @@ export function RegisterModal({ children }: RegisterModalProps) {
                 }
                 className="bg-white border-gray-300 text-black placeholder:text-gray-600 focus:border-blue-500 focus:ring-blue-500"
                 placeholder="Enter your email address"
-              />
-            </div>
-
-            {/* Password */}
-            <div className="space-y-2">
-              <Label htmlFor="password" className="text-white font-semibold">
-                Password *
-              </Label>
-              <Input
-                id="password"
-                required
-                type="password"
-                value={formData.password}
-                onChange={(e) =>
-                  setFormData({ ...formData, password: e.target.value })
-                }
-                className="bg-white border-gray-300 text-black placeholder:text-gray-600 focus:border-blue-500 focus:ring-blue-500"
-                placeholder="Create a password"
-                minLength={6}
               />
             </div>
 
