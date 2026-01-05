@@ -25,6 +25,7 @@ export function Footer() {
       { href: "/logistics-support", label: t("resourcesLogistics") },
       { href: "/privacy-policy", label: t("resourcesPrivacy") },
       { href: "/terms-conditions", label: t("resourcesTerms") },
+      { href: "/hs-code", label: t("resourcesHsCode") },
     ],
     services: [
       { href: "/advantages", label: t("servicesAdvantages") },
