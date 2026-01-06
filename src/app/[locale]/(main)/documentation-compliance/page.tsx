@@ -1,12 +1,22 @@
 import { DocLayout, DocSection } from "@/components/ui/DocLayout";
 import { FileText, Building2, ShieldCheck, Package, Banknote, Receipt, Globe2, Database, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
+import { getTranslations } from 'next-intl/server';
+import { routing } from '@/i18n/routing';
 
-export const metadata = {
-  title: "Documentation & Compliance - Zero International Limited",
-  description:
-    "Zero International Limited operates under a comprehensive documentation and compliance framework ensuring full legal validity, transparent trade operations, and smooth international business activities.",
-};
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'documentationCompliance' });
+  
+  return {
+    title: t('metaTitle'),
+    description: t('metaDescription'),
+  };
+}
 
 const sections = [
   { id: "overview", title: "Documentation & Compliance Framework" },

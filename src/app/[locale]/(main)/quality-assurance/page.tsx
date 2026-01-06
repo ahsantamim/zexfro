@@ -1,12 +1,22 @@
 import { DocLayout, DocSection } from "@/components/ui/DocLayout";
 import { ShieldCheck, Users, FileCheck, Eye, Award, CheckCircle } from "lucide-react";
 import Image from "next/image";
+import { getTranslations } from 'next-intl/server';
+import { routing } from '@/i18n/routing';
 
-export const metadata = {
-  title: "Quality Assurance - Zexfro | International Trade Standards",
-  description:
-    "Zexfro International Ltd ensures quality through verified partners, regulatory compliance, real-time monitoring, and alignment with international standards for reliable global trade operations.",
-};
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'qualityAssurance' });
+  
+  return {
+    title: t('metaTitle'),
+    description: t('metaDescription'),
+  };
+}
 
 const sections = [
   { id: "overview", title: "Quality Assurance Overview" },

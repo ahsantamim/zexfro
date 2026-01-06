@@ -1,12 +1,22 @@
 import { DocLayout, DocSection } from "@/components/ui/DocLayout";
 import { Shield, FileCheck, Users, Leaf, Target, Scale } from "lucide-react";
 import Image from "next/image";
+import { getTranslations } from 'next-intl/server';
+import { routing } from '@/i18n/routing';
 
-export const metadata = {
-  title: "Compliance & Standards - Zexfro | International Trade Excellence",
-  description:
-    "Zexfro International Limited maintains strict compliance with international laws, ethical sourcing standards, and quality benchmarks for trusted global trade operations.",
-};
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'complianceStandards' });
+  
+  return {
+    title: t('metaTitle'),
+    description: t('metaDescription'),
+  };
+}
 
 const sections = [
   { id: "overview", title: "Compliance & Standards Overview" },

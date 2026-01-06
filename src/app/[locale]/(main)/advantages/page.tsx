@@ -1,150 +1,125 @@
+"use client";
+
 import { DocLayout, DocSection } from "@/components/ui/DocLayout";
 import { Globe, TrendingUp, Truck, Shield, Clock, Users, Package } from "lucide-react";
 import Image from "next/image";
-
-export const metadata = {
-  title: "Competitive Advantages - Zexfro | Why Choose Us",
-  description:
-    "Discover Zexfro's competitive advantages in international trade. Strong global network, deep market insight, end-to-end logistics expertise, and commitment to excellence.",
-};
-
-const sections = [
-  { id: "global-network", title: "Strong Global Supplier & Buyer Network" },
-  { id: "market-insight", title: "Deep Market Insight in Bangladesh" },
-  { id: "trade-logistics", title: "End-to-End Trade & Logistics Expertise" },
-  { id: "quality-pricing", title: "Quality Assurance at Competitive Pricing" },
-  { id: "delivery", title: "Faster Shipment & Reliable Delivery" },
-  { id: "communication", title: "Transparent Communication & Customer Support" },
-  { id: "custom-solutions", title: "Customized Trade Solutions" },
-];
+import { useTranslations } from 'next-intl';
 
 export default function CompetitiveAdvantagesPage() {
+  const t = useTranslations('advantages');
+  
+  const sections = [
+    { id: "global-network", title: t('sectionTitles.globalNetwork') },
+    { id: "market-insight", title: t('sectionTitles.marketInsight') },
+    { id: "trade-logistics", title: t('sectionTitles.tradeLogistics') },
+    { id: "quality-pricing", title: t('sectionTitles.qualityPricing') },
+    { id: "delivery", title: t('sectionTitles.delivery') },
+    { id: "communication", title: t('sectionTitles.communication') },
+    { id: "custom-solutions", title: t('sectionTitles.customSolutions') },
+  ];
+
   return (
     <DocLayout
       sections={sections}
-      pageTitle="Our Competitive Advantages"
-      pageDescription="At Zexfro International Limited, our strength lies in our ability to connect global markets with Bangladesh efficiently, reliably, and transparently. Discover what makes us your trusted partner in international trade."
+      pageTitle={t('pageTitle')}
+      pageDescription={t('pageDescription')}
     >
       {/* Section 1: Strong Global Supplier & Buyer Network */}
-      <DocSection id="global-network" title="Strong Global Supplier & Buyer Network">
+      <DocSection id="global-network" title={t('sectionTitles.globalNetwork')}>
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <Globe className="w-6 h-6 text-[#0a4a9e]" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              Trusted Partnerships Across Multiple Countries
+              {t('globalNetwork.subtitle')}
             </h3>
             <p className="text-gray-600">
-              We maintain verified partnerships enabling seamless sourcing and delivery
-              of quality products to and from international markets.
+              {t('globalNetwork.description')}
             </p>
           </div>
         </div>
 
         <p>
-          Zexfro International Limited has built a powerful and diversified global
-          network of verified suppliers and international buyers, forming the backbone
-          of our import–export operations. This network enables us to operate with
-          speed, reliability, and market competitiveness.
+          {t('globalNetwork.intro')}
         </p>
 
         {/* Image */}
         <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl my-8">
           <Image
             src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&q=80"
-            alt="Global business network and partnerships"
+            alt={t('globalNetwork.imageAlt')}
             fill
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">Building Strong Global Partnerships</p>
+            <p className="text-sm font-semibold">{t('globalNetwork.imageCaption')}</p>
           </div>
         </div>
 
         <div className="bg-blue-50 border-l-4 border-[#0a4a9e] p-6 my-6">
-          <h4 className="font-bold text-gray-900 mb-3">Global Sourcing Capability</h4>
+          <h4 className="font-bold text-gray-900 mb-3">{t('globalNetwork.capabilityTitle')}</h4>
           <ul className="space-y-3 text-gray-700">
             <li className="flex items-start gap-3">
               <span className="text-[#0a4a9e] font-bold">•</span>
-              <span>
-                We work with manufacturers, exporters, and distributors across{" "}
-                <strong>Asia, Africa, Europe, USA, and the Middle East</strong>
-              </span>
+              <span>{t('globalNetwork.capability1')}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-[#0a4a9e] font-bold">•</span>
-              <span>
-                Our supplier connections allow us to source high-quality products, rare
-                commodities, industrial parts, and agricultural equipment based on
-                client demand
-              </span>
+              <span>{t('globalNetwork.capability2')}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-[#0a4a9e] font-bold">•</span>
-              <span>
-                We ensure that every supplier undergoes background verification, trade
-                compliance checks, and product quality assessment before business
-                engagement
-              </span>
+              <span>{t('globalNetwork.capability3')}</span>
             </li>
           </ul>
         </div>
 
         <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
-          International Market Reach for Exports
+          {t('globalNetwork.exportsTitle')}
         </h4>
         <p>
-          We connect Bangladeshi producers with buyers in multiple global regions. Our
-          buyer network includes wholesalers, importers, retailers, and industry-based
-          procurement partners. We help local manufacturers expand their footprint by
-          ensuring global visibility, fair pricing, and smooth trade execution.
+          {t('globalNetwork.exportsDesc')}
         </p>
 
         <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
-          Reliable & Long-Term Partnerships
+          {t('globalNetwork.partnershipsTitle')}
         </h4>
         <p>
-          Our business relationships are built on trust, consistency, and contractual
-          transparency. Many of our partners maintain long-term trade agreements due to
-          our on-time shipment record and ethical trade practices. We act as a bridge
-          between global supply chains and Bangladesh, simplifying cross-border
-          business.
+          {t('globalNetwork.partnershipsDesc')}
         </p>
 
         <div className="bg-white border-2 border-[#0a4a9e] rounded-lg p-6 my-6">
-          <h4 className="font-bold text-gray-900 mb-4">Benefits for Our Clients</h4>
+          <h4 className="font-bold text-gray-900 mb-4">{t('globalNetwork.benefitsTitle')}</h4>
           <ul className="space-y-2 text-gray-700">
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✔</span>
-              <span>Access to multiple sourcing options for price comparison</span>
+              <span>{t('globalNetwork.benefit1')}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✔</span>
-              <span>Reduced procurement risk with verified partners</span>
+              <span>{t('globalNetwork.benefit2')}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✔</span>
-              <span>Faster response time due to direct supplier communication</span>
+              <span>{t('globalNetwork.benefit3')}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✔</span>
-              <span>Ability to fulfill both small and bulk shipment orders</span>
+              <span>{t('globalNetwork.benefit4')}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✔</span>
-              <span>Consistent export demand for Bangladeshi goods</span>
+              <span>{t('globalNetwork.benefit5')}</span>
             </li>
           </ul>
         </div>
 
         <div className="bg-gradient-to-r from-[#0a4a9e] to-[#05306b] rounded-lg p-6 text-white text-center">
-          <p className="text-xl font-bold">Our Network, Your Growth</p>
+          <p className="text-xl font-bold">{t('globalNetwork.conclusionTitle')}</p>
           <p className="mt-2 text-white/90">
-            With our strong supplier and buyer ecosystem, we empower businesses to
-            import smarter and export bigger, ensuring a profitable and secure trade
-            experience.
+            {t('globalNetwork.conclusionDesc')}
           </p>
         </div>
       </DocSection>

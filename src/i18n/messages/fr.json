@@ -128,6 +128,130 @@
     "description": "La page que vous recherchez n'existe pas.",
     "goHome": "Aller à l'Accueil"
   },
+  "advantages": {
+    "metaTitle": "Avantages Compétitifs - Zexfro | Pourquoi Nous Choisir",
+    "metaDescription": "Découvrez les avantages compétitifs de Zexfro dans le commerce international.",
+    "pageTitle": "Nos Avantages Compétitifs",
+    "pageDescription": "Chez Zexfro International Limited, notre force réside dans notre capacité à connecter les marchés mondiaux avec le Bangladesh de manière efficace, fiable et transparente.",
+    "sectionTitles": {
+      "globalNetwork": "Réseau Mondial Solide de Fournisseurs et Acheteurs",
+      "marketInsight": "Connaissance Approfondie du Marché au Bangladesh",
+      "tradeLogistics": "Expertise Commerciale et Logistique Complète",
+      "qualityPricing": "Assurance Qualité à Prix Compétitifs",
+      "delivery": "Expédition Plus Rapide et Livraison Fiable",
+      "communication": "Communication Transparente et Support Client",
+      "customSolutions": "Solutions Commerciales Personnalisées"
+    },
+    "globalNetwork": {
+      "subtitle": "Partenariats de Confiance dans Plusieurs Pays",
+      "description": "Nous maintenons des partenariats vérifiés permettant un approvisionnement et une livraison fluides de produits de qualité.",
+      "intro": "Zexfro International Limited a construit un réseau mondial puissant et diversifié de fournisseurs vérifiés et d'acheteurs internationaux.",
+      "imageAlt": "Réseau mondial d'affaires et partenariats",
+      "imageCaption": "Construction de Partenariats Mondiaux Solides",
+      "capabilityTitle": "Capacité d'Approvisionnement Mondial",
+      "capability1": "Nous travaillons avec des fabricants, exportateurs et distributeurs en Asie, Afrique, Europe, États-Unis et Moyen-Orient",
+      "capability2": "Nos connexions de fournisseurs nous permettent de sourcer des produits de haute qualité, des produits rares, des pièces industrielles et des équipements agricoles",
+      "capability3": "Nous nous assurons que chaque fournisseur subit une vérification des antécédents, des contrôles de conformité commerciale et une évaluation de la qualité des produits",
+      "exportsTitle": "Portée du Marché International pour les Exportations",
+      "exportsDesc": "Nous connectons les producteurs bangladais avec des acheteurs dans plusieurs régions mondiales. Notre réseau d'acheteurs comprend des grossistes, importateurs, détaillants et partenaires d'approvisionnement basés sur l'industrie.",
+      "partnershipsTitle": "Partenariats Fiables et à Long Terme",
+      "partnershipsDesc": "Nos relations commerciales sont basées sur la confiance, la cohérence et la transparence contractuelle.",
+      "benefitsTitle": "Avantages pour Nos Clients",
+      "benefit1": "Accès à plusieurs options d'approvisionnement pour la comparaison des prix",
+      "benefit2": "Risque d'approvisionnement réduit avec des partenaires vérifiés",
+      "benefit3": "Temps de réponse plus rapide grâce à la communication directe avec les fournisseurs",
+      "benefit4": "Capacité de satisfaire les petites et grandes commandes en vrac",
+      "benefit5": "Demande d'exportation constante pour les produits bangladais",
+      "conclusionTitle": "Notre Réseau, Votre Croissance",
+      "conclusionDesc": "Avec notre solide écosystème de fournisseurs et d'acheteurs, nous permettons aux entreprises d'importer plus intelligemment et d'exporter plus grand."
+    }
+  },
+  "logisticsSupport": {
+    "metaTitle": "Logistique et Chaîne d'Approvisionnement - Zexfro | Solutions Logistiques Complètes",
+    "metaDescription": "Zexfro fournit une gestion complète de la logistique et de la chaîne d'approvisionnement.",
+    "pageTitle": "Logistique et Chaîne d'Approvisionnement",
+    "pageDescription": "Solutions complètes de gestion de la chaîne d'approvisionnement conçues pour rationaliser vos opérations commerciales mondiales avec efficacité, fiabilité et transparence totale.",
+    "overview": {
+      "title": "Solutions Complètes de Chaîne d'Approvisionnement",
+      "subtitle": "De l'origine à la destination, nous gérons chaque aspect de vos opérations logistiques pour assurer un commerce mondial transparent, efficace et rentable.",
+      "freightTitle": "Gestion du Fret",
+      "freightDesc": "Coordination experte des services de fret aérien, maritime et terrestre pour garantir que votre cargaison arrive à destination à temps et dans le budget.",
+      "warehousingTitle": "Solutions d'Entreposage",
+      "warehousingDesc": "Installations de stockage sécurisées avec systèmes de gestion des stocks pour garder vos produits en sécurité et accessibles quand vous en avez besoin.",
+      "customsTitle": "Dédouanement",
+      "customsDesc": "Support documentaire complet et services de courtage en douane pour assurer des passages frontaliers fluides et la conformité réglementaire.",
+      "trackingTitle": "Suivi en Temps Réel",
+      "trackingDesc": "Visibilité 24/7 sur vos expéditions avec technologie de suivi avancée et notifications de statut automatisées.",
+      "networkTitle": "Réseau Mondial",
+      "networkDesc": "Réseau étendu de partenaires et transporteurs de confiance couvrant toutes les principales routes commerciales et destinations dans le monde.",
+      "riskTitle": "Gestion des Risques",
+      "riskDesc": "Couverture d'assurance complète et planification des contingences pour protéger votre cargaison contre les circonstances imprévues."
+    },
+    "transportation": {
+      "title": "Transport Multimodal",
+      "subtitle": "Options d'expédition flexibles adaptées à vos besoins spécifiques, délais et exigences budgétaires.",
+      "airTitle": "Fret Aérien",
+      "airDesc": "Services de fret aérien rapides et fiables pour les expéditions urgentes. Idéal pour les produits de grande valeur, les denrées périssables et les livraisons urgentes nécessitant la vitesse plutôt que le coût.",
+      "seaTitle": "Fret Maritime",
+      "seaDesc": "Transport maritime rentable pour les cargaisons en vrac et les gros volumes. Options de conteneur complet (FCL) et groupage (LCL) disponibles.",
+      "landTitle": "Transport Terrestre",
+      "landDesc": "Services de fret routier et ferroviaire efficaces pour les expéditions nationales et transfrontalières. Livraison porte-à-porte avec suivi GPS en temps réel.",
+      "imageAlt": "Réseau mondial de transport et de logistique",
+      "stat1": "150+",
+      "stat1Label": "Pays Desservis",
+      "stat2": "10K+",
+      "stat2Label": "Expéditions/An",
+      "stat3": "98%",
+      "stat3Label": "Livraison à Temps"
+    },
+    "process": {
+      "title": "Notre Processus Logistique",
+      "subtitle": "Une approche rationalisée pour gérer votre chaîne d'approvisionnement de bout en bout",
+      "step1Title": "Planification des Commandes",
+      "step1Desc": "Nous analysons vos besoins et créons une stratégie logistique optimale adaptée à vos besoins.",
+      "step2Title": "Documentation",
+      "step2Desc": "Préparation complète de tous les documents douaniers et d'expédition requis pour un traitement fluide.",
+      "step3Title": "Transport",
+      "step3Desc": "Exécution du mouvement du fret en utilisant le mode de transport le plus efficace et rentable.",
+      "step4Title": "Livraison et Suivi",
+      "step4Desc": "Surveillance en temps réel et confirmation de livraison finale avec visibilité complète de l'expédition."
+    },
+    "benefits": {
+      "title": "Pourquoi Choisir Nos Services Logistiques",
+      "subtitle": "Découvrez les avantages de travailler avec un partenaire logistique mondial de confiance",
+      "efficiencyTitle": "Efficacité du Temps",
+      "efficiencyDesc": "Le routage et la planification optimisés garantissent que votre cargaison arrive à l'heure. Notre taux moyen de livraison à temps dépasse 98%, minimisant les retards et maintenant votre chaîne d'approvisionnement en mouvement.",
+      "securityTitle": "Sécurité et Protection",
+      "securityDesc": "Votre cargaison est protégée par une couverture d'assurance complète et des procédures de manutention sécurisées. Nous maintenons les normes de sécurité les plus élevées tout au long de la chaîne logistique.",
+      "transparencyTitle": "Transparence Complète",
+      "transparencyDesc": "Le suivi en temps réel et les notifications automatisées vous tiennent informé à chaque étape. Accédez aux informations détaillées sur l'expédition à tout moment via notre portail en ligne ou application mobile.",
+      "reachTitle": "Portée Mondiale",
+      "reachDesc": "Notre vaste réseau de partenaires de confiance s'étend sur plus de 150 pays, garantissant un service fiable où que votre entreprise vous emmène. Des principaux centres commerciaux aux emplacements éloignés."
+    },
+    "cta": {
+      "title": "Prêt à Optimiser Votre Chaîne d'Approvisionnement?",
+      "description": "Associez-vous à Zexfro pour des solutions logistiques fiables, efficaces et rentables qui font avancer votre entreprise. Contactez-nous aujourd'hui pour une consultation gratuite.",
+      "button": "Commencez Aujourd'hui"
+    }
+  },
+  "qualityAssurance": {
+    "metaTitle": "Assurance Qualité - Zexfro | Normes de Commerce International",
+    "metaDescription": "Zexfro International Ltd garantit la qualité grâce à des partenaires vérifiés, la conformité réglementaire, la surveillance en temps réel et l'alignement sur les normes internationales pour des opérations commerciales mondiales fiables.",
+    "pageTitle": "Assurance Qualité",
+    "pageDescription": "Le modèle d'assurance qualité de Zexfro International Ltd garantit que chaque aspect du commerce international, de la vérification des fournisseurs à la livraison finale, répond aux normes les plus élevées de qualité, de conformité et de fiabilité."
+  },
+  "complianceStandards": {
+    "metaTitle": "Conformité et Normes - Zexfro | Excellence en Commerce International",
+    "metaDescription": "Zexfro International Limited maintient une stricte conformité aux lois internationales, aux normes d'approvisionnement éthique et aux critères de qualité pour des opérations commerciales mondiales fiables.",
+    "pageTitle": "Conformité et Normes",
+    "pageDescription": "Chez Zexfro International Limited, nous reconnaissons que la confiance est la principale monnaie du commerce mondial. Opérer dans le secteur de l'exportation-importation nécessite plus que de la logistique; cela nécessite un engagement rigide envers les lois internationales, l'approvisionnement éthique et les critères de qualité."
+  },
+  "documentationCompliance": {
+    "metaTitle": "Documentation et Conformité - Zero International Limited",
+    "metaDescription": "Zero International Limited opère sous un cadre complet de documentation et de conformité garantissant la pleine validité juridique, des opérations commerciales transparentes et des activités commerciales internationales fluides.",
+    "pageTitle": "Documentation et Conformité",
+    "pageDescription": "Zero International Limited opère sous un cadre complet de documentation et de conformité pour garantir la pleine validité juridique, des opérations commerciales transparentes et des activités commerciales internationales fluides. Tous les processus suivent strictement les exigences réglementaires du Bangladesh et les normes commerciales internationales applicables."
+  },
   "faq": {
     "metaTitle": "Questions Fréquemment Posées - FAQ | Zexfro",
     "metaDescription": "Trouvez des réponses aux questions courantes sur les services d'importation-exportation, la conformité, l'expédition et plus encore de Zexfro International Ltd.",

@@ -5,6 +5,18 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { setRequestLocale } from 'next-intl/server';
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
+import { SessionProvider } from "@/components/providers/SessionProvider";
+import { Outfit } from "next/font/google";
+import "@/styles/globals.css";
+import type { Metadata } from "next";
+
+const outfit = Outfit({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Zexfro - Global Trade Made Simple",
+  description:
+    "Secure. Compliant. Global Trade Made Simple. Connect with verified partners in Europe.",
+};
 
 type Props = {
   children: ReactNode;
@@ -31,11 +43,13 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-      <body>
-        <NextIntlClientProvider messages={messages}>
-          {children}
-          <WhatsAppButton />
-        </NextIntlClientProvider>
+      <body className={outfit.className}>
+        <SessionProvider>
+          <NextIntlClientProvider messages={messages}>
+            {children}
+            <WhatsAppButton />
+          </NextIntlClientProvider>
+        </SessionProvider>
       </body>
     </html>
   );
