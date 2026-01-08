@@ -407,57 +407,62 @@ export default function DocumentationCompliancePage() {
         </div>
 
         <div className="bg-yellow-50 border-l-4 border-yellow-600 p-6 my-6">
-          <h4 className="font-bold text-gray-900 mb-4">Standard Shipping Documents</h4>
-          <p className="text-sm text-gray-700 mb-4">
-            Every shipment is accompanied by complete and accurate documentation to ensure
-            compliance with international trade regulations:
+          <h4 className="font-bold text-gray-900 mb-2">
+            Customs &amp; Shipment Compliance Documents
+          </h4>
+          <p className="text-sm text-gray-700 mb-5">
+            For every consignment, we generate and preserve mandatory trade documents required
+            by Bangladesh Customs, Port Authorities, and International Partners:
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li className="flex items-start gap-3">
-                <span className="text-yellow-600 font-bold">•</span>
-                <span>
-                  <strong>Commercial Invoice:</strong> Detailed transaction record including
-                  pricing and terms
-                </span>
+
+          <div className="rounded-lg bg-white/70 border border-yellow-200 overflow-hidden">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 bg-white border-b border-yellow-200">
+              <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide">Document</p>
+              <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide">Purpose</p>
+            </div>
+            <ul className="divide-y divide-yellow-100">
+              <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
+                <span className="font-semibold text-gray-900">Commercial Invoice</span>
+                <span>Proof of trade value</span>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="text-yellow-600 font-bold">•</span>
-                <span>
-                  <strong>Packing List:</strong> Comprehensive cargo details and packaging
-                  information
-                </span>
+              <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
+                <span className="font-semibold text-gray-900">Packing List</span>
+                <span>Product breakdown &amp; weight</span>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="text-yellow-600 font-bold">•</span>
-                <span>
-                  <strong>Bill of Lading / Airway Bill:</strong> Transport document and
-                  title of goods
-                </span>
+              <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
+                <span className="font-semibold text-gray-900">Bill of Lading / Airway Bill</span>
+                <span>Shipment contract</span>
               </li>
-            </ul>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li className="flex items-start gap-3">
-                <span className="text-yellow-600 font-bold">•</span>
-                <span>
-                  <strong>Certificate of Origin:</strong> Verification of product source country
-                </span>
+              <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
+                <span className="font-semibold text-gray-900">Certificate of Origin (COO)</span>
+                <span>Product source proof</span>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="text-yellow-600 font-bold">•</span>
-                <span>
-                  <strong>HS Code Declaration:</strong> Harmonized System classification for
-                  customs
-                </span>
+              <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
+                <span className="font-semibold text-gray-900">LC (Letter of Credit) documents</span>
+                <span>Bank-secured trade</span>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="text-yellow-600 font-bold">•</span>
-                <span>
-                  <strong>Insurance Certificate:</strong> Cargo insurance coverage documentation
+              <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
+                <span className="font-semibold text-gray-900">Insurance Certificate</span>
+                <span>Cargo safety</span>
+              </li>
+              <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
+                <span className="font-semibold text-gray-900">Proforma Invoice</span>
+                <span>Buyer-seller agreement</span>
+              </li>
+              <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
+                <span className="font-semibold text-gray-900">
+                  LCAF (Letter of Credit Authorization Form)
                 </span>
+                <span>Required for LC imports</span>
               </li>
             </ul>
           </div>
+
+          <p className="text-sm text-gray-700 mt-5">
+            These documents ensure fast clearance at <strong>Chattogram Port</strong>,{" "}
+            <strong>ICD Dhaka</strong>, and{" "}
+            <strong>Hazrat Shahjalal International Airport Cargo</strong>.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
