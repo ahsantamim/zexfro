@@ -58,7 +58,7 @@ export default function CategoryPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen pt-60">
+      <main className="min-h-screen pt-16 md:pt-20">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="flex items-center justify-center py-20">
             <div className="text-center space-y-4">
@@ -73,7 +73,7 @@ export default function CategoryPage() {
 
   if (error || !category) {
     return (
-      <main className="min-h-screen pt-60">
+      <main className="min-h-screen pt-16 md:pt-20">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="text-center py-20">
             <Package className="w-16 h-16 text-gray-400 mx-auto mb-4" />
@@ -95,7 +95,7 @@ export default function CategoryPage() {
   }
 
   return (
-    <main className="min-h-screen pt-60">
+    <main className="min-h-screen pt-16 md:pt-20">
       {/* Back Button */}
       <section className="py-6 bg-white border-b">
         <div className="container mx-auto max-w-7xl px-4">

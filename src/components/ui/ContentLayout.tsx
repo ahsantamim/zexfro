@@ -30,7 +30,7 @@ export function ContentLayout({
         />
         
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a4a9e]/95 via-[#05306b]/90 to-[#041f3f]/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a4a9e]/95 via-[#05306b]/10 to-[#041f3f]/85" />
         
         {/* Decorative Geometric Shapes */}
         <div className="absolute inset-0 opacity-10">

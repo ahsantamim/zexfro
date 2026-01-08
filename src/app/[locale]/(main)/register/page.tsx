@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function RegisterPage() {
   return (
-    <main className="min-h-screen pt-60">
+    <main className="min-h-screen pt-16 md:pt-20">
       <PageHeader
         title="Register"
         description="Join us today and get started"

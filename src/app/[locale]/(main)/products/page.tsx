@@ -21,7 +21,7 @@ export default function ProductsPage() {
   };
 
   return (
-    <main className="min-h-screen pt-60">
+    <main className="min-h-screen pt-16 md:pt-20">
       <PageHeader
         title="Our Products"
         description="Discover our comprehensive range of export and import products connecting businesses across borders"

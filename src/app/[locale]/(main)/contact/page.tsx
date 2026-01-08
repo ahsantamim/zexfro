@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen pt-20 md:pt-60">
+    <main className="min-h-screen pt-16 md:pt-20">
       <PageHeader
         title="Contact Us"
         description="We'd love to hear from you. Send us a message!"

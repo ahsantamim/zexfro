@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen pt-60">
+    <main className="min-h-screen pt-16 md:pt-20">
       <PageHeader
         title="Blog"
         description="Insights, news, and updates from our team"

@@ -129,7 +129,7 @@ export default function ProductPage() {
   const sanitizedHtml = DOMPurify.sanitize(product.long_description || "");
 
   return (
-    <main className="min-h-screen bg-white pt-20 md:pt-60">
+    <main className="min-h-screen bg-white pt-16 md:pt-20">
       {/* Breadcrumb Navigation */}
       <div className="bg-gray-50 border-b border-gray-200">
         <div className="container mx-auto px-4 py-4 max-w-7xl">
