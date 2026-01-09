@@ -1,20 +1,38 @@
 import { DocLayout, DocSection } from "@/components/ui/DocLayout";
-import { FileText, Building2, ShieldCheck, Package, Banknote, Receipt, Globe2, Database, CheckCircle2, Award } from "lucide-react";
+import {
+  FileText,
+  Building2,
+  ShieldCheck,
+  Package,
+  Banknote,
+  Receipt,
+  Globe2,
+  Database,
+  CheckCircle2,
+  Award,
+} from "lucide-react";
 import Image from "next/image";
-import { getTranslations } from 'next-intl/server';
-import { routing } from '@/i18n/routing';
+import { getTranslations } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'documentationCompliance' });
-  
+  const t = await getTranslations({
+    locale,
+    namespace: "documentationCompliance",
+  });
+
   return {
-    title: t('metaTitle'),
-    description: t('metaDescription'),
+    title: t("metaTitle"),
+    description: t("metaDescription"),
   };
 }
 
@@ -49,17 +67,18 @@ export default function DocumentationCompliancePage() {
               Full Legal Compliance & Transparency
             </h3>
             <p className="text-gray-600">
-              Comprehensive documentation framework ensuring legal validity and regulatory
-              compliance across all operations.
+              Comprehensive documentation framework ensuring legal validity and
+              regulatory compliance across all operations.
             </p>
           </div>
         </div>
 
         <p>
-          Zero International Limited operates under a comprehensive documentation and compliance
-          framework to ensure full legal validity, transparent trade operations, and smooth
-          international business activities. All processes strictly follow the regulatory
-          requirements of Bangladesh and applicable international trade standards.
+          Zero International Limited operates under a comprehensive
+          documentation and compliance framework to ensure full legal validity,
+          transparent trade operations, and smooth international business
+          activities. All processes strictly follow the regulatory requirements
+          of Bangladesh and applicable international trade standards.
         </p>
 
         {/* Image */}
@@ -72,46 +91,50 @@ export default function DocumentationCompliancePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">Comprehensive Compliance Framework</p>
+            <p className="text-sm font-semibold">
+              Comprehensive Compliance Framework
+            </p>
           </div>
         </div>
 
         <div className="bg-blue-50 border-l-4 border-[#0a4a9e] p-6 my-6">
-          <h4 className="font-bold text-gray-900 mb-3">Our Documentation Framework Includes:</h4>
+          <h4 className="font-bold text-gray-900 mb-3">
+            Our Documentation Framework Includes:
+          </h4>
           <ul className="space-y-3 text-gray-700">
             <li className="flex items-start gap-3">
               <span className="text-[#0a4a9e] font-bold">•</span>
               <span>
-                <strong>Company Registration & Legal Foundation:</strong> Proper incorporation
-                and statutory documents
+                <strong>Company Registration & Legal Foundation:</strong> Proper
+                incorporation and statutory documents
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-[#0a4a9e] font-bold">•</span>
               <span>
-                <strong>Import & Export Authorization:</strong> Full authorization for
-                international trade activities
+                <strong>Import & Export Authorization:</strong> Full
+                authorization for international trade activities
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-[#0a4a9e] font-bold">•</span>
               <span>
-                <strong>Customs & Shipment Compliance:</strong> Accurate declarations and
-                transparent procedures
+                <strong>Customs & Shipment Compliance:</strong> Accurate
+                declarations and transparent procedures
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-[#0a4a9e] font-bold">•</span>
               <span>
-                <strong>Banking & Financial Compliance:</strong> Authorized transactions
-                through commercial banks
+                <strong>Banking & Financial Compliance:</strong> Authorized
+                transactions through commercial banks
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-[#0a4a9e] font-bold">•</span>
               <span>
-                <strong>Tax & VAT Compliance:</strong> Full compliance with national tax
-                regulations
+                <strong>Tax & VAT Compliance:</strong> Full compliance with
+                national tax regulations
               </span>
             </li>
           </ul>
@@ -122,8 +145,8 @@ export default function DocumentationCompliancePage() {
             Complete Documentation for Transparent Operations
           </p>
           <p className="mt-2 text-white/90">
-            Every aspect of our business is properly documented and compliant with all
-            applicable regulations.
+            Every aspect of our business is properly documented and compliant
+            with all applicable regulations.
           </p>
         </div>
       </DocSection>
@@ -139,16 +162,17 @@ export default function DocumentationCompliancePage() {
               Legally Registered and Properly Incorporated
             </h3>
             <p className="text-gray-600">
-              Zero International Limited is a legally registered company in Bangladesh with
-              all statutory documents properly maintained.
+              Zero International Limited is a legally registered company in
+              Bangladesh with all statutory documents properly maintained.
             </p>
           </div>
         </div>
 
         <p>
-          Zero International Limited is a legally registered company in Bangladesh. All
-          incorporation and statutory documents are properly maintained and updated to ensure
-          regulatory compliance and corporate governance.
+          Zero International Limited is a legally registered company in
+          Bangladesh. All incorporation and statutory documents are properly
+          maintained and updated to ensure regulatory compliance and corporate
+          governance.
         </p>
 
         {/* Image */}
@@ -171,19 +195,31 @@ export default function DocumentationCompliancePage() {
             <ul className="space-y-3 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <span className="text-green-600 font-bold">✓</span>
-                <span><strong>Certificate of Incorporation</strong> - Legal entity establishment</span>
+                <span>
+                  <strong>Certificate of Incorporation</strong> - Legal entity
+                  establishment
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-600 font-bold">✓</span>
-                <span><strong>Memorandum of Association (MOA)</strong> - Company objectives and powers</span>
+                <span>
+                  <strong>Memorandum of Association (MOA)</strong> - Company
+                  objectives and powers
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-600 font-bold">✓</span>
-                <span><strong>Articles of Association (AOA)</strong> - Internal management rules</span>
+                <span>
+                  <strong>Articles of Association (AOA)</strong> - Internal
+                  management rules
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-600 font-bold">✓</span>
-                <span><strong>Director and Shareholder Records</strong> - Complete ownership documentation</span>
+                <span>
+                  <strong>Director and Shareholder Records</strong> - Complete
+                  ownership documentation
+                </span>
               </li>
             </ul>
           </div>
@@ -196,15 +232,19 @@ export default function DocumentationCompliancePage() {
                   Registrar of Joint Stock Companies and Firms (RJSC)
                 </p>
                 <p className="text-sm text-gray-700">
-                  All incorporation documents are issued and maintained by the RJSC, the
-                  official government authority responsible for company registration in Bangladesh.
+                  All incorporation documents are issued and maintained by the
+                  RJSC, the official government authority responsible for
+                  company registration in Bangladesh.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-4">
-                <p className="text-xs font-semibold text-gray-600 mb-2">CORPORATE GOVERNANCE</p>
+                <p className="text-xs font-semibold text-gray-600 mb-2">
+                  CORPORATE GOVERNANCE
+                </p>
                 <p className="text-sm text-gray-700">
-                  Regular updates and maintenance of all statutory records ensure ongoing
-                  compliance with Bangladesh Companies Act requirements.
+                  Regular updates and maintenance of all statutory records
+                  ensure ongoing compliance with Bangladesh Companies Act
+                  requirements.
                 </p>
               </div>
             </div>
@@ -214,24 +254,29 @@ export default function DocumentationCompliancePage() {
         <div className="bg-green-50 border-l-4 border-green-600 p-6 my-6">
           <h4 className="font-bold text-gray-900 mb-3">Trade License</h4>
           <p className="text-gray-700 mb-3">
-            The company holds a valid <strong>Trade License</strong> issued by the relevant
-            city authority and renews it annually to maintain uninterrupted business operations.
+            The company holds a valid <strong>Trade License</strong> issued by
+            the relevant city authority and renews it annually to maintain
+            uninterrupted business operations.
           </p>
           <div className="bg-white rounded-lg p-4 mt-3">
-            <p className="text-sm font-semibold text-gray-900 mb-1">Issuing Authority:</p>
+            <p className="text-sm font-semibold text-gray-900 mb-1">
+              Issuing Authority:
+            </p>
             <p className="text-sm text-gray-700">
-              <strong>Dhaka North City Corporation (DNCC)</strong> - The municipal authority
-              responsible for issuing and renewing trade licenses for businesses operating
-              within Dhaka North.
+              <strong>Dhaka North City Corporation (DNCC)</strong> - The
+              municipal authority responsible for issuing and renewing trade
+              licenses for businesses operating within Dhaka North.
             </p>
           </div>
         </div>
 
         <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-lg p-6 text-white text-center">
-          <p className="text-xl font-bold">Fully Licensed and Legally Compliant</p>
+          <p className="text-xl font-bold">
+            Fully Licensed and Legally Compliant
+          </p>
           <p className="mt-2 text-white/90">
-            All incorporation and operational licenses are maintained in full compliance with
-            Bangladesh law.
+            All incorporation and operational licenses are maintained in full
+            compliance with Bangladesh law.
           </p>
         </div>
       </DocSection>
@@ -247,15 +292,16 @@ export default function DocumentationCompliancePage() {
               Fully Authorized for International Trade
             </h3>
             <p className="text-gray-600">
-              Complete authorization to conduct import and export activities in Bangladesh.
+              Complete authorization to conduct import and export activities in
+              Bangladesh.
             </p>
           </div>
         </div>
 
         <p>
-          Zero International Limited is fully authorized to conduct import and export activities
-          in Bangladesh. We hold all necessary certificates and registrations required for
-          legal international trade operations.
+          Zero International Limited is fully authorized to conduct import and
+          export activities in Bangladesh. We hold all necessary certificates
+          and registrations required for legal international trade operations.
         </p>
 
         {/* Image */}
@@ -268,7 +314,9 @@ export default function DocumentationCompliancePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">Authorized International Trade Operations</p>
+            <p className="text-sm font-semibold">
+              Authorized International Trade Operations
+            </p>
           </div>
         </div>
 
@@ -278,8 +326,8 @@ export default function DocumentationCompliancePage() {
               Import Registration Certificate (IRC)
             </h4>
             <p className="text-sm text-gray-700 mb-4">
-              The IRC authorizes Zero International Limited to import goods into Bangladesh
-              from international markets. This certificate ensures:
+              The IRC authorizes Zero International Limited to import goods into
+              Bangladesh from international markets. This certificate ensures:
             </p>
             <ul className="space-y-2 text-sm text-gray-700">
               <li className="flex items-start gap-2">
@@ -306,8 +354,8 @@ export default function DocumentationCompliancePage() {
               Export Registration Certificate (ERC)
             </h4>
             <p className="text-sm text-gray-700 mb-4">
-              The ERC authorizes Zero International Limited to export goods from Bangladesh
-              to international markets. This certificate provides:
+              The ERC authorizes Zero International Limited to export goods from
+              Bangladesh to international markets. This certificate provides:
             </p>
             <ul className="space-y-2 text-sm text-gray-700">
               <li className="flex items-start gap-2">
@@ -334,11 +382,13 @@ export default function DocumentationCompliancePage() {
           <h4 className="font-bold text-gray-900 mb-3">Issuing Authority</h4>
           <div className="space-y-3">
             <p className="text-gray-700">
-              <strong>Office of the Chief Controller of Imports & Exports (CCI&E)</strong>
+              <strong>
+                Office of the Chief Controller of Imports & Exports (CCI&E)
+              </strong>
             </p>
             <p className="text-sm text-gray-700">
-              The CCI&E is the designated government authority under the Ministry of Commerce
-              responsible for:
+              The CCI&E is the designated government authority under the
+              Ministry of Commerce responsible for:
             </p>
             <ul className="space-y-2 text-sm text-gray-700 mt-3">
               <li className="flex items-start gap-3">
@@ -364,8 +414,8 @@ export default function DocumentationCompliancePage() {
         <div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg p-6 text-white text-center">
           <p className="text-xl font-bold">Fully Certified for Global Trade</p>
           <p className="mt-2 text-white/90">
-            Our IRC and ERC certifications ensure legal, compliant, and seamless international
-            trade operations.
+            Our IRC and ERC certifications ensure legal, compliant, and seamless
+            international trade operations.
           </p>
         </div>
       </DocSection>
@@ -381,16 +431,17 @@ export default function DocumentationCompliancePage() {
               Transparent Customs Procedures
             </h3>
             <p className="text-gray-600">
-              All shipments processed according to Bangladesh Customs regulations for accurate
-              declarations and timely clearance.
+              All shipments processed according to Bangladesh Customs
+              regulations for accurate declarations and timely clearance.
             </p>
           </div>
         </div>
 
         <p>
-          All shipments are processed in accordance with Bangladesh Customs regulations to
-          ensure accurate declarations, timely clearance, and full transparency. Our customs
-          compliance procedures guarantee smooth international trade operations.
+          All shipments are processed in accordance with Bangladesh Customs
+          regulations to ensure accurate declarations, timely clearance, and
+          full transparency. Our customs compliance procedures guarantee smooth
+          international trade operations.
         </p>
 
         {/* Image */}
@@ -403,7 +454,9 @@ export default function DocumentationCompliancePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">Compliant Customs Procedures</p>
+            <p className="text-sm font-semibold">
+              Compliant Customs Procedures
+            </p>
           </div>
         </div>
 
@@ -412,42 +465,61 @@ export default function DocumentationCompliancePage() {
             Customs &amp; Shipment Compliance Documents
           </h4>
           <p className="text-sm text-gray-700 mb-5">
-            For every consignment, we generate and preserve mandatory trade documents required
-            by Bangladesh Customs, Port Authorities, and International Partners:
+            For every consignment, we generate and preserve mandatory trade
+            documents required by Bangladesh Customs, Port Authorities, and
+            International Partners:
           </p>
 
           <div className="rounded-lg bg-white/70 border border-yellow-200 overflow-hidden">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 bg-white border-b border-yellow-200">
-              <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide">Document</p>
-              <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide">Purpose</p>
+              <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide">
+                Document
+              </p>
+              <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide">
+                Purpose
+              </p>
             </div>
             <ul className="divide-y divide-yellow-100">
               <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
-                <span className="font-semibold text-gray-900">Commercial Invoice</span>
+                <span className="font-semibold text-gray-900">
+                  Commercial Invoice
+                </span>
                 <span>Proof of trade value</span>
               </li>
               <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
-                <span className="font-semibold text-gray-900">Packing List</span>
+                <span className="font-semibold text-gray-900">
+                  Packing List
+                </span>
                 <span>Product breakdown &amp; weight</span>
               </li>
               <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
-                <span className="font-semibold text-gray-900">Bill of Lading / Airway Bill</span>
+                <span className="font-semibold text-gray-900">
+                  Bill of Lading / Airway Bill
+                </span>
                 <span>Shipment contract</span>
               </li>
               <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
-                <span className="font-semibold text-gray-900">Certificate of Origin (COO)</span>
+                <span className="font-semibold text-gray-900">
+                  Certificate of Origin (COO)
+                </span>
                 <span>Product source proof</span>
               </li>
               <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
-                <span className="font-semibold text-gray-900">LC (Letter of Credit) documents</span>
+                <span className="font-semibold text-gray-900">
+                  LC (Letter of Credit) documents
+                </span>
                 <span>Bank-secured trade</span>
               </li>
               <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
-                <span className="font-semibold text-gray-900">Insurance Certificate</span>
+                <span className="font-semibold text-gray-900">
+                  Insurance Certificate
+                </span>
                 <span>Cargo safety</span>
               </li>
               <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
-                <span className="font-semibold text-gray-900">Proforma Invoice</span>
+                <span className="font-semibold text-gray-900">
+                  Proforma Invoice
+                </span>
                 <span>Buyer-seller agreement</span>
               </li>
               <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
@@ -460,8 +532,8 @@ export default function DocumentationCompliancePage() {
           </div>
 
           <p className="text-sm text-gray-700 mt-5">
-            These documents ensure fast clearance at <strong>Chattogram Port</strong>,{" "}
-            <strong>ICD Dhaka</strong>, and{" "}
+            These documents ensure fast clearance at{" "}
+            <strong>Chattogram Port</strong>, <strong>ICD Dhaka</strong>, and{" "}
             <strong>Hazrat Shahjalal International Airport Cargo</strong>.
           </p>
         </div>
@@ -469,7 +541,9 @@ export default function DocumentationCompliancePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
           <div className="bg-white border-2 border-yellow-600 rounded-lg p-6 text-center">
             <div className="text-3xl mb-3">📋</div>
-            <h4 className="font-bold text-gray-900 mb-2">Accurate Declarations</h4>
+            <h4 className="font-bold text-gray-900 mb-2">
+              Accurate Declarations
+            </h4>
             <p className="text-sm text-gray-600">
               100% accuracy in customs documentation and product descriptions
             </p>
@@ -493,8 +567,8 @@ export default function DocumentationCompliancePage() {
         <div className="bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-lg p-6 text-white text-center">
           <p className="text-xl font-bold">Seamless Customs Clearance</p>
           <p className="mt-2 text-white/90">
-            Our comprehensive documentation ensures smooth customs procedures and compliance
-            with all regulations.
+            Our comprehensive documentation ensures smooth customs procedures
+            and compliance with all regulations.
           </p>
         </div>
       </DocSection>
@@ -510,16 +584,18 @@ export default function DocumentationCompliancePage() {
               Authorized Financial Transactions
             </h3>
             <p className="text-gray-600">
-              All trade-related financial transactions conducted through authorized commercial
-              banks in compliance with foreign exchange regulations.
+              All trade-related financial transactions conducted through
+              authorized commercial banks in compliance with foreign exchange
+              regulations.
             </p>
           </div>
         </div>
 
         <p>
-          All trade-related financial transactions are conducted through authorized commercial
-          banks and comply with foreign exchange regulations established by Bangladesh Bank,
-          the central banking authority.
+          All trade-related financial transactions are conducted through
+          authorized commercial banks and comply with foreign exchange
+          regulations established by Bangladesh Bank, the central banking
+          authority.
         </p>
 
         {/* Image */}
@@ -532,53 +608,61 @@ export default function DocumentationCompliancePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">Compliant Financial Operations</p>
+            <p className="text-sm font-semibold">
+              Compliant Financial Operations
+            </p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
           <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">Financial Documentation</h4>
+            <h4 className="font-bold text-gray-900 mb-3">
+              Financial Documentation
+            </h4>
             <ul className="space-y-3 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <span className="text-orange-600 font-bold">•</span>
                 <span>
-                  <strong>Bank Solvency Certificate:</strong> Proof of financial standing and
-                  creditworthiness
+                  <strong>Bank Solvency Certificate:</strong> Proof of financial
+                  standing and creditworthiness
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-orange-600 font-bold">•</span>
                 <span>
-                  <strong>Letter of Credit (LC) Documentation:</strong> Secure payment
-                  mechanism for international transactions
+                  <strong>Letter of Credit (LC) Documentation:</strong> Secure
+                  payment mechanism for international transactions
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-orange-600 font-bold">•</span>
                 <span>
-                  <strong>Proforma Invoice:</strong> Preliminary transaction documentation for
-                  LC establishment
+                  <strong>Proforma Invoice:</strong> Preliminary transaction
+                  documentation for LC establishment
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-orange-600 font-bold">•</span>
                 <span>
-                  <strong>Foreign Exchange Endorsements:</strong> Proper documentation of all
-                  foreign currency transactions
+                  <strong>Foreign Exchange Endorsements:</strong> Proper
+                  documentation of all foreign currency transactions
                 </span>
               </li>
             </ul>
           </div>
 
           <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">Regulatory Authority</h4>
+            <h4 className="font-bold text-gray-900 mb-3">
+              Regulatory Authority
+            </h4>
             <div className="space-y-4">
               <div>
-                <p className="font-semibold text-gray-900 mb-2">Bangladesh Bank</p>
+                <p className="font-semibold text-gray-900 mb-2">
+                  Bangladesh Bank
+                </p>
                 <p className="text-sm text-gray-700 mb-3">
-                  The central bank of Bangladesh regulates all foreign exchange transactions
-                  and international trade payments.
+                  The central bank of Bangladesh regulates all foreign exchange
+                  transactions and international trade payments.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-4">
@@ -586,8 +670,12 @@ export default function DocumentationCompliancePage() {
                   COMPLIANCE REQUIREMENTS
                 </p>
                 <ul className="space-y-2 text-sm text-gray-700">
-                  <li>• All international payments through authorized dealers</li>
-                  <li>• Proper documentation of foreign exchange transactions</li>
+                  <li>
+                    • All international payments through authorized dealers
+                  </li>
+                  <li>
+                    • Proper documentation of foreign exchange transactions
+                  </li>
                   <li>• Adherence to Bangladesh Bank forex regulations</li>
                   <li>• Timely reporting of trade transactions</li>
                 </ul>
@@ -597,7 +685,9 @@ export default function DocumentationCompliancePage() {
         </div>
 
         <div className="bg-orange-50 border-l-4 border-orange-600 p-6 my-6">
-          <h4 className="font-bold text-gray-900 mb-3">Banking Compliance Benefits:</h4>
+          <h4 className="font-bold text-gray-900 mb-3">
+            Banking Compliance Benefits:
+          </h4>
           <ul className="space-y-2 text-gray-700">
             <li className="flex items-start gap-3">
               <span className="text-orange-600 font-bold text-xl">✔</span>
@@ -621,8 +711,8 @@ export default function DocumentationCompliancePage() {
         <div className="bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg p-6 text-white text-center">
           <p className="text-xl font-bold">Secure Financial Operations</p>
           <p className="mt-2 text-white/90">
-            All transactions conducted through authorized channels in full compliance with
-            Bangladesh Bank regulations.
+            All transactions conducted through authorized channels in full
+            compliance with Bangladesh Bank regulations.
           </p>
         </div>
       </DocSection>
@@ -630,24 +720,25 @@ export default function DocumentationCompliancePage() {
       {/* Section 6: Tax & VAT Compliance */}
       <DocSection id="tax" title="Tax & VAT Compliance">
         <div className="flex items-start gap-4 mb-6">
-          <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-            <Receipt className="w-6 h-6 text-red-600" />
+          <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <Receipt className="w-6 h-6 text-teal-600" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
               Full Tax & VAT Compliance
             </h3>
             <p className="text-gray-600">
-              Complete compliance with national tax and VAT regulations with accurate
-              financial reporting.
+              Complete compliance with national tax and VAT regulations with
+              accurate financial reporting.
             </p>
           </div>
         </div>
 
         <p>
-          Zero International Limited fully complies with national tax and VAT regulations and
-          maintains accurate financial reporting. All tax obligations are met in accordance
-          with the requirements of the National Board of Revenue (NBR).
+          Zero International Limited fully complies with national tax and VAT
+          regulations and maintains accurate financial reporting. All tax
+          obligations are met in accordance with the requirements of the
+          National Board of Revenue (NBR).
         </p>
 
         {/* Image */}
@@ -660,62 +751,68 @@ export default function DocumentationCompliancePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">Comprehensive Tax Compliance</p>
+            <p className="text-sm font-semibold">
+              Comprehensive Tax Compliance
+            </p>
           </div>
         </div>
 
-        <div className="bg-red-50 border-l-4 border-red-600 p-6 my-6">
+        <div className="bg-teal-50/30 border-l-4 border-teal-500 p-6 my-6 shadow-sm">
           <h4 className="font-bold text-gray-900 mb-4">Compliance Coverage</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h5 className="font-semibold text-gray-900 mb-3">VAT Compliance</h5>
+              <h5 className="font-semibold text-gray-900 mb-3">
+                VAT Compliance
+              </h5>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-red-600 font-bold">•</span>
+                  <span className="text-teal-600 font-bold">•</span>
                   <span>
-                    <strong>VAT Registration:</strong> Properly registered with NBR for VAT
-                    collection and remittance
+                    <strong>VAT Registration:</strong> Properly registered with
+                    NBR for VAT collection and remittance
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-red-600 font-bold">•</span>
+                  <span className="text-teal-600 font-bold">•</span>
                   <span>
-                    <strong>Monthly VAT Returns:</strong> Timely filing of VAT returns and
-                    payment of dues
+                    <strong>Monthly VAT Returns:</strong> Timely filing of VAT
+                    returns and payment of dues
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-red-600 font-bold">•</span>
+                  <span className="text-teal-600 font-bold">•</span>
                   <span>
-                    <strong>VAT Documentation:</strong> Proper invoicing and record-keeping
-                    for VAT transactions
+                    <strong>VAT Documentation:</strong> Proper invoicing and
+                    record-keeping for VAT transactions
                   </span>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h5 className="font-semibold text-gray-900 mb-3">Income Tax Compliance</h5>
+              <h5 className="font-semibold text-gray-900 mb-3">
+                Income Tax Compliance
+              </h5>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-red-600 font-bold">•</span>
+                  <span className="text-teal-600 font-bold">•</span>
                   <span>
-                    <strong>Annual Income Tax Returns:</strong> Complete and accurate tax
-                    return filing
+                    <strong>Annual Income Tax Returns:</strong> Complete and
+                    accurate tax return filing
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-red-600 font-bold">•</span>
+                  <span className="text-teal-600 font-bold">•</span>
                   <span>
-                    <strong>Withholding Tax Records:</strong> Proper deduction and remittance
-                    of withholding taxes
+                    <strong>Withholding Tax Records:</strong> Proper deduction
+                    and remittance of withholding taxes
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-red-600 font-bold">•</span>
+                  <span className="text-teal-600 font-bold">•</span>
                   <span>
-                    <strong>Tax Audit Readiness:</strong> Maintained documentation for tax
-                    audits and assessments
+                    <strong>Tax Audit Readiness:</strong> Maintained
+                    documentation for tax audits and assessments
                   </span>
                 </li>
               </ul>
@@ -723,8 +820,10 @@ export default function DocumentationCompliancePage() {
           </div>
         </div>
 
-        <div className="bg-white border-2 border-red-600 rounded-lg p-6 my-6">
-          <h4 className="font-bold text-gray-900 mb-4 text-center">Regulatory Authority</h4>
+        <div className="bg-teal-50/40 border-2 border-teal-500 rounded-lg p-6 my-6 shadow-md">
+          <h4 className="font-bold text-gray-900 mb-4 text-center">
+            Regulatory Authority
+          </h4>
           <div className="text-center mb-4">
             <p className="text-lg font-semibold text-gray-900">
               National Board of Revenue (NBR)
@@ -734,40 +833,48 @@ export default function DocumentationCompliancePage() {
             </p>
           </div>
           <p className="text-sm text-gray-700 text-center">
-            The NBR is responsible for formulating and implementing tax policies, collecting
-            revenue, and ensuring compliance with tax laws including VAT Act, Income Tax
-            Ordinance, and Customs Act.
+            The NBR is responsible for formulating and implementing tax
+            policies, collecting revenue, and ensuring compliance with tax laws
+            including VAT Act, Income Tax Ordinance, and Customs Act.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-6">
-          <div className="bg-red-50 rounded-lg p-4 text-center">
-            <div className="text-2xl font-bold text-red-600 mb-2">✓</div>
-            <p className="font-semibold text-gray-900 text-sm mb-1">VAT Registered</p>
+          <div className="bg-teal-50/30 rounded-lg p-4 text-center">
+            <div className="text-2xl font-bold text-teal-600 mb-2">✓</div>
+            <p className="font-semibold text-gray-900 text-sm mb-1">
+              VAT Registered
+            </p>
             <p className="text-xs text-gray-600">Valid registration</p>
           </div>
-          <div className="bg-red-50 rounded-lg p-4 text-center">
-            <div className="text-2xl font-bold text-red-600 mb-2">✓</div>
-            <p className="font-semibold text-gray-900 text-sm mb-1">Timely Returns</p>
+          <div className="bg-teal-50/30 rounded-lg p-4 text-center">
+            <div className="text-2xl font-bold text-teal-600 mb-2">✓</div>
+            <p className="font-semibold text-gray-900 text-sm mb-1">
+              Timely Returns
+            </p>
             <p className="text-xs text-gray-600">Monthly VAT filing</p>
           </div>
-          <div className="bg-red-50 rounded-lg p-4 text-center">
-            <div className="text-2xl font-bold text-red-600 mb-2">✓</div>
-            <p className="font-semibold text-gray-900 text-sm mb-1">Tax Compliant</p>
+          <div className="bg-teal-50/30 rounded-lg p-4 text-center">
+            <div className="text-2xl font-bold text-teal-600 mb-2">✓</div>
+            <p className="font-semibold text-gray-900 text-sm mb-1">
+              Tax Compliant
+            </p>
             <p className="text-xs text-gray-600">Annual returns filed</p>
           </div>
-          <div className="bg-red-50 rounded-lg p-4 text-center">
-            <div className="text-2xl font-bold text-red-600 mb-2">✓</div>
-            <p className="font-semibold text-gray-900 text-sm mb-1">Audit Ready</p>
+          <div className="bg-teal-50/30 rounded-lg p-4 text-center">
+            <div className="text-2xl font-bold text-teal-600 mb-2">✓</div>
+            <p className="font-semibold text-gray-900 text-sm mb-1">
+              Audit Ready
+            </p>
             <p className="text-xs text-gray-600">Complete records</p>
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-lg p-6 text-white text-center">
+        <div className="bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg p-6 text-white text-center">
           <p className="text-xl font-bold">100% Tax Compliance</p>
           <p className="mt-2 text-white/90">
-            Full adherence to all VAT and income tax requirements ensures transparent and
-            responsible financial operations.
+            Full adherence to all VAT and income tax requirements ensures
+            transparent and responsible financial operations.
           </p>
         </div>
       </DocSection>
@@ -783,16 +890,17 @@ export default function DocumentationCompliancePage() {
               Adherence to National & International Standards
             </h3>
             <p className="text-gray-600">
-              Full compliance with Bangladesh trade policies and international shipping
-              standards.
+              Full compliance with Bangladesh trade policies and international
+              shipping standards.
             </p>
           </div>
         </div>
 
         <p>
-          The company adheres to all applicable national and international trade regulations,
-          ensuring legal and compliant cross-border commerce. Our operations are governed by
-          comprehensive trade policies and international standards.
+          The company adheres to all applicable national and international trade
+          regulations, ensuring legal and compliant cross-border commerce. Our
+          operations are governed by comprehensive trade policies and
+          international standards.
         </p>
 
         {/* Image */}
@@ -815,68 +923,72 @@ export default function DocumentationCompliancePage() {
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h5 className="font-semibold text-gray-900 mb-3">National Regulations</h5>
+              <h5 className="font-semibold text-gray-900 mb-3">
+                National Regulations
+              </h5>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-start gap-3">
                   <span className="text-indigo-600 font-bold">•</span>
                   <span>
-                    <strong>Bangladesh Import Policy Order:</strong> Governing all import
-                    activities and product categories
+                    <strong>Bangladesh Import Policy Order:</strong> Governing
+                    all import activities and product categories
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-indigo-600 font-bold">•</span>
                   <span>
-                    <strong>Bangladesh Export Policy:</strong> Framework for export
-                    operations and incentives
+                    <strong>Bangladesh Export Policy:</strong> Framework for
+                    export operations and incentives
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-indigo-600 font-bold">•</span>
                   <span>
-                    <strong>Customs Act:</strong> Regulations for customs procedures and
-                    clearance
+                    <strong>Customs Act:</strong> Regulations for customs
+                    procedures and clearance
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-indigo-600 font-bold">•</span>
                   <span>
-                    <strong>VAT & Supplementary Duty Act:</strong> Tax obligations on
-                    imported and exported goods
+                    <strong>VAT & Supplementary Duty Act:</strong> Tax
+                    obligations on imported and exported goods
                   </span>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h5 className="font-semibold text-gray-900 mb-3">International Standards</h5>
+              <h5 className="font-semibold text-gray-900 mb-3">
+                International Standards
+              </h5>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-start gap-3">
                   <span className="text-indigo-600 font-bold">•</span>
                   <span>
-                    <strong>Incoterms:</strong> International commercial terms for
-                    shipment and delivery
+                    <strong>Incoterms:</strong> International commercial terms
+                    for shipment and delivery
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-indigo-600 font-bold">•</span>
                   <span>
-                    <strong>International shipping standards:</strong> Compliance with
-                    maritime and air cargo regulations
+                    <strong>International shipping standards:</strong>{" "}
+                    Compliance with maritime and air cargo regulations
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-indigo-600 font-bold">•</span>
                   <span>
-                    <strong>Product safety standards:</strong> CE marking, ISO certifications
-                    where applicable
+                    <strong>Product safety standards:</strong> CE marking, ISO
+                    certifications where applicable
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-indigo-600 font-bold">•</span>
                   <span>
-                    <strong>Destination country requirements:</strong> Compliance with
-                    import regulations of target markets
+                    <strong>Destination country requirements:</strong>{" "}
+                    Compliance with import regulations of target markets
                   </span>
                 </li>
               </ul>
@@ -886,7 +998,9 @@ export default function DocumentationCompliancePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
           <div className="bg-white border-2 border-indigo-600 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3 text-center">Policy Compliance</h4>
+            <h4 className="font-bold text-gray-900 mb-3 text-center">
+              Policy Compliance
+            </h4>
             <p className="text-sm text-gray-700 text-center mb-4">
               Full adherence to Bangladesh import and export policies
             </p>
@@ -899,7 +1013,9 @@ export default function DocumentationCompliancePage() {
           </div>
 
           <div className="bg-white border-2 border-indigo-600 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3 text-center">Customs Compliance</h4>
+            <h4 className="font-bold text-gray-900 mb-3 text-center">
+              Customs Compliance
+            </h4>
             <p className="text-sm text-gray-700 text-center mb-4">
               Complete adherence to customs procedures and regulations
             </p>
@@ -912,7 +1028,9 @@ export default function DocumentationCompliancePage() {
           </div>
 
           <div className="bg-white border-2 border-indigo-600 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3 text-center">International Standards</h4>
+            <h4 className="font-bold text-gray-900 mb-3 text-center">
+              International Standards
+            </h4>
             <p className="text-sm text-gray-700 text-center mb-4">
               Compliance with global shipping and logistics standards
             </p>
@@ -928,8 +1046,8 @@ export default function DocumentationCompliancePage() {
         <div className="bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg p-6 text-white text-center">
           <p className="text-xl font-bold">Comprehensive Trade Compliance</p>
           <p className="mt-2 text-white/90">
-            Our operations meet all national and international trade requirements for seamless
-            global commerce.
+            Our operations meet all national and international trade
+            requirements for seamless global commerce.
           </p>
         </div>
       </DocSection>
@@ -945,16 +1063,17 @@ export default function DocumentationCompliancePage() {
               Structured Control System for Accountability
             </h3>
             <p className="text-gray-600">
-              Comprehensive internal controls ensuring audit readiness and regulatory
-              compliance.
+              Comprehensive internal controls ensuring audit readiness and
+              regulatory compliance.
             </p>
           </div>
         </div>
 
         <p>
-          To ensure accountability and audit readiness, Zero International Limited maintains
-          a structured internal control system. Our record management practices ensure that
-          all documentation is secure, accessible, and compliant with regulatory requirements.
+          To ensure accountability and audit readiness, Zero International
+          Limited maintains a structured internal control system. Our record
+          management practices ensure that all documentation is secure,
+          accessible, and compliant with regulatory requirements.
         </p>
 
         {/* Image */}
@@ -978,15 +1097,15 @@ export default function DocumentationCompliancePage() {
               <li className="flex items-start gap-3">
                 <span className="text-cyan-600 font-bold">•</span>
                 <span>
-                  <strong>Secure Digital and Physical Document Storage:</strong> Dual storage
-                  system ensuring document safety and accessibility
+                  <strong>Secure Digital and Physical Document Storage:</strong>{" "}
+                  Dual storage system ensuring document safety and accessibility
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-cyan-600 font-bold">•</span>
                 <span>
-                  <strong>Controlled Access to Sensitive Records:</strong> Role-based access
-                  control protecting confidential information
+                  <strong>Controlled Access to Sensitive Records:</strong>{" "}
+                  Role-based access control protecting confidential information
                 </span>
               </li>
             </ul>
@@ -994,15 +1113,17 @@ export default function DocumentationCompliancePage() {
               <li className="flex items-start gap-3">
                 <span className="text-cyan-600 font-bold">•</span>
                 <span>
-                  <strong>Regular Internal Reviews and Compliance Checks:</strong> Periodic
-                  audits ensuring ongoing compliance
+                  <strong>
+                    Regular Internal Reviews and Compliance Checks:
+                  </strong>{" "}
+                  Periodic audits ensuring ongoing compliance
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-cyan-600 font-bold">•</span>
                 <span>
-                  <strong>Ongoing Regulatory Monitoring:</strong> Continuous tracking of
-                  regulatory changes and updates
+                  <strong>Ongoing Regulatory Monitoring:</strong> Continuous
+                  tracking of regulatory changes and updates
                 </span>
               </li>
             </ul>
@@ -1011,7 +1132,9 @@ export default function DocumentationCompliancePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
           <div className="bg-white border-2 border-cyan-600 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">Document Management System</h4>
+            <h4 className="font-bold text-gray-900 mb-3">
+              Document Management System
+            </h4>
             <ul className="space-y-2 text-sm text-gray-700">
               <li className="flex items-start gap-2">
                 <span className="text-cyan-600">✓</span>
@@ -1037,7 +1160,9 @@ export default function DocumentationCompliancePage() {
           </div>
 
           <div className="bg-white border-2 border-cyan-600 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">Quality Control Measures</h4>
+            <h4 className="font-bold text-gray-900 mb-3">
+              Quality Control Measures
+            </h4>
             <ul className="space-y-2 text-sm text-gray-700">
               <li className="flex items-start gap-2">
                 <span className="text-cyan-600">✓</span>
@@ -1049,7 +1174,9 @@ export default function DocumentationCompliancePage() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-cyan-600">✓</span>
-                <span>Process documentation and standard operating procedures</span>
+                <span>
+                  Process documentation and standard operating procedures
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-cyan-600">✓</span>
@@ -1066,8 +1193,8 @@ export default function DocumentationCompliancePage() {
         <div className="bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg p-6 text-white text-center">
           <p className="text-xl font-bold">Audit-Ready at All Times</p>
           <p className="mt-2 text-white/90">
-            Our structured internal control system ensures accountability, transparency, and
-            compliance readiness.
+            Our structured internal control system ensures accountability,
+            transparency, and compliance readiness.
           </p>
         </div>
       </DocSection>
@@ -1089,9 +1216,11 @@ export default function DocumentationCompliancePage() {
         </div>
 
         <p className="text-lg">
-          Zero International Limited is a proud member of the <strong>Dhaka Chamber of Commerce & Industry (DCCI)</strong>, 
-          the leading trade organization in Bangladesh. This membership demonstrates our commitment to ethical business 
-          practices, industry standards, and active participation in the business community.
+          Zero International Limited is a proud member of the{" "}
+          <strong>Dhaka Chamber of Commerce & Industry (DCCI)</strong>, the
+          leading trade organization in Bangladesh. This membership demonstrates
+          our commitment to ethical business practices, industry standards, and
+          active participation in the business community.
         </p>
 
         {/* Image */}
@@ -1111,9 +1240,10 @@ export default function DocumentationCompliancePage() {
         <div className="bg-amber-50 border-l-4 border-amber-600 p-6 my-6">
           <h4 className="font-bold text-gray-900 mb-4">About DCCI</h4>
           <p className="text-gray-700 mb-4">
-            The <strong>Dhaka Chamber of Commerce & Industry</strong> is the largest and most influential chamber 
-            of commerce in Bangladesh, representing the interests of the business community since 1958. DCCI plays 
-            a vital role in:
+            The <strong>Dhaka Chamber of Commerce & Industry</strong> is the
+            largest and most influential chamber of commerce in Bangladesh,
+            representing the interests of the business community since 1958.
+            DCCI plays a vital role in:
           </p>
           <ul className="space-y-2 text-gray-700">
             <li className="flex items-start gap-3">
@@ -1137,60 +1267,72 @@ export default function DocumentationCompliancePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
           <div className="bg-white border-2 border-amber-600 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-4">Membership Benefits</h4>
+            <h4 className="font-bold text-gray-900 mb-4">
+              Membership Benefits
+            </h4>
             <ul className="space-y-3 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
                 <span>
-                  <strong>Enhanced Credibility:</strong> Recognition as a verified and trusted business entity
+                  <strong>Enhanced Credibility:</strong> Recognition as a
+                  verified and trusted business entity
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
                 <span>
-                  <strong>Networking Opportunities:</strong> Access to business forums, seminars, and trade fairs
+                  <strong>Networking Opportunities:</strong> Access to business
+                  forums, seminars, and trade fairs
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
                 <span>
-                  <strong>Trade Support:</strong> Assistance with certificates of origin and trade documentation
+                  <strong>Trade Support:</strong> Assistance with certificates
+                  of origin and trade documentation
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
                 <span>
-                  <strong>Market Intelligence:</strong> Access to business research and market information
+                  <strong>Market Intelligence:</strong> Access to business
+                  research and market information
                 </span>
               </li>
             </ul>
           </div>
 
           <div className="bg-white border-2 border-amber-600 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-4">Our Commitment as a Member</h4>
+            <h4 className="font-bold text-gray-900 mb-4">
+              Our Commitment as a Member
+            </h4>
             <ul className="space-y-3 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
                 <span>
-                  <strong>Ethical Business Practices:</strong> Upholding the highest standards of business ethics
+                  <strong>Ethical Business Practices:</strong> Upholding the
+                  highest standards of business ethics
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
                 <span>
-                  <strong>Industry Standards:</strong> Adhering to industry best practices and guidelines
+                  <strong>Industry Standards:</strong> Adhering to industry best
+                  practices and guidelines
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
                 <span>
-                  <strong>Community Contribution:</strong> Contributing to the development of Bangladesh's business sector
+                  <strong>Community Contribution:</strong> Contributing to the
+                  development of Bangladesh's business sector
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
                 <span>
-                  <strong>Trade Advocacy:</strong> Supporting initiatives that promote international trade
+                  <strong>Trade Advocacy:</strong> Supporting initiatives that
+                  promote international trade
                 </span>
               </li>
             </ul>
@@ -1200,8 +1342,8 @@ export default function DocumentationCompliancePage() {
         <div className="bg-gradient-to-r from-amber-600 to-amber-700 rounded-lg p-6 text-white text-center">
           <p className="text-xl font-bold">Recognized Business Partner</p>
           <p className="mt-2 text-white/90">
-            Our DCCI membership validates our position as a credible and trustworthy international trading company 
-            in Bangladesh.
+            Our DCCI membership validates our position as a credible and
+            trustworthy international trading company in Bangladesh.
           </p>
         </div>
       </DocSection>
@@ -1217,17 +1359,18 @@ export default function DocumentationCompliancePage() {
               Our Commitment to Excellence
             </h3>
             <p className="text-gray-600">
-              Maintaining the highest standards of legal compliance, financial transparency,
-              and ethical trade practices.
+              Maintaining the highest standards of legal compliance, financial
+              transparency, and ethical trade practices.
             </p>
           </div>
         </div>
 
         <p className="text-lg">
-          Zero International Limited is committed to maintaining the highest standards of legal
-          compliance, financial transparency, and ethical trade practices across all operations.
-          Our compliance framework ensures reliability, trust, and long-term partnerships with
-          clients, suppliers, and regulatory authorities.
+          Zero International Limited is committed to maintaining the highest
+          standards of legal compliance, financial transparency, and ethical
+          trade practices across all operations. Our compliance framework
+          ensures reliability, trust, and long-term partnerships with clients,
+          suppliers, and regulatory authorities.
         </p>
 
         {/* Image */}
@@ -1249,7 +1392,8 @@ export default function DocumentationCompliancePage() {
             <div className="text-4xl mb-4">🎯</div>
             <h4 className="font-bold text-gray-900 mb-2">Reliability</h4>
             <p className="text-sm text-gray-600">
-              Consistent compliance and dependable operations across all business activities
+              Consistent compliance and dependable operations across all
+              business activities
             </p>
           </div>
 
@@ -1257,7 +1401,8 @@ export default function DocumentationCompliancePage() {
             <div className="text-4xl mb-4">🤝</div>
             <h4 className="font-bold text-gray-900 mb-2">Trust</h4>
             <p className="text-sm text-gray-600">
-              Building lasting partnerships through transparency and ethical practices
+              Building lasting partnerships through transparency and ethical
+              practices
             </p>
           </div>
 
@@ -1276,36 +1421,36 @@ export default function DocumentationCompliancePage() {
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✓</span>
               <span>
-                <strong>Legal Compliance:</strong> Full adherence to all applicable laws and
-                regulations
+                <strong>Legal Compliance:</strong> Full adherence to all
+                applicable laws and regulations
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✓</span>
               <span>
-                <strong>Financial Transparency:</strong> Clear and accurate financial
-                reporting and documentation
+                <strong>Financial Transparency:</strong> Clear and accurate
+                financial reporting and documentation
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✓</span>
               <span>
-                <strong>Ethical Trade Practices:</strong> Responsible and fair business
-                conduct in all transactions
+                <strong>Ethical Trade Practices:</strong> Responsible and fair
+                business conduct in all transactions
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✓</span>
               <span>
-                <strong>Continuous Improvement:</strong> Ongoing enhancement of compliance
-                systems and processes
+                <strong>Continuous Improvement:</strong> Ongoing enhancement of
+                compliance systems and processes
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✓</span>
               <span>
-                <strong>Stakeholder Partnership:</strong> Building trust with clients,
-                suppliers, and regulators
+                <strong>Stakeholder Partnership:</strong> Building trust with
+                clients, suppliers, and regulators
               </span>
             </li>
           </ul>
@@ -1314,8 +1459,8 @@ export default function DocumentationCompliancePage() {
         <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-lg p-6 text-white text-center mb-8">
           <p className="text-xl font-bold">Compliance is Our Foundation</p>
           <p className="mt-2 text-white/90">
-            Our unwavering commitment to compliance ensures sustainable, transparent, and
-            trustworthy international trade operations.
+            Our unwavering commitment to compliance ensures sustainable,
+            transparent, and trustworthy international trade operations.
           </p>
         </div>
 
@@ -1325,9 +1470,10 @@ export default function DocumentationCompliancePage() {
             Experience Compliant and Transparent Trade
           </h4>
           <p className="mb-6 text-white/90">
-            Partner with Zero International Limited and benefit from our comprehensive
-            documentation and compliance framework. Every transaction is backed by proper
-            legal authorization, transparent procedures, and ethical business practices.
+            Partner with Zero International Limited and benefit from our
+            comprehensive documentation and compliance framework. Every
+            transaction is backed by proper legal authorization, transparent
+            procedures, and ethical business practices.
           </p>
           <a
             href="/contact"
@@ -1340,4 +1486,3 @@ export default function DocumentationCompliancePage() {
     </DocLayout>
   );
 }
-

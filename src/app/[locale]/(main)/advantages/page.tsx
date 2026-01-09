@@ -1,125 +1,133 @@
 "use client";
 
 import { DocLayout, DocSection } from "@/components/ui/DocLayout";
-import { Globe, TrendingUp, Truck, Shield, Clock, Users, Package } from "lucide-react";
+import {
+  Globe,
+  TrendingUp,
+  Truck,
+  Shield,
+  Clock,
+  Users,
+  Package,
+} from "lucide-react";
 import Image from "next/image";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 
 export default function CompetitiveAdvantagesPage() {
-  const t = useTranslations('advantages');
-  
+  const t = useTranslations("advantages");
+
   const sections = [
-    { id: "global-network", title: t('sectionTitles.globalNetwork') },
-    { id: "market-insight", title: t('sectionTitles.marketInsight') },
-    { id: "trade-logistics", title: t('sectionTitles.tradeLogistics') },
-    { id: "quality-pricing", title: t('sectionTitles.qualityPricing') },
-    { id: "delivery", title: t('sectionTitles.delivery') },
-    { id: "communication", title: t('sectionTitles.communication') },
-    { id: "custom-solutions", title: t('sectionTitles.customSolutions') },
+    { id: "global-network", title: t("sectionTitles.globalNetwork") },
+    { id: "market-insight", title: t("sectionTitles.marketInsight") },
+    { id: "trade-logistics", title: t("sectionTitles.tradeLogistics") },
+    { id: "quality-pricing", title: t("sectionTitles.qualityPricing") },
+    { id: "delivery", title: t("sectionTitles.delivery") },
+    { id: "communication", title: t("sectionTitles.communication") },
+    { id: "custom-solutions", title: t("sectionTitles.customSolutions") },
   ];
 
   return (
     <DocLayout
       sections={sections}
-      pageTitle={t('pageTitle')}
-      pageDescription={t('pageDescription')}
+      pageTitle={t("pageTitle")}
+      pageDescription={t("pageDescription")}
     >
       {/* Section 1: Strong Global Supplier & Buyer Network */}
-      <DocSection id="global-network" title={t('sectionTitles.globalNetwork')}>
+      <DocSection id="global-network" title={t("sectionTitles.globalNetwork")}>
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <Globe className="w-6 h-6 text-[#0a4a9e]" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              {t('globalNetwork.subtitle')}
+              {t("globalNetwork.subtitle")}
             </h3>
-            <p className="text-gray-600">
-              {t('globalNetwork.description')}
-            </p>
+            <p className="text-gray-600">{t("globalNetwork.description")}</p>
           </div>
         </div>
 
-        <p>
-          {t('globalNetwork.intro')}
-        </p>
+        <p>{t("globalNetwork.intro")}</p>
 
         {/* Image */}
         <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl my-8">
           <Image
             src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&q=80"
-            alt={t('globalNetwork.imageAlt')}
+            alt={t("globalNetwork.imageAlt")}
             fill
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">{t('globalNetwork.imageCaption')}</p>
+            <p className="text-sm font-semibold">
+              {t("globalNetwork.imageCaption")}
+            </p>
           </div>
         </div>
 
         <div className="bg-blue-50 border-l-4 border-[#0a4a9e] p-6 my-6">
-          <h4 className="font-bold text-gray-900 mb-3">{t('globalNetwork.capabilityTitle')}</h4>
+          <h4 className="font-bold text-gray-900 mb-3">
+            {t("globalNetwork.capabilityTitle")}
+          </h4>
           <ul className="space-y-3 text-gray-700">
             <li className="flex items-start gap-3">
               <span className="text-[#0a4a9e] font-bold">•</span>
-              <span>{t('globalNetwork.capability1')}</span>
+              <span>{t("globalNetwork.capability1")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-[#0a4a9e] font-bold">•</span>
-              <span>{t('globalNetwork.capability2')}</span>
+              <span>{t("globalNetwork.capability2")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-[#0a4a9e] font-bold">•</span>
-              <span>{t('globalNetwork.capability3')}</span>
+              <span>{t("globalNetwork.capability3")}</span>
             </li>
           </ul>
         </div>
 
         <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
-          {t('globalNetwork.exportsTitle')}
+          {t("globalNetwork.exportsTitle")}
         </h4>
-        <p>
-          {t('globalNetwork.exportsDesc')}
-        </p>
+        <p>{t("globalNetwork.exportsDesc")}</p>
 
         <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
-          {t('globalNetwork.partnershipsTitle')}
+          {t("globalNetwork.partnershipsTitle")}
         </h4>
-        <p>
-          {t('globalNetwork.partnershipsDesc')}
-        </p>
+        <p>{t("globalNetwork.partnershipsDesc")}</p>
 
         <div className="bg-white border-2 border-[#0a4a9e] rounded-lg p-6 my-6">
-          <h4 className="font-bold text-gray-900 mb-4">{t('globalNetwork.benefitsTitle')}</h4>
+          <h4 className="font-bold text-gray-900 mb-4">
+            {t("globalNetwork.benefitsTitle")}
+          </h4>
           <ul className="space-y-2 text-gray-700">
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✔</span>
-              <span>{t('globalNetwork.benefit1')}</span>
+              <span>{t("globalNetwork.benefit1")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✔</span>
-              <span>{t('globalNetwork.benefit2')}</span>
+              <span>{t("globalNetwork.benefit2")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✔</span>
-              <span>{t('globalNetwork.benefit3')}</span>
+              <span>{t("globalNetwork.benefit3")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✔</span>
-              <span>{t('globalNetwork.benefit4')}</span>
+              <span>{t("globalNetwork.benefit4")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✔</span>
-              <span>{t('globalNetwork.benefit5')}</span>
+              <span>{t("globalNetwork.benefit5")}</span>
             </li>
           </ul>
         </div>
 
         <div className="bg-gradient-to-r from-[#0a4a9e] to-[#05306b] rounded-lg p-6 text-white text-center">
-          <p className="text-xl font-bold">{t('globalNetwork.conclusionTitle')}</p>
+          <p className="text-xl font-bold">
+            {t("globalNetwork.conclusionTitle")}
+          </p>
           <p className="mt-2 text-white/90">
-            {t('globalNetwork.conclusionDesc')}
+            {t("globalNetwork.conclusionDesc")}
           </p>
         </div>
       </DocSection>
@@ -135,17 +143,19 @@ export default function CompetitiveAdvantagesPage() {
               Extensive Understanding of Local Market Dynamics
             </h3>
             <p className="text-gray-600">
-              Our deep knowledge of the Bangladeshi market allows us to make informed
-              decisions for higher profitability and successful trade operations.
+              Our deep knowledge of the Bangladeshi market allows us to make
+              informed decisions for higher profitability and successful trade
+              operations.
             </p>
           </div>
         </div>
 
         <p>
-          At Zexfro International Limited, our competitive edge is strengthened by our
-          extensive understanding of the Bangladeshi market, trade environment, and
-          consumer demand patterns. This insight allows us to make informed decisions
-          that help our partners trade with confidence and higher profitability.
+          At Zexfro International Limited, our competitive edge is strengthened
+          by our extensive understanding of the Bangladeshi market, trade
+          environment, and consumer demand patterns. This insight allows us to
+          make informed decisions that help our partners trade with confidence
+          and higher profitability.
         </p>
 
         {/* Image */}
@@ -158,7 +168,9 @@ export default function CompetitiveAdvantagesPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">Data-Driven Market Intelligence</p>
+            <p className="text-sm font-semibold">
+              Data-Driven Market Intelligence
+            </p>
           </div>
         </div>
 
@@ -177,10 +189,10 @@ export default function CompetitiveAdvantagesPage() {
             <li>• Global commodities</li>
           </ul>
           <p className="text-gray-700 mt-4">
-            Our research-driven approach helps us identify which products have rising
-            demand, seasonal sales peaks, pricing sensitivity, and distribution potential
-            in Bangladesh. This ensures that imported goods are positioned for maximum
-            sales impact and market acceptance.
+            Our research-driven approach helps us identify which products have
+            rising demand, seasonal sales peaks, pricing sensitivity, and
+            distribution potential in Bangladesh. This ensures that imported
+            goods are positioned for maximum sales impact and market acceptance.
           </p>
         </div>
 
@@ -188,44 +200,45 @@ export default function CompetitiveAdvantagesPage() {
           Knowledge of Regulations & Trade Compliance
         </h4>
         <p>
-          We maintain strong expertise in import-export policies, customs procedures,
-          taxation, documentation requirements, port regulations, and HS code
-          classification. Our team stays updated with government trade rules, product
-          certification needs, and compliance standards, minimizing legal or operational
-          delays. This helps shipments clear faster and remain fully compliant.
+          We maintain strong expertise in import-export policies, customs
+          procedures, taxation, documentation requirements, port regulations,
+          and HS code classification. Our team stays updated with government
+          trade rules, product certification needs, and compliance standards,
+          minimizing legal or operational delays. This helps shipments clear
+          faster and remain fully compliant.
         </p>
 
         <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
           Pricing Intelligence & Market Positioning
         </h4>
         <p>
-          We track real-time pricing behavior in local wholesale and retail channels.
-          Our insights allow us to negotiate cost-effective sourcing, calculate landed
-          cost accurately, and set competitive selling prices for distributors and
-          wholesalers. We help businesses avoid overpricing or underpricing, ensuring
-          healthy margins.
+          We track real-time pricing behavior in local wholesale and retail
+          channels. Our insights allow us to negotiate cost-effective sourcing,
+          calculate landed cost accurately, and set competitive selling prices
+          for distributors and wholesalers. We help businesses avoid overpricing
+          or underpricing, ensuring healthy margins.
         </p>
 
         <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
           Strong Distribution & Market Entry Strategy
         </h4>
         <p>
-          We understand the operational structure of local supply chains, major trading
-          hubs, B2B procurement channels, wholesale markets, and last-mile logistics.
-          This enables us to guide suppliers and importers with effective product entry
-          plans, bulk selling strategy, and demand-based shipment planning. Our
-          Dhaka-based location (Uttara) gives us direct access to national business
-          networks and trade flows.
+          We understand the operational structure of local supply chains, major
+          trading hubs, B2B procurement channels, wholesale markets, and
+          last-mile logistics. This enables us to guide suppliers and importers
+          with effective product entry plans, bulk selling strategy, and
+          demand-based shipment planning. Our Dhaka-based location (Uttara)
+          gives us direct access to national business networks and trade flows.
         </p>
 
         <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
           Risk Management & Market Forecasting
         </h4>
         <p>
-          We assess potential risks such as currency fluctuation, seasonal demand
-          shifts, supply shortages, competitor pricing, and political or port-based
-          impact on trade. Our forecasting helps partners plan inventory, shipments, and
-          pricing with lower uncertainty.
+          We assess potential risks such as currency fluctuation, seasonal
+          demand shifts, supply shortages, competitor pricing, and political or
+          port-based impact on trade. Our forecasting helps partners plan
+          inventory, shipments, and pricing with lower uncertainty.
         </p>
 
         <div className="bg-white border-2 border-green-600 rounded-lg p-6 my-6">
@@ -255,17 +268,22 @@ export default function CompetitiveAdvantagesPage() {
         </div>
 
         <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-lg p-6 text-white text-center">
-          <p className="text-xl font-bold">Our Market Knowledge Drives Your Success</p>
+          <p className="text-xl font-bold">
+            Our Market Knowledge Drives Your Success
+          </p>
           <p className="mt-2 text-white/90">
-            Our deep market insight ensures that every trade decision is data-backed,
-            compliant, and profitable, helping businesses import efficiently and scale
-            exports with confidence.
+            Our deep market insight ensures that every trade decision is
+            data-backed, compliant, and profitable, helping businesses import
+            efficiently and scale exports with confidence.
           </p>
         </div>
       </DocSection>
 
       {/* Section 3: End-to-End Trade & Logistics Expertise */}
-      <DocSection id="trade-logistics" title="End-to-End Trade & Logistics Expertise">
+      <DocSection
+        id="trade-logistics"
+        title="End-to-End Trade & Logistics Expertise"
+      >
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <Truck className="w-6 h-6 text-purple-600" />
@@ -275,18 +293,18 @@ export default function CompetitiveAdvantagesPage() {
               Complete International Trade Cycle Management
             </h3>
             <p className="text-gray-600">
-              From sourcing products globally to delivering goods safely—we manage the
-              entire trade process efficiently.
+              From sourcing products globally to delivering goods safely—we
+              manage the entire trade process efficiently.
             </p>
           </div>
         </div>
 
         <p>
-          At Zexfro International Limited, we manage the entire international trade
-          cycle—from sourcing products globally to delivering goods safely and
-          efficiently to final destinations. Our end-to-end capability eliminates
-          complexity for our clients and ensures a smooth, compliant, cost-efficient,
-          and time-bound trade experience.
+          At Zexfro International Limited, we manage the entire international
+          trade cycle—from sourcing products globally to delivering goods safely
+          and efficiently to final destinations. Our end-to-end capability
+          eliminates complexity for our clients and ensures a smooth, compliant,
+          cost-efficient, and time-bound trade experience.
         </p>
 
         {/* Image */}
@@ -299,7 +317,9 @@ export default function CompetitiveAdvantagesPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">Seamless Logistics Management</p>
+            <p className="text-sm font-semibold">
+              Seamless Logistics Management
+            </p>
           </div>
         </div>
 
@@ -378,9 +398,10 @@ export default function CompetitiveAdvantagesPage() {
           Export Logistics Support for Bangladeshi Goods
         </h4>
         <p>
-          We help local producers connect with international buyers and manage the
-          shipment process outward. We ensure export compliance, freight booking, and
-          smooth handover at Chattogram or Dhaka air cargo terminals.
+          We help local producers connect with international buyers and manage
+          the shipment process outward. We ensure export compliance, freight
+          booking, and smooth handover at Chattogram or Dhaka air cargo
+          terminals.
         </p>
 
         <div className="bg-white border-2 border-purple-600 rounded-lg p-6 my-6">
@@ -416,17 +437,22 @@ export default function CompetitiveAdvantagesPage() {
         </div>
 
         <div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg p-6 text-white text-center">
-          <p className="text-xl font-bold">We Handle the Process, You Scale the Business</p>
+          <p className="text-xl font-bold">
+            We Handle the Process, You Scale the Business
+          </p>
           <p className="mt-2 text-white/90">
-            Our End-to-End trade model allows businesses to focus on sales, growth, and
-            market expansion, while we take care of global procurement, shipping,
-            customs, and delivery logistics.
+            Our End-to-End trade model allows businesses to focus on sales,
+            growth, and market expansion, while we take care of global
+            procurement, shipping, customs, and delivery logistics.
           </p>
         </div>
       </DocSection>
 
       {/* Section 4: Quality Assurance at Competitive Pricing */}
-      <DocSection id="quality-pricing" title="Quality Assurance at Competitive Pricing">
+      <DocSection
+        id="quality-pricing"
+        title="Quality Assurance at Competitive Pricing"
+      >
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <Shield className="w-6 h-6 text-yellow-600" />
@@ -436,31 +462,34 @@ export default function CompetitiveAdvantagesPage() {
               Global-Standard Products at Lower Landed Cost
             </h3>
             <p className="text-gray-600">
-              Balancing product quality with cost efficiency to deliver better value for
-              our clients.
+              Balancing product quality with cost efficiency to deliver better
+              value for our clients.
             </p>
           </div>
         </div>
 
         <p>
-          Quality Assurance at Competitive Pricing is a strategic strength at Zexfro
-          International Limited. We ensure that suppliers meet international standards
-          while keeping pricing competitive through optimized sourcing and logistics.
+          Quality Assurance at Competitive Pricing is a strategic strength at
+          Zexfro International Limited. We ensure that suppliers meet
+          international standards while keeping pricing competitive through
+          optimized sourcing and logistics.
         </p>
 
         <div className="bg-yellow-50 border-l-4 border-yellow-600 p-6 my-6">
-          <h4 className="font-bold text-gray-900 mb-3">Our Quality Framework:</h4>
+          <h4 className="font-bold text-gray-900 mb-3">
+            Our Quality Framework:
+          </h4>
           <div className="space-y-4">
             <div>
               <h5 className="font-semibold text-gray-900 mb-2">
                 1. Multi-Layer Supplier Verification
               </h5>
               <p className="text-sm text-gray-700">
-                Quality assurance starts at the source. We ensure suppliers hold valid
-                trade licenses, have internationally recognized certifications (ISO,
-                HACCP, CE, GMP), maintain compliance with environmental and labor
-                standards, and have a proven export track record with minimal dispute
-                history.
+                Quality assurance starts at the source. We ensure suppliers hold
+                valid trade licenses, have internationally recognized
+                certifications (ISO, HACCP, CE, GMP), maintain compliance with
+                environmental and labor standards, and have a proven export
+                track record with minimal dispute history.
               </p>
             </div>
 
@@ -469,10 +498,10 @@ export default function CompetitiveAdvantagesPage() {
                 2. Pre-Shipment Inspection (PSI)
               </h5>
               <p className="text-sm text-gray-700">
-                Before goods are shipped, we arrange inspections through in-house QC
-                teams or third-party global inspection agencies (SGS, BV, TUV,
-                Intertek). This includes random batch sampling, visual, functional, and
-                safety compliance tests.
+                Before goods are shipped, we arrange inspections through
+                in-house QC teams or third-party global inspection agencies
+                (SGS, BV, TUV, Intertek). This includes random batch sampling,
+                visual, functional, and safety compliance tests.
               </p>
             </div>
 
@@ -483,8 +512,8 @@ export default function CompetitiveAdvantagesPage() {
               <p className="text-sm text-gray-700">
                 For exported goods from Bangladesh, we ensure products meet BSTI
                 standards, agricultural products comply with Plant Quarantine &
-                Phytosanitary Certification, and frozen foods follow BRC or HACCP safety
-                protocols.
+                Phytosanitary Certification, and frozen foods follow BRC or
+                HACCP safety protocols.
               </p>
             </div>
 
@@ -508,16 +537,18 @@ export default function CompetitiveAdvantagesPage() {
           Quality-Focused Procurement Strategy
         </h4>
         <p>
-          Instead of selecting the cheapest product, we prioritize best value for price,
-          consistent quality, durability and safety, and market-acceptable
-          specifications. This prevents hidden costs such as product failure after
-          delivery, re-export charges, customer dissatisfaction, and loss due to poor
-          packaging.
+          Instead of selecting the cheapest product, we prioritize best value
+          for price, consistent quality, durability and safety, and
+          market-acceptable specifications. This prevents hidden costs such as
+          product failure after delivery, re-export charges, customer
+          dissatisfaction, and loss due to poor packaging.
         </p>
 
         <p className="mt-4">
-          <strong>True competitive pricing means lowest cost without future loss, not
-          just lowest purchase price.</strong>
+          <strong>
+            True competitive pricing means lowest cost without future loss, not
+            just lowest purchase price.
+          </strong>
         </p>
 
         <div className="bg-white border border-gray-200 rounded-lg p-6 my-6">
@@ -546,7 +577,9 @@ export default function CompetitiveAdvantagesPage() {
                   <td className="py-2 px-3">Lower cost</td>
                 </tr>
                 <tr className="border-b border-gray-200">
-                  <td className="py-2 px-3">Compliance with global standards</td>
+                  <td className="py-2 px-3">
+                    Compliance with global standards
+                  </td>
                   <td className="py-2 px-3">Better market acceptance</td>
                 </tr>
                 <tr className="border-b border-gray-200">
@@ -567,14 +600,18 @@ export default function CompetitiveAdvantagesPage() {
             Zexfro's Advantage: Right Price for High Quality
           </p>
           <p className="mt-2 text-white/90">
-            Our advantage is not just low price, but the right price for high quality—
-            ensuring value, reliability, and long-term business success.
+            Our advantage is not just low price, but the right price for high
+            quality— ensuring value, reliability, and long-term business
+            success.
           </p>
         </div>
       </DocSection>
 
       {/* Section 5: Faster Shipment & Reliable Delivery */}
-      <DocSection id="delivery" title="Faster Shipment & Reliable Delivery Commitment">
+      <DocSection
+        id="delivery"
+        title="Faster Shipment & Reliable Delivery Commitment"
+      >
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <Clock className="w-6 h-6 text-orange-600" />
@@ -584,18 +621,19 @@ export default function CompetitiveAdvantagesPage() {
               On-Time, Safe, and Dependable Delivery
             </h3>
             <p className="text-gray-600">
-              Products move quickly from origin to destination, reaching buyers on time
-              without unexpected disruptions.
+              Products move quickly from origin to destination, reaching buyers
+              on time without unexpected disruptions.
             </p>
           </div>
         </div>
 
         <p>
-          A Faster Shipment & Reliable Delivery Commitment is a strategic assurance that
-          products will move quickly from origin to destination and reach the buyer on
-          time, safely, and without unexpected disruption. This commitment becomes a
-          competitive edge because international buyers and suppliers highly value
-          speed, consistency, transparency, and dependability in cross-border trade.
+          A Faster Shipment & Reliable Delivery Commitment is a strategic
+          assurance that products will move quickly from origin to destination
+          and reach the buyer on time, safely, and without unexpected
+          disruption. This commitment becomes a competitive edge because
+          international buyers and suppliers highly value speed, consistency,
+          transparency, and dependability in cross-border trade.
         </p>
 
         {/* Image */}
@@ -618,7 +656,9 @@ export default function CompetitiveAdvantagesPage() {
               1. Optimized Logistics Planning
             </h4>
             <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Pre-evaluated routes for fastest, most cost-efficient path</li>
+              <li>
+                • Pre-evaluated routes for fastest, most cost-efficient path
+              </li>
               <li>• Partnerships with global freight forwarders</li>
               <li>• Priority space allocation</li>
               <li>• Mode selection: Air, Sea, or Land based on urgency</li>
@@ -642,7 +682,9 @@ export default function CompetitiveAdvantagesPage() {
               3. Real-Time Shipment Monitoring
             </h4>
             <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Tracking via carrier reference, vessel name, flight number</li>
+              <li>
+                • Tracking via carrier reference, vessel name, flight number
+              </li>
               <li>• ETD and ETA updates</li>
               <li>• Immediate notification of schedule changes</li>
               <li>• Builds trust and reliability</li>
@@ -693,8 +735,8 @@ export default function CompetitiveAdvantagesPage() {
             <li className="flex items-start gap-3">
               <span className="text-orange-600 font-bold">•</span>
               <span>
-                "Shipment dispatched within 48–72 hours after order confirmation or LC
-                acceptance"
+                "Shipment dispatched within 48–72 hours after order confirmation
+                or LC acceptance"
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -707,7 +749,9 @@ export default function CompetitiveAdvantagesPage() {
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-600 font-bold">•</span>
-              <span>"No demurrage or detention through fast customs & port release"</span>
+              <span>
+                "No demurrage or detention through fast customs & port release"
+              </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-600 font-bold">•</span>
@@ -769,36 +813,36 @@ export default function CompetitiveAdvantagesPage() {
         title="Transparent Communication & Customer Support"
       >
         <div className="flex items-start gap-4 mb-6">
-          <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-            <Users className="w-6 h-6 text-red-600" />
+          <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <Users className="w-6 h-6 text-teal-600" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
               Foundation of Trust & Long-Term Partnerships
             </h3>
             <p className="text-gray-600">
-              Fast, accurate, transparent, and professional communication at every stage
-              of the transaction.
+              Fast, accurate, transparent, and professional communication at
+              every stage of the transaction.
             </p>
           </div>
         </div>
 
         <p>
-          At Zexfro International Ltd, communication is more than just responding to
-          messages—it is the foundation of trust, long-term partnerships, and seamless
-          global trade operations. As an international import-export company, we
-          understand that clients, suppliers, and logistics partners require fast,
-          accurate, transparent, and professional communication at every stage of a
-          transaction.
+          At Zexfro International Ltd, communication is more than just
+          responding to messages—it is the foundation of trust, long-term
+          partnerships, and seamless global trade operations. As an
+          international import-export company, we understand that clients,
+          suppliers, and logistics partners require fast, accurate, transparent,
+          and professional communication at every stage of a transaction.
         </p>
 
-        <div className="bg-red-50 border-l-4 border-red-600 p-6 my-6">
+        <div className="bg-teal-50/30 border-l-4 border-teal-500 p-6 my-6 shadow-sm">
           <h4 className="font-bold text-gray-900 mb-3">
             Multi-Channel Communication System
           </h4>
           <p className="text-gray-700 mb-4">
-            We maintain active communication across multiple platforms to stay accessible
-            worldwide:
+            We maintain active communication across multiple platforms to stay
+            accessible worldwide:
           </p>
           <ul className="space-y-2 text-gray-700 text-sm">
             <li>
@@ -806,19 +850,20 @@ export default function CompetitiveAdvantagesPage() {
               quotations, order confirmations
             </li>
             <li>
-              <strong>Instant Messaging</strong> – WhatsApp, WeChat, Skype for real-time
-              updates
+              <strong>Instant Messaging</strong> – WhatsApp, WeChat, Skype for
+              real-time updates
             </li>
             <li>
-              <strong>Direct Voice & Video Calls</strong> – To discuss specifications,
-              negotiate pricing, resolve issues
+              <strong>Direct Voice & Video Calls</strong> – To discuss
+              specifications, negotiate pricing, resolve issues
             </li>
             <li>
-              <strong>Website Live Chat</strong> – Immediate assistance for inquiries
+              <strong>Website Live Chat</strong> – Immediate assistance for
+              inquiries
             </li>
             <li>
-              <strong>Social & Business Platforms</strong> – LinkedIn, Google Business
-              for corporate networking
+              <strong>Social & Business Platforms</strong> – LinkedIn, Google
+              Business for corporate networking
             </li>
           </ul>
         </div>
@@ -827,13 +872,15 @@ export default function CompetitiveAdvantagesPage() {
           Dedicated Client Support Teams
         </h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-          <div className="bg-white border border-red-200 rounded-lg p-4">
-            <p className="font-semibold text-gray-900 mb-2">Key Account Managers</p>
+          <div className="bg-teal-50/20 border border-teal-300 rounded-lg p-4 hover:border-teal-400 transition-colors">
+            <p className="font-semibold text-gray-900 mb-2">
+              Key Account Managers
+            </p>
             <p className="text-sm text-gray-600">
               For regular buyers and suppliers
             </p>
           </div>
-          <div className="bg-white border border-red-200 rounded-lg p-4">
+          <div className="bg-teal-50/20 border border-teal-300 rounded-lg p-4 hover:border-teal-400 transition-colors">
             <p className="font-semibold text-gray-900 mb-2">
               Trade Support Specialists
             </p>
@@ -841,7 +888,7 @@ export default function CompetitiveAdvantagesPage() {
               For sourcing, documentation, and compliance
             </p>
           </div>
-          <div className="bg-white border border-red-200 rounded-lg p-4">
+          <div className="bg-teal-50/20 border border-teal-300 rounded-lg p-4 hover:border-teal-400 transition-colors">
             <p className="font-semibold text-gray-900 mb-2">
               Logistics Coordination Officers
             </p>
@@ -849,7 +896,7 @@ export default function CompetitiveAdvantagesPage() {
               For shipment tracking and delivery updates
             </p>
           </div>
-          <div className="bg-white border border-red-200 rounded-lg p-4">
+          <div className="bg-teal-50/20 border border-teal-300 rounded-lg p-4 hover:border-teal-400 transition-colors">
             <p className="font-semibold text-gray-900 mb-2">
               Quality & Dispute Resolution Team
             </p>
@@ -862,40 +909,41 @@ export default function CompetitiveAdvantagesPage() {
         <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
           Fast Response & Real-Time Updates
         </h4>
-        <div className="bg-white border-2 border-red-600 rounded-lg p-6 my-6">
+        <div className="bg-teal-50/40 border-2 border-teal-500 rounded-lg p-6 my-6 shadow-md">
           <p className="font-bold text-gray-900 mb-3">We Guarantee:</p>
           <ul className="space-y-2 text-gray-700">
             <li className="flex items-start gap-3">
-              <span className="text-red-600 font-bold">•</span>
+              <span className="text-teal-600 font-bold">•</span>
               <span>
-                <strong>Inquiry Response</strong> within 10–30 minutes during business
-                hours
+                <strong>Inquiry Response</strong> within 10–30 minutes during
+                business hours
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-red-600 font-bold">•</span>
+              <span className="text-teal-600 font-bold">•</span>
               <span>
-                <strong>Quotation Delivery</strong> within 6–12 hours depending on
-                product complexity
+                <strong>Quotation Delivery</strong> within 6–12 hours depending
+                on product complexity
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-red-600 font-bold">•</span>
+              <span className="text-teal-600 font-bold">•</span>
               <span>
                 <strong>Daily Progress Updates</strong> for shipments and orders
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-red-600 font-bold">•</span>
+              <span className="text-teal-600 font-bold">•</span>
               <span>
                 <strong>Live Tracking Information</strong> for all international
                 shipments
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-red-600 font-bold">•</span>
+              <span className="text-teal-600 font-bold">•</span>
               <span>
-                <strong>Instant Issue Acknowledgment</strong> with resolution plan
+                <strong>Instant Issue Acknowledgment</strong> with resolution
+                plan
               </span>
             </li>
           </ul>
@@ -910,20 +958,22 @@ export default function CompetitiveAdvantagesPage() {
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✔</span>
               <span>
-                <strong>Transparency</strong> – No hidden charges or unclear terms
+                <strong>Transparency</strong> – No hidden charges or unclear
+                terms
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✔</span>
               <span>
-                <strong>Accuracy</strong> – Verified information and correct documentation
+                <strong>Accuracy</strong> – Verified information and correct
+                documentation
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✔</span>
               <span>
-                <strong>Professionalism</strong> – Respectful tone and formal trade
-                etiquette
+                <strong>Professionalism</strong> – Respectful tone and formal
+                trade etiquette
               </span>
             </li>
           </ul>
@@ -931,30 +981,31 @@ export default function CompetitiveAdvantagesPage() {
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✔</span>
               <span>
-                <strong>Reliability</strong> – Consistent follow-ups, no false deadlines
+                <strong>Reliability</strong> – Consistent follow-ups, no false
+                deadlines
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✔</span>
               <span>
-                <strong>Problem-Solving Mindset</strong> – We resolve issues, not avoid
-                them
+                <strong>Problem-Solving Mindset</strong> – We resolve issues,
+                not avoid them
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✔</span>
               <span>
-                <strong>Long-Term Partnership Focus</strong> – Clients as partners, not
-                transactions
+                <strong>Long-Term Partnership Focus</strong> – Clients as
+                partners, not transactions
               </span>
             </li>
           </ul>
         </div>
 
-        <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-lg p-6 text-white text-center mt-8">
+        <div className="bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg p-6 text-white text-center mt-8">
           <p className="text-xl font-bold">
-            "Clear Communication, Fast Support, and Reliable Solutions—Every Time,
-            Worldwide."
+            "Clear Communication, Fast Support, and Reliable Solutions—Every
+            Time, Worldwide."
           </p>
           <p className="mt-2 text-white/90 text-sm">
             — Zexfro International Ltd
@@ -963,7 +1014,10 @@ export default function CompetitiveAdvantagesPage() {
       </DocSection>
 
       {/* Section 7: Customized Trade Solutions */}
-      <DocSection id="custom-solutions" title="Customized Trade Solutions for Businesses">
+      <DocSection
+        id="custom-solutions"
+        title="Customized Trade Solutions for Businesses"
+      >
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <Package className="w-6 h-6 text-indigo-600" />
@@ -973,18 +1027,19 @@ export default function CompetitiveAdvantagesPage() {
               Tailored Sourcing & Export Strategies
             </h3>
             <p className="text-gray-600">
-              We adapt to the unique needs of wholesalers, manufacturers, retailers, and
-              importers with customized solutions.
+              We adapt to the unique needs of wholesalers, manufacturers,
+              retailers, and importers with customized solutions.
             </p>
           </div>
         </div>
 
         <p>
-          At Zexfro International Ltd, we understand that no two businesses are the
-          same. Whether you're a wholesaler needing bulk procurement, a manufacturer
-          sourcing raw materials, a retailer importing finished goods, or an exporter
-          seeking global buyers—we provide customized trade solutions tailored to your
-          specific requirements, industry, budget, and growth objectives.
+          At Zexfro International Ltd, we understand that no two businesses are
+          the same. Whether you're a wholesaler needing bulk procurement, a
+          manufacturer sourcing raw materials, a retailer importing finished
+          goods, or an exporter seeking global buyers—we provide customized
+          trade solutions tailored to your specific requirements, industry,
+          budget, and growth objectives.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
@@ -1011,7 +1066,8 @@ export default function CompetitiveAdvantagesPage() {
               <li>• Accurate HS code classification</li>
               <li>• Shipment consolidation options</li>
               <li>
-                <strong>Result:</strong> Full cost transparency and lower expenses
+                <strong>Result:</strong> Full cost transparency and lower
+                expenses
               </li>
             </ul>
           </div>
@@ -1087,7 +1143,9 @@ export default function CompetitiveAdvantagesPage() {
           </div>
 
           <div className="bg-indigo-50 border-2 border-indigo-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">8. After-Sales Support</h4>
+            <h4 className="font-bold text-gray-900 mb-3">
+              8. After-Sales Support
+            </h4>
             <ul className="space-y-2 text-sm text-gray-700">
               <li>• Delivery confirmation and feedback</li>
               <li>• Installation guidance for equipment</li>
@@ -1104,8 +1162,8 @@ export default function CompetitiveAdvantagesPage() {
             Our Commitment
           </h4>
           <p className="text-center text-gray-700 mb-4">
-            Zexfro International Ltd stands as your strategic global trade partner,
-            ensuring that your import-export operations are:
+            Zexfro International Ltd stands as your strategic global trade
+            partner, ensuring that your import-export operations are:
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
             <div className="bg-indigo-50 rounded-lg p-3">
@@ -1134,10 +1192,11 @@ export default function CompetitiveAdvantagesPage() {
             Why Choose Zexfro International Ltd?
           </h4>
           <p className="mb-6 text-white/90 text-center max-w-3xl mx-auto">
-            We don't just trade products—we build global business bridges, simplify
-            complex import-export operations, and create profitable opportunities for our
-            partners worldwide. Our commitment to reliability, speed, quality, and
-            compliance sets us apart in the industry.
+            We don't just trade products—we build global business bridges,
+            simplify complex import-export operations, and create profitable
+            opportunities for our partners worldwide. Our commitment to
+            reliability, speed, quality, and compliance sets us apart in the
+            industry.
           </p>
           <div className="text-center">
             <a

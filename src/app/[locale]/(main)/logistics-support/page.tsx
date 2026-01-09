@@ -1,33 +1,37 @@
 import { DocLayout, DocSection } from "@/components/ui/DocLayout";
-import { 
-  Package, 
-  Plane, 
+import {
+  Package,
+  Plane,
   Ship,
-  FileCheck, 
-  MonitorDot, 
-  Network, 
+  FileCheck,
+  MonitorDot,
+  Network,
   Truck,
   Globe,
   CheckCircle,
   Clock,
-  Shield
+  Shield,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { getTranslations } from 'next-intl/server';
-import { routing } from '@/i18n/routing';
+import { getTranslations } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'logisticsSupport' });
-  
+  const t = await getTranslations({ locale, namespace: "logisticsSupport" });
+
   return {
-    title: t('metaTitle'),
-    description: t('metaDescription'),
+    title: t("metaTitle"),
+    description: t("metaDescription"),
   };
 }
 
@@ -40,15 +44,19 @@ const sections = [
   { id: "tracking", title: "Real-Time Tracking & Monitoring" },
 ];
 
-export default async function LogisticsSupplyChainPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function LogisticsSupplyChainPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'logisticsSupport' });
+  const t = await getTranslations({ locale, namespace: "logisticsSupport" });
 
   return (
     <DocLayout
       sections={sections}
-      pageTitle={t('pageTitle')}
-      pageDescription={t('pageDescription')}
+      pageTitle={t("pageTitle")}
+      pageDescription={t("pageDescription")}
     >
       {/* Section 1: Overview */}
       <DocSection id="overview" title="Logistics Support Overview">
@@ -58,16 +66,17 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              {t('overview.title')}
+              {t("overview.title")}
             </h3>
-            <p className="text-gray-600">
-              {t('overview.subtitle')}
-            </p>
+            <p className="text-gray-600">{t("overview.subtitle")}</p>
           </div>
         </div>
 
         <p>
-          Zexfro International Ltd provides comprehensive logistics and supply chain support services that ensure seamless international trade operations. Our end-to-end logistics solutions cover every aspect of global shipping, from initial freight planning to final delivery.
+          Zexfro International Ltd provides comprehensive logistics and supply
+          chain support services that ensure seamless international trade
+          operations. Our end-to-end logistics solutions cover every aspect of
+          global shipping, from initial freight planning to final delivery.
         </p>
 
         {/* Image */}
@@ -80,7 +89,9 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">Comprehensive Logistics Solutions</p>
+            <p className="text-sm font-semibold">
+              Comprehensive Logistics Solutions
+            </p>
           </div>
         </div>
 
@@ -89,19 +100,21 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
               <Package className="w-6 h-6 text-blue-600" />
             </div>
-            <h4 className="font-bold text-gray-900 mb-2">{t('overview.freightTitle')}</h4>
-            <p className="text-sm text-gray-700">
-              {t('overview.freightDesc')}
-            </p>
+            <h4 className="font-bold text-gray-900 mb-2">
+              {t("overview.freightTitle")}
+            </h4>
+            <p className="text-sm text-gray-700">{t("overview.freightDesc")}</p>
           </div>
 
           <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6">
             <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
               <Truck className="w-6 h-6 text-green-600" />
             </div>
-            <h4 className="font-bold text-gray-900 mb-2">{t('overview.warehousingTitle')}</h4>
+            <h4 className="font-bold text-gray-900 mb-2">
+              {t("overview.warehousingTitle")}
+            </h4>
             <p className="text-sm text-gray-700">
-              {t('overview.warehousingDesc')}
+              {t("overview.warehousingDesc")}
             </p>
           </div>
 
@@ -109,19 +122,21 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
             <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
               <FileCheck className="w-6 h-6 text-purple-600" />
             </div>
-            <h4 className="font-bold text-gray-900 mb-2">{t('overview.customsTitle')}</h4>
-            <p className="text-sm text-gray-700">
-              {t('overview.customsDesc')}
-            </p>
+            <h4 className="font-bold text-gray-900 mb-2">
+              {t("overview.customsTitle")}
+            </h4>
+            <p className="text-sm text-gray-700">{t("overview.customsDesc")}</p>
           </div>
 
           <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-6">
             <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
               <MonitorDot className="w-6 h-6 text-orange-600" />
             </div>
-            <h4 className="font-bold text-gray-900 mb-2">{t('overview.trackingTitle')}</h4>
+            <h4 className="font-bold text-gray-900 mb-2">
+              {t("overview.trackingTitle")}
+            </h4>
             <p className="text-sm text-gray-700">
-              {t('overview.trackingDesc')}
+              {t("overview.trackingDesc")}
             </p>
           </div>
 
@@ -129,27 +144,28 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
               <Network className="w-6 h-6 text-blue-600" />
             </div>
-            <h4 className="font-bold text-gray-900 mb-2">{t('overview.networkTitle')}</h4>
-            <p className="text-sm text-gray-700">
-              {t('overview.networkDesc')}
-            </p>
+            <h4 className="font-bold text-gray-900 mb-2">
+              {t("overview.networkTitle")}
+            </h4>
+            <p className="text-sm text-gray-700">{t("overview.networkDesc")}</p>
           </div>
 
           <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6">
             <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
               <Shield className="w-6 h-6 text-green-600" />
             </div>
-            <h4 className="font-bold text-gray-900 mb-2">{t('overview.riskTitle')}</h4>
-            <p className="text-sm text-gray-700">
-              {t('overview.riskDesc')}
-            </p>
+            <h4 className="font-bold text-gray-900 mb-2">
+              {t("overview.riskTitle")}
+            </h4>
+            <p className="text-sm text-gray-700">{t("overview.riskDesc")}</p>
           </div>
         </div>
 
         <div className="bg-gradient-to-r from-[#0a4a9e] to-[#05306b] rounded-lg p-6 text-white text-center">
           <p className="text-xl font-bold">End-to-End Logistics Solutions</p>
           <p className="mt-2 text-white/90">
-            From origin to destination, we manage every step of your supply chain with precision and care.
+            From origin to destination, we manage every step of your supply
+            chain with precision and care.
           </p>
         </div>
       </DocSection>
@@ -165,13 +181,17 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
               Optimized Freight Solutions for Global Trade
             </h3>
             <p className="text-gray-600">
-              Strategic freight management ensuring cost-effective and timely delivery of goods worldwide.
+              Strategic freight management ensuring cost-effective and timely
+              delivery of goods worldwide.
             </p>
           </div>
         </div>
 
         <p>
-          Our international freight management services are designed to optimize your shipping operations while minimizing costs. We leverage our extensive network of carriers and freight forwarders to secure the best rates and routes for your shipments.
+          Our international freight management services are designed to optimize
+          your shipping operations while minimizing costs. We leverage our
+          extensive network of carriers and freight forwarders to secure the
+          best rates and routes for your shipments.
         </p>
 
         {/* Image */}
@@ -189,30 +209,36 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
         </div>
 
         <div className="bg-green-50 border-l-4 border-green-600 p-6 my-6">
-          <h4 className="font-bold text-gray-900 mb-3">Our Freight Management Capabilities:</h4>
+          <h4 className="font-bold text-gray-900 mb-3">
+            Our Freight Management Capabilities:
+          </h4>
           <ul className="space-y-3 text-gray-700">
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold">•</span>
               <span>
-                <strong>Carrier Selection & Negotiation:</strong> Access to multiple shipping lines with competitive rates
+                <strong>Carrier Selection & Negotiation:</strong> Access to
+                multiple shipping lines with competitive rates
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold">•</span>
               <span>
-                <strong>Route Optimization:</strong> Strategic planning for fastest and most cost-effective routes
+                <strong>Route Optimization:</strong> Strategic planning for
+                fastest and most cost-effective routes
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold">•</span>
               <span>
-                <strong>Container Management:</strong> FCL and LCL consolidation services
+                <strong>Container Management:</strong> FCL and LCL consolidation
+                services
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold">•</span>
               <span>
-                <strong>Cargo Insurance:</strong> Comprehensive coverage for shipment protection
+                <strong>Cargo Insurance:</strong> Comprehensive coverage for
+                shipment protection
               </span>
             </li>
           </ul>
@@ -220,7 +246,9 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
           <div className="bg-white border-2 border-green-600 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">Benefits for Importers</h4>
+            <h4 className="font-bold text-gray-900 mb-3">
+              Benefits for Importers
+            </h4>
             <ul className="space-y-2 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <span className="text-green-600 font-bold text-xl">✔</span>
@@ -242,7 +270,9 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
           </div>
 
           <div className="bg-white border-2 border-green-600 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">Benefits for Exporters</h4>
+            <h4 className="font-bold text-gray-900 mb-3">
+              Benefits for Exporters
+            </h4>
             <ul className="space-y-2 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <span className="text-green-600 font-bold text-xl">✔</span>
@@ -265,38 +295,46 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
         </div>
 
         <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-lg p-6 text-white text-center">
-          <p className="text-xl font-bold">Optimized Freight, Maximized Value</p>
+          <p className="text-xl font-bold">
+            Optimized Freight, Maximized Value
+          </p>
           <p className="mt-2 text-white/90">
-            Our strategic freight management delivers the perfect balance of speed, cost, and reliability.
+            Our strategic freight management delivers the perfect balance of
+            speed, cost, and reliability.
           </p>
         </div>
       </DocSection>
 
       {/* Section 3: Multi-Modal Transportation */}
-      <DocSection id="transportation" title="Multi-Modal Transportation Services">
+      <DocSection
+        id="transportation"
+        title="Multi-Modal Transportation Services"
+      >
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <Globe className="w-6 h-6 text-purple-600" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              {t('transportation.title')}
+              {t("transportation.title")}
             </h3>
-            <p className="text-gray-600">
-              {t('transportation.subtitle')}
-            </p>
+            <p className="text-gray-600">{t("transportation.subtitle")}</p>
           </div>
         </div>
 
         <p>
-          We offer flexible multi-modal transportation solutions tailored to your specific needs, timeline, and budget. Whether you need air freight for urgent shipments, sea freight for cost-effective bulk transport, or land freight for regional distribution, we have you covered.
+          We offer flexible multi-modal transportation solutions tailored to
+          your specific needs, timeline, and budget. Whether you need air
+          freight for urgent shipments, sea freight for cost-effective bulk
+          transport, or land freight for regional distribution, we have you
+          covered.
         </p>
 
         {/* Image */}
         <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl my-8">
           <Image
             src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=1200&q=80"
-            alt={t('transportation.imageAlt')}
+            alt={t("transportation.imageAlt")}
             fill
             className="object-cover"
           />
@@ -304,16 +342,28 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
           <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-lg p-6 shadow-xl">
             <div className="grid grid-cols-3 gap-4 text-center">
               <div>
-                <div className="text-2xl font-bold text-[#0a4a9e]">{t('transportation.stat1')}</div>
-                <div className="text-xs text-gray-600 mt-1">{t('transportation.stat1Label')}</div>
+                <div className="text-2xl font-bold text-[#0a4a9e]">
+                  {t("transportation.stat1")}
+                </div>
+                <div className="text-xs text-gray-600 mt-1">
+                  {t("transportation.stat1Label")}
+                </div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-[#0a4a9e]">{t('transportation.stat2')}</div>
-                <div className="text-xs text-gray-600 mt-1">{t('transportation.stat2Label')}</div>
+                <div className="text-2xl font-bold text-[#0a4a9e]">
+                  {t("transportation.stat2")}
+                </div>
+                <div className="text-xs text-gray-600 mt-1">
+                  {t("transportation.stat2Label")}
+                </div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-[#0a4a9e]">{t('transportation.stat3')}</div>
-                <div className="text-xs text-gray-600 mt-1">{t('transportation.stat3Label')}</div>
+                <div className="text-2xl font-bold text-[#0a4a9e]">
+                  {t("transportation.stat3")}
+                </div>
+                <div className="text-xs text-gray-600 mt-1">
+                  {t("transportation.stat3Label")}
+                </div>
               </div>
             </div>
           </div>
@@ -326,9 +376,11 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
                 <Plane className="w-6 h-6 text-blue-600" />
               </div>
               <div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">{t('transportation.airTitle')}</h4>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">
+                  {t("transportation.airTitle")}
+                </h4>
                 <p className="text-gray-600 text-sm mb-3">
-                  {t('transportation.airDesc')}
+                  {t("transportation.airDesc")}
                 </p>
                 <ul className="space-y-1 text-sm text-gray-700">
                   <li>• Express delivery for time-sensitive cargo</li>
@@ -346,15 +398,22 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
                 <Ship className="w-6 h-6 text-green-600" />
               </div>
               <div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">{t('transportation.seaTitle')}</h4>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">
+                  {t("transportation.seaTitle")}
+                </h4>
                 <p className="text-gray-600 text-sm mb-3">
-                  {t('transportation.seaDesc')}
+                  {t("transportation.seaDesc")}
                 </p>
                 <ul className="space-y-1 text-sm text-gray-700">
                   <li>• Cost-effective for large volume shipments</li>
-                  <li>• FCL (Full Container Load) and LCL (Less than Container Load) options</li>
+                  <li>
+                    • FCL (Full Container Load) and LCL (Less than Container
+                    Load) options
+                  </li>
                   <li>• Major port connections worldwide</li>
-                  <li>• Specialized container types (reefer, flat rack, etc.)</li>
+                  <li>
+                    • Specialized container types (reefer, flat rack, etc.)
+                  </li>
                 </ul>
               </div>
             </div>
@@ -366,9 +425,11 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
                 <Truck className="w-6 h-6 text-orange-600" />
               </div>
               <div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">{t('transportation.landTitle')}</h4>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">
+                  {t("transportation.landTitle")}
+                </h4>
                 <p className="text-gray-600 text-sm mb-3">
-                  {t('transportation.landDesc')}
+                  {t("transportation.landDesc")}
                 </p>
                 <ul className="space-y-1 text-sm text-gray-700">
                   <li>• Efficient regional and cross-border delivery</li>
@@ -384,7 +445,8 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
         <div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg p-6 text-white text-center">
           <p className="text-xl font-bold">The Right Mode for Every Shipment</p>
           <p className="mt-2 text-white/90">
-            Choose from air, sea, or land freight—or combine them for optimal results.
+            Choose from air, sea, or land freight—or combine them for optimal
+            results.
           </p>
         </div>
       </DocSection>
@@ -399,14 +461,15 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
             <h3 className="text-xl font-bold text-gray-900 mb-2">
               Expert Customs Handling for Smooth Clearance
             </h3>
-            <p className="text-gray-600">
-              {t('overview.customsDesc')}
-            </p>
+            <p className="text-gray-600">{t("overview.customsDesc")}</p>
           </div>
         </div>
 
         <p>
-          Navigating customs regulations can be complex and time-consuming. Our expert customs clearance services ensure that your shipments pass through customs smoothly and efficiently, minimizing delays and avoiding costly penalties.
+          Navigating customs regulations can be complex and time-consuming. Our
+          expert customs clearance services ensure that your shipments pass
+          through customs smoothly and efficiently, minimizing delays and
+          avoiding costly penalties.
         </p>
 
         {/* Image */}
@@ -424,42 +487,66 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
         </div>
 
         <div className="bg-yellow-50 border-l-4 border-yellow-600 p-6 my-6">
-          <h4 className="font-bold text-gray-900 mb-4">Complete Documentation Support:</h4>
+          <h4 className="font-bold text-gray-900 mb-4">
+            Complete Documentation Support:
+          </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <ul className="space-y-2 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <span className="text-yellow-600 font-bold">•</span>
-                <span><strong>Commercial Invoice:</strong> Accurate transaction documentation</span>
+                <span>
+                  <strong>Commercial Invoice:</strong> Accurate transaction
+                  documentation
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-yellow-600 font-bold">•</span>
-                <span><strong>Packing List:</strong> Detailed cargo specifications</span>
+                <span>
+                  <strong>Packing List:</strong> Detailed cargo specifications
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-yellow-600 font-bold">•</span>
-                <span><strong>Bill of Lading:</strong> Transport document and title</span>
+                <span>
+                  <strong>Bill of Lading:</strong> Transport document and title
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-yellow-600 font-bold">•</span>
-                <span><strong>Certificate of Origin:</strong> Source country verification</span>
+                <span>
+                  <strong>Certificate of Origin:</strong> Source country
+                  verification
+                </span>
               </li>
             </ul>
             <ul className="space-y-2 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <span className="text-yellow-600 font-bold">•</span>
-                <span><strong>HS Code Classification:</strong> Proper tariff determination</span>
+                <span>
+                  <strong>HS Code Classification:</strong> Proper tariff
+                  determination
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-yellow-600 font-bold">•</span>
-                <span><strong>Import/Export Licenses:</strong> Required permits and authorizations</span>
+                <span>
+                  <strong>Import/Export Licenses:</strong> Required permits and
+                  authorizations
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-yellow-600 font-bold">•</span>
-                <span><strong>Phytosanitary Certificates:</strong> For agricultural products</span>
+                <span>
+                  <strong>Phytosanitary Certificates:</strong> For agricultural
+                  products
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-yellow-600 font-bold">•</span>
-                <span><strong>Customs Declarations:</strong> Accurate and compliant filing</span>
+                <span>
+                  <strong>Customs Declarations:</strong> Accurate and compliant
+                  filing
+                </span>
               </li>
             </ul>
           </div>
@@ -468,28 +555,36 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-6">
           <div className="bg-white border-2 border-yellow-600 rounded-lg p-4 text-center">
             <div className="text-3xl mb-3">📋</div>
-            <h4 className="font-bold text-gray-900 mb-2 text-sm">Accurate Documentation</h4>
+            <h4 className="font-bold text-gray-900 mb-2 text-sm">
+              Accurate Documentation
+            </h4>
             <p className="text-xs text-gray-600">
               100% compliance with customs requirements
             </p>
           </div>
           <div className="bg-white border-2 border-yellow-600 rounded-lg p-4 text-center">
             <div className="text-3xl mb-3">⚡</div>
-            <h4 className="font-bold text-gray-900 mb-2 text-sm">Fast Clearance</h4>
+            <h4 className="font-bold text-gray-900 mb-2 text-sm">
+              Fast Clearance
+            </h4>
             <p className="text-xs text-gray-600">
               Expedited processing for minimal delays
             </p>
           </div>
           <div className="bg-white border-2 border-yellow-600 rounded-lg p-4 text-center">
             <div className="text-3xl mb-3">💰</div>
-            <h4 className="font-bold text-gray-900 mb-2 text-sm">Duty Optimization</h4>
+            <h4 className="font-bold text-gray-900 mb-2 text-sm">
+              Duty Optimization
+            </h4>
             <p className="text-xs text-gray-600">
               Strategic planning to minimize costs
             </p>
           </div>
           <div className="bg-white border-2 border-yellow-600 rounded-lg p-4 text-center">
             <div className="text-3xl mb-3">🔍</div>
-            <h4 className="font-bold text-gray-900 mb-2 text-sm">Compliance Assurance</h4>
+            <h4 className="font-bold text-gray-900 mb-2 text-sm">
+              Compliance Assurance
+            </h4>
             <p className="text-xs text-gray-600">
               Zero penalties with expert handling
             </p>
@@ -499,7 +594,8 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
         <div className="bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-lg p-6 text-white text-center">
           <p className="text-xl font-bold">Seamless Customs Clearance</p>
           <p className="mt-2 text-white/90">
-            Expert documentation and customs management ensuring smooth, penalty-free clearance.
+            Expert documentation and customs management ensuring smooth,
+            penalty-free clearance.
           </p>
         </div>
       </DocSection>
@@ -514,14 +610,15 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
             <h3 className="text-xl font-bold text-gray-900 mb-2">
               Secure Storage & Efficient Distribution
             </h3>
-            <p className="text-gray-600">
-              {t('overview.warehousingDesc')}
-            </p>
+            <p className="text-gray-600">{t("overview.warehousingDesc")}</p>
           </div>
         </div>
 
         <p>
-          Our warehousing and distribution services provide secure, cost-effective storage solutions with flexible options for short-term and long-term needs. We offer strategically located facilities with modern inventory management systems.
+          Our warehousing and distribution services provide secure,
+          cost-effective storage solutions with flexible options for short-term
+          and long-term needs. We offer strategically located facilities with
+          modern inventory management systems.
         </p>
 
         {/* Image */}
@@ -544,41 +641,66 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
             <ul className="space-y-3 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <span className="text-orange-600 font-bold">•</span>
-                <span><strong>Secure Storage:</strong> 24/7 surveillance and access control</span>
+                <span>
+                  <strong>Secure Storage:</strong> 24/7 surveillance and access
+                  control
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-orange-600 font-bold">•</span>
-                <span><strong>Inventory Management:</strong> Real-time tracking and reporting</span>
+                <span>
+                  <strong>Inventory Management:</strong> Real-time tracking and
+                  reporting
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-orange-600 font-bold">•</span>
-                <span><strong>Cross-Docking:</strong> Quick transfer and distribution</span>
+                <span>
+                  <strong>Cross-Docking:</strong> Quick transfer and
+                  distribution
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-orange-600 font-bold">•</span>
-                <span><strong>Special Handling:</strong> Temperature-controlled storage available</span>
+                <span>
+                  <strong>Special Handling:</strong> Temperature-controlled
+                  storage available
+                </span>
               </li>
             </ul>
           </div>
 
           <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">Distribution Services</h4>
+            <h4 className="font-bold text-gray-900 mb-3">
+              Distribution Services
+            </h4>
             <ul className="space-y-3 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <span className="text-orange-600 font-bold">•</span>
-                <span><strong>Order Fulfillment:</strong> Pick, pack, and ship services</span>
+                <span>
+                  <strong>Order Fulfillment:</strong> Pick, pack, and ship
+                  services
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-orange-600 font-bold">•</span>
-                <span><strong>Last-Mile Delivery:</strong> Direct to customer doorstep</span>
+                <span>
+                  <strong>Last-Mile Delivery:</strong> Direct to customer
+                  doorstep
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-orange-600 font-bold">•</span>
-                <span><strong>Nationwide Network:</strong> Coverage across Bangladesh</span>
+                <span>
+                  <strong>Nationwide Network:</strong> Coverage across
+                  Bangladesh
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-orange-600 font-bold">•</span>
-                <span><strong>Returns Management:</strong> Reverse logistics support</span>
+                <span>
+                  <strong>Returns Management:</strong> Reverse logistics support
+                </span>
               </li>
             </ul>
           </div>
@@ -587,7 +709,8 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
         <div className="bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg p-6 text-white text-center">
           <p className="text-xl font-bold">Your Inventory, Our Priority</p>
           <p className="mt-2 text-white/90">
-            Secure warehousing and efficient distribution to keep your supply chain moving.
+            Secure warehousing and efficient distribution to keep your supply
+            chain moving.
           </p>
         </div>
       </DocSection>
@@ -595,21 +718,22 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
       {/* Section 6: Tracking */}
       <DocSection id="tracking" title="Real-Time Tracking & Monitoring">
         <div className="flex items-start gap-4 mb-6">
-          <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-            <MonitorDot className="w-6 h-6 text-red-600" />
+          <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <MonitorDot className="w-6 h-6 text-teal-600" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
               Complete Visibility Throughout Your Supply Chain
             </h3>
-            <p className="text-gray-600">
-              {t('overview.trackingDesc')}
-            </p>
+            <p className="text-gray-600">{t("overview.trackingDesc")}</p>
           </div>
         </div>
 
         <p>
-          Stay informed about your shipments with our advanced real-time tracking and monitoring systems. From the moment your cargo leaves the origin until it reaches its final destination, you'll have complete visibility and control.
+          Stay informed about your shipments with our advanced real-time
+          tracking and monitoring systems. From the moment your cargo leaves the
+          origin until it reaches its final destination, you'll have complete
+          visibility and control.
         </p>
 
         {/* Image */}
@@ -622,47 +746,70 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">Advanced Tracking Technology</p>
+            <p className="text-sm font-semibold">
+              Advanced Tracking Technology
+            </p>
           </div>
         </div>
 
-        <div className="bg-red-50 border-l-4 border-red-600 p-6 my-6">
+        <div className="bg-teal-50/30 border-l-4 border-teal-500 p-6 my-6 shadow-sm">
           <h4 className="font-bold text-gray-900 mb-3">Tracking Features:</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <ul className="space-y-2 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <span className="text-red-600 font-bold">•</span>
-                <span><strong>GPS Location Tracking:</strong> Real-time position updates</span>
+                <span>
+                  <strong>GPS Location Tracking:</strong> Real-time position
+                  updates
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-red-600 font-bold">•</span>
-                <span><strong>Milestone Notifications:</strong> Automated status alerts</span>
+                <span>
+                  <strong>Milestone Notifications:</strong> Automated status
+                  alerts
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-red-600 font-bold">•</span>
-                <span><strong>ETA Updates:</strong> Dynamic arrival time estimates</span>
+                <span>
+                  <strong>ETA Updates:</strong> Dynamic arrival time estimates
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-red-600 font-bold">•</span>
-                <span><strong>Customs Status:</strong> Clearance progress monitoring</span>
+                <span>
+                  <strong>Customs Status:</strong> Clearance progress monitoring
+                </span>
               </li>
             </ul>
             <ul className="space-y-2 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <span className="text-red-600 font-bold">•</span>
-                <span><strong>Delay Alerts:</strong> Immediate notification of issues</span>
+                <span>
+                  <strong>Delay Alerts:</strong> Immediate notification of
+                  issues
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-red-600 font-bold">•</span>
-                <span><strong>Document Tracking:</strong> Digital access to all paperwork</span>
+                <span>
+                  <strong>Document Tracking:</strong> Digital access to all
+                  paperwork
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-red-600 font-bold">•</span>
-                <span><strong>Multi-Shipment Dashboard:</strong> Manage all orders in one place</span>
+                <span>
+                  <strong>Multi-Shipment Dashboard:</strong> Manage all orders
+                  in one place
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-red-600 font-bold">•</span>
-                <span><strong>Historical Reports:</strong> Complete shipment history</span>
+                <span>
+                  <strong>Historical Reports:</strong> Complete shipment history
+                </span>
               </li>
             </ul>
           </div>
@@ -675,10 +822,10 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
                 <Clock className="w-6 h-6 text-green-600" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{t('benefits.efficiencyTitle')}</h3>
-                <p className="text-gray-600">
-                  {t('benefits.efficiencyDesc')}
-                </p>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {t("benefits.efficiencyTitle")}
+                </h3>
+                <p className="text-gray-600">{t("benefits.efficiencyDesc")}</p>
               </div>
             </div>
           </div>
@@ -689,10 +836,10 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
                 <Shield className="w-6 h-6 text-blue-600" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{t('benefits.securityTitle')}</h3>
-                <p className="text-gray-600">
-                  {t('benefits.securityDesc')}
-                </p>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {t("benefits.securityTitle")}
+                </h3>
+                <p className="text-gray-600">{t("benefits.securityDesc")}</p>
               </div>
             </div>
           </div>
@@ -703,9 +850,11 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
                 <MonitorDot className="w-6 h-6 text-purple-600" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{t('benefits.transparencyTitle')}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {t("benefits.transparencyTitle")}
+                </h3>
                 <p className="text-gray-600">
-                  {t('benefits.transparencyDesc')}
+                  {t("benefits.transparencyDesc")}
                 </p>
               </div>
             </div>
@@ -717,35 +866,34 @@ export default async function LogisticsSupplyChainPage({ params }: { params: Pro
                 <Network className="w-6 h-6 text-orange-600" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{t('benefits.reachTitle')}</h3>
-                <p className="text-gray-600">
-                  {t('benefits.reachDesc')}
-                </p>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {t("benefits.reachTitle")}
+                </h3>
+                <p className="text-gray-600">{t("benefits.reachDesc")}</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-lg p-6 text-white text-center mb-8">
-          <p className="text-xl font-bold">Total Transparency, Complete Control</p>
+        <div className="bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg p-6 text-white text-center mb-8">
+          <p className="text-xl font-bold">
+            Total Transparency, Complete Control
+          </p>
           <p className="mt-2 text-white/90">
-            Monitor every step of your shipment journey with our advanced tracking technology.
+            Monitor every step of your shipment journey with our advanced
+            tracking technology.
           </p>
         </div>
 
         {/* Call-to-Action box */}
         <div className="bg-gradient-to-r from-[#0a4a9e] to-[#05306b] rounded-lg p-8 text-white">
-          <h4 className="text-2xl font-bold mb-4">
-            {t('cta.title')}
-          </h4>
-          <p className="mb-6 text-white/90">
-            {t('cta.description')}
-          </p>
+          <h4 className="text-2xl font-bold mb-4">{t("cta.title")}</h4>
+          <p className="mb-6 text-white/90">{t("cta.description")}</p>
           <Link
             href="/contact"
             className="inline-block bg-white text-[#0a4a9e] font-bold px-8 py-3 rounded-full hover:bg-white/90 transition-colors duration-200"
           >
-            {t('cta.button')}
+            {t("cta.button")}
           </Link>
         </div>
       </DocSection>
