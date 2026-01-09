@@ -1,11 +1,9 @@
 import prisma from "@/lib/db/prisma";
-import bcrypt from "bcryptjs";
 
 export interface Registration {
   id: string;
   name: string;
   email: string;
-  password: string;
   phone?: string;
   company?: string;
   country?: string;
@@ -21,14 +19,10 @@ export interface Registration {
 export async function createRegistration(
   data: Partial<Registration>
 ): Promise<Registration> {
-  // Hash password before saving
-  const hashedPassword = await bcrypt.hash(data.password || "", 10);
-
   const registration = await prisma.registration.create({
     data: {
       name: data.name!,
       email: data.email!,
-      password: hashedPassword,
       phone: data.phone,
       company: data.company,
       country: data.country,

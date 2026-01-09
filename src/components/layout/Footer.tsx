@@ -10,7 +10,7 @@ export function Footer() {
   const footerLinks = {
     company: [
       { href: "/payment-methods", label: t("companyPaymentMethods") },
-      { href: "/contact", label: t("companyCaseStudies") },
+      { href: "/case-study", label: t("companyCaseStudies") },
       { href: "/contact", label: t("companyCareers") },
       { href: "/contact", label: t("companyPartner") },
       { href: "/contact", label: t("companyQuote") },

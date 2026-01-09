@@ -7,7 +7,6 @@ import { Analytics } from "@/components/admin/Analytics";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useDashboard } from "@/lib/hooks/useDashboard";
-import { PageLoader } from "@/components/ui/LoadingSpinner";
 
 export default function AdminDashboard() {
   const { data: dashboardData, isLoading, error } = useDashboard();

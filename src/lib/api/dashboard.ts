@@ -20,24 +20,15 @@ export interface RecentActivityItem {
 
 export async function getDashboardStats(): Promise<DashboardStats> {
   try {
-    // Get products count using raw query since Prisma model doesn't match DB table
-    let totalProducts = 0;
-    try {
-      const productResult = await prisma.$queryRaw<Array<{ count: bigint }>>`
-        SELECT COUNT(*) FROM products
-      `;
-      totalProducts = Number(productResult[0].count);
-    } catch (error) {
-      console.error("Error counting products:", error);
-    }
-
     const [
+      totalProducts,
       totalBlogPosts,
       totalUsers,
       totalRegistrations,
       publishedBlogPosts,
       draftBlogPosts,
     ] = await Promise.all([
+      prisma.product.count(),
       prisma.blogPost.count(),
       prisma.user.count(),
       prisma.registration.count(),
@@ -83,21 +74,18 @@ export async function getRecentActivity(): Promise<RecentActivityItem[]> {
   try {
     const activities: RecentActivityItem[] = [];
 
-    // Get recent products using raw query
+    // Get recent products using Prisma
     try {
-      const recentProducts = await prisma.$queryRaw<
-        Array<{
-          id: string;
-          name: string;
-          category_id: string;
-          created_at: Date;
-        }>
-      >`
-        SELECT id, name, category_id, created_at 
-        FROM products 
-        ORDER BY created_at DESC 
-        LIMIT 5
-      `;
+      const recentProducts = await prisma.product.findMany({
+        take: 5,
+        orderBy: { createdAt: "desc" },
+        select: {
+          id: true,
+          name: true,
+          category: true,
+          createdAt: true,
+        },
+      });
 
       recentProducts.forEach((product) => {
         activities.push({
@@ -105,7 +93,7 @@ export async function getRecentActivity(): Promise<RecentActivityItem[]> {
           type: "product",
           title: "New product added",
           description: product.name,
-          createdAt: product.created_at,
+          createdAt: product.createdAt,
         });
       });
     } catch (error) {

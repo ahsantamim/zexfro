@@ -28,7 +28,7 @@ export default async function AdminLayout({
         <div className="flex">
           <AdminSidebar />
           <main className="flex-1 p-6 md:p-8 lg:p-10">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-full mx-auto">
               <Breadcrumbs />
               <div className="bg-white rounded-xl shadow-sm p-6 md:p-8">
                 {children}

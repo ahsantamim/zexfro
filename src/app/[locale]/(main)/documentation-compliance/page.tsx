@@ -1,5 +1,5 @@
 import { DocLayout, DocSection } from "@/components/ui/DocLayout";
-import { FileText, Building2, ShieldCheck, Package, Banknote, Receipt, Globe2, Database, CheckCircle2 } from "lucide-react";
+import { FileText, Building2, ShieldCheck, Package, Banknote, Receipt, Globe2, Database, CheckCircle2, Award } from "lucide-react";
 import Image from "next/image";
 import { getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
@@ -27,6 +27,7 @@ const sections = [
   { id: "tax", title: "Tax & VAT Compliance" },
   { id: "international", title: "International Trade Compliance" },
   { id: "controls", title: "Internal Control & Record Management" },
+  { id: "membership", title: "Member of Association" },
   { id: "commitment", title: "Compliance Commitment" },
 ];
 
@@ -1071,7 +1072,141 @@ export default function DocumentationCompliancePage() {
         </div>
       </DocSection>
 
-      {/* Section 9: Compliance Commitment */}
+      {/* Section 9: Member of Association */}
+      <DocSection id="membership" title="Member of Association">
+        <div className="flex items-start gap-4 mb-6">
+          <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <Award className="w-6 h-6 text-amber-600" />
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">
+              Dhaka Chamber of Commerce & Industry (DCCI)
+            </h3>
+            <p className="text-gray-600">
+              Proud member of Bangladesh's premier business association
+            </p>
+          </div>
+        </div>
+
+        <p className="text-lg">
+          Zero International Limited is a proud member of the <strong>Dhaka Chamber of Commerce & Industry (DCCI)</strong>, 
+          the leading trade organization in Bangladesh. This membership demonstrates our commitment to ethical business 
+          practices, industry standards, and active participation in the business community.
+        </p>
+
+        {/* Image */}
+        <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl my-8">
+          <Image
+            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80"
+            alt="Chamber of Commerce membership"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+          <div className="absolute bottom-6 left-6 text-white">
+            <p className="text-sm font-semibold">Member of DCCI</p>
+          </div>
+        </div>
+
+        <div className="bg-amber-50 border-l-4 border-amber-600 p-6 my-6">
+          <h4 className="font-bold text-gray-900 mb-4">About DCCI</h4>
+          <p className="text-gray-700 mb-4">
+            The <strong>Dhaka Chamber of Commerce & Industry</strong> is the largest and most influential chamber 
+            of commerce in Bangladesh, representing the interests of the business community since 1958. DCCI plays 
+            a vital role in:
+          </p>
+          <ul className="space-y-2 text-gray-700">
+            <li className="flex items-start gap-3">
+              <span className="text-amber-600 font-bold">•</span>
+              <span>Promoting trade and commerce in Bangladesh</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-amber-600 font-bold">•</span>
+              <span>Facilitating business networking and partnerships</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-amber-600 font-bold">•</span>
+              <span>Advocating for business-friendly policies</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-amber-600 font-bold">•</span>
+              <span>Supporting international trade development</span>
+            </li>
+          </ul>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+          <div className="bg-white border-2 border-amber-600 rounded-lg p-6">
+            <h4 className="font-bold text-gray-900 mb-4">Membership Benefits</h4>
+            <ul className="space-y-3 text-sm text-gray-700">
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                <span>
+                  <strong>Enhanced Credibility:</strong> Recognition as a verified and trusted business entity
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                <span>
+                  <strong>Networking Opportunities:</strong> Access to business forums, seminars, and trade fairs
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                <span>
+                  <strong>Trade Support:</strong> Assistance with certificates of origin and trade documentation
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                <span>
+                  <strong>Market Intelligence:</strong> Access to business research and market information
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-white border-2 border-amber-600 rounded-lg p-6">
+            <h4 className="font-bold text-gray-900 mb-4">Our Commitment as a Member</h4>
+            <ul className="space-y-3 text-sm text-gray-700">
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                <span>
+                  <strong>Ethical Business Practices:</strong> Upholding the highest standards of business ethics
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                <span>
+                  <strong>Industry Standards:</strong> Adhering to industry best practices and guidelines
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                <span>
+                  <strong>Community Contribution:</strong> Contributing to the development of Bangladesh's business sector
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                <span>
+                  <strong>Trade Advocacy:</strong> Supporting initiatives that promote international trade
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-r from-amber-600 to-amber-700 rounded-lg p-6 text-white text-center">
+          <p className="text-xl font-bold">Recognized Business Partner</p>
+          <p className="mt-2 text-white/90">
+            Our DCCI membership validates our position as a credible and trustworthy international trading company 
+            in Bangladesh.
+          </p>
+        </div>
+      </DocSection>
+
+      {/* Section 10: Compliance Commitment */}
       <DocSection id="commitment" title="Compliance Commitment">
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">

@@ -9,7 +9,6 @@ export async function POST(request: NextRequest) {
 
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
     const country = formData.get("country") as string;
     const company = formData.get("company") as string;
     const designation = formData.get("designation") as string;
@@ -20,7 +19,7 @@ export async function POST(request: NextRequest) {
     const file = formData.get("file") as File | null;
 
     // Validate required fields
-    if (!email || !name || !password) {
+    if (!email || !name) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 }
@@ -71,7 +70,6 @@ export async function POST(request: NextRequest) {
     const registration = await createRegistration({
       name,
       email,
-      password,
       country,
       company,
       designation,
