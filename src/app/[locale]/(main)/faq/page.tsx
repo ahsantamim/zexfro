@@ -1,10 +1,7 @@
 "use client";
 
-import { 
-  ContentLayout, 
-  ContentSection
-} from "@/components/ui/ContentLayout";
-import { 
+import { ContentLayout, ContentSection } from "@/components/ui/ContentLayout";
+import {
   Building2,
   FileCheck,
   Shield,
@@ -12,12 +9,13 @@ import {
   DollarSign,
   ChevronDown,
   Mail,
-  Phone
+  Phone,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@/i18n/routing";
+import { RegisterModal } from "@/components/home/RegisterModal";
 
 export default function FAQPage() {
   const t = useTranslations("faq");
@@ -71,9 +69,9 @@ export default function FAQPage() {
   ];
 
   const toggleAccordion = (categoryId: string, index: number) => {
-    setOpenItems(prev => ({
+    setOpenItems((prev) => ({
       ...prev,
-      [categoryId]: prev[categoryId] === index ? null : index
+      [categoryId]: prev[categoryId] === index ? null : index,
     }));
   };
 
@@ -125,16 +123,18 @@ export default function FAQPage() {
             <div className="space-y-6">
               {leftColumnCategories.map((category) => {
                 const colors = getColorClasses(category.color);
-                
+
                 return (
                   <div key={category.id} className="space-y-3">
                     {/* Category Header */}
-                    <div className={`${colors.headerBg} border-2 ${colors.border} rounded-lg p-4`}>
+                    <div
+                      className={`${colors.headerBg} border-2 ${colors.border} rounded-lg p-4`}
+                    >
                       <div className="flex items-center gap-3">
-                        <div className={`w-10 h-10 ${colors.iconBg} rounded-lg flex items-center justify-center flex-shrink-0`}>
-                          <div className={colors.icon}>
-                            {category.icon}
-                          </div>
+                        <div
+                          className={`w-10 h-10 ${colors.iconBg} rounded-lg flex items-center justify-center flex-shrink-0`}
+                        >
+                          <div className={colors.icon}>{category.icon}</div>
                         </div>
                         <h2 className="text-xl font-bold text-gray-900">
                           {category.title}
@@ -146,7 +146,7 @@ export default function FAQPage() {
                     <div className="space-y-2">
                       {category.questions.map((questionKey, index) => {
                         const isOpen = openItems[category.id] === index;
-                        
+
                         return (
                           <div
                             key={questionKey}
@@ -154,13 +154,21 @@ export default function FAQPage() {
                           >
                             {/* Question Button */}
                             <button
-                              onClick={() => toggleAccordion(category.id, index)}
+                              onClick={() =>
+                                toggleAccordion(category.id, index)
+                              }
                               className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition-colors"
                               aria-expanded={isOpen}
                             >
                               <div className="flex items-start gap-3 flex-1">
-                                <div className={`w-7 h-7 ${colors.iconBg} rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5`}>
-                                  <span className={`${colors.icon} font-bold text-xs`}>Q</span>
+                                <div
+                                  className={`w-7 h-7 ${colors.iconBg} rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5`}
+                                >
+                                  <span
+                                    className={`${colors.icon} font-bold text-xs`}
+                                  >
+                                    Q
+                                  </span>
                                 </div>
                                 <span className="text-sm md:text-base font-bold text-gray-900 pr-4">
                                   {t(`questions.${questionKey}.question`)}
@@ -168,7 +176,10 @@ export default function FAQPage() {
                               </div>
                               <motion.div
                                 animate={{ rotate: isOpen ? 180 : 0 }}
-                                transition={{ duration: 0.3, ease: "easeInOut" }}
+                                transition={{
+                                  duration: 0.3,
+                                  ease: "easeInOut",
+                                }}
                               >
                                 <ChevronDown className="w-5 h-5 text-[#0a4a9e] flex-shrink-0" />
                               </motion.div>
@@ -179,36 +190,64 @@ export default function FAQPage() {
                               {isOpen && (
                                 <motion.div
                                   initial={{ height: 0, opacity: 0 }}
-                                  animate={{ 
-                                    height: "auto", 
+                                  animate={{
+                                    height: "auto",
                                     opacity: 1,
                                     transition: {
-                                      height: { duration: 0.4, ease: "easeInOut" },
-                                      opacity: { duration: 0.3, delay: 0.1, ease: "easeIn" }
-                                    }
+                                      height: {
+                                        duration: 0.4,
+                                        ease: "easeInOut",
+                                      },
+                                      opacity: {
+                                        duration: 0.3,
+                                        delay: 0.1,
+                                        ease: "easeIn",
+                                      },
+                                    },
                                   }}
-                                  exit={{ 
-                                    height: 0, 
+                                  exit={{
+                                    height: 0,
                                     opacity: 0,
                                     transition: {
-                                      height: { duration: 0.4, ease: "easeInOut" },
-                                      opacity: { duration: 0.2, ease: "easeOut" }
-                                    }
+                                      height: {
+                                        duration: 0.4,
+                                        ease: "easeInOut",
+                                      },
+                                      opacity: {
+                                        duration: 0.2,
+                                        ease: "easeOut",
+                                      },
+                                    },
                                   }}
                                   className="overflow-hidden"
                                 >
                                   <div className="px-4 pb-4">
                                     <div className="flex items-start gap-3 pl-10 pt-3 border-t border-gray-200">
-                                      <div className={`w-7 h-7 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0`}>
-                                        <span className="text-green-600 font-bold text-xs">A</span>
+                                      <div
+                                        className={`w-7 h-7 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0`}
+                                      >
+                                        <span className="text-green-600 font-bold text-xs">
+                                          A
+                                        </span>
                                       </div>
                                       <div className="text-sm text-gray-700 leading-relaxed flex-1">
-                                        {t.rich(`questions.${questionKey}.answer`, {
-                                          br: () => <br />,
-                                          ul: (chunks) => <ul className="list-disc pl-5 space-y-1 mt-2">{chunks}</ul>,
-                                          li: (chunks) => <li>{chunks}</li>,
-                                          strong: (chunks) => <strong className="font-semibold">{chunks}</strong>,
-                                        })}
+                                        {t.rich(
+                                          `questions.${questionKey}.answer`,
+                                          {
+                                            br: () => <br />,
+                                            ul: (chunks) => (
+                                              <ul className="list-disc pl-5 space-y-1 mt-2">
+                                                {chunks}
+                                              </ul>
+                                            ),
+                                            li: (chunks) => <li>{chunks}</li>,
+                                            strong: (chunks) => (
+                                              <strong className="font-semibold">
+                                                {chunks}
+                                              </strong>
+                                            ),
+                                          }
+                                        )}
                                       </div>
                                     </div>
                                   </div>
@@ -228,16 +267,18 @@ export default function FAQPage() {
             <div className="space-y-6">
               {rightColumnCategories.map((category) => {
                 const colors = getColorClasses(category.color);
-                
+
                 return (
                   <div key={category.id} className="space-y-3">
                     {/* Category Header */}
-                    <div className={`${colors.headerBg} border-2 ${colors.border} rounded-lg p-4`}>
+                    <div
+                      className={`${colors.headerBg} border-2 ${colors.border} rounded-lg p-4`}
+                    >
                       <div className="flex items-center gap-3">
-                        <div className={`w-10 h-10 ${colors.iconBg} rounded-lg flex items-center justify-center flex-shrink-0`}>
-                          <div className={colors.icon}>
-                            {category.icon}
-                          </div>
+                        <div
+                          className={`w-10 h-10 ${colors.iconBg} rounded-lg flex items-center justify-center flex-shrink-0`}
+                        >
+                          <div className={colors.icon}>{category.icon}</div>
                         </div>
                         <h2 className="text-xl font-bold text-gray-900">
                           {category.title}
@@ -249,7 +290,7 @@ export default function FAQPage() {
                     <div className="space-y-2">
                       {category.questions.map((questionKey, index) => {
                         const isOpen = openItems[category.id] === index;
-                        
+
                         return (
                           <div
                             key={questionKey}
@@ -257,13 +298,21 @@ export default function FAQPage() {
                           >
                             {/* Question Button */}
                             <button
-                              onClick={() => toggleAccordion(category.id, index)}
+                              onClick={() =>
+                                toggleAccordion(category.id, index)
+                              }
                               className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition-colors"
                               aria-expanded={isOpen}
                             >
                               <div className="flex items-start gap-3 flex-1">
-                                <div className={`w-7 h-7 ${colors.iconBg} rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5`}>
-                                  <span className={`${colors.icon} font-bold text-xs`}>Q</span>
+                                <div
+                                  className={`w-7 h-7 ${colors.iconBg} rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5`}
+                                >
+                                  <span
+                                    className={`${colors.icon} font-bold text-xs`}
+                                  >
+                                    Q
+                                  </span>
                                 </div>
                                 <span className="text-sm md:text-base font-bold text-gray-900 pr-4">
                                   {t(`questions.${questionKey}.question`)}
@@ -271,7 +320,10 @@ export default function FAQPage() {
                               </div>
                               <motion.div
                                 animate={{ rotate: isOpen ? 180 : 0 }}
-                                transition={{ duration: 0.3, ease: "easeInOut" }}
+                                transition={{
+                                  duration: 0.3,
+                                  ease: "easeInOut",
+                                }}
                               >
                                 <ChevronDown className="w-5 h-5 text-[#0a4a9e] flex-shrink-0" />
                               </motion.div>
@@ -282,36 +334,64 @@ export default function FAQPage() {
                               {isOpen && (
                                 <motion.div
                                   initial={{ height: 0, opacity: 0 }}
-                                  animate={{ 
-                                    height: "auto", 
+                                  animate={{
+                                    height: "auto",
                                     opacity: 1,
                                     transition: {
-                                      height: { duration: 0.4, ease: "easeInOut" },
-                                      opacity: { duration: 0.3, delay: 0.1, ease: "easeIn" }
-                                    }
+                                      height: {
+                                        duration: 0.4,
+                                        ease: "easeInOut",
+                                      },
+                                      opacity: {
+                                        duration: 0.3,
+                                        delay: 0.1,
+                                        ease: "easeIn",
+                                      },
+                                    },
                                   }}
-                                  exit={{ 
-                                    height: 0, 
+                                  exit={{
+                                    height: 0,
                                     opacity: 0,
                                     transition: {
-                                      height: { duration: 0.4, ease: "easeInOut" },
-                                      opacity: { duration: 0.2, ease: "easeOut" }
-                                    }
+                                      height: {
+                                        duration: 0.4,
+                                        ease: "easeInOut",
+                                      },
+                                      opacity: {
+                                        duration: 0.2,
+                                        ease: "easeOut",
+                                      },
+                                    },
                                   }}
                                   className="overflow-hidden"
                                 >
                                   <div className="px-4 pb-4">
                                     <div className="flex items-start gap-3 pl-10 pt-3 border-t border-gray-200">
-                                      <div className={`w-7 h-7 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0`}>
-                                        <span className="text-green-600 font-bold text-xs">A</span>
+                                      <div
+                                        className={`w-7 h-7 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0`}
+                                      >
+                                        <span className="text-green-600 font-bold text-xs">
+                                          A
+                                        </span>
                                       </div>
                                       <div className="text-sm text-gray-700 leading-relaxed flex-1">
-                                        {t.rich(`questions.${questionKey}.answer`, {
-                                          br: () => <br />,
-                                          ul: (chunks) => <ul className="list-disc pl-5 space-y-1 mt-2">{chunks}</ul>,
-                                          li: (chunks) => <li>{chunks}</li>,
-                                          strong: (chunks) => <strong className="font-semibold">{chunks}</strong>,
-                                        })}
+                                        {t.rich(
+                                          `questions.${questionKey}.answer`,
+                                          {
+                                            br: () => <br />,
+                                            ul: (chunks) => (
+                                              <ul className="list-disc pl-5 space-y-1 mt-2">
+                                                {chunks}
+                                              </ul>
+                                            ),
+                                            li: (chunks) => <li>{chunks}</li>,
+                                            strong: (chunks) => (
+                                              <strong className="font-semibold">
+                                                {chunks}
+                                              </strong>
+                                            ),
+                                          }
+                                        )}
                                       </div>
                                     </div>
                                   </div>
@@ -334,11 +414,32 @@ export default function FAQPage() {
       <section className="py-12 md:py-16 bg-gradient-to-r from-[#0a4a9e] to-[#05306b] relative overflow-hidden">
         {/* Decorative Background */}
         <div className="absolute inset-0 opacity-10">
-          <svg className="absolute right-10 top-10 h-32 w-32 text-white" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="2" fill="none" />
+          <svg
+            className="absolute right-10 top-10 h-32 w-32 text-white"
+            viewBox="0 0 100 100"
+          >
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="currentColor"
+              strokeWidth="2"
+              fill="none"
+            />
           </svg>
-          <svg className="absolute left-20 bottom-10 h-24 w-24 text-white" viewBox="0 0 100 100">
-            <rect x="10" y="10" width="80" height="80" stroke="currentColor" strokeWidth="2" fill="none" />
+          <svg
+            className="absolute left-20 bottom-10 h-24 w-24 text-white"
+            viewBox="0 0 100 100"
+          >
+            <rect
+              x="10"
+              y="10"
+              width="80"
+              height="80"
+              stroke="currentColor"
+              strokeWidth="2"
+              fill="none"
+            />
           </svg>
         </div>
 
@@ -377,12 +478,11 @@ export default function FAQPage() {
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
             {t("cta.description")}
           </p>
-          <Link
-            href="/register"
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-[#0a4a9e] to-[#05306b] hover:from-[#0d5bbf] hover:to-[#0a4a9e] text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-          >
-            {t("cta.button")}
-          </Link>
+          <RegisterModal>
+            <button className="inline-flex items-center gap-3 bg-gradient-to-r from-[#0a4a9e] to-[#05306b] hover:from-[#0d5bbf] hover:to-[#0a4a9e] text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              {t("cta.button")}
+            </button>
+          </RegisterModal>
         </div>
       </section>
     </ContentLayout>

@@ -28,23 +28,38 @@ export function ContentLayout({
             backgroundImage: `url('${heroImage}')`,
           }}
         />
-        
+
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a4a9e]/95 via-[#05306b]/10 to-[#041f3f]/85" />
-        
+
         {/* Decorative Geometric Shapes */}
         <div className="absolute inset-0 opacity-10">
           <svg
             className="absolute right-10 top-10 h-32 w-32 text-white"
             viewBox="0 0 100 100"
           >
-            <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="2" fill="none" />
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="currentColor"
+              strokeWidth="2"
+              fill="none"
+            />
           </svg>
           <svg
             className="absolute left-20 bottom-20 h-24 w-24 text-white"
             viewBox="0 0 100 100"
           >
-            <rect x="10" y="10" width="80" height="80" stroke="currentColor" strokeWidth="2" fill="none" />
+            <rect
+              x="10"
+              y="10"
+              width="80"
+              height="80"
+              stroke="currentColor"
+              strokeWidth="2"
+              fill="none"
+            />
           </svg>
           <svg
             className="absolute right-1/3 bottom-10 h-28 w-28 text-white"
@@ -73,9 +88,7 @@ export function ContentLayout({
       </section>
 
       {/* Main Content */}
-      <main className="bg-gray-50">
-        {children}
-      </main>
+      <main className="bg-gray-50">{children}</main>
     </div>
   );
 }
@@ -86,10 +99,10 @@ interface ContentSectionProps {
   noPadding?: boolean;
 }
 
-export function ContentSection({ 
-  children, 
+export function ContentSection({
+  children,
   bgColor = "white",
-  noPadding = false 
+  noPadding = false,
 }: ContentSectionProps) {
   const bgColors = {
     white: "bg-white",
@@ -98,7 +111,11 @@ export function ContentSection({
   };
 
   return (
-    <section className={`${bgColors[bgColor]} ${noPadding ? "" : "py-12 sm:py-16 md:py-20"}`}>
+    <section
+      className={`${bgColors[bgColor]} ${
+        noPadding ? "" : "py-12 sm:py-16 md:py-20"
+      }`}
+    >
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {children}
       </div>
@@ -113,11 +130,11 @@ interface SectionHeaderProps {
   centered?: boolean;
 }
 
-export function SectionHeader({ 
-  title, 
-  subtitle, 
+export function SectionHeader({
+  title,
+  subtitle,
   icon,
-  centered = false 
+  centered = false,
 }: SectionHeaderProps) {
   return (
     <div className={`mb-8 md:mb-12 ${centered ? "text-center" : ""}`}>
@@ -132,9 +149,7 @@ export function SectionHeader({
         {title}
       </h2>
       {subtitle && (
-        <p className="text-lg md:text-xl text-gray-600 max-w-3xl">
-          {subtitle}
-        </p>
+        <p className="text-lg md:text-xl text-gray-600 max-w-3xl">{subtitle}</p>
       )}
     </div>
   );
@@ -147,7 +162,12 @@ interface FeatureCardProps {
   color?: "blue" | "green" | "purple" | "orange";
 }
 
-export function FeatureCard({ icon, title, description, color = "blue" }: FeatureCardProps) {
+export function FeatureCard({
+  icon,
+  title,
+  description,
+  color = "blue",
+}: FeatureCardProps) {
   const colors = {
     blue: {
       icon: "text-blue-600",
@@ -172,11 +192,13 @@ export function FeatureCard({ icon, title, description, color = "blue" }: Featur
   };
 
   return (
-    <div className={`p-6 ${colors[color].bg} border-2 ${colors[color].border} rounded-lg hover:shadow-lg transition-all duration-300`}>
-      <div className={`w-12 h-12 ${colors[color].bg} rounded-lg flex items-center justify-center mb-4`}>
-        <div className={colors[color].icon}>
-          {icon}
-        </div>
+    <div
+      className={`p-6 ${colors[color].bg} border-2 ${colors[color].border} rounded-lg hover:shadow-lg transition-all duration-300`}
+    >
+      <div
+        className={`w-12 h-12 ${colors[color].bg} rounded-lg flex items-center justify-center mb-4`}
+      >
+        <div className={colors[color].icon}>{icon}</div>
       </div>
       <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
       <p className="text-gray-600 leading-relaxed">{description}</p>
@@ -188,23 +210,33 @@ interface CTABoxProps {
   title: string;
   description: string;
   buttonText: string;
-  buttonLink: string;
+  buttonLink?: string;
+  buttonElement?: ReactNode;
 }
 
-export function CTABox({ title, description, buttonText, buttonLink }: CTABoxProps) {
+export function CTABox({
+  title,
+  description,
+  buttonText,
+  buttonLink,
+  buttonElement,
+}: CTABoxProps) {
   return (
     <div className="bg-gradient-to-r from-[#0a4a9e] to-[#05306b] rounded-lg p-8 md:p-12 text-white text-center">
       <h3 className="text-2xl md:text-3xl font-bold mb-4">{title}</h3>
       <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
         {description}
       </p>
-      <Link
-        href={buttonLink}
-        className="inline-block bg-white text-[#0a4a9e] font-bold px-10 py-4 rounded-full hover:bg-white/90 transition-all duration-300 transform hover:scale-105 shadow-lg"
-      >
-        {buttonText}
-      </Link>
+      {buttonElement ? (
+        buttonElement
+      ) : (
+        <Link
+          href={buttonLink || "#"}
+          className="inline-block bg-white text-[#0a4a9e] font-bold px-10 py-4 rounded-full hover:bg-white/90 transition-all duration-300 transform hover:scale-105 shadow-lg"
+        >
+          {buttonText}
+        </Link>
+      )}
     </div>
   );
 }
-

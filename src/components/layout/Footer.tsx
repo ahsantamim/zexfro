@@ -20,7 +20,7 @@ export function Footer() {
     company: [
       { href: "/payment-methods", label: t("companyPaymentMethods") },
       { href: "/case-study", label: t("companyCaseStudies") },
-      { href: "/contact", label: t("companyCareers") },
+      { href: "/careers", label: t("companyCareers") },
       { href: "/contact", label: t("companyPartner") },
       { href: "/contact", label: t("companyQuote") },
       { href: "/about", label: t("companyMission") },
