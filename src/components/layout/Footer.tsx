@@ -71,42 +71,27 @@ export function Footer() {
       <div className="container mx-auto max-w-9xl px-4 sm:px-6 lg:px-8 py-12 sm:py-14 md:py-16 lg:py-20 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 max-w-7xl mx-auto items-start">
           {/* Info Column */}
-          <div className="text-center md:text-left">
-            <h4 className="text-white font-semibold ">Information</h4>
+          <div className="text-center">
+            <h4 className="text-white font-semibold mb-4">Information</h4>
             <div className="space-y-4">
-              {/* Logo and Tagline Row */}
-              <div className="ml-[-8] mb-[-2]  flex items-center gap-1 justify-center md:justify-start">
-                <Image
-                  src="/Logo.png"
-                  alt="Zexfro Logo"
-                  width={80}
-                  height={80}
-                  className="object-contain flex-shrink-0"
-                />
-                <p className="text-xs font-medium text-gray-200 text-left">
-                  Secure. Compliant.<br />
-                  Global Trade Made Simple.
-                </p>
-              </div>
-              
               {/* Contact Info */}
               <div className="space-y-2 text-sm">
-                <div className="flex items-start gap-2 justify-center md:justify-start">
+                <div className="flex items-start gap-2 justify-center">
                   <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
                   <span>123 Trade Street, Business District</span>
                 </div>
-                <div className="flex items-center gap-2 justify-center md:justify-start">
+                <div className="flex items-center gap-2 justify-center">
                   <Phone className="w-4 h-4 flex-shrink-0" />
                   <span>+1 (555) 123-4567</span>
                 </div>
-                <div className="flex items-center gap-2 justify-center md:justify-start">
+                <div className="flex items-center gap-2 justify-center">
                   <Mail className="w-4 h-4 flex-shrink-0" />
                   <span>info@zexfro.com</span>
                 </div>
               </div>
               
               {/* Social Icons */}
-              <div className="flex gap-4 justify-center md:justify-start mt-6">
+              <div className="flex gap-4 justify-center mt-6">
                 <a
                   href="https://facebook.com"
                   target="_blank"
@@ -148,7 +133,7 @@ export function Footer() {
           </div>
 
           {/* Company Links */}
-          <div className="text-center md:text-left">
+          <div className="text-center">
             <h4 className="text-white font-semibold mb-4">
               {t("companyTitle")}
             </h4>
@@ -167,7 +152,7 @@ export function Footer() {
           </div>
 
           {/* Resources Links */}
-          <div className="text-center md:text-left">
+          <div className="text-center">
             <h4 className="text-white font-semibold mb-4">
               {t("resourcesTitle")}
             </h4>
@@ -186,7 +171,7 @@ export function Footer() {
           </div>
 
           {/* Services Links */}
-          <div className="text-center md:text-left">
+          <div className="text-center">
             <h4 className="text-white font-semibold mb-4">
               {t("servicesTitle")}
             </h4>
@@ -206,8 +191,19 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center text-sm text-gray-400">
-          <p>© 2026 Zexfro. All rights reserved.</p>
+        <div className="mt-12 pt-8 border-t border-gray-800 text-center">
+          <div className="flex flex-col items-center gap-4">
+            {/* Logo */}
+            <Image
+              src="/Logo.png"
+              alt="Zexfro Logo"
+              width={80}
+              height={80}
+              className="object-contain opacity-50"
+            />
+            {/* Copyright Text */}
+            <p className="text-sm text-gray-400">© 2026 Zexfro. All rights reserved.</p>
+          </div>
         </div>
       </div>
     </footer>
