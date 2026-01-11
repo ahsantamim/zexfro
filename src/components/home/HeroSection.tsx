@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from "react";
 import { ProductDrawer } from "@/components/home/ProductDrawer";
 import { RegisterModal } from "@/components/home/RegisterModal";
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import { LettersPullUp } from "@/components/ui/letters-pull-up";
 
 export function HeroSection() {
   const t = useTranslations("hero");
@@ -94,21 +96,44 @@ export function HeroSection() {
 
       {/* MAIN HERO CONTENT (perfect centered) */}
       <div className="container mx-auto max-w-7xl relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-16 flex flex-col items-center justify-center text-center">
-        <div className="max-w-4xl animate-fade-in">
-          {/* TITLE */}
-          <h1 className="font-bold leading-[1.2] mb-6 text-[36px] sm:text-[40px] md:text-[48px] lg:text-[72px] drop-shadow-lg">
-            {t("title.line1")}
-            <br className="sm:hidden" />
-            <span className="text-white  px-2 rounded">{t("title.line2")}</span> {t("title.line3")}
-          </h1>
+        <div className="max-w-4xl">
+          {/* TITLE - Animated with LettersPullUp - Two Lines */}
+          <div className="mb-6 space-y-2">
+            {/* Line 1: Secure. Compliant. */}
+            <LettersPullUp 
+              text={t("title.line1")}
+              className="font-bold leading-[1.2] text-[36px] sm:text-[40px] md:text-[48px] lg:text-[72px] drop-shadow-lg text-white"
+              delay={0.08}
+            />
+            {/* Line 2: Global Trade Made Simple. */}
+            <LettersPullUp 
+              text={`${t("title.line2")} ${t("title.line3")}`}
+              className="font-bold leading-[1.2] text-[36px] sm:text-[40px] md:text-[48px] lg:text-[72px] drop-shadow-lg text-white"
+              delay={0.08}
+            />
+          </div>
 
-          {/* SUBTITLE */}
-          <p className="font-normal leading-[1.4] md:leading-[1.5] mb-8 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-gray-200 mx-auto max-w-[60ch]">
+          {/* SUBTITLE - Animated */}
+          <motion.p 
+            className="font-normal leading-[1.4] md:leading-[1.5] mb-8 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-gray-200 mx-auto max-w-[60ch]"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.4, ease: "easeOut" }}
+          >
             {t("subtitle")}
-          </p>
+          </motion.p>
 
-          {/* BUTTON */}
-          <div className="space-y-4 flex flex-col items-center">
+          {/* BUTTON - Animated */}
+          <motion.div 
+            className="space-y-4 flex flex-col items-center"
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ 
+              duration: 0.7, 
+              delay: 1.7,
+              ease: [0.34, 1.56, 0.64, 1]
+            }}
+          >
             <RegisterModal>
               <MovingBorderButton
                 borderRadius="9999px"
@@ -176,7 +201,12 @@ export function HeroSection() {
               {t("here")}
             </p>
 
-            <div className="flex flex-row flex-wrap gap-y-4 gap-x-56 mt-12 justify-center">
+            <motion.div 
+              className="flex flex-row flex-wrap gap-y-4 gap-x-56 mt-12 justify-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 2.3, ease: "easeOut" }}
+            >
               <ProductDrawer type="import">
                 <button className="px-8 py-3.5 bg-white font-bold cursor-pointer hover:bg-[#083a73] hover:text-white text-[#0A4D96] text-[18px] sm:text-[22px] rounded-full border border-[#0A4D96] transition-all duration-300 flex items-center gap-2 min-w-[200px] justify-center group whitespace-nowrap">
                   {t("importProducts")}
@@ -190,16 +220,21 @@ export function HeroSection() {
                   <ArrowRight className="w-5 h-5 group-hover:-rotate-45 transition-transform duration-300" />
                 </button>
               </ProductDrawer>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          {/* TRUST BADGE */}
-          <div className="mt-10 pt-6 border-t border-gray-400/20 max-w-md mx-auto">
+          {/* TRUST BADGE - Animated */}
+          <motion.div 
+            className="mt-10 pt-6 border-t border-gray-400/20 max-w-md mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 2.7, ease: "easeOut" }}
+          >
             <p className="text-[12px] sm:text-[13px] text-gray-300">
               {t("trustedBy")} <span className="font-bold text-white">{t("trustedByCount")}</span>{" "}
               {t("trustedByText")}
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

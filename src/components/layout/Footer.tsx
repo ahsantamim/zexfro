@@ -69,9 +69,86 @@ export function Footer() {
       <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 via-transparent to-gray-900/80" />
 
       <div className="container mx-auto max-w-9xl px-4 sm:px-6 lg:px-8 py-12 sm:py-14 md:py-16 lg:py-20 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 max-w-5xl mx-auto items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 max-w-7xl mx-auto items-start">
+          {/* Info Column */}
+          <div className="text-center md:text-left">
+            <h4 className="text-white font-semibold ">Information</h4>
+            <div className="space-y-4">
+              {/* Logo and Tagline Row */}
+              <div className="ml-[-8] mb-[-2]  flex items-center gap-1 justify-center md:justify-start">
+                <Image
+                  src="/Logo.png"
+                  alt="Zexfro Logo"
+                  width={80}
+                  height={80}
+                  className="object-contain flex-shrink-0"
+                />
+                <p className="text-xs font-medium text-gray-200 text-left">
+                  Secure. Compliant.<br />
+                  Global Trade Made Simple.
+                </p>
+              </div>
+              
+              {/* Contact Info */}
+              <div className="space-y-2 text-sm">
+                <div className="flex items-start gap-2 justify-center md:justify-start">
+                  <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                  <span>123 Trade Street, Business District</span>
+                </div>
+                <div className="flex items-center gap-2 justify-center md:justify-start">
+                  <Phone className="w-4 h-4 flex-shrink-0" />
+                  <span>+1 (555) 123-4567</span>
+                </div>
+                <div className="flex items-center gap-2 justify-center md:justify-start">
+                  <Mail className="w-4 h-4 flex-shrink-0" />
+                  <span>info@zexfro.com</span>
+                </div>
+              </div>
+              
+              {/* Social Icons */}
+              <div className="flex gap-4 justify-center md:justify-start mt-6">
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                  aria-label="Twitter"
+                >
+                  <Twitter className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+          </div>
+
           {/* Company Links */}
-          <div className="text-center">
+          <div className="text-center md:text-left">
             <h4 className="text-white font-semibold mb-4">
               {t("companyTitle")}
             </h4>
@@ -90,7 +167,7 @@ export function Footer() {
           </div>
 
           {/* Resources Links */}
-          <div className="text-center">
+          <div className="text-center md:text-left">
             <h4 className="text-white font-semibold mb-4">
               {t("resourcesTitle")}
             </h4>
@@ -109,7 +186,7 @@ export function Footer() {
           </div>
 
           {/* Services Links */}
-          <div className="text-center">
+          <div className="text-center md:text-left">
             <h4 className="text-white font-semibold mb-4">
               {t("servicesTitle")}
             </h4>
@@ -128,78 +205,8 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Company Info Row */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-sm text-gray-400">
-            <div className="flex items-center gap-3">
-              <Image
-                src="/Logo.png"
-                alt="Zexfro Logo"
-                width={100}
-                height={100}
-                className="object-contain"
-              />
-              <div className="text-left">
-                <p className="text-xs">{t("brandDescription")}</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 flex-shrink-0" />
-              <span>{t("address")}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4 flex-shrink-0" />
-              <span>{t("phone")}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4 flex-shrink-0" />
-              <span>{t("email")}</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Social Media Icons */}
-        <div className="mt-8 flex justify-center gap-6">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white transition-colors"
-            aria-label="Facebook"
-          >
-            <Facebook className="w-6 h-6" />
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white transition-colors"
-            aria-label="Twitter"
-          >
-            <Twitter className="w-6 h-6" />
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white transition-colors"
-            aria-label="LinkedIn"
-          >
-            <Linkedin className="w-6 h-6" />
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white transition-colors"
-            aria-label="Instagram"
-          >
-            <Instagram className="w-6 h-6" />
-          </a>
-        </div>
-
         {/* Copyright */}
-        <div className="mt-8 text-center text-sm text-gray-400">
+        <div className="mt-12 pt-8 border-t border-gray-800 text-center text-sm text-gray-400">
           <p>© 2026 Zexfro. All rights reserved.</p>
         </div>
       </div>

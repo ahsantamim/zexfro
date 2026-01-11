@@ -64,7 +64,7 @@ export function ServicesHighlightSection() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/100 via-white/70 to-white/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/100 via-white/70 to-slate-50/100" />
       </div>
 
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 w-full">
