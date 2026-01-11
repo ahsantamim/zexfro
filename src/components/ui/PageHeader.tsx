@@ -3,11 +3,31 @@
 interface PageHeaderProps {
   title: string;
   description: string;
+  heroImage?: string;
 }
 
-export function PageHeader({ title, description }: PageHeaderProps) {
+export function PageHeader({ title, description, heroImage }: PageHeaderProps) {
   return (
-    <section className="bg-gradient-to-br from-[#0a4a9e] via-[#05306b] to-[#041f3f] text-white py-20 md:py-32 relative overflow-hidden">
+    <section className="relative py-20 md:py-32 text-white overflow-hidden">
+      {/* Background Image (if provided) */}
+      {heroImage && (
+        <>
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url('${heroImage}')`,
+            }}
+          />
+          {/* Gradient Overlay for background image */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a4a9e]/95 via-[#05306b]/10 to-[#041f3f]/85" />
+        </>
+      )}
+      
+      {/* Gradient Background (if no image) */}
+      {!heroImage && (
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a4a9e] via-[#05306b] to-[#041f3f]" />
+      )}
+      
       {/* Decorative Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-32 h-32 border-2 border-white rounded-full" />

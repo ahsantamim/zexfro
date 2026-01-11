@@ -25,6 +25,7 @@ export default function ProductsPage() {
       <PageHeader
         title="Our Products"
         description="Discover our comprehensive range of export and import products connecting businesses across borders"
+        heroImage="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1600&q=80"
       />
 
       {/* Products Section */}

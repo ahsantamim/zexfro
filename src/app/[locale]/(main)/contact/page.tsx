@@ -14,15 +14,27 @@ export default function ContactPage() {
       <PageHeader
         title="Contact Us"
         description="We'd love to hear from you. Send us a message!"
+        heroImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80"
       />
-      <section className="bg-white py-12 sm:py-16 md:py-20 lg:py-24">
+      
+      {/* Main Contact Section - Clean Two Column Layout */}
+      <section className="bg-gray-50 py-16 md:py-24">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <ContactForm />
-            <ContactInfo />
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+            {/* Left Column - Contact Info (2/5 width) */}
+            <div className="lg:col-span-2">
+              <ContactInfo />
+            </div>
+            
+            {/* Right Column - Contact Form (3/5 width) */}
+            <div className="lg:col-span-3">
+              <ContactForm />
+            </div>
           </div>
         </div>
       </section>
+      
+      {/* Map Section */}
       <MapSection />
     </main>
   );

@@ -14,6 +14,7 @@ export default function BlogPage() {
       <PageHeader
         title="Blog"
         description="Insights, news, and updates from our team"
+        heroImage="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1600&q=80"
       />
       <section className="bg-white py-16 md:py-24">
         <div className="container mx-auto max-w-7xl px-4">
