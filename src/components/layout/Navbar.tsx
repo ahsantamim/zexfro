@@ -24,7 +24,15 @@ const navLinks: NavLink[] = [
       { href: "/benefits-for-supplier", key: "benefitsForSupplier" },
     ]
   },
-  { href: "/services", key: "services" },
+  { 
+    key: "services", 
+    isDropdown: true,
+    dropdownItems: [
+      { href: "/services", key: "seamlessSolutions" },
+      { href: "/local-service", key: "localService" },
+      { href: "/global-service", key: "globalService" },
+    ]
+  },
   { href: "/products", key: "products" },
   { href: "/blog", key: "blog" },
   { href: "/contact", key: "contact" },
@@ -35,8 +43,11 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showStaticLogo, setShowStaticLogo] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const aboutDropdownRef = useRef<HTMLDivElement>(null);
+  const servicesDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Show GIF animation for 3 seconds, then switch to static PNG
@@ -47,11 +58,14 @@ export function Navbar() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Close dropdown when clicking outside
+  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (aboutDropdownRef.current && !aboutDropdownRef.current.contains(event.target as Node)) {
         setAboutDropdownOpen(false);
+      }
+      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target as Node)) {
+        setServicesDropdownOpen(false);
       }
     };
 
@@ -139,30 +153,36 @@ export function Navbar() {
           <div className="flex items-center space-x-1 lg:space-x-2">
             {navLinks.map((link) => {
               if (link.isDropdown) {
-                // About dropdown
+                // Dropdown logic
+                const isAbout = link.key === "about";
+                const isServices = link.key === "services";
+                const dropdownOpen = isAbout ? aboutDropdownOpen : servicesDropdownOpen;
+                const setDropdownOpen = isAbout ? setAboutDropdownOpen : setServicesDropdownOpen;
+                const dropdownRef = isAbout ? aboutDropdownRef : servicesDropdownRef;
+
                 return (
                   <div key={link.key} className="relative" ref={dropdownRef}>
                     <button
-                      onMouseEnter={() => setAboutDropdownOpen(true)}
-                      onClick={() => setAboutDropdownOpen(!aboutDropdownOpen)}
+                      onMouseEnter={() => setDropdownOpen(true)}
+                      onClick={() => setDropdownOpen(!dropdownOpen)}
                       className="px-4 lg:px-5 py-2 text-base lg:text-lg font-semibold text-white hover:bg-white/20 transition-colors duration-200 rounded-md flex items-center gap-1"
                     >
                       {t(link.key as any)}
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${aboutDropdownOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
                     </button>
 
                     {/* Dropdown Menu */}
-                    {aboutDropdownOpen && (
+                    {dropdownOpen && (
                       <div
-                        onMouseLeave={() => setAboutDropdownOpen(false)}
-                        className="absolute top-full left-0 mt-2 w-64 bg-white rounded-md shadow-xl border border-gray-200 py-2 animate-in fade-in slide-in-from-top-2 duration-200"
+                        onMouseLeave={() => setDropdownOpen(false)}
+                        className="absolute top-full left-0 w-64 bg-[#1800ad] shadow-xl py-2 animate-in fade-in slide-in-from-top-2 duration-200"
                       >
                         {link.dropdownItems?.map((item) => (
                           <Link
                             key={item.href}
                             href={item.href}
-                            onClick={() => setAboutDropdownOpen(false)}
-                            className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-[#0a4a9e] transition-colors"
+                            onClick={() => setDropdownOpen(false)}
+                            className="block px-4 py-3 text-sm font-semibold text-white hover:bg-white hover:text-black transition-colors"
                           >
                             {t(item.key as any)}
                           </Link>
@@ -202,17 +222,22 @@ export function Navbar() {
           <div className="container mx-auto max-w-7xl px-4 py-4 space-y-2">
             {navLinks.map((link) => {
               if (link.isDropdown) {
-                // About dropdown for mobile
+                // Dropdown for mobile
+                const isAbout = link.key === "about";
+                const isServices = link.key === "services";
+                const mobileOpen = isAbout ? mobileAboutOpen : mobileServicesOpen;
+                const setMobileOpen = isAbout ? setMobileAboutOpen : setMobileServicesOpen;
+
                 return (
                   <div key={link.key}>
                     <button
-                      onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+                      onClick={() => setMobileOpen(!mobileOpen)}
                       className="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-white hover:bg-white/20 transition-colors rounded-md"
                     >
                       {t(link.key as any)}
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileAboutOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileOpen ? 'rotate-180' : ''}`} />
                     </button>
-                    {mobileAboutOpen && (
+                    {mobileOpen && (
                       <div className="ml-4 mt-1 space-y-1">
                         {link.dropdownItems?.map((item) => (
                           <Link
@@ -220,7 +245,7 @@ export function Navbar() {
                             href={item.href}
                             onClick={() => {
                               setIsOpen(false);
-                              setMobileAboutOpen(false);
+                              setMobileOpen(false);
                             }}
                             className="block px-4 py-2 text-sm font-semibold text-white/90 hover:bg-white/20 transition-colors rounded-md"
                           >

@@ -153,9 +153,7 @@ export default function CompetitiveAdvantagesPage() {
         <p>
           At Zexfro International Limited, our competitive edge is strengthened
           by our extensive understanding of the Bangladeshi market, trade
-          environment, and consumer demand patterns. This insight allows us to
-          make informed decisions that help our partners trade with confidence
-          and higher profitability.
+          environment, and consumer demand patterns.
         </p>
 
         {/* Image */}
@@ -181,64 +179,44 @@ export default function CompetitiveAdvantagesPage() {
           <p className="text-gray-700 mb-3">
             We continuously analyze market trends across sectors such as:
           </p>
-          <ul className="space-y-2 text-gray-700 text-sm">
+          <ul className="space-y-1 text-gray-700 text-sm mb-4">
             <li>• Agriculture</li>
             <li>• Industrial machinery</li>
             <li>• Consumer goods</li>
             <li>• Raw materials</li>
             <li>• Global commodities</li>
           </ul>
-          <p className="text-gray-700 mt-4">
-            Our research-driven approach helps us identify which products have
-            rising demand, seasonal sales peaks, pricing sensitivity, and
-            distribution potential in Bangladesh. This ensures that imported
-            goods are positioned for maximum sales impact and market acceptance.
+          <p className="text-gray-700">
+            Our research-driven approach helps us identify rising demand, seasonal sales peaks, pricing sensitivity, and distribution potential in Bangladesh. This ensures that imported goods are positioned for maximum sales impact and market acceptance.
           </p>
         </div>
 
         <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
           Knowledge of Regulations & Trade Compliance
         </h4>
-        <p>
-          We maintain strong expertise in import-export policies, customs
-          procedures, taxation, documentation requirements, port regulations,
-          and HS code classification. Our team stays updated with government
-          trade rules, product certification needs, and compliance standards,
-          minimizing legal or operational delays. This helps shipments clear
-          faster and remain fully compliant.
+        <p className="mb-4">
+          We maintain strong expertise in import-export policies, customs procedures, taxation, documentation requirements, port regulations, and HS code classification. Our team stays updated with government trade rules, product certification needs, and compliance standards, minimizing legal or operational delays. This helps shipments clear faster and remain fully compliant.
         </p>
 
         <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
           Pricing Intelligence & Market Positioning
         </h4>
-        <p>
-          We track real-time pricing behavior in local wholesale and retail
-          channels. Our insights allow us to negotiate cost-effective sourcing,
-          calculate landed cost accurately, and set competitive selling prices
-          for distributors and wholesalers. We help businesses avoid overpricing
-          or underpricing, ensuring healthy margins.
+        <p className="mb-4">
+          We track real-time pricing behavior in local wholesale and retail channels. Our insights allow us to negotiate cost-effective sourcing, calculate landed cost accurately, and set competitive selling prices for distributors and wholesalers. We help businesses avoid overpricing or underpricing, ensuring healthy margins.
         </p>
 
         <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
           Strong Distribution & Market Entry Strategy
         </h4>
-        <p>
-          We understand the operational structure of local supply chains, major
-          trading hubs, B2B procurement channels, wholesale markets, and
-          last-mile logistics. This enables us to guide suppliers and importers
-          with effective product entry plans, bulk selling strategy, and
-          demand-based shipment planning. Our Dhaka-based location (Uttara)
-          gives us direct access to national business networks and trade flows.
+        <p className="mb-4">
+          We understand the operational structure of local supply chains, major trading hubs, B2B procurement channels, wholesale markets, and last-mile logistics. This enables us to guide suppliers and importers with effective product entry plans, bulk selling strategy, and demand-based shipment planning. Our Dhaka-based location (Uttara) gives us direct access to national business networks and trade flows.
         </p>
 
         <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
           Risk Management & Market Forecasting
         </h4>
-        <p>
-          We assess potential risks such as currency fluctuation, seasonal
-          demand shifts, supply shortages, competitor pricing, and political or
-          port-based impact on trade. Our forecasting helps partners plan
-          inventory, shipments, and pricing with lower uncertainty.
+        <p className="mb-4">
+          We assess potential risks such as currency fluctuation, seasonal demand shifts, supply shortages, competitor pricing, and political or port-based impact on trade. Our forecasting helps partners plan inventory, shipments, and pricing with lower uncertainty.
         </p>
 
         <div className="bg-white border-2 border-green-600 rounded-lg p-6 my-6">
@@ -272,9 +250,7 @@ export default function CompetitiveAdvantagesPage() {
             Our Market Knowledge Drives Your Success
           </p>
           <p className="mt-2 text-white/90">
-            Our deep market insight ensures that every trade decision is
-            data-backed, compliant, and profitable, helping businesses import
-            efficiently and scale exports with confidence.
+            We ensure every trade decision is data-backed, compliant, and profitable.
           </p>
         </div>
       </DocSection>
@@ -300,11 +276,7 @@ export default function CompetitiveAdvantagesPage() {
         </div>
 
         <p>
-          At Zexfro International Limited, we manage the entire international
-          trade cycle—from sourcing products globally to delivering goods safely
-          and efficiently to final destinations. Our end-to-end capability
-          eliminates complexity for our clients and ensures a smooth, compliant,
-          cost-efficient, and time-bound trade experience.
+          We manage the entire international trade cycle—from sourcing to final delivery—eliminating complexity and ensuring a smooth, compliant, cost-efficient, and timely experience.
         </p>
 
         {/* Image */}
@@ -329,15 +301,16 @@ export default function CompetitiveAdvantagesPage() {
               1. Product Sourcing & Supplier Coordination
             </h4>
             <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Identify and engage verified manufacturers worldwide</li>
-              <li>• Coordinate pricing, specs, and packaging standards</li>
-              <li>• Ensure quality consistency and competitive terms</li>
+              <li>• Identify verified manufacturers</li>
+              <li>• Coordinate pricing and specifications</li>
+              <li>• Finalize packaging standards</li>
+              <li>• Order finalization</li>
             </ul>
           </div>
 
           <div className="bg-purple-50 border-2 border-purple-200 rounded-lg p-6">
             <h4 className="font-bold text-gray-900 mb-3">
-              2. Trade Documentation & Compliance
+              2. Trade Documentation & Compliance Management
             </h4>
             <ul className="space-y-2 text-sm text-gray-700">
               <li>• Commercial Invoice</li>
@@ -345,7 +318,7 @@ export default function CompetitiveAdvantagesPage() {
               <li>• Bill of Lading / Airway Bill</li>
               <li>• Certificate of Origin</li>
               <li>• Insurance Papers</li>
-              <li>• Product certifications (if required)</li>
+              <li>• Product compliance certificates</li>
             </ul>
           </div>
 
@@ -354,9 +327,11 @@ export default function CompetitiveAdvantagesPage() {
               3. Freight, Shipping & Carrier Management
             </h4>
             <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Arrange shipments via sea, air, or land freight</li>
-              <li>• Work with trusted global freight forwarders</li>
-              <li>• Industry-standard packaging and container planning</li>
+              <li>• Sea freight</li>
+              <li>• Air freight</li>
+              <li>• Land freight</li>
+              <li>• Global freight forwarders</li>
+              <li>• Trusted carriers</li>
             </ul>
           </div>
 
@@ -365,44 +340,49 @@ export default function CompetitiveAdvantagesPage() {
               4. Customs Clearance & Port Handling
             </h4>
             <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Expert knowledge of Bangladesh customs procedures</li>
-              <li>• Pre-calculate duties and taxes</li>
-              <li>• Monitor clearance to prevent delays</li>
+              <li>• Bangladesh customs procedures</li>
+              <li>• Duty structures</li>
+              <li>• HS code classification</li>
+              <li>• Port rules</li>
+              <li>• Clearance timelines</li>
             </ul>
           </div>
 
           <div className="bg-purple-50 border-2 border-purple-200 rounded-lg p-6">
             <h4 className="font-bold text-gray-900 mb-3">
-              5. Warehousing & Last-Mile Delivery
+              5. Warehousing, Local Transport & Last-Mile Delivery
             </h4>
             <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Secure storage and inland logistics</li>
-              <li>• FCL and LCL distribution support</li>
-              <li>• Nationwide delivery across Bangladesh</li>
+              <li>• Secure storage</li>
+              <li>• Inland logistics</li>
+              <li>• Nationwide delivery</li>
+              <li>• FCL/LCL distribution</li>
             </ul>
           </div>
 
           <div className="bg-purple-50 border-2 border-purple-200 rounded-lg p-6">
             <h4 className="font-bold text-gray-900 mb-3">
-              6. Real-Time Tracking & Communication
+              6. Real-Time Tracking & Client Communication
             </h4>
             <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Regular shipment updates</li>
+              <li>• Shipment updates</li>
               <li>• Estimated arrival schedules</li>
-              <li>• Transparent status reports</li>
+              <li>• Cargo status reports</li>
+            </ul>
+          </div>
+
+          <div className="bg-purple-50 border-2 border-purple-200 rounded-lg p-6">
+            <h4 className="font-bold text-gray-900 mb-3">
+              7. Export Logistics Support for Bangladeshi Goods
+            </h4>
+            <ul className="space-y-2 text-sm text-gray-700">
+              <li>• International buyer connection</li>
+              <li>• Export compliance management</li>
+              <li>• Freight booking</li>
+              <li>• Port handover coordination</li>
             </ul>
           </div>
         </div>
-
-        <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
-          Export Logistics Support for Bangladeshi Goods
-        </h4>
-        <p>
-          We help local producers connect with international buyers and manage
-          the shipment process outward. We ensure export compliance, freight
-          booking, and smooth handover at Chattogram or Dhaka air cargo
-          terminals.
-        </p>
 
         <div className="bg-white border-2 border-purple-600 rounded-lg p-6 my-6">
           <h4 className="font-bold text-gray-900 mb-4">
@@ -441,9 +421,7 @@ export default function CompetitiveAdvantagesPage() {
             We Handle the Process, You Scale the Business
           </p>
           <p className="mt-2 text-white/90">
-            Our End-to-End trade model allows businesses to focus on sales,
-            growth, and market expansion, while we take care of global
-            procurement, shipping, customs, and delivery logistics.
+            Focus on sales and growth while we manage global procurement, shipping, customs, and delivery.
           </p>
         </div>
       </DocSection>
@@ -469,142 +447,155 @@ export default function CompetitiveAdvantagesPage() {
         </div>
 
         <p>
-          Quality Assurance at Competitive Pricing is a strategic strength at
-          Zexfro International Limited. We ensure that suppliers meet
-          international standards while keeping pricing competitive through
-          optimized sourcing and logistics.
+          A strategic strength for Zexfro International Limited, especially when operating in global sourcing while representing Bangladesh in international trade.
         </p>
 
         <div className="bg-yellow-50 border-l-4 border-yellow-600 p-6 my-6">
           <h4 className="font-bold text-gray-900 mb-3">
-            Our Quality Framework:
+            Our Framework:
           </h4>
           <div className="space-y-4">
             <div>
               <h5 className="font-semibold text-gray-900 mb-2">
-                1. Multi-Layer Supplier Verification
+                Multi-Layer Supplier Verification
               </h5>
-              <p className="text-sm text-gray-700">
-                Quality assurance starts at the source. We ensure suppliers hold
-                valid trade licenses, have internationally recognized
-                certifications (ISO, HACCP, CE, GMP), maintain compliance with
-                environmental and labor standards, and have a proven export
-                track record with minimal dispute history.
-              </p>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li>• Valid trade licenses</li>
+                <li>• International certifications (ISO, HACCP, CE, GMP)</li>
+                <li>• Environmental compliance</li>
+                <li>• Labor standards</li>
+                <li>• Proven export track record</li>
+              </ul>
             </div>
 
             <div>
               <h5 className="font-semibold text-gray-900 mb-2">
-                2. Pre-Shipment Inspection (PSI)
+                Pre-Shipment Inspection (PSI)
               </h5>
-              <p className="text-sm text-gray-700">
-                Before goods are shipped, we arrange inspections through
-                in-house QC teams or third-party global inspection agencies
-                (SGS, BV, TUV, Intertek). This includes random batch sampling,
-                visual, functional, and safety compliance tests.
-              </p>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li>• In-house QC teams</li>
+                <li>• Third-party agencies (SGS, BV, TUV, Intertek)</li>
+                <li>• Random batch sampling</li>
+                <li>• Visual/functional/safety tests</li>
+              </ul>
             </div>
 
             <div>
               <h5 className="font-semibold text-gray-900 mb-2">
-                3. Compliance with Bangladesh Export Standards
+                Compliance with Bangladesh Export Standards
               </h5>
-              <p className="text-sm text-gray-700">
-                For exported goods from Bangladesh, we ensure products meet BSTI
-                standards, agricultural products comply with Plant Quarantine &
-                Phytosanitary Certification, and frozen foods follow BRC or
-                HACCP safety protocols.
-              </p>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li>• BSTI certification</li>
+                <li>• Plant Quarantine & Phytosanitary</li>
+                <li>• BRC/HACCP protocols</li>
+                <li>• Material and durability standards</li>
+              </ul>
             </div>
 
             <div>
               <h5 className="font-semibold text-gray-900 mb-2">
-                4. Price Optimization Without Compromising Quality
+                Price Optimization
               </h5>
-              <ul className="space-y-1 text-sm text-gray-700 mt-2">
-                <li>• Sourcing directly from manufacturers</li>
-                <li>• Consolidating bulk shipments to reduce freight cost</li>
-                <li>• Negotiating long-term supplier contracts</li>
-                <li>• Using optimized logistics planning</li>
-                <li>• Selecting cost-efficient ports and schedules</li>
-                <li>• Ensuring proper packaging to avoid damage</li>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li>• Direct manufacturer sourcing</li>
+                <li>• Bulk shipment consolidation</li>
+                <li>• Long-term supplier contracts</li>
+                <li>• Optimized logistics planning</li>
+                <li>• Cost-efficient port selection</li>
+              </ul>
+            </div>
+
+            <div>
+              <h5 className="font-semibold text-gray-900 mb-2">
+                Quality-Focused Procurement
+              </h5>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li>• Best value for price</li>
+                <li>• Consistent quality</li>
+                <li>• Durability and safety</li>
+                <li>• Market-acceptable specifications</li>
+              </ul>
+            </div>
+
+            <div>
+              <h5 className="font-semibold text-gray-900 mb-2">
+                Transparent Specification Matching
+              </h5>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li>• Material type</li>
+                <li>• Size/weight/dimensions</li>
+                <li>• Technical performance</li>
+                <li>• Shelf-life and storage</li>
+                <li>• Processing grade</li>
+                <li>• Packaging requirements</li>
+              </ul>
+            </div>
+
+            <div>
+              <h5 className="font-semibold text-gray-900 mb-2">
+                Continuous Feedback-Based Improvement
+              </h5>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li>• Buyer feedback collection</li>
+                <li>• Supplier performance evaluation</li>
+                <li>• Packaging/branding upgrades</li>
+                <li>• Logistics optimization</li>
+              </ul>
+            </div>
+
+            <div>
+              <h5 className="font-semibold text-gray-900 mb-2">
+                Smart Cost-Saving Packaging & Handling
+              </h5>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li>• Export-grade materials</li>
+                <li>• Moisture-proof packing</li>
+                <li>• Correct HS code classification</li>
+                <li>• Proper container selection</li>
+                <li>• Labeling compliance</li>
               </ul>
             </div>
           </div>
         </div>
 
-        <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
-          Quality-Focused Procurement Strategy
-        </h4>
-        <p>
-          Instead of selecting the cheapest product, we prioritize best value
-          for price, consistent quality, durability and safety, and
-          market-acceptable specifications. This prevents hidden costs such as
-          product failure after delivery, re-export charges, customer
-          dissatisfaction, and loss due to poor packaging.
-        </p>
-
-        <p className="mt-4">
-          <strong>
-            True competitive pricing means lowest cost without future loss, not
-            just lowest purchase price.
-          </strong>
-        </p>
-
-        <div className="bg-white border border-gray-200 rounded-lg p-6 my-6">
-          <h4 className="font-bold text-gray-900 mb-4">
-            Benefits & Results Summary
+        <div className="bg-yellow-50 border border-yellow-300 rounded-lg p-6 my-6">
+          <h4 className="text-xl font-bold text-gray-900 mb-4">
+            Risk-Free Trade Guarantee
           </h4>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b-2 border-gray-300">
-                  <th className="text-left py-2 px-3 text-gray-900">Benefit</th>
-                  <th className="text-left py-2 px-3 text-gray-900">Result</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-gray-200">
-                  <td className="py-2 px-3">Verified suppliers</td>
-                  <td className="py-2 px-3">Higher reliability</td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="py-2 px-3">Pre-shipment testing</td>
-                  <td className="py-2 px-3">Fewer disputes</td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="py-2 px-3">Bulk and direct sourcing</td>
-                  <td className="py-2 px-3">Lower cost</td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="py-2 px-3">
-                    Compliance with global standards
-                  </td>
-                  <td className="py-2 px-3">Better market acceptance</td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="py-2 px-3">Damage-free packaging</td>
-                  <td className="py-2 px-3">Reduced loss cost</td>
-                </tr>
-                <tr>
-                  <td className="py-2 px-3">Logistics expertise</td>
-                  <td className="py-2 px-3">Lower landed price</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <ul className="space-y-2 text-gray-700">
+            <li className="flex items-start gap-3">
+              <span className="text-yellow-600 font-bold">✓</span>
+              <span>Products meeting buyer standards</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-yellow-600 font-bold">✓</span>
+              <span>Verified suppliers with global credibility</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-yellow-600 font-bold">✓</span>
+              <span>Inspected shipments before dispatch</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-yellow-600 font-bold">✓</span>
+              <span>Lower logistics and handling cost</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-yellow-600 font-bold">✓</span>
+              <span>Zero compromise on safety and compliance</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-yellow-600 font-bold">✓</span>
+              <span>Best possible price for genuine quality</span>
+            </li>
+          </ul>
         </div>
 
-        <div className="bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-lg p-6 text-white text-center">
-          <p className="text-xl font-bold">
-            Zexfro's Advantage: Right Price for High Quality
-          </p>
-          <p className="mt-2 text-white/90">
-            Our advantage is not just low price, but the right price for high
-            quality— ensuring value, reliability, and long-term business
-            success.
+        <div className="bg-white border-2 border-gray-200 rounded-lg p-6 my-6">
+          <p className="text-center text-lg font-semibold text-gray-900">
+            <strong>Summary:</strong> Zexfro's advantage is not just low price, but the right price for high quality.
           </p>
         </div>
+
       </DocSection>
 
       {/* Section 5: Faster Shipment & Reliable Delivery */}
@@ -628,12 +619,7 @@ export default function CompetitiveAdvantagesPage() {
         </div>
 
         <p>
-          A Faster Shipment & Reliable Delivery Commitment is a strategic
-          assurance that products will move quickly from origin to destination
-          and reach the buyer on time, safely, and without unexpected
-          disruption. This commitment becomes a competitive edge because
-          international buyers and suppliers highly value speed, consistency,
-          transparency, and dependability in cross-border trade.
+          A strategic assurance that products will move quickly from origin to destination and reach the buyer on time, safely, and without unexpected disruption.
         </p>
 
         {/* Image */}
@@ -650,81 +636,112 @@ export default function CompetitiveAdvantagesPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-          <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">
-              1. Optimized Logistics Planning
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>
-                • Pre-evaluated routes for fastest, most cost-efficient path
-              </li>
-              <li>• Partnerships with global freight forwarders</li>
-              <li>• Priority space allocation</li>
-              <li>• Mode selection: Air, Sea, or Land based on urgency</li>
-            </ul>
-          </div>
+        <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
+          Our Delivery Framework:
+        </h4>
 
-          <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">
-              2. Strong Carrier & Forwarder Network
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Multiple trusted shipping carriers</li>
-              <li>• Negotiated contracts for express handling</li>
-              <li>• Fallback carrier options</li>
-              <li>• Prevents container shortages and booking delays</li>
-            </ul>
+        <div className="bg-orange-50 border-l-4 border-orange-600 p-6 my-6">
+          <div className="space-y-4">
+            <div>
+              <h5 className="font-semibold text-gray-900 mb-2">1. Optimized Logistics Planning</h5>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li>• Pre-evaluated shipment routes</li>
+                <li>• Partnerships with global freight forwarders</li>
+                <li>• Cargo mode selection based on urgency</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h5 className="font-semibold text-gray-900 mb-2">2. Strong Carrier & Forwarder Network</h5>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li>• Multiple trusted shipping carriers</li>
+                <li>• Negotiated express handling contracts</li>
+                <li>• Fallback carrier options</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h5 className="font-semibold text-gray-900 mb-2">3. Real-Time Shipment Monitoring & Updates</h5>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li>• Carrier reference tracking</li>
+                <li>• ETD/ETA updates</li>
+                <li>• Immediate delay notifications</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h5 className="font-semibold text-gray-900 mb-2">4. Efficient Documentation & Customs Handling</h5>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li>• Commercial Invoice</li>
+                <li>• Packing List</li>
+                <li>• Bill of Lading/Airway Bill</li>
+                <li>• Certificate of Origin</li>
+                <li>• Phytosanitary certificates</li>
+                <li>• Insurance</li>
+                <li>• LC compliance documents</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h5 className="font-semibold text-gray-900 mb-2">5. Port & Warehouse Coordination</h5>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li>• Immediate cargo movement</li>
+                <li>• Pre-booked storage</li>
+                <li>• Cross-docking services</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h5 className="font-semibold text-gray-900 mb-2">6. Proactive Risk Mitigation</h5>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li>• Port congestion monitoring</li>
+                <li>• Alternative routing</li>
+                <li>• Emergency freight escalation</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h5 className="font-semibold text-gray-900 mb-2">7. Last-Mile Delivery Assurance</h5>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li>• Fast inland transport</li>
+                <li>• Trusted trucking partners</li>
+                <li>• Delivery coordination</li>
+                <li>• Handover confirmation</li>
+              </ul>
+            </div>
           </div>
+        </div>
 
-          <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">
-              3. Real-Time Shipment Monitoring
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>
-                • Tracking via carrier reference, vessel name, flight number
-              </li>
-              <li>• ETD and ETA updates</li>
-              <li>• Immediate notification of schedule changes</li>
-              <li>• Builds trust and reliability</li>
-            </ul>
-          </div>
-
-          <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">
-              4. Efficient Documentation & Customs
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Documents prepared accurately and ahead of time</li>
-              <li>• Experienced C&F agents for faster clearance</li>
-              <li>• Minimizes HS code mismatch and inspection delays</li>
-              <li>• Reduces port demurrage charges</li>
-            </ul>
-          </div>
-
-          <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">
-              5. Port & Warehouse Coordination
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Immediate cargo movement from port to warehouse</li>
-              <li>• Pre-booked storage prevents waiting time</li>
-              <li>• Cross-docking services for urgent orders</li>
-            </ul>
-          </div>
-
-          <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">
-              6. Proactive Risk Mitigation
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Monitor global port congestion trends</li>
-              <li>• Plan around holidays and seasonal disruptions</li>
-              <li>• Alternative routing options</li>
-              <li>• Emergency freight escalation when needed</li>
-            </ul>
-          </div>
+        <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
+          Delivery Reliability Standards
+        </h4>
+        <div className="bg-white border-2 border-orange-300 rounded-lg p-6 my-6">
+          <ul className="space-y-3 text-gray-700">
+            <li className="flex items-start gap-3">
+              <span className="text-orange-600 font-bold">✓</span>
+              <span><strong>Timeliness:</strong> Delivery within promised ETA</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-600 font-bold">✓</span>
+              <span><strong>Cargo Safety:</strong> Damage-free handling and transport</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-600 font-bold">✓</span>
+              <span><strong>Insurance Coverage:</strong> Protection against loss/damage/theft</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-600 font-bold">✓</span>
+              <span><strong>Secure Packaging:</strong> Export-grade packing</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-600 font-bold">✓</span>
+              <span><strong>Demurrage Avoidance:</strong> Fast unloading and clearance</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-600 font-bold">✓</span>
+              <span><strong>No Sudden Hidden Costs:</strong> Pre-communicated pricing</span>
+            </li>
+          </ul>
         </div>
 
         <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
@@ -734,76 +751,40 @@ export default function CompetitiveAdvantagesPage() {
           <ul className="space-y-2 text-gray-700">
             <li className="flex items-start gap-3">
               <span className="text-orange-600 font-bold">•</span>
-              <span>
-                "Shipment dispatched within 48–72 hours after order confirmation
-                or LC acceptance"
-              </span>
+              <span>Shipment dispatched within 48–72 hours after order confirmation</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-600 font-bold">•</span>
-              <span>"Guaranteed ETA with alternative backup routing"</span>
+              <span>Guaranteed ETA with alternative backup routing</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-600 font-bold">•</span>
-              <span>"99% on-time delivery record commitment"</span>
+              <span>99% on-time delivery record commitment</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-600 font-bold">•</span>
-              <span>
-                "No demurrage or detention through fast customs & port release"
-              </span>
+              <span>No demurrage through fast customs & port release</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-600 font-bold">•</span>
-              <span>
-                "Compensation or corrective shipment in case of rare delays"
-              </span>
+              <span>Compensation or corrective shipment for delays</span>
             </li>
           </ul>
         </div>
 
-        <div className="bg-white border-2 border-orange-600 rounded-lg p-6 my-6">
-          <h4 className="font-bold text-gray-900 mb-4">
-            What Zexfro's Commitment Means:
-          </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <ul className="space-y-2 text-gray-700 text-sm">
-              <li className="flex items-start gap-2">
-                <span className="text-orange-600">✓</span>
-                <span>Fast booking & dispatch</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-600">✓</span>
-                <span>Trusted multi-carrier options</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-600">✓</span>
-                <span>Accurate pre-shipment documentation</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-600">✓</span>
-                <span>Real-time cargo tracking</span>
-              </li>
-            </ul>
-            <ul className="space-y-2 text-gray-700 text-sm">
-              <li className="flex items-start gap-2">
-                <span className="text-orange-600">✓</span>
-                <span>Fast customs clearance</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-600">✓</span>
-                <span>Cargo safety with insurance</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-600">✓</span>
-                <span>Proactive delay prevention</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-600">✓</span>
-                <span>On-time, secure, hassle-free delivery</span>
-              </li>
-            </ul>
-          </div>
+        <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
+          Business Value
+        </h4>
+        <div className="bg-white border-2 border-orange-300 rounded-lg p-6 my-6">
+          <ul className="space-y-2 text-gray-700">
+            <li>• Buyers receive goods earlier → faster sales cycle</li>
+            <li>• Repeat orders increase</li>
+            <li>• Lower cost, higher margin</li>
+            <li>• Strong international reputation</li>
+            <li>• Higher buyer confidence</li>
+            <li>• No booking failure</li>
+            <li>• No seasonal disruption losses</li>
+          </ul>
         </div>
       </DocSection>
 
@@ -828,187 +809,127 @@ export default function CompetitiveAdvantagesPage() {
         </div>
 
         <p>
-          At Zexfro International Ltd, communication is more than just
-          responding to messages—it is the foundation of trust, long-term
-          partnerships, and seamless global trade operations. As an
-          international import-export company, we understand that clients,
-          suppliers, and logistics partners require fast, accurate, transparent,
-          and professional communication at every stage of a transaction.
+          Communication is the foundation of trust, long-term partnerships, and seamless global trade operations at Zexfro International Ltd.
         </p>
 
         <div className="bg-teal-50/30 border-l-4 border-teal-500 p-6 my-6 shadow-sm">
           <h4 className="font-bold text-gray-900 mb-3">
-            Multi-Channel Communication System
+            Multi-Channel Support
           </h4>
-          <p className="text-gray-700 mb-4">
-            We maintain active communication across multiple platforms to stay
-            accessible worldwide:
-          </p>
           <ul className="space-y-2 text-gray-700 text-sm">
-            <li>
-              <strong>24/7 Email Support</strong> – For formal trade documents,
-              quotations, order confirmations
-            </li>
-            <li>
-              <strong>Instant Messaging</strong> – WhatsApp, WeChat, Skype for
-              real-time updates
-            </li>
-            <li>
-              <strong>Direct Voice & Video Calls</strong> – To discuss
-              specifications, negotiate pricing, resolve issues
-            </li>
-            <li>
-              <strong>Website Live Chat</strong> – Immediate assistance for
-              inquiries
-            </li>
-            <li>
-              <strong>Social & Business Platforms</strong> – LinkedIn, Google
-              Business for corporate networking
-            </li>
+            <li>• 24/7 Email Support</li>
+            <li>• Instant Messaging Platforms (WhatsApp, WeChat, Skype)</li>
+            <li>• Direct Voice & Video Calls</li>
+            <li>• Website Live Chat Support</li>
+            <li>• Social & Business Platforms (LinkedIn, Google Business)</li>
           </ul>
         </div>
 
         <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
-          Dedicated Client Support Teams
+          Dedicated Teams
         </h4>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-          <div className="bg-teal-50/20 border border-teal-300 rounded-lg p-4 hover:border-teal-400 transition-colors">
-            <p className="font-semibold text-gray-900 mb-2">
-              Key Account Managers
-            </p>
-            <p className="text-sm text-gray-600">
-              For regular buyers and suppliers
-            </p>
-          </div>
-          <div className="bg-teal-50/20 border border-teal-300 rounded-lg p-4 hover:border-teal-400 transition-colors">
-            <p className="font-semibold text-gray-900 mb-2">
-              Trade Support Specialists
-            </p>
-            <p className="text-sm text-gray-600">
-              For sourcing, documentation, and compliance
-            </p>
-          </div>
-          <div className="bg-teal-50/20 border border-teal-300 rounded-lg p-4 hover:border-teal-400 transition-colors">
-            <p className="font-semibold text-gray-900 mb-2">
-              Logistics Coordination Officers
-            </p>
-            <p className="text-sm text-gray-600">
-              For shipment tracking and delivery updates
-            </p>
-          </div>
-          <div className="bg-teal-50/20 border border-teal-300 rounded-lg p-4 hover:border-teal-400 transition-colors">
-            <p className="font-semibold text-gray-900 mb-2">
-              Quality & Dispute Resolution Team
-            </p>
-            <p className="text-sm text-gray-600">
-              For handling claims and product issues
-            </p>
-          </div>
+        <div className="bg-teal-50/20 border-l-4 border-teal-400 p-6 my-6">
+          <ul className="space-y-2 text-gray-700 text-sm">
+            <li>• Key Account Managers (KAM)</li>
+            <li>• Trade Support Specialists</li>
+            <li>• Logistics Coordination Officers</li>
+            <li>• Quality & Dispute Resolution Team</li>
+            <li>• Technical Support Advisors</li>
+          </ul>
         </div>
 
         <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
-          Fast Response & Real-Time Updates
+          Response Guarantees
         </h4>
         <div className="bg-teal-50/40 border-2 border-teal-500 rounded-lg p-6 my-6 shadow-md">
-          <p className="font-bold text-gray-900 mb-3">We Guarantee:</p>
           <ul className="space-y-2 text-gray-700">
             <li className="flex items-start gap-3">
               <span className="text-teal-600 font-bold">•</span>
-              <span>
-                <strong>Inquiry Response</strong> within 10–30 minutes during
-                business hours
-              </span>
+              <span>Inquiry Response within 10–30 minutes</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-teal-600 font-bold">•</span>
-              <span>
-                <strong>Quotation Delivery</strong> within 6–12 hours depending
-                on product complexity
-              </span>
+              <span>Quotation Delivery within 6–12 hours</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-teal-600 font-bold">•</span>
-              <span>
-                <strong>Daily Progress Updates</strong> for shipments and orders
-              </span>
+              <span>Daily Shipment & Order Progress Updates</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-teal-600 font-bold">•</span>
-              <span>
-                <strong>Live Tracking Information</strong> for all international
-                shipments
-              </span>
+              <span>Live Tracking Information</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-teal-600 font-bold">•</span>
-              <span>
-                <strong>Instant Issue Acknowledgment</strong> with resolution
-                plan
-              </span>
+              <span>Instant Issue Acknowledgment & Resolution</span>
             </li>
           </ul>
         </div>
 
         <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
-          Customer-Centric Support Philosophy
+          Support Philosophy
         </h4>
-        <p>Our support approach is built on:</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+        <div className="bg-white border-2 border-teal-300 rounded-lg p-6 my-6">
           <ul className="space-y-2 text-gray-700">
             <li className="flex items-start gap-3">
-              <span className="text-green-600 font-bold text-xl">✔</span>
-              <span>
-                <strong>Transparency</strong> – No hidden charges or unclear
-                terms
-              </span>
+              <span className="text-teal-600 font-bold">✓</span>
+              <span><strong>Transparency:</strong> No hidden charges or unclear terms</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-green-600 font-bold text-xl">✔</span>
-              <span>
-                <strong>Accuracy</strong> – Verified information and correct
-                documentation
-              </span>
+              <span className="text-teal-600 font-bold">✓</span>
+              <span><strong>Accuracy:</strong> Verified information and precise details</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-green-600 font-bold text-xl">✔</span>
-              <span>
-                <strong>Professionalism</strong> – Respectful tone and formal
-                trade etiquette
-              </span>
+              <span className="text-teal-600 font-bold">✓</span>
+              <span><strong>Professionalism:</strong> Respectful tone and formal trade etiquette</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-teal-600 font-bold">✓</span>
+              <span><strong>Reliability:</strong> Consistent follow-ups and no false deadlines</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-teal-600 font-bold">✓</span>
+              <span><strong>Problem-Solving Mindset</strong></span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-teal-600 font-bold">✓</span>
+              <span><strong>Long-Term Partnership Focus</strong></span>
             </li>
           </ul>
+        </div>
+
+        <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
+          After-Sales Support
+        </h4>
+        <div className="bg-teal-50/20 border-l-4 border-teal-400 p-6 my-6">
           <ul className="space-y-2 text-gray-700">
-            <li className="flex items-start gap-3">
-              <span className="text-green-600 font-bold text-xl">✔</span>
-              <span>
-                <strong>Reliability</strong> – Consistent follow-ups, no false
-                deadlines
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-green-600 font-bold text-xl">✔</span>
-              <span>
-                <strong>Problem-Solving Mindset</strong> – We resolve issues,
-                not avoid them
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-green-600 font-bold text-xl">✔</span>
-              <span>
-                <strong>Long-Term Partnership Focus</strong> – Clients as
-                partners, not transactions
-              </span>
-            </li>
+            <li>• Delivery confirmation and feedback collection</li>
+            <li>• Installation guidance for equipment</li>
+            <li>• Warranty or product replacement support</li>
+            <li>• Continuous market updates</li>
+            <li>• New sourcing opportunities</li>
+            <li>• Future bulk order planning</li>
+          </ul>
+        </div>
+
+        <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
+          Continuous Improvement
+        </h4>
+        <div className="bg-white border border-teal-200 rounded-lg p-6 my-6">
+          <ul className="space-y-2 text-gray-700">
+            <li>• Response time monitoring</li>
+            <li>• Staff training in international business communication</li>
+            <li>• CRM tools for client history tracking</li>
+            <li>• Client feedback collection for service upgrades</li>
           </ul>
         </div>
 
         <div className="bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg p-6 text-white text-center mt-8">
           <p className="text-xl font-bold">
-            "Clear Communication, Fast Support, and Reliable Solutions—Every
-            Time, Worldwide."
+            Our Promise
           </p>
-          <p className="mt-2 text-white/90 text-sm">
-            — Zexfro International Ltd
+          <p className="mt-2 text-white/90">
+            "Clear Communication, Fast Support, and Reliable Solutions—Every Time, Worldwide."
           </p>
         </div>
       </DocSection>
@@ -1034,126 +955,93 @@ export default function CompetitiveAdvantagesPage() {
         </div>
 
         <p>
-          At Zexfro International Ltd, we understand that no two businesses are
-          the same. Whether you're a wholesaler needing bulk procurement, a
-          manufacturer sourcing raw materials, a retailer importing finished
-          goods, or an exporter seeking global buyers—we provide customized
-          trade solutions tailored to your specific requirements, industry,
-          budget, and growth objectives.
+          We adapt to the unique needs of wholesalers, manufacturers, retailers, and importers by providing tailored sourcing and export strategies.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-          <div className="bg-indigo-50 border-2 border-indigo-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">
-              1. Product-Specific Global Sourcing
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Analyze your detailed product requirements</li>
-              <li>• Match with trusted manufacturers worldwide</li>
-              <li>• Provide backup sourcing channels</li>
-              <li>
-                <strong>Result:</strong> Stable supply and competitive pricing
-              </li>
-            </ul>
-          </div>
+        <h4 className="text-xl font-bold text-gray-900 mb-4 mt-8">
+          Our Customized Services:
+        </h4>
 
-          <div className="bg-indigo-50 border-2 border-indigo-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">
-              2. Tailored Pricing & Landed Cost
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Custom cost breakdowns (FOB, CFR, CIF, DDP, EXW)</li>
-              <li>• Accurate HS code classification</li>
-              <li>• Shipment consolidation options</li>
-              <li>
-                <strong>Result:</strong> Full cost transparency and lower
-                expenses
-              </li>
-            </ul>
-          </div>
+        <div className="bg-indigo-50 border-l-4 border-indigo-600 p-6 my-6">
+          <div className="space-y-5 text-gray-700">
+            <div>
+              <h5 className="font-semibold text-gray-900 mb-2">Product-Specific Global Sourcing</h5>
+              <ul className="space-y-1 text-sm mb-2">
+                <li>• Detailed requirement analysis</li>
+                <li>• Trusted manufacturer matching</li>
+                <li>• Backup sourcing channels</li>
+              </ul>
+              <p className="text-sm text-indigo-700"><strong>Result:</strong> Stable supply, assured quality, competitive pricing</p>
+            </div>
 
-          <div className="bg-indigo-50 border-2 border-indigo-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">
-              3. Custom Compliance & Regulatory Support
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Compliance roadmap based on product category</li>
-              <li>• Product certifications (BSTI, Plant Quarantine)</li>
-              <li>• Trade agreement benefits (GSP, SAFTA, APTA)</li>
-              <li>
-                <strong>Result:</strong> Faster clearance, zero surprises
-              </li>
-            </ul>
-          </div>
+            <div>
+              <h5 className="font-semibold text-gray-900 mb-2">Tailored Pricing & Landed Cost Optimization</h5>
+              <ul className="space-y-1 text-sm mb-2">
+                <li>• Customized cost breakdowns (FOB, CFR, CIF, DDP, EXW)</li>
+                <li>• Accurate HS code classification</li>
+                <li>• Logistics cost comparison</li>
+                <li>• Shipment consolidation</li>
+                <li>• Optimal port selection</li>
+              </ul>
+              <p className="text-sm text-indigo-700"><strong>Result:</strong> Full cost transparency, lower landed expenses</p>
+            </div>
 
-          <div className="bg-indigo-50 border-2 border-indigo-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">
-              4. Customized Logistics & Delivery
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Air freight for urgent delivery</li>
-              <li>• Sea freight for bulk volume</li>
-              <li>• FCL/LCL container planning</li>
-              <li>
-                <strong>Result:</strong> Faster, safer delivery cycles
-              </li>
-            </ul>
-          </div>
+            <div>
+              <h5 className="font-semibold text-gray-900 mb-2">Custom Compliance & Regulatory Support</h5>
+              <ul className="space-y-1 text-sm mb-2">
+                <li>• Compliance roadmap building</li>
+                <li>• Product certifications (BSTI, Plant Quarantine)</li>
+                <li>• Country-of-origin rules</li>
+                <li>• Trade agreement benefits</li>
+                <li>• LC compliance support</li>
+              </ul>
+              <p className="text-sm text-indigo-700"><strong>Result:</strong> Faster customs clearance, zero compliance surprises</p>
+            </div>
 
-          <div className="bg-indigo-50 border-2 border-indigo-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">
-              5. Private Labeling & Packaging
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Export-standard packaging</li>
-              <li>• Custom labels, barcodes, origin tags</li>
-              <li>• Multilingual packaging support</li>
-              <li>
-                <strong>Result:</strong> Stronger brand presence
-              </li>
-            </ul>
-          </div>
+            <div>
+              <h5 className="font-semibold text-gray-900 mb-2">Customized Logistics & Delivery Planning</h5>
+              <ul className="space-y-1 text-sm mb-2">
+                <li>• Air/sea/hybrid shipping</li>
+                <li>• FCL/LCL container planning</li>
+                <li>• Cold chain/special cargo handling</li>
+                <li>• Real-time shipment tracking</li>
+              </ul>
+              <p className="text-sm text-indigo-700"><strong>Result:</strong> Faster, safer, more reliable delivery cycles</p>
+            </div>
 
-          <div className="bg-indigo-50 border-2 border-indigo-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">
-              6. Personalized Trade Finance
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Secure payment methods (LC, TT, CAD, DP, DA)</li>
-              <li>• Risk-balanced payment negotiation</li>
-              <li>• Bank alignment for compliance</li>
-              <li>
-                <strong>Result:</strong> Protected cash flow
-              </li>
-            </ul>
-          </div>
+            <div>
+              <h5 className="font-semibold text-gray-900 mb-2">Private Labeling, Packaging & Branding</h5>
+              <ul className="space-y-1 text-sm mb-2">
+                <li>• Export-standard packaging</li>
+                <li>• Custom labels and barcodes</li>
+                <li>• Multilingual packaging</li>
+                <li>• Private label manufacturing</li>
+              </ul>
+              <p className="text-sm text-indigo-700"><strong>Result:</strong> Stronger brand presence in buyer markets</p>
+            </div>
 
-          <div className="bg-indigo-50 border-2 border-indigo-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">
-              7. Business-Scalable Planning
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Annual supply contracts</li>
-              <li>• Exclusive supplier agreements</li>
-              <li>• Logistics scalability</li>
-              <li>
-                <strong>Result:</strong> Sustainable growth
-              </li>
-            </ul>
-          </div>
+            <div>
+              <h5 className="font-semibold text-gray-900 mb-2">Personalized Trade Finance & Payment Term Structuring</h5>
+              <ul className="space-y-1 text-sm mb-2">
+                <li>• LC (Letter of Credit)</li>
+                <li>• TT (Bank Transfer)</li>
+                <li>• CAD, DP, DA</li>
+                <li>• Risk-balanced payment negotiation</li>
+                <li>• Bank alignment for currency compliance</li>
+              </ul>
+              <p className="text-sm text-indigo-700"><strong>Result:</strong> Protected cash flow, secure global transactions</p>
+            </div>
 
-          <div className="bg-indigo-50 border-2 border-indigo-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">
-              8. After-Sales Support
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Delivery confirmation and feedback</li>
-              <li>• Installation guidance for equipment</li>
-              <li>• Warranty support</li>
-              <li>
-                <strong>Result:</strong> Long-term partnership
-              </li>
-            </ul>
+            <div>
+              <h5 className="font-semibold text-gray-900 mb-2">Business-Scalable Trade Planning</h5>
+              <ul className="space-y-1 text-sm mb-2">
+                <li>• Annual supply contracts</li>
+                <li>• Exclusive supplier agreements</li>
+                <li>• Logistics and warehousing scalability</li>
+                <li>• Demand-based reorder planning</li>
+              </ul>
+              <p className="text-sm text-indigo-700"><strong>Result:</strong> Sustainable growth for SMEs and large enterprises</p>
+            </div>
           </div>
         </div>
 
@@ -1161,43 +1049,31 @@ export default function CompetitiveAdvantagesPage() {
           <h4 className="font-bold text-gray-900 mb-4 text-center text-xl">
             Our Commitment
           </h4>
-          <p className="text-center text-gray-700 mb-4">
-            Zexfro International Ltd stands as your strategic global trade
-            partner, ensuring that your import-export operations are:
+          <p className="text-center text-gray-700">
+            Zexfro International Ltd stands as your strategic global trade partner, ensuring that your import-export operations are: <strong>Customized, Cost-efficient, Compliant, Scalable, Fast and reliable,</strong> Backed by <strong>dedicated communication support.</strong>
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
-            <div className="bg-indigo-50 rounded-lg p-3">
-              <p className="font-semibold text-indigo-600">Customized</p>
-            </div>
-            <div className="bg-indigo-50 rounded-lg p-3">
-              <p className="font-semibold text-indigo-600">Cost-efficient</p>
-            </div>
-            <div className="bg-indigo-50 rounded-lg p-3">
-              <p className="font-semibold text-indigo-600">Compliant</p>
-            </div>
-            <div className="bg-indigo-50 rounded-lg p-3">
-              <p className="font-semibold text-indigo-600">Scalable</p>
-            </div>
-            <div className="bg-indigo-50 rounded-lg p-3">
-              <p className="font-semibold text-indigo-600">Fast & Reliable</p>
-            </div>
-            <div className="bg-indigo-50 rounded-lg p-3">
-              <p className="font-semibold text-indigo-600">Supported</p>
-            </div>
-          </div>
         </div>
 
         <div className="bg-gradient-to-r from-[#0a4a9e] to-[#05306b] rounded-lg p-8 text-white my-8">
           <h4 className="text-2xl font-bold mb-4 text-center">
-            Why Choose Zexfro International Ltd?
+            Why Choose Us?
           </h4>
           <p className="mb-6 text-white/90 text-center max-w-3xl mx-auto">
-            We don't just trade products—we build global business bridges,
-            simplify complex import-export operations, and create profitable
-            opportunities for our partners worldwide. Our commitment to
-            reliability, speed, quality, and compliance sets us apart in the
-            industry.
+            We don't just trade products—we build global business bridges, simplify complex import-export operations, and create profitable opportunities for our partners worldwide.
           </p>
+
+          <div className="bg-white/10 rounded-lg p-6 mb-6">
+            <h5 className="text-xl font-bold mb-4 text-center">Business Advantages:</h5>
+            <ul className="space-y-2 text-white/90">
+              <li>✓ <strong>Fully Customized Solutions</strong> → Designed around your product & business model</li>
+              <li>✓ <strong>Strong Global Supplier & Buyer Network</strong> → Reliable sourcing and faster buyer reach</li>
+              <li>✓ <strong>End-to-End Trade & Logistics Expertise</strong> → Seamless execution from order to delivery</li>
+              <li>✓ <strong>Real-Time Communication</strong> → Faster coordination across borders</li>
+              <li>✓ <strong>Cost-Efficient Shipment Planning</strong> → Maximum savings and optimized lead time</li>
+              <li>✓ <strong>Risk-Free Compliance Roadmap</strong> → Hassle-free customs and documentation</li>
+            </ul>
+          </div>
+
           <div className="text-center">
             <a
               href="/contact"
