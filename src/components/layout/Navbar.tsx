@@ -7,14 +7,18 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
-type NavLink = 
+type NavLink =
   | { href: string; key: string; isDropdown?: false }
-  | { key: string; isDropdown: true; dropdownItems: Array<{ href: string; key: string }> };
+  | {
+      key: string;
+      isDropdown: true;
+      dropdownItems: Array<{ href: string; key: string }>;
+    };
 
 const navLinks: NavLink[] = [
   { href: "/", key: "home" },
-  { 
-    key: "about", 
+  {
+    key: "about",
     isDropdown: true,
     dropdownItems: [
       { href: "/about", key: "aboutUs" },
@@ -22,16 +26,16 @@ const navLinks: NavLink[] = [
       { href: "/vision-mission-values", key: "visionMissionValues" },
       { href: "/glossary", key: "glossary" },
       { href: "/benefits-for-supplier", key: "benefitsForSupplier" },
-    ]
+    ],
   },
-  { 
-    key: "services", 
+  {
+    key: "services",
     isDropdown: true,
     dropdownItems: [
       { href: "/services", key: "seamlessSolutions" },
       { href: "/local-service", key: "localService" },
       { href: "/global-service", key: "globalService" },
-    ]
+    ],
   },
   { href: "/products", key: "products" },
   { href: "/blog", key: "blog" },
@@ -61,10 +65,16 @@ export function Navbar() {
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (aboutDropdownRef.current && !aboutDropdownRef.current.contains(event.target as Node)) {
+      if (
+        aboutDropdownRef.current &&
+        !aboutDropdownRef.current.contains(event.target as Node)
+      ) {
         setAboutDropdownOpen(false);
       }
-      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target as Node)) {
+      if (
+        servicesDropdownRef.current &&
+        !servicesDropdownRef.current.contains(event.target as Node)
+      ) {
         setServicesDropdownOpen(false);
       }
     };
@@ -96,7 +106,7 @@ export function Navbar() {
           {/* Mobile Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/Logo.png"
+              src="/zexfro_logo.png"
               alt="Zexfro Logo"
               width={68}
               height={68}
@@ -135,11 +145,11 @@ export function Navbar() {
               />
               {/* Static PNG Logo */}
               <Image
-                src="/Logo.png"
+                src="/zexfro_logo.png"
                 alt="Zexfro Logo"
                 width={120}
                 height={120}
-                className={`object-contain absolute scale-190 transition-all duration-1000 ${
+                className={`object-contain absolute scale-220 transition-all duration-1000 ${
                   showStaticLogo
                     ? "opacity-100 scale-100"
                     : "opacity-0 scale-110"
@@ -156,9 +166,15 @@ export function Navbar() {
                 // Dropdown logic
                 const isAbout = link.key === "about";
                 const isServices = link.key === "services";
-                const dropdownOpen = isAbout ? aboutDropdownOpen : servicesDropdownOpen;
-                const setDropdownOpen = isAbout ? setAboutDropdownOpen : setServicesDropdownOpen;
-                const dropdownRef = isAbout ? aboutDropdownRef : servicesDropdownRef;
+                const dropdownOpen = isAbout
+                  ? aboutDropdownOpen
+                  : servicesDropdownOpen;
+                const setDropdownOpen = isAbout
+                  ? setAboutDropdownOpen
+                  : setServicesDropdownOpen;
+                const dropdownRef = isAbout
+                  ? aboutDropdownRef
+                  : servicesDropdownRef;
 
                 return (
                   <div key={link.key} className="relative" ref={dropdownRef}>
@@ -168,7 +184,11 @@ export function Navbar() {
                       className="px-4 lg:px-5 py-2 text-base lg:text-lg font-semibold text-white hover:bg-white/20 transition-colors duration-200 rounded-md flex items-center gap-1"
                     >
                       {t(link.key as any)}
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform duration-200 ${
+                          dropdownOpen ? "rotate-180" : ""
+                        }`}
+                      />
                     </button>
 
                     {/* Dropdown Menu */}
@@ -194,7 +214,7 @@ export function Navbar() {
               }
 
               // Regular links
-              if ('href' in link) {
+              if ("href" in link) {
                 return (
                   <Link
                     key={link.href}
@@ -225,8 +245,12 @@ export function Navbar() {
                 // Dropdown for mobile
                 const isAbout = link.key === "about";
                 const isServices = link.key === "services";
-                const mobileOpen = isAbout ? mobileAboutOpen : mobileServicesOpen;
-                const setMobileOpen = isAbout ? setMobileAboutOpen : setMobileServicesOpen;
+                const mobileOpen = isAbout
+                  ? mobileAboutOpen
+                  : mobileServicesOpen;
+                const setMobileOpen = isAbout
+                  ? setMobileAboutOpen
+                  : setMobileServicesOpen;
 
                 return (
                   <div key={link.key}>
@@ -235,7 +259,11 @@ export function Navbar() {
                       className="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-white hover:bg-white/20 transition-colors rounded-md"
                     >
                       {t(link.key as any)}
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform duration-200 ${
+                          mobileOpen ? "rotate-180" : ""
+                        }`}
+                      />
                     </button>
                     {mobileOpen && (
                       <div className="ml-4 mt-1 space-y-1">
@@ -259,7 +287,7 @@ export function Navbar() {
               }
 
               // Regular links for mobile
-              if ('href' in link) {
+              if ("href" in link) {
                 return (
                   <Link
                     key={link.href}

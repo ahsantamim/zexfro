@@ -89,7 +89,7 @@ export function Footer() {
                   <span>info@zexfro.com</span>
                 </div>
               </div>
-              
+
               {/* Social Icons */}
               <div className="flex gap-4 justify-center mt-6">
                 <a
@@ -195,14 +195,16 @@ export function Footer() {
           <div className="flex flex-col items-center gap-4">
             {/* Logo */}
             <Image
-              src="/Logo.png"
+              src="/zexfro_logo.png"
               alt="Zexfro Logo"
               width={80}
               height={80}
               className="object-contain opacity-50"
             />
             {/* Copyright Text */}
-            <p className="text-sm text-gray-400">© 2026 Zexfro. All rights reserved.</p>
+            <p className="text-sm text-gray-400">
+              © 2026 Zexfro. All rights reserved.
+            </p>
           </div>
         </div>
       </div>
