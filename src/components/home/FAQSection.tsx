@@ -62,7 +62,7 @@ export function FAQSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-6 md:mb-8"
+          className="text-center mb-12 md:mb-16"
         >
           <motion.div
             initial={{ scale: 0 }}
@@ -78,7 +78,7 @@ export function FAQSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
           >
             {t("homeSectionTitle")}
           </motion.h2>
@@ -87,7 +87,7 @@ export function FAQSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-base md:text-lg text-white/90 max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto"
           >
             {t("homeSectionSubtitle")}
           </motion.p>

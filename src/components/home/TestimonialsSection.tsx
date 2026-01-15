@@ -3,9 +3,20 @@
 import { Quote, Star } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
+
+import {
+  type CarouselApi,
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export function TestimonialsSection() {
   const t = useTranslations("testimonials");
+  const [api, setApi] = useState<CarouselApi | null>(null);
   const testimonials = [
     {
       id: 1,
@@ -40,69 +51,130 @@ export function TestimonialsSection() {
       quote:
         "Finding quality verified partners across Europe has never been easier. Zexfro's network is unmatched in the industry.",
     },
+    {
+      id: 4,
+      name: "Amina Rahman",
+      role: "Procurement Manager",
+      company: "Dhaka Imports Co.",
+      image:
+        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80",
+      rating: 5,
+      quote:
+        "The supplier verification and documentation support made cross-border sourcing much faster and more reliable for our team.",
+    },
+    {
+      id: 5,
+      name: "David Miller",
+      role: "Operations Lead",
+      company: "NorthBridge Logistics",
+      image:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
+      rating: 5,
+      quote:
+        "From quotation to delivery updates, everything feels streamlined. We reduced coordination overhead significantly.",
+    },
+    {
+      id: 6,
+      name: "Priya Kapoor",
+      role: "Compliance Specialist",
+      company: "TradeSecure Group",
+      image:
+        "https://images.unsplash.com/photo-1548142813-c348350df52b?w=400&q=80",
+      rating: 5,
+      quote:
+        "Clear compliance workflows and consistent communication helped us avoid delays and keep shipments moving smoothly.",
+    },
   ];
 
+  useEffect(() => {
+    if (!api) return;
+    const id = window.setInterval(() => {
+      api.scrollNext();
+    }, 4500);
+    return () => window.clearInterval(id);
+  }, [api]);
+
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white flex items-center">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-[#0A4D96] w-full">
       <div className="container mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             {t("title")}
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-blue-100/90 max-w-2xl mx-auto">
             {t("subtitle")}
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {testimonials.map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="group p-6 bg-gray-50 rounded-none hover:shadow-xl transition-all duration-300 border border-gray-200 relative"
-            >
-              {/* Quote Icon */}
-              <div className="absolute top-6 right-6 opacity-10">
-                <Quote className="w-16 h-16 text-[#0A4D96]" strokeWidth={1} />
-              </div>
+        {/* Testimonials Carousel */}
+        <div className="relative max-w-7xl mx-auto">
+          <Carousel
+            className="w-full"
+            opts={{ align: "start", loop: true }}
+            setApi={setApi}
+          >
+            <CarouselContent className="-ml-6">
+              {testimonials.map((testimonial) => (
+                <CarouselItem
+                  key={testimonial.id}
+                  className="pl-6 basis-full md:basis-1/2 lg:basis-1/3"
+                >
+                  <div className="group p-6 bg-white rounded-none hover:shadow-xl transition-all duration-300 border border-white/20 relative h-full">
+                    {/* Quote Icon */}
+                    <div className="absolute top-6 right-6 opacity-10">
+                      <Quote
+                        className="w-16 h-16 text-[#0A4D96]"
+                        strokeWidth={1}
+                      />
+                    </div>
 
-              {/* Rating */}
-              <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-5 h-5 text-yellow-400 fill-yellow-400"
-                  />
-                ))}
-              </div>
+                    {/* Rating */}
+                    <div className="flex gap-1 mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-5 h-5 text-yellow-400 fill-yellow-400"
+                        />
+                      ))}
+                    </div>
 
-              {/* Quote */}
-              <p className="text-gray-600 text-sm leading-relaxed mb-6 relative z-10">
-                `{testimonial.quote}`
-              </p>
+                    {/* Quote */}
+                    <p className="text-gray-700 text-sm leading-relaxed mb-6 relative z-10">
+                      {testimonial.quote}
+                    </p>
 
-              {/* Author */}
-              <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden">
-                  <Image
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <div className="font-bold text-gray-900">
-                    {testimonial.name}
+                    {/* Author */}
+                    <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
+                      <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                        <Image
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div>
+                        <div className="font-bold text-gray-900">
+                          {testimonial.name}
+                        </div>
+                        <div className="text-sm text-gray-600">
+                          {testimonial.role}, {testimonial.company}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="text-sm text-gray-600">
-                    {testimonial.role}, {testimonial.company}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+
+            {testimonials.length > 1 && (
+              <>
+                <CarouselPrevious className="bg-white/15 border-white/30 text-white hover:bg-white/25 hover:text-white -left-4 md:-left-10" />
+                <CarouselNext className="bg-white/15 border-white/30 text-white hover:bg-white/25 hover:text-white -right-4 md:-right-10" />
+              </>
+            )}
+          </Carousel>
         </div>
       </div>
     </section>
