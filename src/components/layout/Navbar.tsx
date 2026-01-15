@@ -106,7 +106,7 @@ export function Navbar() {
           {/* Mobile Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/zexfro_logo.png"
+              src="/zexfro_logo_new.png"
               alt="Zexfro Logo"
               width={68}
               height={68}
@@ -145,11 +145,11 @@ export function Navbar() {
               />
               {/* Static PNG Logo */}
               <Image
-                src="/zexfro_logo.png"
+                src="/zexfro_logo_new.png"
                 alt="Zexfro Logo"
                 width={120}
                 height={120}
-                className={`object-contain absolute scale-220 transition-all duration-1000 ${
+                className={`object-contain absolute scale-200 mt-2 transition-all duration-1000 ${
                   showStaticLogo
                     ? "opacity-100 scale-100"
                     : "opacity-0 scale-110"

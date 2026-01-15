@@ -78,15 +78,27 @@ export function Footer() {
               <div className="space-y-2 text-sm">
                 <div className="flex items-start gap-2 justify-center">
                   <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                  <span>123 Trade Street, Business District</span>
+                  <span>9/B, Uttara -8, Dhaka -1230, Bangladesh</span>
                 </div>
                 <div className="flex items-center gap-2 justify-center">
                   <Phone className="w-4 h-4 flex-shrink-0" />
-                  <span>+1 (555) 123-4567</span>
+                  <span>Official Phone: +88 01911657332</span>
+                </div>
+                <div className="flex items-center gap-2 justify-center">
+                  <Phone className="w-4 h-4 flex-shrink-0" />
+                  <span>+880 1342045246</span>
                 </div>
                 <div className="flex items-center gap-2 justify-center">
                   <Mail className="w-4 h-4 flex-shrink-0" />
-                  <span>info@zexfro.com</span>
+                  <span>infro@mdshameem.com</span>
+                </div>
+                <div className="flex items-center gap-2 justify-center">
+                  <Mail className="w-4 h-4 flex-shrink-0" />
+                  <span>Official Email: info@zexfro.com</span>
+                </div>
+                <div className="flex items-center gap-2 justify-center">
+                  <Mail className="w-4 h-4 flex-shrink-0" />
+                  <span>Director Official Email: md@zexfro.com</span>
                 </div>
               </div>
 
@@ -195,7 +207,7 @@ export function Footer() {
           <div className="flex flex-col items-center gap-4">
             {/* Logo */}
             <Image
-              src="/zexfro_logo.png"
+              src="/zexfro_logo_new.png"
               alt="Zexfro Logo"
               width={80}
               height={80}
