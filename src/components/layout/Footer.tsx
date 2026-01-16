@@ -30,13 +30,13 @@ export function Footer() {
       { href: "/blog", label: t("resourcesBlog") },
       { href: "/faq", label: t("resourcesFaq") },
       { href: "/contact", label: t("resourcesContact") },
-      { href: "/logistics-support", label: t("resourcesLogistics") },
+      { href: "/logistic-supply-chain", label: t("resourcesLogistics") },
       { href: "/privacy-policy", label: t("resourcesPrivacy") },
       { href: "/terms-conditions", label: t("resourcesTerms") },
       { href: "/hs-code", label: t("resourcesHsCode") },
     ],
     services: [
-      { href: "/advantages", label: t("servicesAdvantages") },
+      { href: "/competitive-advantages", label: t("servicesAdvantages") },
       { href: "/logistics-support", label: t("servicesLogisticsSupport") },
       { href: "/quality-assurance", label: t("servicesQualityAssurance") },
       {

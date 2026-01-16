@@ -1,8 +1,8 @@
 /**
  * DOCUMENTATION PAGE TEMPLATE
- * 
+ *
  * This is a reusable template for creating long-form content pages with scrollspy navigation.
- * 
+ *
  * TO USE THIS TEMPLATE:
  * 1. Copy this file to your desired location (e.g., compliance-standards/page.tsx)
  * 2. Update the metadata (title, description)
@@ -11,9 +11,9 @@
  * 5. Create DocSection components for each section
  * 6. Add your content inside each DocSection
  * 7. Delete this comment block
- * 
+ *
  * EXAMPLES:
- * - /advantages - Competitive Advantages
+ * - /competitive-advantages - Competitive Advantages
  * - /logistics-support - Logistics Support
  * - /quality-assurance - Quality Assurance
  */
@@ -82,7 +82,9 @@ export default function YourPageName() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">Image Caption or Description</p>
+            <p className="text-sm font-semibold">
+              Image Caption or Description
+            </p>
           </div>
         </div>
 
@@ -234,12 +236,10 @@ export default function YourPageName() {
 
         {/* Call-to-Action box (typically at end of last section) */}
         <div className="bg-gradient-to-r from-[#0a4a9e] to-[#05306b] rounded-lg p-8 text-white my-8">
-          <h4 className="text-2xl font-bold mb-4">
-            Ready to Take Action?
-          </h4>
+          <h4 className="text-2xl font-bold mb-4">Ready to Take Action?</h4>
           <p className="mb-6 text-white/90">
-            Compelling call-to-action text that encourages users to contact you or
-            take the next step.
+            Compelling call-to-action text that encourages users to contact you
+            or take the next step.
           </p>
           <a
             href="/contact"
@@ -255,34 +255,34 @@ export default function YourPageName() {
 
 /**
  * AVAILABLE ICON COLORS FOR VARIETY:
- * 
+ *
  * Blue (Primary Brand Color):
  * - bg-blue-100 with text-[#0a4a9e]
  * - border-[#0a4a9e]
- * 
+ *
  * Green:
  * - bg-green-100 with text-green-600
  * - border-green-600
- * 
+ *
  * Yellow:
  * - bg-yellow-100 with text-yellow-600
  * - border-yellow-600
- * 
+ *
  * Purple:
  * - bg-purple-100 with text-purple-600
  * - border-purple-600
- * 
+ *
  * Orange:
  * - bg-orange-100 with text-orange-600
  * - border-orange-600
- * 
+ *
  * Red:
  * - bg-red-100 with text-red-600
  * - border-red-600
- * 
- * 
+ *
+ *
  * COMMON LUCIDE ICONS TO USE:
- * 
+ *
  * - Shield, ShieldCheck, ShieldAlert
  * - CheckCircle, Check, CheckSquare
  * - Package, PackageCheck, PackageSearch
@@ -298,4 +298,3 @@ export default function YourPageName() {
  * - Lock, Key, Unlock
  * - Heart, ThumbsUp, Smile
  */
-

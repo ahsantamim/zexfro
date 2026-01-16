@@ -99,7 +99,7 @@ npm run db:sync         # Generate + Push (combined)
 
 | Route                                | File Path                                                   | Description              |
 | ------------------------------------ | ----------------------------------------------------------- | ------------------------ |
-| `/[locale]/advantages`               | `src/app/[locale]/(main)/advantages/page.tsx`               | Company advantages       |
+| `/[locale]/competitive-advantages`   | `src/app/[locale]/(main)/competitive-advantages/page.tsx`   | Company advantages       |
 | `/[locale]/benefits-for-supplier`    | `src/app/[locale]/(main)/benefits-for-supplier/page.tsx`    | Supplier benefits        |
 | `/[locale]/compliance-standards`     | `src/app/[locale]/(main)/compliance-standards/page.tsx`     | Compliance standards     |
 | `/[locale]/documentation-compliance` | `src/app/[locale]/(main)/documentation-compliance/page.tsx` | Documentation compliance |

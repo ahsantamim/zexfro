@@ -7,19 +7,23 @@ The `ContentLayout` component system provides a unique, modern page layout desig
 ## When to Use Each Layout
 
 ### DocLayout (Scrollspy Design)
+
 **Use for:** Service pages with technical, detailed content that benefits from sidebar navigation
 
 **Pages using DocLayout:**
-- Competitive Advantages (`/advantages`)
+
+- Competitive Advantages (`/competitive-advantages`)
 - Logistics Support (`/logistics-support`) - **Note: This will be migrated to ContentLayout**
 - Quality Assurance (`/quality-assurance`)
 - Compliance & Standards (`/compliance-standards`)
 - Documentation & Compliance (`/documentation-compliance`)
 
 ### ContentLayout (Hero + Sections Design)
+
 **Use for:** Policy pages, informational pages, and content-focused pages
 
 **Pages using ContentLayout:**
+
 - Logistics & Supply Chain (`/logistics-support`) - **Updated with new design**
 - Privacy Policy (`/privacy-policy`) - **New page**
 - Terms & Conditions (`/terms-conditions`) - **New page**
@@ -39,16 +43,18 @@ import { ContentLayout } from "@/components/ui/ContentLayout";
   heroImage="https://images.unsplash.com/photo-xxx?w=1600&q=80" // Optional
 >
   {/* Your content sections here */}
-</ContentLayout>
+</ContentLayout>;
 ```
 
 **Props:**
+
 - `pageTitle` (string, required): The main page heading
 - `pageDescription` (string, required): Subtitle/description text
 - `heroImage` (string, optional): Hero background image URL (defaults to a world map image)
 - `children` (ReactNode, required): Page content sections
 
 **Features:**
+
 - Full-width hero section with gradient overlay
 - Decorative geometric shapes (circles, squares, hexagons)
 - Responsive height (400px mobile, 500px desktop)
@@ -63,17 +69,21 @@ A container for page content sections with consistent spacing and background opt
 ```tsx
 import { ContentSection } from "@/components/ui/ContentLayout";
 
-<ContentSection bgColor="white"> {/* or "gray" or "blue" */}
+<ContentSection bgColor="white">
+  {" "}
+  {/* or "gray" or "blue" */}
   {/* Your section content */}
-</ContentSection>
+</ContentSection>;
 ```
 
 **Props:**
+
 - `bgColor` (string, optional): Background color - "white", "gray", or "blue" (default: "white")
 - `noPadding` (boolean, optional): Remove default padding (default: false)
 - `children` (ReactNode, required): Section content
 
 **Features:**
+
 - Consistent container width (max-w-6xl)
 - Responsive padding (py-12 to py-20)
 - Alternating background colors for visual hierarchy
@@ -93,16 +103,18 @@ import { Shield } from "lucide-react";
   subtitle="Optional subtitle text"
   icon={<Shield className="w-7 h-7 text-white" />}
   centered={true}
-/>
+/>;
 ```
 
 **Props:**
+
 - `title` (string, required): Section heading
 - `subtitle` (string, optional): Section description
 - `icon` (ReactNode, optional): Icon element (typically Lucide React icon)
 - `centered` (boolean, optional): Center-align the header (default: false)
 
 **Features:**
+
 - Large, bold title (text-3xl to text-4xl)
 - Optional icon in blue container
 - Consistent spacing and typography
@@ -122,16 +134,18 @@ import { Package } from "lucide-react";
   title="Feature Title"
   description="Feature description text"
   color="blue" // or "green", "purple", "orange"
-/>
+/>;
 ```
 
 **Props:**
+
 - `icon` (ReactNode, required): Icon element
 - `title` (string, required): Card title
 - `description` (string, required): Card description
 - `color` (string, optional): Color theme - "blue", "green", "purple", or "orange" (default: "blue")
 
 **Features:**
+
 - Colored backgrounds and borders
 - Icon container with matching color
 - Hover shadow effect
@@ -151,16 +165,18 @@ import { CTABox } from "@/components/ui/ContentLayout";
   description="Join thousands of businesses worldwide"
   buttonText="Contact Us Today"
   buttonLink="/contact"
-/>
+/>;
 ```
 
 **Props:**
+
 - `title` (string, required): CTA heading
 - `description` (string, required): CTA description
 - `buttonText` (string, required): Button label
 - `buttonLink` (string, required): Button destination URL
 
 **Features:**
+
 - Blue gradient background
 - White text with semi-transparent description
 - Prominent white button with hover effects
@@ -171,12 +187,12 @@ import { CTABox } from "@/components/ui/ContentLayout";
 ## Complete Page Example
 
 ```tsx
-import { 
-  ContentLayout, 
-  ContentSection, 
-  SectionHeader, 
+import {
+  ContentLayout,
+  ContentSection,
+  SectionHeader,
   FeatureCard,
-  CTABox 
+  CTABox,
 } from "@/components/ui/ContentLayout";
 import { Shield, Lock, Eye } from "lucide-react";
 
@@ -243,22 +259,26 @@ export default function ExamplePage() {
 ## Design Principles
 
 ### 1. Visual Hierarchy
+
 - Hero section draws immediate attention
 - Alternating background colors (white → gray → white)
 - Clear section separation with consistent spacing
 
 ### 2. Consistency
+
 - All sections use the same container width (max-w-6xl)
 - Consistent padding and spacing throughout
 - Standardized typography and colors
 
 ### 3. Responsiveness
+
 - Mobile-first approach
 - Hero height adjusts (400px → 500px)
 - Grid layouts collapse on mobile
 - Padding scales with screen size
 
 ### 4. Accessibility
+
 - Semantic HTML structure
 - Proper heading hierarchy
 - Sufficient color contrast
@@ -269,17 +289,20 @@ export default function ExamplePage() {
 ## Color Palette
 
 ### Background Colors
+
 - **White** (`bg-white`): Primary content background
 - **Gray** (`bg-gray-50`): Alternating section background
 - **Blue** (`bg-blue-50`): Accent section background
 
 ### Feature Card Colors
+
 - **Blue**: Primary features (`blue-50`, `blue-100`, `blue-600`)
 - **Green**: Success/positive features (`green-50`, `green-100`, `green-600`)
 - **Purple**: Premium/special features (`purple-50`, `purple-100`, `purple-600`)
 - **Orange**: Action/urgent features (`orange-50`, `orange-100`, `orange-600`)
 
 ### Brand Colors
+
 - **Primary Blue**: `#0a4a9e` - Main brand color
 - **Dark Blue**: `#05306b` - Gradient accent
 - **Darker Blue**: `#041f3f` - Deep gradient
@@ -289,16 +312,19 @@ export default function ExamplePage() {
 ## Typography
 
 ### Headings
+
 - **Page Title (Hero)**: `text-4xl md:text-5xl lg:text-6xl font-bold`
 - **Section Title**: `text-3xl md:text-4xl font-bold`
 - **Card Title**: `text-xl font-bold`
 
 ### Body Text
+
 - **Large**: `text-lg md:text-xl` (hero description, section subtitles)
 - **Regular**: `text-base` (standard content)
 - **Small**: `text-sm` (card descriptions, labels)
 
 ### Colors
+
 - **Headings**: `text-gray-900`
 - **Body**: `text-gray-700`
 - **Muted**: `text-gray-600`
@@ -309,6 +335,7 @@ export default function ExamplePage() {
 ## Best Practices
 
 ### DO:
+
 ✅ Use alternating background colors for visual rhythm
 ✅ Include a SectionHeader for each major section
 ✅ Use FeatureCards in grids of 2-4 items
@@ -317,6 +344,7 @@ export default function ExamplePage() {
 ✅ Use semantic HTML (section, article, etc.)
 
 ### DON'T:
+
 ❌ Mix ContentLayout and DocLayout on the same page
 ❌ Use more than 3 background colors on one page
 ❌ Skip the hero section (it's part of ContentLayout)
@@ -331,19 +359,21 @@ export default function ExamplePage() {
 If you need to migrate a page from DocLayout to ContentLayout:
 
 1. **Replace the layout wrapper:**
+
    ```tsx
    // Before (DocLayout)
    <DocLayout sections={sections} pageTitle="..." pageDescription="...">
-   
+
    // After (ContentLayout)
    <ContentLayout pageTitle="..." pageDescription="..." heroImage="...">
    ```
 
 2. **Replace DocSection with ContentSection:**
+
    ```tsx
    // Before
    <DocSection id="overview" title="Overview">
-   
+
    // After
    <ContentSection bgColor="white">
      <SectionHeader title="Overview" subtitle="..." />
@@ -368,6 +398,7 @@ If you need to migrate a page from DocLayout to ContentLayout:
 ## Support
 
 For questions or issues with the ContentLayout system, refer to:
+
 - UI Guidelines: `UI_GUIDELINES.md`
 - Visual Guide: `VISUAL_GUIDE.md`
 - Component source: `src/components/ui/ContentLayout.tsx`
@@ -376,4 +407,3 @@ For questions or issues with the ContentLayout system, refer to:
 
 **Last Updated:** January 4, 2026
 **Version:** 1.0
-
