@@ -82,23 +82,12 @@ export function Footer() {
                 </div>
                 <div className="flex items-center gap-2 justify-center">
                   <Phone className="w-4 h-4 flex-shrink-0" />
-                  <span>Official Phone: +88 01911657332</span>
+                  <span>Phone: +88 01911657332</span>
                 </div>
-                <div className="flex items-center gap-2 justify-center">
-                  <Phone className="w-4 h-4 flex-shrink-0" />
-                  <span>+880 1342045246</span>
-                </div>
+
                 <div className="flex items-center gap-2 justify-center">
                   <Mail className="w-4 h-4 flex-shrink-0" />
-                  <span>infro@mdshameem.com</span>
-                </div>
-                <div className="flex items-center gap-2 justify-center">
-                  <Mail className="w-4 h-4 flex-shrink-0" />
-                  <span>Official Email: info@zexfro.com</span>
-                </div>
-                <div className="flex items-center gap-2 justify-center">
-                  <Mail className="w-4 h-4 flex-shrink-0" />
-                  <span>Director Official Email: md@zexfro.com</span>
+                  <span>Email: info@zexfrointl.com</span>
                 </div>
               </div>
 
