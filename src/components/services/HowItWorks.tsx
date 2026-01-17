@@ -1,35 +1,16 @@
+"use client";
+
 import { FileSearch, CheckCircle, Truck, PackageCheck } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function HowItWorks() {
+  const t = useTranslations("services.howItWorks");
+
   const steps = [
-    {
-      number: "01",
-      icon: FileSearch,
-      title: "Consultation & Assessment",
-      description:
-        "Share your export-import requirements with us. Our team analyzes your needs and creates a customized solution plan.",
-    },
-    {
-      number: "02",
-      icon: CheckCircle,
-      title: "Documentation & Compliance",
-      description:
-        "We handle all necessary documentation, permits, and ensure full compliance with international trade regulations.",
-    },
-    {
-      number: "03",
-      icon: Truck,
-      title: "Logistics & Shipping",
-      description:
-        "Your cargo is transported via the most efficient route with real-time tracking and full insurance coverage.",
-    },
-    {
-      number: "04",
-      icon: PackageCheck,
-      title: "Delivery & Support",
-      description:
-        "Final delivery to destination with customs clearance, and ongoing support for any post-delivery requirements.",
-    },
+    { icon: FileSearch },
+    { icon: CheckCircle },
+    { icon: Truck },
+    { icon: PackageCheck },
   ];
 
   return (
@@ -49,14 +30,13 @@ export function HowItWorks() {
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <span className="text-[#0a4a9e] font-semibold text-sm uppercase tracking-wider bg-blue-50 px-4 py-2 rounded-full inline-block">
-            Our Process
+            {t("sectionTag")}
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-6 mb-4">
-            How It Works
+            {t("title")}
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            A simple, transparent process to get your goods moving across
-            borders
+            {t("subtitle")}
           </p>
         </div>
 
@@ -70,6 +50,7 @@ export function HowItWorks() {
 
           {steps.map((step, index) => {
             const Icon = step.icon;
+            const stepNumber = String(index + 1).padStart(2, '0');
             return (
               <div key={index} className="relative z-10">
                 {/* Step Card */}
@@ -77,7 +58,7 @@ export function HowItWorks() {
                   {/* Number Badge */}
                   <div className="flex justify-center mb-6">
                     <div className="w-16 h-16 bg-gradient-to-br from-[#0a4a9e] via-[#05306b] to-[#041f3f] rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg relative z-20">
-                      {step.number}
+                      {stepNumber}
                     </div>
                   </div>
 
@@ -90,24 +71,16 @@ export function HowItWorks() {
                       />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">
-                      {step.title}
+                      {t(`steps.${index}.title`)}
                     </h3>
                     <p className="text-gray-600 text-sm leading-relaxed text-center">
-                      {step.description}
+                      {t(`steps.${index}.description`)}
                     </p>
                   </div>
                 </div>
               </div>
             );
           })}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-12">
-          <p className="text-lg text-gray-600 mb-6">
-            Ready to get started? Our team is here to guide you through every
-            step.
-          </p>
         </div>
       </div>
     </section>

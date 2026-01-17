@@ -1,3 +1,5 @@
+"use client";
+
 import {
   CheckCircle2,
   Shield,
@@ -9,64 +11,20 @@ import {
   Award,
 } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export function ServicesBenefits() {
-  const benefits = [
-    {
-      icon: Shield,
-      title: "100% Secure & Compliant",
-      description:
-        "All transactions are protected with bank-level security and full compliance with international trade regulations.",
-    },
-    {
-      icon: Clock,
-      title: "Fast Processing",
-      description:
-        "Streamlined workflows and automated systems ensure quick turnaround times for all documentation and shipping.",
-    },
-    {
-      icon: Globe2,
-      title: "Global Network",
-      description:
-        "Access to a verified network of partners across 150+ countries for seamless international trade operations.",
-    },
-    {
-      icon: TrendingUp,
-      title: "Cost Optimization",
-      description:
-        "Leverage our volume discounts and optimized routes to reduce shipping costs by up to 30%.",
-    },
-    {
-      icon: Users2,
-      title: "Dedicated Support",
-      description:
-        "24/7 multilingual customer support team ready to assist you at every step of your trade journey.",
-    },
-    {
-      icon: Award,
-      title: "Industry Expertise",
-      description:
-        "Over 15 years of experience in international trade with certified customs brokers and logistics specialists.",
-    },
-    {
-      icon: Sparkles,
-      title: "Technology-Driven",
-      description:
-        "Advanced tracking systems, real-time updates, and digital documentation for complete transparency.",
-    },
-    {
-      icon: CheckCircle2,
-      title: "Quality Guaranteed",
-      description:
-        "Comprehensive quality checks and verification processes to ensure your goods meet all required standards.",
-    },
-  ];
+  const t = useTranslations("services.benefits");
 
-  const stats = [
-    { value: "10,000+", label: "Successful Shipments" },
-    { value: "150+", label: "Countries Covered" },
-    { value: "98%", label: "On-Time Delivery" },
-    { value: "24/7", label: "Customer Support" },
+  const benefits = [
+    { icon: Shield },
+    { icon: Clock },
+    { icon: Globe2 },
+    { icon: TrendingUp },
+    { icon: Users2 },
+    { icon: Award },
+    { icon: Sparkles },
+    { icon: CheckCircle2 },
   ];
 
   return (
@@ -77,14 +35,13 @@ export function ServicesBenefits() {
           {/* Section Header */}
           <div className="text-center mb-12 md:mb-16">
             <span className="text-[#0a4a9e] font-semibold text-sm uppercase tracking-wider bg-white px-4 py-2 rounded-full inline-block">
-              Why Choose Us
+              {t("sectionTag")}
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-6 mb-4">
-              Benefits That Drive Success
+              {t("title")}
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Experience the advantages of working with a trusted partner in
-              international trade
+              {t("subtitle")}
             </p>
           </div>
 
@@ -104,10 +61,10 @@ export function ServicesBenefits() {
                     />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">
-                    {benefit.title}
+                    {t(`items.${index}.title`)}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    {benefit.description}
+                    {t(`items.${index}.description`)}
                   </p>
                 </div>
               );
@@ -135,31 +92,42 @@ export function ServicesBenefits() {
             <div className="space-y-8 order-1 lg:order-2">
               <div>
                 <span className="text-[#0a4a9e] font-semibold text-sm uppercase tracking-wider bg-blue-50 px-4 py-2 rounded-full inline-block">
-                  Proven Track Record
+                  {t("stats.sectionTag")}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-6 mb-4">
-                  Numbers That Speak for Themselves
+                  {t("stats.title")}
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Our commitment to excellence is reflected in our performance
-                  metrics. We&apos;ve helped thousands of businesses expand
-                  globally with reliable, efficient trade solutions.
+                  {t("stats.description")}
                 </p>
               </div>
 
               {/* Stats Grid */}
               <div className="grid grid-cols-2 gap-6">
-                {stats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="p-6 bg-gradient-to-br from-[#0a4a9e] via-[#05306b] to-[#041f3f] rounded-none text-white"
-                  >
-                    <div className="text-4xl md:text-5xl font-bold mb-2">
-                      {stat.value}
-                    </div>
-                    <div className="text-white/90 text-sm">{stat.label}</div>
+                <div className="p-6 bg-gradient-to-br from-[#0a4a9e] via-[#05306b] to-[#041f3f] rounded-none text-white">
+                  <div className="text-4xl md:text-5xl font-bold mb-2">
+                    {t("stats.successfulShipments.value")}
                   </div>
-                ))}
+                  <div className="text-white/90 text-sm">{t("stats.successfulShipments.label")}</div>
+                </div>
+                <div className="p-6 bg-gradient-to-br from-[#0a4a9e] via-[#05306b] to-[#041f3f] rounded-none text-white">
+                  <div className="text-4xl md:text-5xl font-bold mb-2">
+                    {t("stats.countriesCovered.value")}
+                  </div>
+                  <div className="text-white/90 text-sm">{t("stats.countriesCovered.label")}</div>
+                </div>
+                <div className="p-6 bg-gradient-to-br from-[#0a4a9e] via-[#05306b] to-[#041f3f] rounded-none text-white">
+                  <div className="text-4xl md:text-5xl font-bold mb-2">
+                    {t("stats.onTimeDelivery.value")}
+                  </div>
+                  <div className="text-white/90 text-sm">{t("stats.onTimeDelivery.label")}</div>
+                </div>
+                <div className="p-6 bg-gradient-to-br from-[#0a4a9e] via-[#05306b] to-[#041f3f] rounded-none text-white">
+                  <div className="text-4xl md:text-5xl font-bold mb-2">
+                    {t("stats.customerSupport.value")}
+                  </div>
+                  <div className="text-white/90 text-sm">{t("stats.customerSupport.label")}</div>
+                </div>
               </div>
             </div>
           </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Ship,
   Package,
@@ -12,81 +14,24 @@ import {
   BarChart3,
   Truck,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function ServicesGrid() {
+  const t = useTranslations("services.servicesGrid");
+
   const services = [
-    {
-      icon: Ship,
-      title: "International Shipping",
-      description:
-        "Comprehensive sea, air, and land freight services to move your cargo efficiently across borders with real-time tracking and insurance coverage.",
-    },
-    {
-      icon: FileCheck,
-      title: "Customs Clearance",
-      description:
-        "Expert customs documentation and clearance services ensuring compliance with international regulations and smooth border crossings for your shipments.",
-    },
-    {
-      icon: ShieldCheck,
-      title: "Trade Compliance",
-      description:
-        "Navigate complex international trade regulations with our compliance services, including licensing, permits, and regulatory documentation support.",
-    },
-    {
-      icon: Package,
-      title: "Export Documentation",
-      description:
-        "Complete export documentation services including commercial invoices, certificates of origin, packing lists, and all required export paperwork.",
-    },
-    {
-      icon: Warehouse,
-      title: "Warehousing Solutions",
-      description:
-        "Secure storage facilities at strategic locations worldwide with inventory management, cross-docking, and distribution services for your goods.",
-    },
-    {
-      icon: Globe,
-      title: "Market Research",
-      description:
-        "In-depth market analysis and trade intelligence to help you identify opportunities, understand regulations, and expand into new international markets.",
-    },
-    {
-      icon: DollarSign,
-      title: "Trade Finance",
-      description:
-        "Flexible financing solutions including letters of credit, trade credit insurance, and working capital facilities to support your import-export operations.",
-    },
-    {
-      icon: TrendingUp,
-      title: "Supply Chain Optimization",
-      description:
-        "End-to-end supply chain consulting to streamline operations, reduce costs, and improve efficiency across your international trade network.",
-    },
-    {
-      icon: Users,
-      title: "Supplier Verification",
-      description:
-        "Thorough due diligence and verification of international suppliers to ensure reliability, quality standards, and compliance with ethical practices.",
-    },
-    {
-      icon: Clock,
-      title: "Quality Inspection",
-      description:
-        "Pre-shipment and on-site quality control inspections to ensure products meet specifications and international quality standards before dispatch.",
-    },
-    {
-      icon: BarChart3,
-      title: "Trade Analytics",
-      description:
-        "Advanced data analytics and reporting tools to track performance, identify trends, and make informed decisions about your international trade operations.",
-    },
-    {
-      icon: Truck,
-      title: "Door-to-Door Delivery",
-      description:
-        "Complete logistics management from origin to destination, including pickup, transportation, customs clearance, and final mile delivery services.",
-    },
+    { icon: Ship, title: t("services.0.title"), description: t("services.0.description") },
+    { icon: FileCheck, title: t("services.1.title"), description: t("services.1.description") },
+    { icon: ShieldCheck, title: t("services.2.title"), description: t("services.2.description") },
+    { icon: Package, title: t("services.3.title"), description: t("services.3.description") },
+    { icon: Warehouse, title: t("services.4.title"), description: t("services.4.description") },
+    { icon: Globe, title: t("services.5.title"), description: t("services.5.description") },
+    { icon: DollarSign, title: t("services.6.title"), description: t("services.6.description") },
+    { icon: TrendingUp, title: t("services.7.title"), description: t("services.7.description") },
+    { icon: Users, title: t("services.8.title"), description: t("services.8.description") },
+    { icon: Clock, title: t("services.9.title"), description: t("services.9.description") },
+    { icon: BarChart3, title: t("services.10.title"), description: t("services.10.description") },
+    { icon: Truck, title: t("services.11.title"), description: t("services.11.description") },
   ];
 
   return (
@@ -95,14 +40,13 @@ export function ServicesGrid() {
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <span className="text-[#0a4a9e] font-semibold text-sm uppercase tracking-wider bg-blue-50 px-4 py-2 rounded-full inline-block">
-            What We Offer
+            {t("sectionTag")}
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-6 mb-4">
-            Comprehensive Export-Import Solutions
+            {t("title")}
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            From shipping to compliance, we provide end-to-end services to make
-            your international trade seamless and successful
+            {t("subtitle")}
           </p>
         </div>
 

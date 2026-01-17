@@ -9,7 +9,7 @@ import { useTranslations } from "next-intl";
 
 export default function ServicesPage() {
   const t = useTranslations("services");
-  
+
   return (
     <main className="min-h-screen pt-16 md:pt-20">
       <PageHeader

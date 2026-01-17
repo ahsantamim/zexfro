@@ -566,5 +566,628 @@
       "description": "Únase a Zexfro hoy y experimente el comercio internacional sin problemas con total cumplimiento y soporte.",
       "button": "Regístrese Ahora"
     }
+  },
+  "about": {
+    "pageTitle": "Sobre Nosotros",
+    "pageDescription": "Un Viaje de Excelencia desde 2018 hasta el Presente",
+    "announcement": "📢 Anuncio 2026 📢",
+    "evolution": {
+      "title": "Evolución hacia Zexfro International Limited",
+      "subtitle": "Un Viaje de Excelencia (2018 – Presente)",
+      "paragraph1": "Fundada en 2018 como una empresa unipersonal, Zexfro International comenzó con una visión clara: conectar mercados y ofrecer excelencia en el mundo del comercio. Durante los últimos siete años, hemos navegado desafíos, abrazado la innovación y nos hemos mantenido firmes en nuestro compromiso con la calidad.",
+      "paragraph2": "Hoy, el 14 de septiembre de 2025, estamos encantados de anunciar nuestra incorporación oficial como Zexfro International Limited. Esta transición marca un nuevo capítulo en nuestra historia: uno que refleja nuestro crecimiento de una empresa local dedicada a una entidad corporativa estructurada.",
+      "celebration": "🎉 Celebrando Nuestro Aniversario de Fundación",
+      "celebrationDesc": "Queremos hacer del 14 de septiembre un día memorable mientras celebramos el aniversario de fundación de Zexfro International Limited. Todos los compradores, vendedores y simpatizantes serán invitados a unirse a nosotros para conmemorar este hito especial."
+    },
+    "gratitude": {
+      "title": "Nuestro Más Profundo Agradecimiento",
+      "subtitle": "Reconocemos que este éxito no es solo nuestro",
+      "buyers": {
+        "title": "Compradores Valiosos",
+        "description": "Gracias por confiar en nuestros productos y servicios. Su satisfacción ha sido nuestra mayor recompensa."
+      },
+      "suppliers": {
+        "title": "Proveedores y Vendedores de Confianza",
+        "description": "Su cooperación oportuna y compromiso con la calidad han sido la columna vertebral de nuestras operaciones."
+      },
+      "wellWishers": {
+        "title": "Simpatizantes y Partes Interesadas",
+        "description": "Sus oraciones y aliento han impulsado nuestro impulso para tener éxito durante este viaje de siete años."
+      }
+    },
+    "lookingAhead": {
+      "title": "Mirando Hacia Adelante",
+      "paragraph1": "Como Zexfro International Limited, somos más que una empresa comercial; somos su socio confiable en el comercio global. Nuestra misión sigue siendo la misma: proporcionar soluciones comerciales sin problemas, pero nuestra visión ahora es más amplia, con el objetivo de establecer nuevos puntos de referencia en el ámbito internacional.",
+      "paragraph2": "Solicitamos humildemente sus continuas oraciones y cooperación mientras nos embarcamos en esta emocionante nueva era. Juntos, construyamos un futuro de prosperidad compartida."
+    },
+    "whoWeAre": {
+      "title": "Zexfro International Ltd",
+      "subtitle": "Su socio de confianza en el comercio global",
+      "paragraph1": "Zexfro International Ltd es una empresa de Importación-Exportación y Comercio confiable y de rápido crecimiento establecida en Bangladesh, con sede en Uttara, Dhaka. Desde el principio, nuestra misión principal ha sido conectar proveedores globales con el mercado bangladesí mientras garantizamos calidad premium, asequibilidad, cumplimiento y satisfacción del cliente.",
+      "paragraph2": "Nos especializamos en importar una amplia gama de productos de diferentes países alrededor del mundo y distribuirlos en todo Bangladesh a través de una red de marketing y suministro confiable. Junto con la importación y distribución local, contribuimos con orgullo a la economía de Bangladesh exportando productos locales de alta calidad a los mercados internacionales."
+    },
+    "imports": {
+      "title": "Lo Que Hacemos - Importaciones",
+      "subtitle": "Productos globales para el mercado bangladesí",
+      "intro": "Importamos productos de fabricantes y proveedores verificados globalmente en diversas industrias que incluyen:",
+      "items": [
+        "Productos Veterinarios y de Salud Animal",
+        "Equipos y Herramientas Agrícolas",
+        "Prendas de Vestir y Materias Primas Textiles",
+        "Maquinarias Industriales y Comerciales",
+        "Productos de Belleza y Cosméticos",
+        "Accesorios de Prendas de Vestir y Productos Terminados",
+        "Productos de Consumo General",
+        "Equipos Industriales Especializados",
+        "Y muchos más según la demanda del mercado"
+      ],
+      "note": "Todos los bienes importados se obtienen cuidadosamente a través de una estricta inspección de calidad, verificación de cumplimiento y estándares de documentación para cumplir con las expectativas regulatorias y del mercado local."
+    },
+    "exports": {
+      "title": "Lo Que Hacemos - Exportaciones",
+      "subtitle": "Excelencia bangladesí para el mundo",
+      "intro": "Zexfro International Ltd también exporta productos bangladesíes que incluyen:",
+      "garments": {
+        "title": "Prendas de Vestir y Ropa",
+        "description": "Productos textiles de alta calidad de Bangladesh"
+      },
+      "agricultural": {
+        "title": "Productos Agrícolas y Orgánicos",
+        "description": "Productos agrícolas frescos y procesados"
+      },
+      "consumer": {
+        "title": "Productos de Consumo e Industriales Locales",
+        "description": "Amplia gama de productos manufacturados"
+      },
+      "handicrafts": {
+        "title": "Artesanías y Artículos Especializados",
+        "description": "Artesanía única de Bangladesh"
+      },
+      "customized": {
+        "title": "Productos Personalizados",
+        "description": "Basados en los requisitos de compradores internacionales"
+      },
+      "note": "Aseguramos que cada envío de exportación cumpla con los estándares comerciales internacionales, documentación adecuada, empaque y compromisos de entrega."
+    },
+    "quality": {
+      "title": "Nuestro Compromiso con la Calidad",
+      "subtitle": "La calidad no es solo un estándar, es una responsabilidad",
+      "verification": {
+        "title": "Verificación de Productos",
+        "description": "Verificación de productos de proveedores globales certificados"
+      },
+      "checks": {
+        "title": "Controles de Calidad",
+        "description": "Controles de calidad previos al envío y posteriores al desembarco"
+      },
+      "compliance": {
+        "title": "Cumplimiento",
+        "description": "Cumplimiento de las regulaciones comerciales de Bangladesh"
+      },
+      "standards": {
+        "title": "Estándares de la Industria",
+        "description": "Protocolos de garantía de calidad específicos de la industria"
+      },
+      "logistics": {
+        "title": "Soporte Logístico",
+        "description": "Soporte logístico y de distribución seguro y eficiente"
+      },
+      "team": {
+        "title": "Equipo Dedicado",
+        "description": "Nuestro equipo de calidad dedicado garantiza que solo los mejores productos lleguen a los clientes"
+      }
+    },
+    "customerSatisfaction": {
+      "title": "Satisfacción del Cliente",
+      "subtitle": "Nuestra Máxima Prioridad",
+      "intro": "Nuestro objetivo es entregar valor ofreciendo:",
+      "authentic": {
+        "title": "Productos Auténticos",
+        "description": "Calidad genuina garantizada"
+      },
+      "pricing": {
+        "title": "Precios Competitivos",
+        "description": "El mejor valor para su inversión"
+      },
+      "support": {
+        "title": "Soporte Confiable",
+        "description": "Siempre aquí para ayudar"
+      },
+      "delivery": {
+        "title": "Entrega a Tiempo",
+        "description": "Cumpliendo plazos de manera consistente"
+      },
+      "communication": {
+        "title": "Comunicación Transparente",
+        "description": "Actualizaciones claras y honestas"
+      },
+      "outro": "Trabajamos estrechamente con minoristas, distribuidores, compradores corporativos y consumidores individuales para construir confianza y satisfacción a largo plazo."
+    },
+    "whyChoose": {
+      "title": "Por Qué Elegir Zexfro International Ltd",
+      "subtitle": "Su socio de confianza para la excelencia en el comercio global",
+      "network": {
+        "title": "Red Global Sólida",
+        "description": "Red sólida de proveedores y compradores globales"
+      },
+      "expertise": {
+        "title": "Experiencia de Extremo a Extremo",
+        "description": "Experiencia en comercio, logística y cumplimiento de extremo a extremo"
+      },
+      "insight": {
+        "title": "Conocimiento Profundo del Mercado",
+        "description": "Conocimiento profundo del mercado en Bangladesh"
+      },
+      "focused": {
+        "title": "Enfocado en la Industria",
+        "description": "Abastecimiento y distribución enfocados en la industria"
+      },
+      "customerCentric": {
+        "title": "Centrado en el Cliente",
+        "description": "Modelo de negocio centrado en el cliente"
+      },
+      "ethics": {
+        "title": "Calidad y Ética",
+        "description": "Compromiso con la calidad y el comercio ético"
+      }
+    },
+    "vision": {
+      "title": "Nuestra Visión",
+      "description": "Convertirnos en uno de los facilitadores de comercio global más confiables en Bangladesh al proporcionar productos de clase mundial, construir asociaciones sólidas y contribuir al comercio internacional con integridad e innovación."
+    },
+    "mission": {
+      "title": "Nuestra Misión",
+      "items": [
+        "Importar productos globales de alta calidad a precios competitivos",
+        "Distribuirlos eficientemente en todo Bangladesh",
+        "Mantener el cumplimiento, los estándares y la transparencia en el comercio",
+        "Exportar productos bangladesíes a compradores internacionales",
+        "Garantizar la satisfacción del cliente a través de la calidad y el servicio"
+      ]
+    },
+    "closing": {
+      "title": "Crezcamos Juntos",
+      "paragraph": "Zexfro International Ltd continúa expandiendo su alcance, diversificando sus capacidades de abastecimiento y fortaleciendo las relaciones con los clientes. Creemos en empoderar a empresas y consumidores a través de soluciones de comercio global respaldadas por calidad y confianza.",
+      "regards": "Con cariño,",
+      "team": "El Equipo de Gestión",
+      "company": "Zexfro International Limited"
+    },
+    "cta": {
+      "title": "¿Listo para Asociarse con Nosotros?",
+      "description": "Únase a cientos de empresas que confían en Zexfro International Limited para sus necesidades de comercio internacional. Crezcamos juntos en esta nueva era de excelencia.",
+      "button": "Comience Hoy"
+    }
+  },
+  "boardOfDirectors": {
+    "pageTitle": "Junta Directiva",
+    "pageDescription": "Conozca a los líderes experimentados que dirigen a Zexfro hacia la excelencia en el comercio internacional y el comercio global.",
+    "introduction": {
+      "title": "Excelencia en Liderazgo",
+      "description": "Nuestra Junta Directiva reúne décadas de experiencia combinada en comercio internacional, logística, cumplimiento y desarrollo empresarial. Juntos, guían la dirección estratégica de Zexfro y garantizan que mantengamos los más altos estándares de excelencia en el servicio."
+    },
+    "directors": {
+      "title": "Conozca a Nuestros Directores",
+      "subtitle": "Profesionales experimentados dedicados a su éxito",
+      "email": "Correo",
+      "linkedin": "LinkedIn"
+    },
+    "governance": {
+      "title": "Gobernanza Corporativa",
+      "subtitle": "Comprometidos con la transparencia y la responsabilidad",
+      "boardResponsibilities": {
+        "title": "Responsabilidades de la Junta",
+        "items": [
+          "Planificación estratégica y dirección",
+          "Supervisión de la gestión de riesgos",
+          "Monitoreo del desempeño financiero",
+          "Cumplimiento y estándares éticos"
+        ]
+      },
+      "meetingSchedule": {
+        "title": "Calendario de Reuniones",
+        "items": [
+          "Reuniones trimestrales de la junta",
+          "Asambleas generales anuales",
+          "Sesiones de comités especiales",
+          "Retiros de planificación estratégica"
+        ]
+      },
+      "commitment": {
+        "title": "Nuestro Compromiso",
+        "description": "La Junta Directiva está comprometida a mantener los más altos estándares de gobierno corporativo, transparencia y conducta empresarial ética. Aseguramos que Zexfro opere en el mejor interés de nuestras partes interesadas, empleados y las comunidades a las que servimos."
+      }
+    },
+    "cta": {
+      "title": "¿Quiere Saber Más?",
+      "description": "Póngase en contacto con nuestro equipo para descubrir cómo Zexfro puede apoyar sus necesidades de comercio internacional.",
+      "button": "Contáctenos"
+    }
+  },
+  "visionMissionValues": {
+    "pageTitle": "Visión, Misión y Valores",
+    "pageDescription": "Nuestros principios rectores y compromiso con la excelencia en el comercio internacional",
+    "vision": {
+      "title": "Nuestra Visión",
+      "statement": "Ser la plataforma más confiable e innovadora del mundo para el comercio internacional seguro, conforme y eficiente, conectando empresas a través de fronteras y creando oportunidades para el comercio global sostenible.",
+      "globalReach": {
+        "title": "Alcance Global",
+        "description": "Expandiendo nuestra red para servir a empresas en cada rincón del mundo"
+      },
+      "trustSecurity": {
+        "title": "Confianza y Seguridad",
+        "description": "Construyendo relaciones duraderas a través de la transparencia y la confiabilidad"
+      },
+      "innovation": {
+        "title": "Innovación",
+        "description": "Liderando la industria con soluciones y tecnología de vanguardia"
+      }
+    },
+    "mission": {
+      "title": "Nuestra Misión",
+      "statement": "Empoderar a empresas de todo el mundo proporcionando soluciones de comercio internacional sin problemas, seguras y conformes que impulsen el crecimiento, fomenten asociaciones y creen valor duradero.",
+      "subtitle": "Lo Logramos Mediante:",
+      "items": [
+        {
+          "title": "Garantizar el Cumplimiento",
+          "description": "Manteniendo los más altos estándares de cumplimiento regulatorio en todas las jurisdicciones"
+        },
+        {
+          "title": "Construir Confianza",
+          "description": "Creando entornos transparentes y seguros para transacciones internacionales"
+        },
+        {
+          "title": "Entregar Excelencia",
+          "description": "Proporcionando calidad de servicio excepcional y soporte en cada punto de contacto"
+        },
+        {
+          "title": "Fomentar el Crecimiento",
+          "description": "Permitiendo que las empresas se expandan globalmente con confianza y eficiencia"
+        }
+      ]
+    },
+    "values": {
+      "title": "Nuestros Valores Fundamentales",
+      "subtitle": "Los principios fundamentales que dan forma a nuestra cultura y guían nuestras decisiones",
+      "integrity": {
+        "title": "Integridad",
+        "description": "Conducimos negocios con honestidad, transparencia y prácticas éticas en cada interacción y transacción."
+      },
+      "excellence": {
+        "title": "Excelencia",
+        "description": "Nos esforzamos por la más alta calidad en nuestros servicios, mejorando continuamente y superando expectativas."
+      },
+      "customerCentricity": {
+        "title": "Centrado en el Cliente",
+        "description": "El éxito de nuestros clientes está en el corazón de todo lo que hacemos. Escuchamos, nos adaptamos y entregamos soluciones que importan."
+      },
+      "innovation": {
+        "title": "Innovación",
+        "description": "Abrazamos el cambio y buscamos continuamente nuevas formas de mejorar nuestros procesos y servicios."
+      },
+      "collaboration": {
+        "title": "Colaboración",
+        "description": "Creemos en el poder de las asociaciones y trabajamos junto con clientes, proveedores y partes interesadas."
+      },
+      "accountability": {
+        "title": "Responsabilidad",
+        "description": "Asumimos la responsabilidad de nuestras acciones y compromisos, cumpliendo nuestras promesas de manera consistente."
+      }
+    },
+    "commitment": {
+      "title": "Nuestro Compromiso con Usted",
+      "subtitle": "Construyendo asociaciones duraderas a través de una dedicación inquebrantable",
+      "toClients": {
+        "title": "A Nuestros Clientes",
+        "description": "Prometemos proporcionar soluciones comerciales seguras, conformes y eficientes que lo ayuden a hacer crecer su negocio globalmente. Su éxito es nuestra prioridad, y estamos comprometidos a ser su socio de confianza en cada paso del camino."
+      },
+      "toTeam": {
+        "title": "A Nuestro Equipo",
+        "description": "Fomentamos una cultura de respeto, crecimiento e innovación. Invertimos en nuestra gente, alentamos la colaboración y creamos un entorno donde todos pueden prosperar y contribuir a nuestra visión compartida."
+      },
+      "toPartners": {
+        "title": "A Nuestros Socios",
+        "description": "Construimos relaciones basadas en la confianza, el respeto mutuo y objetivos compartidos. Creemos en prácticas justas, comunicación clara y la creación de escenarios win-win que beneficien a todas las partes interesadas."
+      },
+      "toCommunity": {
+        "title": "A Nuestra Comunidad",
+        "description": "Reconocemos nuestra responsabilidad de contribuir positivamente a las comunidades que servimos. Operamos éticamente, apoyamos prácticas sostenibles y nos esforzamos por tener un impacto significativo."
+      }
+    },
+    "cta": {
+      "title": "¿Comparte Nuestra Visión?",
+      "description": "Únase a nosotros para revolucionar el comercio internacional y crear oportunidades para el crecimiento global.",
+      "button": "Comenzar"
+    }
+  },
+  "benefitsForSupplier": {
+    "pageTitle": "Beneficios para Proveedores",
+    "pageDescription": "Asóciate con Zexfro y desbloquea oportunidades globales para el crecimiento de tu negocio",
+    "introduction": {
+      "title": "¿Por Qué Asociarse con Zexfro?",
+      "description": "Únete a nuestra red global de proveedores de confianza y obtén acceso a mercados internacionales, procesos optimizados y sistemas de pago confiables. Proporcionamos la plataforma, el apoyo y la experiencia que necesitas para expandir tu negocio globalmente."
+    },
+    "keyBenefits": {
+      "title": "Beneficios Clave",
+      "subtitle": "Lo que ganas al asociarte con nosotros",
+      "globalMarket": {
+        "title": "Acceso al Mercado Global",
+        "description": "Alcanza compradores en más de 50 países y expande tu base de clientes más allá de los mercados locales."
+      },
+      "securePayments": {
+        "title": "Pagos Seguros",
+        "description": "Benefíciate de transacciones basadas en LC y sistemas de pago confiables que protegen tus intereses."
+      },
+      "documentation": {
+        "title": "Soporte de Documentación",
+        "description": "Nos encargamos de toda la documentación de exportación, cumplimiento y procedimientos aduaneros por ti."
+      },
+      "support": {
+        "title": "Soporte Dedicado",
+        "description": "Recibe asistencia personalizada de nuestro equipo durante todo el proceso comercial."
+      },
+      "logistics": {
+        "title": "Asistencia Logística",
+        "description": "Gestión simplificada de envíos y logística con nuestros socios experimentados."
+      },
+      "growth": {
+        "title": "Crecimiento Empresarial",
+        "description": "Accede a análisis, información del mercado y herramientas para ayudar a escalar tu negocio."
+      }
+    },
+    "howItWorks": {
+      "title": "Cómo Funciona",
+      "subtitle": "Tu viaje para convertirte en socio proveedor de Zexfro",
+      "steps": [
+        {
+          "title": "Registrarse",
+          "description": "Completa nuestro simple formulario de registro de proveedores y proporciona los detalles de tu negocio."
+        },
+        {
+          "title": "Verificación",
+          "description": "Verificamos tus credenciales y aseguramos el cumplimiento de los estándares internacionales."
+        },
+        {
+          "title": "Listar Productos",
+          "description": "Agrega tus productos a nuestra plataforma y alcanza compradores globales al instante."
+        },
+        {
+          "title": "Comenzar a Comerciar",
+          "description": "Recibe pedidos, gestiona envíos y haz crecer tu negocio globalmente."
+        }
+      ]
+    },
+    "whatWeOffer": {
+      "title": "Lo Que Ofrecemos a los Proveedores",
+      "subtitle": "Apoyo integral para tu éxito",
+      "items": [
+        {
+          "title": "Inteligencia de Mercado",
+          "description": "Acceso a tendencias del mercado, información de precios y preferencias de compradores para optimizar tus ofertas."
+        },
+        {
+          "title": "Soporte de Aseguramiento de Calidad",
+          "description": "Orientación para cumplir con estándares de calidad internacionales y certificaciones."
+        },
+        {
+          "title": "Capacitación y Recursos",
+          "description": "Materiales educativos y capacitación para ayudarte a entender procesos y requisitos de exportación."
+        },
+        {
+          "title": "Resolución de Disputas",
+          "description": "Procesos justos y transparentes para manejar cualquier preocupación o disputa que pueda surgir."
+        },
+        {
+          "title": "Soporte de Marketing",
+          "description": "Visibilidad a través de nuestra plataforma, campañas promocionales y programas de alcance a compradores."
+        }
+      ]
+    },
+    "successStories": {
+      "title": "Historias de Éxito",
+      "subtitle": "Resultados reales de nuestros socios proveedores",
+      "revenueGrowth": {
+        "value": "300%",
+        "label": "Crecimiento de Ingresos",
+        "description": "Aumento promedio de ingresos para proveedores en su primer año"
+      },
+      "newMarkets": {
+        "value": "15+",
+        "label": "Nuevos Mercados",
+        "description": "Número promedio de nuevos países que nuestros proveedores alcanzan"
+      },
+      "onTimePayment": {
+        "value": "99%",
+        "label": "Pago a Tiempo",
+        "description": "Procesamiento de pagos confiable con seguridad basada en LC"
+      }
+    },
+    "requirements": {
+      "title": "Requisitos para Proveedores",
+      "subtitle": "Lo que buscamos en nuestros socios",
+      "items": [
+        {
+          "title": "Registro Legal",
+          "description": "Registro comercial válido y números de identificación fiscal"
+        },
+        {
+          "title": "Estándares de Calidad",
+          "description": "Compromiso con el cumplimiento de requisitos de calidad internacionales"
+        },
+        {
+          "title": "Cumplimiento de Productos",
+          "description": "Los productos deben cumplir con las regulaciones del país de destino"
+        },
+        {
+          "title": "Prácticas Éticas",
+          "description": "Adhesión a prácticas comerciales y laborales éticas"
+        },
+        {
+          "title": "Capacidad Confiable",
+          "description": "Capacidad para cumplir pedidos de manera consistente y a tiempo"
+        },
+        {
+          "title": "Comunicación",
+          "description": "Comunicación receptiva y profesional con los compradores"
+        }
+      ]
+    },
+    "cta": {
+      "title": "¿Listo para Expandirte Globalmente?",
+      "description": "Únete a nuestra red de proveedores exitosos y comienza a alcanzar compradores internacionales hoy.",
+      "primaryButton": "Convertirse en Proveedor",
+      "secondaryButton": "Más Información"
+    }
+  },
+  "services": {
+    "pageTitle": "Nuestros Servicios",
+    "pageDescription": "Soluciones integrales de exportación-importación para ayudar a su negocio a tener éxito en mercados globales",
+    "servicesGrid": {
+      "sectionTag": "Lo Que Ofrecemos",
+      "title": "Soluciones Integrales de Exportación-Importación",
+      "subtitle": "Desde el envío hasta el cumplimiento, proporcionamos servicios de extremo a extremo para hacer que su comercio internacional sea fluido y exitoso",
+      "services": [
+        {
+          "title": "Envío Internacional",
+          "description": "Servicios completos de flete marítimo, aéreo y terrestre para mover su carga eficientemente a través de fronteras con seguimiento en tiempo real y cobertura de seguro."
+        },
+        {
+          "title": "Despacho Aduanero",
+          "description": "Servicios expertos de documentación y despacho aduanero que garantizan el cumplimiento de las regulaciones internacionales y cruces fronterizos sin problemas para sus envíos."
+        },
+        {
+          "title": "Cumplimiento Comercial",
+          "description": "Navegue por las complejas regulaciones comerciales internacionales con nuestros servicios de cumplimiento, incluidas licencias, permisos y soporte de documentación regulatoria."
+        },
+        {
+          "title": "Documentación de Exportación",
+          "description": "Servicios completos de documentación de exportación que incluyen facturas comerciales, certificados de origen, listas de empaque y todos los documentos de exportación requeridos."
+        },
+        {
+          "title": "Soluciones de Almacenamiento",
+          "description": "Instalaciones de almacenamiento seguras en ubicaciones estratégicas en todo el mundo con gestión de inventario, cross-docking y servicios de distribución para sus productos."
+        },
+        {
+          "title": "Investigación de Mercado",
+          "description": "Análisis de mercado en profundidad e inteligencia comercial para ayudarlo a identificar oportunidades, comprender regulaciones y expandirse a nuevos mercados internacionales."
+        },
+        {
+          "title": "Financiamiento Comercial",
+          "description": "Soluciones de financiamiento flexibles que incluyen cartas de crédito, seguro de crédito comercial y facilidades de capital de trabajo para respaldar sus operaciones de importación-exportación."
+        },
+        {
+          "title": "Optimización de la Cadena de Suministro",
+          "description": "Consultoría de cadena de suministro de extremo a extremo para optimizar operaciones, reducir costos y mejorar la eficiencia en toda su red de comercio internacional."
+        },
+        {
+          "title": "Verificación de Proveedores",
+          "description": "Diligencia debida exhaustiva y verificación de proveedores internacionales para garantizar la confiabilidad, los estándares de calidad y el cumplimiento de las prácticas éticas."
+        },
+        {
+          "title": "Inspección de Calidad",
+          "description": "Inspecciones de control de calidad previas al envío y en el sitio para garantizar que los productos cumplan con las especificaciones y los estándares de calidad internacionales antes del despacho."
+        },
+        {
+          "title": "Análisis Comercial",
+          "description": "Herramientas avanzadas de análisis de datos y presentación de informes para rastrear el rendimiento, identificar tendencias y tomar decisiones informadas sobre sus operaciones de comercio internacional."
+        },
+        {
+          "title": "Entrega Puerta a Puerta",
+          "description": "Gestión logística completa desde el origen hasta el destino, incluida la recogida, el transporte, el despacho aduanero y los servicios de entrega de última milla."
+        }
+      ]
+    },
+    "howItWorks": {
+      "sectionTag": "Nuestro Proceso",
+      "title": "Cómo Funciona",
+      "subtitle": "Un proceso simple y transparente para poner sus productos en movimiento a través de fronteras",
+      "steps": [
+        {
+          "title": "Consulta y Evaluación",
+          "description": "Comparta sus requisitos de exportación-importación con nosotros. Nuestro equipo analiza sus necesidades y crea un plan de solución personalizado."
+        },
+        {
+          "title": "Documentación y Cumplimiento",
+          "description": "Nos encargamos de toda la documentación necesaria, permisos y garantizamos el cumplimiento total de las regulaciones comerciales internacionales."
+        },
+        {
+          "title": "Logística y Envío",
+          "description": "Su carga se transporta a través de la ruta más eficiente con seguimiento en tiempo real y cobertura de seguro completa."
+        },
+        {
+          "title": "Entrega y Soporte",
+          "description": "Entrega final al destino con despacho aduanero y soporte continuo para cualquier requisito posterior a la entrega."
+        }
+      ]
+    },
+    "benefits": {
+      "sectionTag": "Por Qué Elegirnos",
+      "title": "Beneficios Que Impulsan el Éxito",
+      "subtitle": "Experimente las ventajas de trabajar con un socio de confianza en el comercio internacional",
+      "items": [
+        {
+          "title": "100% Seguro y Conforme",
+          "description": "Todas las transacciones están protegidas con seguridad de nivel bancario y cumplimiento total de las regulaciones comerciales internacionales."
+        },
+        {
+          "title": "Procesamiento Rápido",
+          "description": "Los flujos de trabajo optimizados y los sistemas automatizados garantizan tiempos de respuesta rápidos para toda la documentación y el envío."
+        },
+        {
+          "title": "Red Global",
+          "description": "Acceso a una red verificada de socios en más de 150 países para operaciones comerciales internacionales sin problemas."
+        },
+        {
+          "title": "Optimización de Costos",
+          "description": "Aproveche nuestros descuentos por volumen y rutas optimizadas para reducir los costos de envío hasta en un 30%."
+        },
+        {
+          "title": "Soporte Dedicado",
+          "description": "Equipo de atención al cliente multilingüe 24/7 listo para ayudarlo en cada paso de su viaje comercial."
+        },
+        {
+          "title": "Experiencia en la Industria",
+          "description": "Más de 15 años de experiencia en comercio internacional con corredores de aduanas certificados y especialistas en logística."
+        },
+        {
+          "title": "Impulsado por Tecnología",
+          "description": "Sistemas de seguimiento avanzados, actualizaciones en tiempo real y documentación digital para una transparencia completa."
+        },
+        {
+          "title": "Calidad Garantizada",
+          "description": "Controles de calidad exhaustivos y procesos de verificación para garantizar que sus productos cumplan con todos los estándares requeridos."
+        }
+      ],
+      "stats": {
+        "sectionTag": "Historial Comprobado",
+        "title": "Números Que Hablan Por Sí Mismos",
+        "description": "Nuestro compromiso con la excelencia se refleja en nuestras métricas de rendimiento. Hemos ayudado a miles de empresas a expandirse globalmente con soluciones comerciales confiables y eficientes.",
+        "successfulShipments": {
+          "value": "10,000+",
+          "label": "Envíos Exitosos"
+        },
+        "countriesCovered": {
+          "value": "150+",
+          "label": "Países Cubiertos"
+        },
+        "onTimeDelivery": {
+          "value": "98%",
+          "label": "Entrega a Tiempo"
+        },
+        "customerSupport": {
+          "value": "24/7",
+          "label": "Atención al Cliente"
+        }
+      }
+    },
+    "cta": {
+      "sectionTag": "Comience Hoy",
+      "title": "¿Listo para Expandir Su Comercio Global?",
+      "description": "Hablemos sobre cómo nuestros servicios integrales de importación-exportación pueden ayudar a su negocio a prosperar en los mercados internacionales",
+      "contactButton": "Contáctenos Ahora",
+      "registerButton": "Registre Su Negocio",
+      "contactInfo": "O contáctenos directamente:",
+      "phone": "+1 (234) 567-890",
+      "email": "info@zexfro.com"
+    }
   }
 }

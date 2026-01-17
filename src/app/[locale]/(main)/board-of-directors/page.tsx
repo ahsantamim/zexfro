@@ -1,3 +1,5 @@
+"use client";
+
 import { 
   ContentLayout, 
   ContentSection, 
@@ -11,13 +13,11 @@ import {
   Award
 } from "lucide-react";
 import Image from "next/image";
-
-export const metadata = {
-  title: "Board of Directors - Zexfro | Leadership Team",
-  description: "Meet the experienced leadership team guiding Zexfro's vision and strategic direction in international trade.",
-};
+import { useTranslations } from "next-intl";
 
 export default function BoardOfDirectorsPage() {
+  const t = useTranslations("boardOfDirectors");
+  
   const directors = [
     {
       name: "John Anderson",
@@ -71,8 +71,8 @@ export default function BoardOfDirectorsPage() {
 
   return (
     <ContentLayout
-      pageTitle="Board of Directors"
-      pageDescription="Meet the experienced leaders steering Zexfro towards excellence in international trade and global commerce."
+      pageTitle={t("pageTitle")}
+      pageDescription={t("pageDescription")}
       heroImage="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=80"
     >
       {/* Introduction */}
@@ -82,10 +82,10 @@ export default function BoardOfDirectorsPage() {
             <Users className="w-8 h-8 text-white" />
           </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Leadership Excellence
+            {t("introduction.title")}
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed">
-            Our Board of Directors brings together decades of combined experience in international trade, logistics, compliance, and business development. Together, they guide Zexfro's strategic direction and ensure we maintain the highest standards of service excellence.
+            {t("introduction.description")}
           </p>
         </div>
       </ContentSection>
@@ -93,8 +93,8 @@ export default function BoardOfDirectorsPage() {
       {/* Directors Grid */}
       <ContentSection bgColor="gray">
         <SectionHeader
-          title="Meet Our Directors"
-          subtitle="Experienced professionals dedicated to your success"
+          title={t("directors.title")}
+          subtitle={t("directors.subtitle")}
           centered
         />
 
@@ -129,14 +129,14 @@ export default function BoardOfDirectorsPage() {
                     className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#0a4a9e] transition-colors"
                   >
                     <Mail className="w-4 h-4" />
-                    <span className="hidden lg:inline">Email</span>
+                    <span className="hidden lg:inline">{t("directors.email")}</span>
                   </a>
                   <a
                     href={director.linkedin}
                     className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#0a4a9e] transition-colors"
                   >
                     <Linkedin className="w-4 h-4" />
-                    <span className="hidden lg:inline">LinkedIn</span>
+                    <span className="hidden lg:inline">{t("directors.linkedin")}</span>
                   </a>
                 </div>
               </div>
@@ -148,8 +148,8 @@ export default function BoardOfDirectorsPage() {
       {/* Governance */}
       <ContentSection bgColor="white">
         <SectionHeader
-          title="Corporate Governance"
-          subtitle="Committed to transparency and accountability"
+          title={t("governance.title")}
+          subtitle={t("governance.subtitle")}
           icon={<Award className="w-7 h-7 text-white" />}
           centered
         />
@@ -157,56 +157,40 @@ export default function BoardOfDirectorsPage() {
         <div className="max-w-4xl mx-auto mt-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Board Responsibilities</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                {t("governance.boardResponsibilities.title")}
+              </h3>
               <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600 font-bold">•</span>
-                  <span>Strategic planning and direction</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600 font-bold">•</span>
-                  <span>Risk management oversight</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600 font-bold">•</span>
-                  <span>Financial performance monitoring</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600 font-bold">•</span>
-                  <span>Compliance and ethical standards</span>
-                </li>
+                {t.raw("governance.boardResponsibilities.items").map((item: string, index: number) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
 
             <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Meeting Schedule</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                {t("governance.meetingSchedule.title")}
+              </h3>
               <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start gap-2">
-                  <span className="text-green-600 font-bold">•</span>
-                  <span>Quarterly board meetings</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-600 font-bold">•</span>
-                  <span>Annual general meetings</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-600 font-bold">•</span>
-                  <span>Special committee sessions</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-600 font-bold">•</span>
-                  <span>Strategic planning retreats</span>
-                </li>
+                {t.raw("governance.meetingSchedule.items").map((item: string, index: number) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="text-green-600 font-bold">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
 
           <div className="mt-8 bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200 rounded-lg p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-              Our Commitment
+              {t("governance.commitment.title")}
             </h3>
             <p className="text-gray-700 text-center leading-relaxed">
-              The Board of Directors is committed to maintaining the highest standards of corporate governance, transparency, and ethical business conduct. We ensure that Zexfro operates in the best interests of our stakeholders, employees, and the communities we serve.
+              {t("governance.commitment.description")}
             </p>
           </div>
         </div>
@@ -215,13 +199,12 @@ export default function BoardOfDirectorsPage() {
       {/* CTA */}
       <ContentSection bgColor="gray">
         <CTABox
-          title="Want to Learn More?"
-          description="Get in touch with our team to discover how Zexfro can support your international trade needs."
-          buttonText="Contact Us"
+          title={t("cta.title")}
+          description={t("cta.description")}
+          buttonText={t("cta.button")}
           buttonLink="/contact"
         />
       </ContentSection>
     </ContentLayout>
   );
 }
-

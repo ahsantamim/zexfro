@@ -1,13 +1,13 @@
 "use client";
 
-import { 
-  ContentLayout, 
-  ContentSection, 
+import {
+  ContentLayout,
+  ContentSection,
   SectionHeader,
   FeatureCard,
-  CTABox 
+  CTABox,
 } from "@/components/ui/ContentLayout";
-import { 
+import {
   Target,
   Users,
   Globe,
@@ -17,22 +17,25 @@ import {
   Package,
   CheckCircle2,
   Heart,
-  Sparkles
+  Sparkles,
 } from "lucide-react";
 import Image from "next/image";
 import ScrollVelocity from "@/components/ui/ScrollVelocity";
+import { useTranslations } from "next-intl";
 
 export default function AboutPage() {
+  const t = useTranslations("about");
+
   return (
     <ContentLayout
-      pageTitle="About Us"
-      pageDescription="A Journey of Excellence from 2018 to Present"
+      pageTitle={t("pageTitle")}
+      pageDescription={t("pageDescription")}
       heroImage="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80"
     >
       {/* Scroll Velocity Text Bar */}
       <div className="w-full bg-gradient-to-r from-[#0a4a9e] via-[#05306b] to-[#0a4a9e] py-8 text-white overflow-hidden">
         <ScrollVelocity
-          texts={['📢 Announcement 2026 📢']} 
+          texts={[t("announcement")]}
           velocity={50}
           className="custom-scroll-text"
         />
@@ -42,28 +45,26 @@ export default function AboutPage() {
       <ContentSection bgColor="white">
         <div className="max-w-4xl mx-auto text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Evolution into Zexfro International Limited
+            {t("evolution.title")}
           </h2>
           <p className="text-xl text-gray-600 mb-4">
-            A Journey of Excellence (2018 – Present)
+            {t("evolution.subtitle")}
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Founded in <strong>2018</strong> as a proprietorship, Zexfro International began with a clear vision: to bridge markets and deliver excellence in the world of trade. Over the past seven years, we have navigated challenges, embraced innovation, and remained steadfast in our commitment to quality.
+              {t("evolution.paragraph1")}
             </p>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Today, on <strong>September 14, 2025</strong>, we are thrilled to announce our official incorporation as <strong>Zexfro International Limited</strong>. This transition marks a new chapter in our history—one that reflects our growth from a dedicated local enterprise to a structured corporate entity.
+              {t("evolution.paragraph2")}
             </p>
             <div className="bg-blue-50 border-l-4 border-[#0a4a9e] p-6 rounded-r-lg">
               <p className="text-gray-700 font-semibold mb-2">
-                🎉 Celebrating Our Founding Anniversary
+                {t("evolution.celebration")}
               </p>
-              <p className="text-gray-600">
-                We want to make September 14 memorable as we celebrate the founding anniversary of Zexfro International Limited. All buyers, sellers, and well-wishers will be invited to join us in commemorating this special milestone.
-              </p>
+              <p className="text-gray-600">{t("evolution.celebrationDesc")}</p>
             </div>
           </div>
 
@@ -81,8 +82,8 @@ export default function AboutPage() {
       {/* Gratitude Section */}
       <ContentSection bgColor="gray">
         <SectionHeader
-          title="Our Deepest Gratitude"
-          subtitle="We recognize that this success is not ours alone"
+          title={t("gratitude.title")}
+          subtitle={t("gratitude.subtitle")}
           centered
         />
 
@@ -91,19 +92,21 @@ export default function AboutPage() {
             <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Users className="w-8 h-8 text-[#0a4a9e]" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Valued Buyers</h3>
-            <p className="text-gray-600">
-              Thank you for trusting our products and services. Your satisfaction has been our greatest reward.
-            </p>
+            <h3 className="text-xl font-bold text-gray-900 mb-3">
+              {t("gratitude.buyers.title")}
+            </h3>
+            <p className="text-gray-600">{t("gratitude.buyers.description")}</p>
           </div>
 
           <div className="bg-white rounded-lg p-8 shadow-lg text-center">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Package className="w-8 h-8 text-green-600" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Trusted Suppliers & Vendors</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-3">
+              {t("gratitude.suppliers.title")}
+            </h3>
             <p className="text-gray-600">
-              Your timely cooperation and commitment to quality have been the backbone of our operations.
+              {t("gratitude.suppliers.description")}
             </p>
           </div>
 
@@ -111,9 +114,11 @@ export default function AboutPage() {
             <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Heart className="w-8 h-8 text-purple-600" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Well-wishers & Stakeholders</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-3">
+              {t("gratitude.wellWishers.title")}
+            </h3>
             <p className="text-gray-600">
-              Your prayers and encouragement have fueled our drive to succeed during this seven-year journey.
+              {t("gratitude.wellWishers.description")}
             </p>
           </div>
         </div>
@@ -128,13 +133,13 @@ export default function AboutPage() {
             </div>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Looking Ahead
+            {t("lookingAhead.title")}
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
-            As <strong>Zexfro International Limited</strong>, we are more than just a trading company; we are your reliable partner in global commerce. Our mission remains the same—to provide seamless trade solutions—but our vision is now broader, aiming to set new benchmarks in the international arena.
+            {t("lookingAhead.paragraph1")}
           </p>
           <p className="text-lg text-gray-700 leading-relaxed">
-            We humbly request your continued prayers and cooperation as we embark on this exciting new era. Together, let's build a future of shared prosperity.
+            {t("lookingAhead.paragraph2")}
           </p>
         </div>
       </ContentSection>
@@ -142,17 +147,17 @@ export default function AboutPage() {
       {/* Who We Are */}
       <ContentSection bgColor="white">
         <SectionHeader
-          title="Zexfro International Ltd"
-          subtitle="Your trusted partner in global trade"
+          title={t("whoWeAre.title")}
+          subtitle={t("whoWeAre.subtitle")}
           centered
         />
 
         <div className="max-w-4xl mx-auto mt-8">
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
-            Zexfro International Ltd is a trusted and fast-growing Import-Export and Trading company established in Bangladesh, headquartered in Uttara, Dhaka. From the beginning, our core mission has been to connect global suppliers with the Bangladeshi market while ensuring premium quality, affordability, compliance, and customer satisfaction.
+            {t("whoWeAre.paragraph1")}
           </p>
           <p className="text-lg text-gray-700 leading-relaxed">
-            We specialize in importing a diverse range of products from different countries around the world and distributing them across Bangladesh through a reliable marketing and supply network. Along with import and local distribution, we proudly contribute to Bangladesh's economy by exporting high-quality local products to international markets.
+            {t("whoWeAre.paragraph2")}
           </p>
         </div>
       </ContentSection>
@@ -171,26 +176,14 @@ export default function AboutPage() {
 
           <div>
             <SectionHeader
-              title="What We Do - Imports"
-              subtitle="Global products for the Bangladeshi market"
+              title={t("imports.title")}
+              subtitle={t("imports.subtitle")}
             />
 
-            <p className="text-gray-700 mb-6 mt-6">
-              We import products from globally verified manufacturers and suppliers across industries including:
-            </p>
+            <p className="text-gray-700 mb-6 mt-6">{t("imports.intro")}</p>
 
             <div className="grid grid-cols-1 gap-3">
-              {[
-                "Veterinary & Animal Health Products",
-                "Agricultural Equipment & Tools",
-                "Garments & Textile Raw Materials",
-                "Industrial and Commercial Machineries",
-                "Beauty & Cosmetic Products",
-                "Garment Accessories & Finished Goods",
-                "General Consumer Products",
-                "Specialized Industrial Equipment",
-                "And many more based on market demand"
-              ].map((item, index) => (
+              {t.raw("imports.items").map((item: string, index: number) => (
                 <div key={index} className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700">{item}</span>
@@ -199,9 +192,7 @@ export default function AboutPage() {
             </div>
 
             <div className="bg-blue-50 border-l-4 border-[#0a4a9e] p-4 rounded-r-lg mt-6">
-              <p className="text-sm text-gray-700">
-                All imported goods are carefully sourced through strict quality inspection, compliance verification, and documentation standards to meet local regulatory and market expectations.
-              </p>
+              <p className="text-sm text-gray-700">{t("imports.note")}</p>
             </div>
           </div>
         </div>
@@ -212,56 +203,72 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <SectionHeader
-              title="What We Do - Exports"
-              subtitle="Bangladeshi excellence to the world"
+              title={t("exports.title")}
+              subtitle={t("exports.subtitle")}
             />
 
-            <p className="text-gray-700 mb-6 mt-6">
-              Zexfro International Ltd also exports Bangladeshi products including:
-            </p>
+            <p className="text-gray-700 mb-6 mt-6">{t("exports.intro")}</p>
 
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold text-gray-900">Garments & Apparel</span>
-                  <p className="text-sm text-gray-600">High-quality textile products from Bangladesh</p>
+                  <span className="font-semibold text-gray-900">
+                    {t("exports.garments.title")}
+                  </span>
+                  <p className="text-sm text-gray-600">
+                    {t("exports.garments.description")}
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold text-gray-900">Agricultural & Organic Goods</span>
-                  <p className="text-sm text-gray-600">Fresh and processed agricultural products</p>
+                  <span className="font-semibold text-gray-900">
+                    {t("exports.agricultural.title")}
+                  </span>
+                  <p className="text-sm text-gray-600">
+                    {t("exports.agricultural.description")}
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold text-gray-900">Local Consumer and Industrial Products</span>
-                  <p className="text-sm text-gray-600">Diverse range of manufactured goods</p>
+                  <span className="font-semibold text-gray-900">
+                    {t("exports.consumer.title")}
+                  </span>
+                  <p className="text-sm text-gray-600">
+                    {t("exports.consumer.description")}
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold text-gray-900">Handicrafts & Specialized Items</span>
-                  <p className="text-sm text-gray-600">Unique Bangladeshi craftsmanship</p>
+                  <span className="font-semibold text-gray-900">
+                    {t("exports.handicrafts.title")}
+                  </span>
+                  <p className="text-sm text-gray-600">
+                    {t("exports.handicrafts.description")}
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold text-gray-900">Customized Products</span>
-                  <p className="text-sm text-gray-600">Based on international buyer requirements</p>
+                  <span className="font-semibold text-gray-900">
+                    {t("exports.customized.title")}
+                  </span>
+                  <p className="text-sm text-gray-600">
+                    {t("exports.customized.description")}
+                  </p>
                 </div>
               </div>
             </div>
 
             <div className="bg-green-50 border-l-4 border-green-600 p-4 rounded-r-lg mt-6">
-              <p className="text-sm text-gray-700">
-                We ensure every export shipment meets international trade standards, proper documentation, packaging, and delivery commitments.
-              </p>
+              <p className="text-sm text-gray-700">{t("exports.note")}</p>
             </div>
           </div>
 
@@ -279,46 +286,46 @@ export default function AboutPage() {
       {/* Commitment to Quality */}
       <ContentSection bgColor="gray">
         <SectionHeader
-          title="Our Commitment to Quality"
-          subtitle="Quality is not just a standard—it's a responsibility"
+          title={t("quality.title")}
+          subtitle={t("quality.subtitle")}
           centered
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           <FeatureCard
             icon={<Shield className="w-6 h-6" />}
-            title="Product Verification"
-            description="Product verification from certified global suppliers"
+            title={t("quality.verification.title")}
+            description={t("quality.verification.description")}
             color="blue"
           />
           <FeatureCard
             icon={<CheckCircle2 className="w-6 h-6" />}
-            title="Quality Checks"
-            description="Pre-shipment and post-landing quality checks"
+            title={t("quality.checks.title")}
+            description={t("quality.checks.description")}
             color="green"
           />
           <FeatureCard
             icon={<Award className="w-6 h-6" />}
-            title="Compliance"
-            description="Compliance with Bangladesh trade regulations"
+            title={t("quality.compliance.title")}
+            description={t("quality.compliance.description")}
             color="purple"
           />
           <FeatureCard
             icon={<Target className="w-6 h-6" />}
-            title="Industry Standards"
-            description="Industry-specific quality assurance protocols"
+            title={t("quality.standards.title")}
+            description={t("quality.standards.description")}
             color="orange"
           />
           <FeatureCard
             icon={<Package className="w-6 h-6" />}
-            title="Logistics Support"
-            description="Safe and efficient logistics and distribution support"
+            title={t("quality.logistics.title")}
+            description={t("quality.logistics.description")}
             color="blue"
           />
           <FeatureCard
             icon={<Users className="w-6 h-6" />}
-            title="Dedicated Team"
-            description="Our dedicated quality team ensures only the best products reach customers"
+            title={t("quality.team.title")}
+            description={t("quality.team.description")}
             color="green"
           />
         </div>
@@ -338,12 +345,12 @@ export default function AboutPage() {
 
           <div>
             <SectionHeader
-              title="Customer Satisfaction"
-              subtitle="Our Top Priority"
+              title={t("customerSatisfaction.title")}
+              subtitle={t("customerSatisfaction.subtitle")}
             />
 
             <p className="text-gray-700 mb-6 mt-6">
-              We aim to deliver value by offering:
+              {t("customerSatisfaction.intro")}
             </p>
 
             <div className="space-y-4">
@@ -352,8 +359,12 @@ export default function AboutPage() {
                   <CheckCircle2 className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900">Authentic Products</h4>
-                  <p className="text-sm text-gray-600">Genuine quality guaranteed</p>
+                  <h4 className="font-bold text-gray-900">
+                    {t("customerSatisfaction.authentic.title")}
+                  </h4>
+                  <p className="text-sm text-gray-600">
+                    {t("customerSatisfaction.authentic.description")}
+                  </p>
                 </div>
               </div>
 
@@ -362,8 +373,12 @@ export default function AboutPage() {
                   <TrendingUp className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900">Competitive Pricing</h4>
-                  <p className="text-sm text-gray-600">Best value for your investment</p>
+                  <h4 className="font-bold text-gray-900">
+                    {t("customerSatisfaction.pricing.title")}
+                  </h4>
+                  <p className="text-sm text-gray-600">
+                    {t("customerSatisfaction.pricing.description")}
+                  </p>
                 </div>
               </div>
 
@@ -372,8 +387,12 @@ export default function AboutPage() {
                   <Users className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900">Reliable Support</h4>
-                  <p className="text-sm text-gray-600">Always here to help</p>
+                  <h4 className="font-bold text-gray-900">
+                    {t("customerSatisfaction.support.title")}
+                  </h4>
+                  <p className="text-sm text-gray-600">
+                    {t("customerSatisfaction.support.description")}
+                  </p>
                 </div>
               </div>
 
@@ -382,8 +401,12 @@ export default function AboutPage() {
                   <Package className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900">On-time Delivery</h4>
-                  <p className="text-sm text-gray-600">Meeting deadlines consistently</p>
+                  <h4 className="font-bold text-gray-900">
+                    {t("customerSatisfaction.delivery.title")}
+                  </h4>
+                  <p className="text-sm text-gray-600">
+                    {t("customerSatisfaction.delivery.description")}
+                  </p>
                 </div>
               </div>
 
@@ -392,14 +415,18 @@ export default function AboutPage() {
                   <Globe className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900">Transparent Communication</h4>
-                  <p className="text-sm text-gray-600">Clear and honest updates</p>
+                  <h4 className="font-bold text-gray-900">
+                    {t("customerSatisfaction.communication.title")}
+                  </h4>
+                  <p className="text-sm text-gray-600">
+                    {t("customerSatisfaction.communication.description")}
+                  </p>
                 </div>
               </div>
             </div>
 
             <p className="text-gray-600 mt-6">
-              We work closely with retailers, distributors, corporate buyers, and individual consumers to build long-term trust and satisfaction.
+              {t("customerSatisfaction.outro")}
             </p>
           </div>
         </div>
@@ -408,8 +435,8 @@ export default function AboutPage() {
       {/* Why Choose Us */}
       <ContentSection bgColor="blue">
         <SectionHeader
-          title="Why Choose Zexfro International Ltd"
-          subtitle="Your trusted partner for global trade excellence"
+          title={t("whyChoose.title")}
+          subtitle={t("whyChoose.subtitle")}
           centered
         />
 
@@ -418,48 +445,70 @@ export default function AboutPage() {
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
               <Globe className="w-6 h-6 text-[#0a4a9e]" />
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Strong Global Network</h3>
-            <p className="text-gray-600">Strong global supplier & buyer network</p>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">
+              {t("whyChoose.network.title")}
+            </h3>
+            <p className="text-gray-600">
+              {t("whyChoose.network.description")}
+            </p>
           </div>
 
           <div className="bg-white rounded-lg p-6 shadow-lg">
             <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
               <Package className="w-6 h-6 text-green-600" />
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">End-to-End Expertise</h3>
-            <p className="text-gray-600">End-to-End trade, logistics & compliance expertise</p>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">
+              {t("whyChoose.expertise.title")}
+            </h3>
+            <p className="text-gray-600">
+              {t("whyChoose.expertise.description")}
+            </p>
           </div>
 
           <div className="bg-white rounded-lg p-6 shadow-lg">
             <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
               <Target className="w-6 h-6 text-purple-600" />
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Deep Market Insight</h3>
-            <p className="text-gray-600">Deep market insight in Bangladesh</p>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">
+              {t("whyChoose.insight.title")}
+            </h3>
+            <p className="text-gray-600">
+              {t("whyChoose.insight.description")}
+            </p>
           </div>
 
           <div className="bg-white rounded-lg p-6 shadow-lg">
             <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
               <Award className="w-6 h-6 text-orange-600" />
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Industry-Focused</h3>
-            <p className="text-gray-600">Industry-focused sourcing and distribution</p>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">
+              {t("whyChoose.focused.title")}
+            </h3>
+            <p className="text-gray-600">
+              {t("whyChoose.focused.description")}
+            </p>
           </div>
 
           <div className="bg-white rounded-lg p-6 shadow-lg">
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
               <Users className="w-6 h-6 text-[#0a4a9e]" />
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Customer-Centric</h3>
-            <p className="text-gray-600">Customer-centric business model</p>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">
+              {t("whyChoose.customerCentric.title")}
+            </h3>
+            <p className="text-gray-600">
+              {t("whyChoose.customerCentric.description")}
+            </p>
           </div>
 
           <div className="bg-white rounded-lg p-6 shadow-lg">
             <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
               <Shield className="w-6 h-6 text-green-600" />
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Quality & Ethics</h3>
-            <p className="text-gray-600">Commitment to quality and ethical trade</p>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">
+              {t("whyChoose.ethics.title")}
+            </h3>
+            <p className="text-gray-600">{t("whyChoose.ethics.description")}</p>
           </div>
         </div>
       </ContentSection>
@@ -472,10 +521,10 @@ export default function AboutPage() {
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
                 <Target className="w-8 h-8 text-white" />
               </div>
-              <h2 className="text-3xl font-bold">Our Vision</h2>
+              <h2 className="text-3xl font-bold">{t("vision.title")}</h2>
             </div>
             <p className="text-lg text-white/90 leading-relaxed">
-              To become one of the most reliable global trade facilitators in Bangladesh by providing world-class products, building strong partnerships, and contributing to international commerce with integrity and innovation.
+              {t("vision.description")}
             </p>
           </div>
 
@@ -484,29 +533,15 @@ export default function AboutPage() {
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
                 <Sparkles className="w-8 h-8 text-white" />
               </div>
-              <h2 className="text-3xl font-bold">Our Mission</h2>
+              <h2 className="text-3xl font-bold">{t("mission.title")}</h2>
             </div>
             <ul className="space-y-3 text-white/90">
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <span>To import high-quality global products at competitive prices</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <span>To distribute them efficiently across Bangladesh</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <span>To maintain compliance, standards, and transparency in trade</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <span>To export Bangladeshi products to international buyers</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <span>To ensure customer satisfaction through quality and service</span>
-              </li>
+              {t.raw("mission.items").map((item: string, index: number) => (
+                <li key={index} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -516,15 +551,15 @@ export default function AboutPage() {
       <ContentSection bgColor="gray">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Let's Grow Together
+            {t("closing.title")}
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-8">
-            Zexfro International Ltd continues to expand its reach, diversify its sourcing capabilities, and strengthen customer relationships. We believe in empowering businesses and consumers through global trade solutions backed by quality and trust.
+            {t("closing.paragraph")}
           </p>
           <div className="bg-gradient-to-r from-[#0a4a9e] to-[#05306b] rounded-lg p-8 text-white">
-            <p className="text-xl font-semibold mb-4">Warm Regards,</p>
-            <p className="text-2xl font-bold">The Management Team</p>
-            <p className="text-xl mt-2">Zexfro International Limited</p>
+            <p className="text-xl font-semibold mb-4">{t("closing.regards")}</p>
+            <p className="text-2xl font-bold">{t("closing.team")}</p>
+            <p className="text-xl mt-2">{t("closing.company")}</p>
           </div>
         </div>
       </ContentSection>
@@ -532,9 +567,9 @@ export default function AboutPage() {
       {/* CTA */}
       <ContentSection bgColor="white">
         <CTABox
-          title="Ready to Partner With Us?"
-          description="Join hundreds of businesses that trust Zexfro International Limited for their international trade needs. Let's grow together in this new era of excellence."
-          buttonText="Get Started Today"
+          title={t("cta.title")}
+          description={t("cta.description")}
+          buttonText={t("cta.button")}
           buttonLink="/contact"
         />
       </ContentSection>
