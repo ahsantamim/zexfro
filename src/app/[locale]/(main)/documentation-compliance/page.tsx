@@ -36,215 +36,176 @@ export async function generateMetadata({
   };
 }
 
-const sections = [
-  { id: "overview", title: "Documentation & Compliance Framework" },
-  { id: "company", title: "Company Registration & Legal Foundation" },
-  { id: "trade-auth", title: "Import & Export Authorization" },
-  { id: "customs", title: "Customs & Shipment Compliance" },
-  { id: "banking", title: "Banking & Financial Compliance" },
-  { id: "tax", title: "Tax & VAT Compliance" },
-  { id: "international", title: "International Trade Compliance" },
-  { id: "controls", title: "Internal Control & Record Management" },
-  { id: "membership", title: "Member of Association" },
-  { id: "commitment", title: "Compliance Commitment" },
-];
+export default async function DocumentationCompliancePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({
+    locale,
+    namespace: "documentationCompliance",
+  });
 
-export default function DocumentationCompliancePage() {
+  const sections = [
+    { id: "overview", title: t("sections.overview") },
+    { id: "company", title: t("sections.company") },
+    { id: "trade-auth", title: t("sections.tradeAuth") },
+    { id: "customs", title: t("sections.customs") },
+    { id: "banking", title: t("sections.banking") },
+    { id: "tax", title: t("sections.tax") },
+    { id: "international", title: t("sections.international") },
+    { id: "controls", title: t("sections.controls") },
+    { id: "membership", title: t("sections.membership") },
+    { id: "commitment", title: t("sections.commitment") },
+  ];
+
   return (
     <DocLayout
       sections={sections}
-      pageTitle="Documentation & Compliance"
-      pageDescription="Zero International Limited operates under a comprehensive documentation and compliance framework to ensure full legal validity, transparent trade operations, and smooth international business activities. All processes strictly follow the regulatory requirements of Bangladesh and applicable international trade standards."
+      pageTitle={t("pageTitle")}
+      pageDescription={t("pageDescription")}
     >
       {/* Section 1: Overview */}
-      <DocSection id="overview" title="Documentation & Compliance Framework">
+      <DocSection id="overview" title={t("sections.overview")}>
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <FileText className="w-6 h-6 text-[#0a4a9e]" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              Full Legal Compliance & Transparency
+              {t("overview.cardTitle")}
             </h3>
-            <p className="text-gray-600">
-              Comprehensive documentation framework ensuring legal validity and
-              regulatory compliance across all operations.
-            </p>
+            <p className="text-gray-600">{t("overview.cardDesc")}</p>
           </div>
         </div>
 
-        <p>
-          Zero International Limited operates under a comprehensive
-          documentation and compliance framework to ensure full legal validity,
-          transparent trade operations, and smooth international business
-          activities. All processes strictly follow the regulatory requirements
-          of Bangladesh and applicable international trade standards.
-        </p>
+        <p>{t("overview.intro")}</p>
 
         {/* Image */}
         <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl my-8">
           <Image
             src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80"
-            alt="Documentation and compliance framework"
+            alt={t("overview.imageAlt")}
             fill
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
             <p className="text-sm font-semibold">
-              Comprehensive Compliance Framework
+              {t("overview.imageCaption")}
             </p>
           </div>
         </div>
 
         <div className="bg-blue-50 border-l-4 border-[#0a4a9e] p-6 my-6">
           <h4 className="font-bold text-gray-900 mb-3">
-            Our Documentation Framework Includes:
+            {t("overview.frameworkTitle")}
           </h4>
           <ul className="space-y-3 text-gray-700">
             <li className="flex items-start gap-3">
               <span className="text-[#0a4a9e] font-bold">•</span>
-              <span>
-                <strong>Company Registration & Legal Foundation:</strong> Proper
-                incorporation and statutory documents
-              </span>
+              <span>{t("overview.framework1")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-[#0a4a9e] font-bold">•</span>
-              <span>
-                <strong>Import & Export Authorization:</strong> Full
-                authorization for international trade activities
-              </span>
+              <span>{t("overview.framework2")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-[#0a4a9e] font-bold">•</span>
-              <span>
-                <strong>Customs & Shipment Compliance:</strong> Accurate
-                declarations and transparent procedures
-              </span>
+              <span>{t("overview.framework3")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-[#0a4a9e] font-bold">•</span>
-              <span>
-                <strong>Banking & Financial Compliance:</strong> Authorized
-                transactions through commercial banks
-              </span>
+              <span>{t("overview.framework4")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-[#0a4a9e] font-bold">•</span>
-              <span>
-                <strong>Tax & VAT Compliance:</strong> Full compliance with
-                national tax regulations
-              </span>
+              <span>{t("overview.framework5")}</span>
             </li>
           </ul>
         </div>
 
         <div className="bg-gradient-to-r from-[#0a4a9e] to-[#05306b] rounded-lg p-6 text-white text-center">
-          <p className="text-xl font-bold">
-            Complete Documentation for Transparent Operations
-          </p>
-          <p className="mt-2 text-white/90">
-            Every aspect of our business is properly documented and compliant
-            with all applicable regulations.
-          </p>
+          <p className="text-xl font-bold">{t("overview.highlightTitle")}</p>
+          <p className="mt-2 text-white/90">{t("overview.highlightDesc")}</p>
         </div>
       </DocSection>
 
       {/* Section 2: Company Registration & Legal Foundation */}
-      <DocSection id="company" title="Company Registration & Legal Foundation">
+      <DocSection id="company" title={t("sections.company")}>
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <Building2 className="w-6 h-6 text-green-600" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              Legally Registered and Properly Incorporated
+              {t("company.cardTitle")}
             </h3>
-            <p className="text-gray-600">
-              Zero International Limited is a legally registered company in
-              Bangladesh with all statutory documents properly maintained.
-            </p>
+            <p className="text-gray-600">{t("company.cardDesc")}</p>
           </div>
         </div>
 
-        <p>
-          Zero International Limited is a legally registered company in
-          Bangladesh. All incorporation and statutory documents are properly
-          maintained and updated to ensure regulatory compliance and corporate
-          governance.
-        </p>
+        <p>{t("company.intro")}</p>
 
         {/* Image */}
         <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl my-8">
           <Image
             src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80"
-            alt="Company registration and legal documents"
+            alt={t("company.imageAlt")}
             fill
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">Proper Legal Foundation</p>
+            <p className="text-sm font-semibold">{t("company.imageCaption")}</p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
           <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">Key Documents</h4>
+            <h4 className="font-bold text-gray-900 mb-3">
+              {t("company.docsTitle")}
+            </h4>
             <ul className="space-y-3 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <span className="text-green-600 font-bold">✓</span>
-                <span>
-                  <strong>Certificate of Incorporation</strong> - Legal entity
-                  establishment
-                </span>
+                <span>{t("company.doc1")}</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-600 font-bold">✓</span>
-                <span>
-                  <strong>Memorandum of Association (MOA)</strong> - Company
-                  objectives and powers
-                </span>
+                <span>{t("company.doc2")}</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-600 font-bold">✓</span>
-                <span>
-                  <strong>Articles of Association (AOA)</strong> - Internal
-                  management rules
-                </span>
+                <span>{t("company.doc3")}</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-600 font-bold">✓</span>
-                <span>
-                  <strong>Director and Shareholder Records</strong> - Complete
-                  ownership documentation
-                </span>
+                <span>{t("company.doc4")}</span>
               </li>
             </ul>
           </div>
 
           <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6">
-            <h4 className="font-bold text-gray-900 mb-3">Issuing Authority</h4>
+            <h4 className="font-bold text-gray-900 mb-3">
+              {t("company.authorityTitle")}
+            </h4>
             <div className="space-y-4">
               <div>
                 <p className="font-semibold text-gray-900 mb-2">
-                  Registrar of Joint Stock Companies and Firms (RJSC)
+                  {t("company.authorityName")}
                 </p>
                 <p className="text-sm text-gray-700">
-                  All incorporation documents are issued and maintained by the
-                  RJSC, the official government authority responsible for
-                  company registration in Bangladesh.
+                  {t("company.authorityDesc")}
                 </p>
               </div>
               <div className="bg-white rounded-lg p-4">
                 <p className="text-xs font-semibold text-gray-600 mb-2">
-                  CORPORATE GOVERNANCE
+                  {t("company.governanceLabel")}
                 </p>
                 <p className="text-sm text-gray-700">
-                  Regular updates and maintenance of all statutory records
-                  ensure ongoing compliance with Bangladesh Companies Act
-                  requirements.
+                  {t("company.governanceDesc")}
                 </p>
               </div>
             </div>
@@ -252,70 +213,54 @@ export default function DocumentationCompliancePage() {
         </div>
 
         <div className="bg-green-50 border-l-4 border-green-600 p-6 my-6">
-          <h4 className="font-bold text-gray-900 mb-3">Trade License</h4>
-          <p className="text-gray-700 mb-3">
-            The company holds a valid <strong>Trade License</strong> issued by
-            the relevant city authority and renews it annually to maintain
-            uninterrupted business operations.
-          </p>
+          <h4 className="font-bold text-gray-900 mb-3">
+            {t("company.licenseTitle")}
+          </h4>
+          <p className="text-gray-700 mb-3">{t("company.licenseDesc")}</p>
           <div className="bg-white rounded-lg p-4 mt-3">
             <p className="text-sm font-semibold text-gray-900 mb-1">
-              Issuing Authority:
+              {t("company.licenseAuthorityLabel")}
             </p>
             <p className="text-sm text-gray-700">
-              <strong>Dhaka North City Corporation (DNCC)</strong> - The
-              municipal authority responsible for issuing and renewing trade
-              licenses for businesses operating within Dhaka North.
+              {t("company.licenseAuthorityDesc")}
             </p>
           </div>
         </div>
 
         <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-lg p-6 text-white text-center">
-          <p className="text-xl font-bold">
-            Fully Licensed and Legally Compliant
-          </p>
-          <p className="mt-2 text-white/90">
-            All incorporation and operational licenses are maintained in full
-            compliance with Bangladesh law.
-          </p>
+          <p className="text-xl font-bold">{t("company.highlightTitle")}</p>
+          <p className="mt-2 text-white/90">{t("company.highlightDesc")}</p>
         </div>
       </DocSection>
 
       {/* Section 3: Import & Export Authorization */}
-      <DocSection id="trade-auth" title="Import & Export Authorization">
+      <DocSection id="trade-auth" title={t("sections.tradeAuth")}>
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <ShieldCheck className="w-6 h-6 text-purple-600" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              Fully Authorized for International Trade
+              {t("tradeAuth.cardTitle")}
             </h3>
-            <p className="text-gray-600">
-              Complete authorization to conduct import and export activities in
-              Bangladesh.
-            </p>
+            <p className="text-gray-600">{t("tradeAuth.cardDesc")}</p>
           </div>
         </div>
 
-        <p>
-          Zero International Limited is fully authorized to conduct import and
-          export activities in Bangladesh. We hold all necessary certificates
-          and registrations required for legal international trade operations.
-        </p>
+        <p>{t("tradeAuth.intro")}</p>
 
         {/* Image */}
         <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl my-8">
           <Image
             src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&q=80"
-            alt="Import and export authorization"
+            alt={t("tradeAuth.imageAlt")}
             fill
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
             <p className="text-sm font-semibold">
-              Authorized International Trade Operations
+              {t("tradeAuth.imageCaption")}
             </p>
           </div>
         </div>
@@ -323,218 +268,196 @@ export default function DocumentationCompliancePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
           <div className="bg-purple-50 border-2 border-purple-200 rounded-lg p-6">
             <h4 className="font-bold text-gray-900 mb-4 text-center">
-              Import Registration Certificate (IRC)
+              {t("tradeAuth.ircTitle")}
             </h4>
             <p className="text-sm text-gray-700 mb-4">
-              The IRC authorizes Zero International Limited to import goods into
-              Bangladesh from international markets. This certificate ensures:
+              {t("tradeAuth.ircDesc")}
             </p>
             <ul className="space-y-2 text-sm text-gray-700">
               <li className="flex items-start gap-2">
                 <span className="text-purple-600">✓</span>
-                <span>Legal authorization to import products</span>
+                <span>{t("tradeAuth.ircBenefit1")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-purple-600">✓</span>
-                <span>Compliance with Bangladesh import policies</span>
+                <span>{t("tradeAuth.ircBenefit2")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-purple-600">✓</span>
-                <span>Access to international supplier networks</span>
+                <span>{t("tradeAuth.ircBenefit3")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-purple-600">✓</span>
-                <span>Customs clearance authorization</span>
+                <span>{t("tradeAuth.ircBenefit4")}</span>
               </li>
             </ul>
           </div>
 
           <div className="bg-purple-50 border-2 border-purple-200 rounded-lg p-6">
             <h4 className="font-bold text-gray-900 mb-4 text-center">
-              Export Registration Certificate (ERC)
+              {t("tradeAuth.ercTitle")}
             </h4>
             <p className="text-sm text-gray-700 mb-4">
-              The ERC authorizes Zero International Limited to export goods from
-              Bangladesh to international markets. This certificate provides:
+              {t("tradeAuth.ercDesc")}
             </p>
             <ul className="space-y-2 text-sm text-gray-700">
               <li className="flex items-start gap-2">
                 <span className="text-purple-600">✓</span>
-                <span>Legal authorization to export products</span>
+                <span>{t("tradeAuth.ercBenefit1")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-purple-600">✓</span>
-                <span>Compliance with Bangladesh export policies</span>
+                <span>{t("tradeAuth.ercBenefit2")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-purple-600">✓</span>
-                <span>Access to international buyer networks</span>
+                <span>{t("tradeAuth.ercBenefit3")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-purple-600">✓</span>
-                <span>Export incentive eligibility</span>
+                <span>{t("tradeAuth.ercBenefit4")}</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="bg-purple-50 border-l-4 border-purple-600 p-6 my-6">
-          <h4 className="font-bold text-gray-900 mb-3">Issuing Authority</h4>
+          <h4 className="font-bold text-gray-900 mb-3">
+            {t("tradeAuth.authorityTitle")}
+          </h4>
           <div className="space-y-3">
             <p className="text-gray-700">
-              <strong>
-                Office of the Chief Controller of Imports & Exports (CCI&E)
-              </strong>
+              <strong>{t("tradeAuth.authorityName")}</strong>
             </p>
             <p className="text-sm text-gray-700">
-              The CCI&E is the designated government authority under the
-              Ministry of Commerce responsible for:
+              {t("tradeAuth.authorityDesc")}
             </p>
             <ul className="space-y-2 text-sm text-gray-700 mt-3">
               <li className="flex items-start gap-3">
                 <span className="text-purple-600 font-bold">•</span>
-                <span>Issuing and renewing IRC and ERC certificates</span>
+                <span>{t("tradeAuth.authorityRole1")}</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-purple-600 font-bold">•</span>
-                <span>Monitoring import and export compliance</span>
+                <span>{t("tradeAuth.authorityRole2")}</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-purple-600 font-bold">•</span>
-                <span>Maintaining trader registration database</span>
+                <span>{t("tradeAuth.authorityRole3")}</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-purple-600 font-bold">•</span>
-                <span>Implementing Bangladesh trade policies</span>
+                <span>{t("tradeAuth.authorityRole4")}</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg p-6 text-white text-center">
-          <p className="text-xl font-bold">Fully Certified for Global Trade</p>
-          <p className="mt-2 text-white/90">
-            Our IRC and ERC certifications ensure legal, compliant, and seamless
-            international trade operations.
-          </p>
+          <p className="text-xl font-bold">{t("tradeAuth.highlightTitle")}</p>
+          <p className="mt-2 text-white/90">{t("tradeAuth.highlightDesc")}</p>
         </div>
       </DocSection>
 
       {/* Section 4: Customs & Shipment Compliance */}
-      <DocSection id="customs" title="Customs & Shipment Compliance">
+      <DocSection id="customs" title={t("sections.customs")}>
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <Package className="w-6 h-6 text-yellow-600" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              Transparent Customs Procedures
+              {t("customs.cardTitle")}
             </h3>
-            <p className="text-gray-600">
-              All shipments processed according to Bangladesh Customs
-              regulations for accurate declarations and timely clearance.
-            </p>
+            <p className="text-gray-600">{t("customs.cardDesc")}</p>
           </div>
         </div>
 
-        <p>
-          All shipments are processed in accordance with Bangladesh Customs
-          regulations to ensure accurate declarations, timely clearance, and
-          full transparency. Our customs compliance procedures guarantee smooth
-          international trade operations.
-        </p>
+        <p>{t("customs.intro")}</p>
 
         {/* Image */}
         <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl my-8">
           <Image
             src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80"
-            alt="Customs clearance and shipping documentation"
+            alt={t("customs.imageAlt")}
             fill
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">
-              Compliant Customs Procedures
-            </p>
+            <p className="text-sm font-semibold">{t("customs.imageCaption")}</p>
           </div>
         </div>
 
         <div className="bg-yellow-50 border-l-4 border-yellow-600 p-6 my-6">
           <h4 className="font-bold text-gray-900 mb-2">
-            Customs &amp; Shipment Compliance Documents
+            {t("customs.docsTitle")}
           </h4>
-          <p className="text-sm text-gray-700 mb-5">
-            For every consignment, we generate and preserve mandatory trade
-            documents required by Bangladesh Customs, Port Authorities, and
-            International Partners:
-          </p>
+          <p className="text-sm text-gray-700 mb-5">{t("customs.docsIntro")}</p>
 
           <div className="rounded-lg bg-white/70 border border-yellow-200 overflow-hidden">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 bg-white border-b border-yellow-200">
               <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide">
-                Document
+                {t("customs.docColumnTitle")}
               </p>
               <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide">
-                Purpose
+                {t("customs.purposeColumnTitle")}
               </p>
             </div>
             <ul className="divide-y divide-yellow-100">
               <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
                 <span className="font-semibold text-gray-900">
-                  Commercial Invoice
+                  {t("customs.doc1Name")}
                 </span>
-                <span>Proof of trade value</span>
+                <span>{t("customs.doc1Purpose")}</span>
               </li>
               <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
                 <span className="font-semibold text-gray-900">
-                  Packing List
+                  {t("customs.doc2Name")}
                 </span>
-                <span>Product breakdown &amp; weight</span>
+                <span>{t("customs.doc2Purpose")}</span>
               </li>
               <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
                 <span className="font-semibold text-gray-900">
-                  Bill of Lading / Airway Bill
+                  {t("customs.doc3Name")}
                 </span>
-                <span>Shipment contract</span>
+                <span>{t("customs.doc3Purpose")}</span>
               </li>
               <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
                 <span className="font-semibold text-gray-900">
-                  Certificate of Origin (COO)
+                  {t("customs.doc4Name")}
                 </span>
-                <span>Product source proof</span>
+                <span>{t("customs.doc4Purpose")}</span>
               </li>
               <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
                 <span className="font-semibold text-gray-900">
-                  LC (Letter of Credit) documents
+                  {t("customs.doc5Name")}
                 </span>
-                <span>Bank-secured trade</span>
+                <span>{t("customs.doc5Purpose")}</span>
               </li>
               <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
                 <span className="font-semibold text-gray-900">
-                  Insurance Certificate
+                  {t("customs.doc6Name")}
                 </span>
-                <span>Cargo safety</span>
+                <span>{t("customs.doc6Purpose")}</span>
               </li>
               <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
                 <span className="font-semibold text-gray-900">
-                  Proforma Invoice
+                  {t("customs.doc7Name")}
                 </span>
-                <span>Buyer-seller agreement</span>
+                <span>{t("customs.doc7Purpose")}</span>
               </li>
               <li className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4 py-3 text-sm text-gray-700">
                 <span className="font-semibold text-gray-900">
-                  LCAF (Letter of Credit Authorization Form)
+                  {t("customs.doc8Name")}
                 </span>
-                <span>Required for LC imports</span>
+                <span>{t("customs.doc8Purpose")}</span>
               </li>
             </ul>
           </div>
 
           <p className="text-sm text-gray-700 mt-5">
-            These documents ensure fast clearance at{" "}
-            <strong>Chattogram Port</strong>, <strong>ICD Dhaka</strong>, and{" "}
-            <strong>Hazrat Shahjalal International Airport Cargo</strong>.
+            {t("customs.clearanceNote")}
           </p>
         </div>
 
@@ -542,142 +465,109 @@ export default function DocumentationCompliancePage() {
           <div className="bg-white border-2 border-yellow-600 rounded-lg p-6 text-center">
             <div className="text-3xl mb-3">📋</div>
             <h4 className="font-bold text-gray-900 mb-2">
-              Accurate Declarations
+              {t("customs.feature1Title")}
             </h4>
-            <p className="text-sm text-gray-600">
-              100% accuracy in customs documentation and product descriptions
-            </p>
+            <p className="text-sm text-gray-600">{t("customs.feature1Desc")}</p>
           </div>
           <div className="bg-white border-2 border-yellow-600 rounded-lg p-6 text-center">
             <div className="text-3xl mb-3">⚡</div>
-            <h4 className="font-bold text-gray-900 mb-2">Timely Clearance</h4>
-            <p className="text-sm text-gray-600">
-              Efficient processing ensuring minimal delays at customs
-            </p>
+            <h4 className="font-bold text-gray-900 mb-2">
+              {t("customs.feature2Title")}
+            </h4>
+            <p className="text-sm text-gray-600">{t("customs.feature2Desc")}</p>
           </div>
           <div className="bg-white border-2 border-yellow-600 rounded-lg p-6 text-center">
             <div className="text-3xl mb-3">🔍</div>
-            <h4 className="font-bold text-gray-900 mb-2">Full Transparency</h4>
-            <p className="text-sm text-gray-600">
-              Complete documentation trail for every shipment
-            </p>
+            <h4 className="font-bold text-gray-900 mb-2">
+              {t("customs.feature3Title")}
+            </h4>
+            <p className="text-sm text-gray-600">{t("customs.feature3Desc")}</p>
           </div>
         </div>
 
         <div className="bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-lg p-6 text-white text-center">
-          <p className="text-xl font-bold">Seamless Customs Clearance</p>
-          <p className="mt-2 text-white/90">
-            Our comprehensive documentation ensures smooth customs procedures
-            and compliance with all regulations.
-          </p>
+          <p className="text-xl font-bold">{t("customs.highlightTitle")}</p>
+          <p className="mt-2 text-white/90">{t("customs.highlightDesc")}</p>
         </div>
       </DocSection>
 
       {/* Section 5: Banking & Financial Compliance */}
-      <DocSection id="banking" title="Banking & Financial Compliance">
+      <DocSection id="banking" title={t("sections.banking")}>
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <Banknote className="w-6 h-6 text-orange-600" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              Authorized Financial Transactions
+              {t("banking.cardTitle")}
             </h3>
-            <p className="text-gray-600">
-              All trade-related financial transactions conducted through
-              authorized commercial banks in compliance with foreign exchange
-              regulations.
-            </p>
+            <p className="text-gray-600">{t("banking.cardDesc")}</p>
           </div>
         </div>
 
-        <p>
-          All trade-related financial transactions are conducted through
-          authorized commercial banks and comply with foreign exchange
-          regulations established by Bangladesh Bank, the central banking
-          authority.
-        </p>
+        <p>{t("banking.intro")}</p>
 
         {/* Image */}
         <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl my-8">
           <Image
             src="https://images.unsplash.com/photo-1556155092-490a1ba16284?w=1200&q=80"
-            alt="Banking and financial compliance"
+            alt={t("banking.imageAlt")}
             fill
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">
-              Compliant Financial Operations
-            </p>
+            <p className="text-sm font-semibold">{t("banking.imageCaption")}</p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
           <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-6">
             <h4 className="font-bold text-gray-900 mb-3">
-              Financial Documentation
+              {t("banking.docsTitle")}
             </h4>
             <ul className="space-y-3 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <span className="text-orange-600 font-bold">•</span>
-                <span>
-                  <strong>Bank Solvency Certificate:</strong> Proof of financial
-                  standing and creditworthiness
-                </span>
+                <span>{t("banking.doc1")}</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-orange-600 font-bold">•</span>
-                <span>
-                  <strong>Letter of Credit (LC) Documentation:</strong> Secure
-                  payment mechanism for international transactions
-                </span>
+                <span>{t("banking.doc2")}</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-orange-600 font-bold">•</span>
-                <span>
-                  <strong>Proforma Invoice:</strong> Preliminary transaction
-                  documentation for LC establishment
-                </span>
+                <span>{t("banking.doc3")}</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-orange-600 font-bold">•</span>
-                <span>
-                  <strong>Foreign Exchange Endorsements:</strong> Proper
-                  documentation of all foreign currency transactions
-                </span>
+                <span>{t("banking.doc4")}</span>
               </li>
             </ul>
           </div>
 
           <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-6">
             <h4 className="font-bold text-gray-900 mb-3">
-              Regulatory Authority
+              {t("banking.authorityTitle")}
             </h4>
             <div className="space-y-4">
               <div>
                 <p className="font-semibold text-gray-900 mb-2">
-                  Bangladesh Bank
+                  {t("banking.authorityName")}
                 </p>
                 <p className="text-sm text-gray-700 mb-3">
-                  The central bank of Bangladesh regulates all foreign exchange
-                  transactions and international trade payments.
+                  {t("banking.authorityDesc")}
                 </p>
               </div>
               <div className="bg-white rounded-lg p-4">
                 <p className="text-xs font-semibold text-gray-600 mb-2">
-                  COMPLIANCE REQUIREMENTS
+                  {t("banking.complianceLabel")}
                 </p>
                 <ul className="space-y-2 text-sm text-gray-700">
-                  <li>
-                    • All international payments through authorized dealers
-                  </li>
-                  <li>
-                    • Proper documentation of foreign exchange transactions
-                  </li>
-                  <li>• Adherence to Bangladesh Bank forex regulations</li>
-                  <li>• Timely reporting of trade transactions</li>
+                  <li>• {t("banking.requirement1")}</li>
+                  <li>• {t("banking.requirement2")}</li>
+                  <li>• {t("banking.requirement3")}</li>
+                  <li>• {t("banking.requirement4")}</li>
                 </ul>
               </div>
             </div>
@@ -686,134 +576,105 @@ export default function DocumentationCompliancePage() {
 
         <div className="bg-orange-50 border-l-4 border-orange-600 p-6 my-6">
           <h4 className="font-bold text-gray-900 mb-3">
-            Banking Compliance Benefits:
+            {t("banking.benefitsTitle")}
           </h4>
           <ul className="space-y-2 text-gray-700">
             <li className="flex items-start gap-3">
               <span className="text-orange-600 font-bold text-xl">✔</span>
-              <span>Secure and transparent financial transactions</span>
+              <span>{t("banking.benefit1")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-600 font-bold text-xl">✔</span>
-              <span>Full compliance with Bangladesh Bank regulations</span>
+              <span>{t("banking.benefit2")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-600 font-bold text-xl">✔</span>
-              <span>Protection through letter of credit mechanisms</span>
+              <span>{t("banking.benefit3")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-600 font-bold text-xl">✔</span>
-              <span>Proper audit trail for all financial operations</span>
+              <span>{t("banking.benefit4")}</span>
             </li>
           </ul>
         </div>
 
         <div className="bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg p-6 text-white text-center">
-          <p className="text-xl font-bold">Secure Financial Operations</p>
-          <p className="mt-2 text-white/90">
-            All transactions conducted through authorized channels in full
-            compliance with Bangladesh Bank regulations.
-          </p>
+          <p className="text-xl font-bold">{t("banking.highlightTitle")}</p>
+          <p className="mt-2 text-white/90">{t("banking.highlightDesc")}</p>
         </div>
       </DocSection>
 
       {/* Section 6: Tax & VAT Compliance */}
-      <DocSection id="tax" title="Tax & VAT Compliance">
+      <DocSection id="tax" title={t("sections.tax")}>
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <Receipt className="w-6 h-6 text-teal-600" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              Full Tax & VAT Compliance
+              {t("tax.cardTitle")}
             </h3>
-            <p className="text-gray-600">
-              Complete compliance with national tax and VAT regulations with
-              accurate financial reporting.
-            </p>
+            <p className="text-gray-600">{t("tax.cardDesc")}</p>
           </div>
         </div>
 
-        <p>
-          Zero International Limited fully complies with national tax and VAT
-          regulations and maintains accurate financial reporting. All tax
-          obligations are met in accordance with the requirements of the
-          National Board of Revenue (NBR).
-        </p>
+        <p>{t("tax.intro")}</p>
 
         {/* Image */}
         <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl my-8">
           <Image
             src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=1200&q=80"
-            alt="Tax and VAT compliance"
+            alt={t("tax.imageAlt")}
             fill
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">
-              Comprehensive Tax Compliance
-            </p>
+            <p className="text-sm font-semibold">{t("tax.imageCaption")}</p>
           </div>
         </div>
 
         <div className="bg-teal-50/30 border-l-4 border-teal-500 p-6 my-6 shadow-sm">
-          <h4 className="font-bold text-gray-900 mb-4">Compliance Coverage</h4>
+          <h4 className="font-bold text-gray-900 mb-4">
+            {t("tax.coverageTitle")}
+          </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <h5 className="font-semibold text-gray-900 mb-3">
-                VAT Compliance
+                {t("tax.vatTitle")}
               </h5>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-start gap-3">
                   <span className="text-teal-600 font-bold">•</span>
-                  <span>
-                    <strong>VAT Registration:</strong> Properly registered with
-                    NBR for VAT collection and remittance
-                  </span>
+                  <span>{t("tax.vatItem1")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-teal-600 font-bold">•</span>
-                  <span>
-                    <strong>Monthly VAT Returns:</strong> Timely filing of VAT
-                    returns and payment of dues
-                  </span>
+                  <span>{t("tax.vatItem2")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-teal-600 font-bold">•</span>
-                  <span>
-                    <strong>VAT Documentation:</strong> Proper invoicing and
-                    record-keeping for VAT transactions
-                  </span>
+                  <span>{t("tax.vatItem3")}</span>
                 </li>
               </ul>
             </div>
 
             <div>
               <h5 className="font-semibold text-gray-900 mb-3">
-                Income Tax Compliance
+                {t("tax.incomeTaxTitle")}
               </h5>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-start gap-3">
                   <span className="text-teal-600 font-bold">•</span>
-                  <span>
-                    <strong>Annual Income Tax Returns:</strong> Complete and
-                    accurate tax return filing
-                  </span>
+                  <span>{t("tax.incomeTaxItem1")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-teal-600 font-bold">•</span>
-                  <span>
-                    <strong>Withholding Tax Records:</strong> Proper deduction
-                    and remittance of withholding taxes
-                  </span>
+                  <span>{t("tax.incomeTaxItem2")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-teal-600 font-bold">•</span>
-                  <span>
-                    <strong>Tax Audit Readiness:</strong> Maintained
-                    documentation for tax audits and assessments
-                  </span>
+                  <span>{t("tax.incomeTaxItem3")}</span>
                 </li>
               </ul>
             </div>
@@ -822,20 +683,18 @@ export default function DocumentationCompliancePage() {
 
         <div className="bg-teal-50/40 border-2 border-teal-500 rounded-lg p-6 my-6 shadow-md">
           <h4 className="font-bold text-gray-900 mb-4 text-center">
-            Regulatory Authority
+            {t("tax.authorityTitle")}
           </h4>
           <div className="text-center mb-4">
             <p className="text-lg font-semibold text-gray-900">
-              National Board of Revenue (NBR)
+              {t("tax.authorityName")}
             </p>
             <p className="text-sm text-gray-600 mt-2">
-              The apex authority for tax administration in Bangladesh
+              {t("tax.authoritySubtitle")}
             </p>
           </div>
           <p className="text-sm text-gray-700 text-center">
-            The NBR is responsible for formulating and implementing tax
-            policies, collecting revenue, and ensuring compliance with tax laws
-            including VAT Act, Income Tax Ordinance, and Customs Act.
+            {t("tax.authorityDesc")}
           </p>
         </div>
 
@@ -843,153 +702,120 @@ export default function DocumentationCompliancePage() {
           <div className="bg-teal-50/30 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-teal-600 mb-2">✓</div>
             <p className="font-semibold text-gray-900 text-sm mb-1">
-              VAT Registered
+              {t("tax.feature1Title")}
             </p>
-            <p className="text-xs text-gray-600">Valid registration</p>
+            <p className="text-xs text-gray-600">{t("tax.feature1Desc")}</p>
           </div>
           <div className="bg-teal-50/30 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-teal-600 mb-2">✓</div>
             <p className="font-semibold text-gray-900 text-sm mb-1">
-              Timely Returns
+              {t("tax.feature2Title")}
             </p>
-            <p className="text-xs text-gray-600">Monthly VAT filing</p>
+            <p className="text-xs text-gray-600">{t("tax.feature2Desc")}</p>
           </div>
           <div className="bg-teal-50/30 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-teal-600 mb-2">✓</div>
             <p className="font-semibold text-gray-900 text-sm mb-1">
-              Tax Compliant
+              {t("tax.feature3Title")}
             </p>
-            <p className="text-xs text-gray-600">Annual returns filed</p>
+            <p className="text-xs text-gray-600">{t("tax.feature3Desc")}</p>
           </div>
           <div className="bg-teal-50/30 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-teal-600 mb-2">✓</div>
             <p className="font-semibold text-gray-900 text-sm mb-1">
-              Audit Ready
+              {t("tax.feature4Title")}
             </p>
-            <p className="text-xs text-gray-600">Complete records</p>
+            <p className="text-xs text-gray-600">{t("tax.feature4Desc")}</p>
           </div>
         </div>
 
         <div className="bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg p-6 text-white text-center">
-          <p className="text-xl font-bold">100% Tax Compliance</p>
-          <p className="mt-2 text-white/90">
-            Full adherence to all VAT and income tax requirements ensures
-            transparent and responsible financial operations.
-          </p>
+          <p className="text-xl font-bold">{t("tax.highlightTitle")}</p>
+          <p className="mt-2 text-white/90">{t("tax.highlightDesc")}</p>
         </div>
       </DocSection>
 
       {/* Section 7: International Trade Compliance */}
-      <DocSection id="international" title="International Trade Compliance">
+      <DocSection id="international" title={t("sections.international")}>
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <Globe2 className="w-6 h-6 text-indigo-600" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              Adherence to National & International Standards
+              {t("international.cardTitle")}
             </h3>
-            <p className="text-gray-600">
-              Full compliance with Bangladesh trade policies and international
-              shipping standards.
-            </p>
+            <p className="text-gray-600">{t("international.cardDesc")}</p>
           </div>
         </div>
 
-        <p>
-          The company adheres to all applicable national and international trade
-          regulations, ensuring legal and compliant cross-border commerce. Our
-          operations are governed by comprehensive trade policies and
-          international standards.
-        </p>
+        <p>{t("international.intro")}</p>
 
         {/* Image */}
         <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl my-8">
           <Image
             src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&q=80"
-            alt="International trade compliance"
+            alt={t("international.imageAlt")}
             fill
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">Global Trade Standards</p>
+            <p className="text-sm font-semibold">
+              {t("international.imageCaption")}
+            </p>
           </div>
         </div>
 
         <div className="bg-indigo-50 border-l-4 border-indigo-600 p-6 my-6">
           <h4 className="font-bold text-gray-900 mb-4">
-            Applicable Trade Regulations & Standards:
+            {t("international.regulationsTitle")}
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <h5 className="font-semibold text-gray-900 mb-3">
-                National Regulations
+                {t("international.nationalTitle")}
               </h5>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-start gap-3">
                   <span className="text-indigo-600 font-bold">•</span>
-                  <span>
-                    <strong>Bangladesh Import Policy Order:</strong> Governing
-                    all import activities and product categories
-                  </span>
+                  <span>{t("international.nationalItem1")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-indigo-600 font-bold">•</span>
-                  <span>
-                    <strong>Bangladesh Export Policy:</strong> Framework for
-                    export operations and incentives
-                  </span>
+                  <span>{t("international.nationalItem2")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-indigo-600 font-bold">•</span>
-                  <span>
-                    <strong>Customs Act:</strong> Regulations for customs
-                    procedures and clearance
-                  </span>
+                  <span>{t("international.nationalItem3")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-indigo-600 font-bold">•</span>
-                  <span>
-                    <strong>VAT & Supplementary Duty Act:</strong> Tax
-                    obligations on imported and exported goods
-                  </span>
+                  <span>{t("international.nationalItem4")}</span>
                 </li>
               </ul>
             </div>
 
             <div>
               <h5 className="font-semibold text-gray-900 mb-3">
-                International Standards
+                {t("international.standardsTitle")}
               </h5>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-start gap-3">
                   <span className="text-indigo-600 font-bold">•</span>
-                  <span>
-                    <strong>Incoterms:</strong> International commercial terms
-                    for shipment and delivery
-                  </span>
+                  <span>{t("international.standardsItem1")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-indigo-600 font-bold">•</span>
-                  <span>
-                    <strong>International shipping standards:</strong>{" "}
-                    Compliance with maritime and air cargo regulations
-                  </span>
+                  <span>{t("international.standardsItem2")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-indigo-600 font-bold">•</span>
-                  <span>
-                    <strong>Product safety standards:</strong> CE marking, ISO
-                    certifications where applicable
-                  </span>
+                  <span>{t("international.standardsItem3")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-indigo-600 font-bold">•</span>
-                  <span>
-                    <strong>Destination country requirements:</strong>{" "}
-                    Compliance with import regulations of target markets
-                  </span>
+                  <span>{t("international.standardsItem4")}</span>
                 </li>
               </ul>
             </div>
@@ -999,132 +825,115 @@ export default function DocumentationCompliancePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
           <div className="bg-white border-2 border-indigo-600 rounded-lg p-6">
             <h4 className="font-bold text-gray-900 mb-3 text-center">
-              Policy Compliance
+              {t("international.policyTitle")}
             </h4>
             <p className="text-sm text-gray-700 text-center mb-4">
-              Full adherence to Bangladesh import and export policies
+              {t("international.policyDesc")}
             </p>
             <ul className="space-y-2 text-xs text-gray-600">
-              <li>• Approved product categories</li>
-              <li>• Restricted item compliance</li>
-              <li>• Documentation requirements</li>
-              <li>• Licensing obligations</li>
+              <li>• {t("international.policyItem1")}</li>
+              <li>• {t("international.policyItem2")}</li>
+              <li>• {t("international.policyItem3")}</li>
+              <li>• {t("international.policyItem4")}</li>
             </ul>
           </div>
 
           <div className="bg-white border-2 border-indigo-600 rounded-lg p-6">
             <h4 className="font-bold text-gray-900 mb-3 text-center">
-              Customs Compliance
+              {t("international.customsTitle")}
             </h4>
             <p className="text-sm text-gray-700 text-center mb-4">
-              Complete adherence to customs procedures and regulations
+              {t("international.customsDesc")}
             </p>
             <ul className="space-y-2 text-xs text-gray-600">
-              <li>• Accurate HS code classification</li>
-              <li>• Proper valuation methods</li>
-              <li>• Tariff compliance</li>
-              <li>• Origin certification</li>
+              <li>• {t("international.customsItem1")}</li>
+              <li>• {t("international.customsItem2")}</li>
+              <li>• {t("international.customsItem3")}</li>
+              <li>• {t("international.customsItem4")}</li>
             </ul>
           </div>
 
           <div className="bg-white border-2 border-indigo-600 rounded-lg p-6">
             <h4 className="font-bold text-gray-900 mb-3 text-center">
-              International Standards
+              {t("international.intlStandardsTitle")}
             </h4>
             <p className="text-sm text-gray-700 text-center mb-4">
-              Compliance with global shipping and logistics standards
+              {t("international.intlStandardsDesc")}
             </p>
             <ul className="space-y-2 text-xs text-gray-600">
-              <li>• Incoterms 2020</li>
-              <li>• IATA/IMO regulations</li>
-              <li>• Product certifications</li>
-              <li>• Quality standards</li>
+              <li>• {t("international.intlStandardsItem1")}</li>
+              <li>• {t("international.intlStandardsItem2")}</li>
+              <li>• {t("international.intlStandardsItem3")}</li>
+              <li>• {t("international.intlStandardsItem4")}</li>
             </ul>
           </div>
         </div>
 
         <div className="bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg p-6 text-white text-center">
-          <p className="text-xl font-bold">Comprehensive Trade Compliance</p>
+          <p className="text-xl font-bold">
+            {t("international.highlightTitle")}
+          </p>
           <p className="mt-2 text-white/90">
-            Our operations meet all national and international trade
-            requirements for seamless global commerce.
+            {t("international.highlightDesc")}
           </p>
         </div>
       </DocSection>
 
       {/* Section 8: Internal Control & Record Management */}
-      <DocSection id="controls" title="Internal Control & Record Management">
+      <DocSection id="controls" title={t("sections.controls")}>
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <Database className="w-6 h-6 text-cyan-600" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              Structured Control System for Accountability
+              {t("controls.cardTitle")}
             </h3>
-            <p className="text-gray-600">
-              Comprehensive internal controls ensuring audit readiness and
-              regulatory compliance.
-            </p>
+            <p className="text-gray-600">{t("controls.cardDesc")}</p>
           </div>
         </div>
 
-        <p>
-          To ensure accountability and audit readiness, Zero International
-          Limited maintains a structured internal control system. Our record
-          management practices ensure that all documentation is secure,
-          accessible, and compliant with regulatory requirements.
-        </p>
+        <p>{t("controls.intro")}</p>
 
         {/* Image */}
         <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl my-8">
           <Image
             src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=1200&q=80"
-            alt="Internal controls and record management"
+            alt={t("controls.imageAlt")}
             fill
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">Structured Control Systems</p>
+            <p className="text-sm font-semibold">
+              {t("controls.imageCaption")}
+            </p>
           </div>
         </div>
 
         <div className="bg-cyan-50 border-l-4 border-cyan-600 p-6 my-6">
-          <h4 className="font-bold text-gray-900 mb-4">Key Practices</h4>
+          <h4 className="font-bold text-gray-900 mb-4">
+            {t("controls.practicesTitle")}
+          </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <ul className="space-y-3 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <span className="text-cyan-600 font-bold">•</span>
-                <span>
-                  <strong>Secure Digital and Physical Document Storage:</strong>{" "}
-                  Dual storage system ensuring document safety and accessibility
-                </span>
+                <span>{t("controls.practice1")}</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-cyan-600 font-bold">•</span>
-                <span>
-                  <strong>Controlled Access to Sensitive Records:</strong>{" "}
-                  Role-based access control protecting confidential information
-                </span>
+                <span>{t("controls.practice2")}</span>
               </li>
             </ul>
             <ul className="space-y-3 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <span className="text-cyan-600 font-bold">•</span>
-                <span>
-                  <strong>
-                    Regular Internal Reviews and Compliance Checks:
-                  </strong>{" "}
-                  Periodic audits ensuring ongoing compliance
-                </span>
+                <span>{t("controls.practice3")}</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-cyan-600 font-bold">•</span>
-                <span>
-                  <strong>Ongoing Regulatory Monitoring:</strong> Continuous
-                  tracking of regulatory changes and updates
-                </span>
+                <span>{t("controls.practice4")}</span>
               </li>
             </ul>
           </div>
@@ -1133,134 +942,120 @@ export default function DocumentationCompliancePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
           <div className="bg-white border-2 border-cyan-600 rounded-lg p-6">
             <h4 className="font-bold text-gray-900 mb-3">
-              Document Management System
+              {t("controls.docManagementTitle")}
             </h4>
             <ul className="space-y-2 text-sm text-gray-700">
               <li className="flex items-start gap-2">
                 <span className="text-cyan-600">✓</span>
-                <span>Digital archiving with backup systems</span>
+                <span>{t("controls.docManagement1")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-cyan-600">✓</span>
-                <span>Physical document storage with security measures</span>
+                <span>{t("controls.docManagement2")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-cyan-600">✓</span>
-                <span>Document indexing and retrieval systems</span>
+                <span>{t("controls.docManagement3")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-cyan-600">✓</span>
-                <span>Retention policy compliance</span>
+                <span>{t("controls.docManagement4")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-cyan-600">✓</span>
-                <span>Audit trail maintenance</span>
+                <span>{t("controls.docManagement5")}</span>
               </li>
             </ul>
           </div>
 
           <div className="bg-white border-2 border-cyan-600 rounded-lg p-6">
             <h4 className="font-bold text-gray-900 mb-3">
-              Quality Control Measures
+              {t("controls.qualityControlTitle")}
             </h4>
             <ul className="space-y-2 text-sm text-gray-700">
               <li className="flex items-start gap-2">
                 <span className="text-cyan-600">✓</span>
-                <span>Regular compliance audits and reviews</span>
+                <span>{t("controls.qualityControl1")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-cyan-600">✓</span>
-                <span>Staff training on compliance procedures</span>
+                <span>{t("controls.qualityControl2")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-cyan-600">✓</span>
-                <span>
-                  Process documentation and standard operating procedures
-                </span>
+                <span>{t("controls.qualityControl3")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-cyan-600">✓</span>
-                <span>Corrective action implementation</span>
+                <span>{t("controls.qualityControl4")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-cyan-600">✓</span>
-                <span>Continuous improvement initiatives</span>
+                <span>{t("controls.qualityControl5")}</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg p-6 text-white text-center">
-          <p className="text-xl font-bold">Audit-Ready at All Times</p>
-          <p className="mt-2 text-white/90">
-            Our structured internal control system ensures accountability,
-            transparency, and compliance readiness.
-          </p>
+          <p className="text-xl font-bold">{t("controls.highlightTitle")}</p>
+          <p className="mt-2 text-white/90">{t("controls.highlightDesc")}</p>
         </div>
       </DocSection>
 
       {/* Section 9: Member of Association */}
-      <DocSection id="membership" title="Member of Association">
+      <DocSection id="membership" title={t("sections.membership")}>
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <Award className="w-6 h-6 text-amber-600" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              Dhaka Chamber of Commerce & Industry (DCCI)
+              {t("membership.cardTitle")}
             </h3>
-            <p className="text-gray-600">
-              Proud member of Bangladesh's premier business association
-            </p>
+            <p className="text-gray-600">{t("membership.cardDesc")}</p>
           </div>
         </div>
 
-        <p className="text-lg">
-          Zero International Limited is a proud member of the{" "}
-          <strong>Dhaka Chamber of Commerce & Industry (DCCI)</strong>, the
-          leading trade organization in Bangladesh. This membership demonstrates
-          our commitment to ethical business practices, industry standards, and
-          active participation in the business community.
-        </p>
+        <p className="text-lg">{t("membership.intro")}</p>
 
         {/* Image */}
         <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl my-8">
           <Image
             src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80"
-            alt="Chamber of Commerce membership"
+            alt={t("membership.imageAlt")}
             fill
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">Member of DCCI</p>
+            <p className="text-sm font-semibold">
+              {t("membership.imageCaption")}
+            </p>
           </div>
         </div>
 
         <div className="bg-amber-50 border-l-4 border-amber-600 p-6 my-6">
-          <h4 className="font-bold text-gray-900 mb-4">About DCCI</h4>
-          <p className="text-gray-700 mb-4">
-            The <strong>Dhaka Chamber of Commerce & Industry</strong> is the
-            largest and most influential chamber of commerce in Bangladesh,
-            representing the interests of the business community since 1958.
-            DCCI plays a vital role in:
-          </p>
+          <h4 className="font-bold text-gray-900 mb-4">
+            {t("membership.aboutTitle")}
+          </h4>
+          <p className="text-gray-700 mb-4">{t("membership.aboutDesc")}</p>
           <ul className="space-y-2 text-gray-700">
             <li className="flex items-start gap-3">
               <span className="text-amber-600 font-bold">•</span>
-              <span>Promoting trade and commerce in Bangladesh</span>
+              <span>{t("membership.aboutRole1")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-amber-600 font-bold">•</span>
-              <span>Facilitating business networking and partnerships</span>
+              <span>{t("membership.aboutRole2")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-amber-600 font-bold">•</span>
-              <span>Advocating for business-friendly policies</span>
+              <span>{t("membership.aboutRole3")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-amber-600 font-bold">•</span>
-              <span>Supporting international trade development</span>
+              <span>{t("membership.aboutRole4")}</span>
             </li>
           </ul>
         </div>
@@ -1268,218 +1063,167 @@ export default function DocumentationCompliancePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
           <div className="bg-white border-2 border-amber-600 rounded-lg p-6">
             <h4 className="font-bold text-gray-900 mb-4">
-              Membership Benefits
+              {t("membership.benefitsTitle")}
             </h4>
             <ul className="space-y-3 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                <span>
-                  <strong>Enhanced Credibility:</strong> Recognition as a
-                  verified and trusted business entity
-                </span>
+                <span>{t("membership.benefit1")}</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                <span>
-                  <strong>Networking Opportunities:</strong> Access to business
-                  forums, seminars, and trade fairs
-                </span>
+                <span>{t("membership.benefit2")}</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                <span>
-                  <strong>Trade Support:</strong> Assistance with certificates
-                  of origin and trade documentation
-                </span>
+                <span>{t("membership.benefit3")}</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                <span>
-                  <strong>Market Intelligence:</strong> Access to business
-                  research and market information
-                </span>
+                <span>{t("membership.benefit4")}</span>
               </li>
             </ul>
           </div>
 
           <div className="bg-white border-2 border-amber-600 rounded-lg p-6">
             <h4 className="font-bold text-gray-900 mb-4">
-              Our Commitment as a Member
+              {t("membership.commitmentTitle")}
             </h4>
             <ul className="space-y-3 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                <span>
-                  <strong>Ethical Business Practices:</strong> Upholding the
-                  highest standards of business ethics
-                </span>
+                <span>{t("membership.commitment1")}</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                <span>
-                  <strong>Industry Standards:</strong> Adhering to industry best
-                  practices and guidelines
-                </span>
+                <span>{t("membership.commitment2")}</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                <span>
-                  <strong>Community Contribution:</strong> Contributing to the
-                  development of Bangladesh's business sector
-                </span>
+                <span>{t("membership.commitment3")}</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                <span>
-                  <strong>Trade Advocacy:</strong> Supporting initiatives that
-                  promote international trade
-                </span>
+                <span>{t("membership.commitment4")}</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="bg-gradient-to-r from-amber-600 to-amber-700 rounded-lg p-6 text-white text-center">
-          <p className="text-xl font-bold">Recognized Business Partner</p>
-          <p className="mt-2 text-white/90">
-            Our DCCI membership validates our position as a credible and
-            trustworthy international trading company in Bangladesh.
-          </p>
+          <p className="text-xl font-bold">{t("membership.highlightTitle")}</p>
+          <p className="mt-2 text-white/90">{t("membership.highlightDesc")}</p>
         </div>
       </DocSection>
 
       {/* Section 10: Compliance Commitment */}
-      <DocSection id="commitment" title="Compliance Commitment">
+      <DocSection id="commitment" title={t("sections.commitment")}>
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <CheckCircle2 className="w-6 h-6 text-green-600" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              Our Commitment to Excellence
+              {t("commitment.cardTitle")}
             </h3>
-            <p className="text-gray-600">
-              Maintaining the highest standards of legal compliance, financial
-              transparency, and ethical trade practices.
-            </p>
+            <p className="text-gray-600">{t("commitment.cardDesc")}</p>
           </div>
         </div>
 
-        <p className="text-lg">
-          Zero International Limited is committed to maintaining the highest
-          standards of legal compliance, financial transparency, and ethical
-          trade practices across all operations. Our compliance framework
-          ensures reliability, trust, and long-term partnerships with clients,
-          suppliers, and regulatory authorities.
-        </p>
+        <p className="text-lg">{t("commitment.intro")}</p>
 
         {/* Image */}
         <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl my-8">
           <Image
             src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&q=80"
-            alt="Compliance commitment and business integrity"
+            alt={t("commitment.imageAlt")}
             fill
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="text-sm font-semibold">Commitment to Excellence</p>
+            <p className="text-sm font-semibold">
+              {t("commitment.imageCaption")}
+            </p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
           <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6 text-center">
             <div className="text-4xl mb-4">🎯</div>
-            <h4 className="font-bold text-gray-900 mb-2">Reliability</h4>
+            <h4 className="font-bold text-gray-900 mb-2">
+              {t("commitment.value1Title")}
+            </h4>
             <p className="text-sm text-gray-600">
-              Consistent compliance and dependable operations across all
-              business activities
+              {t("commitment.value1Desc")}
             </p>
           </div>
 
           <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6 text-center">
             <div className="text-4xl mb-4">🤝</div>
-            <h4 className="font-bold text-gray-900 mb-2">Trust</h4>
+            <h4 className="font-bold text-gray-900 mb-2">
+              {t("commitment.value2Title")}
+            </h4>
             <p className="text-sm text-gray-600">
-              Building lasting partnerships through transparency and ethical
-              practices
+              {t("commitment.value2Desc")}
             </p>
           </div>
 
           <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6 text-center">
             <div className="text-4xl mb-4">🌟</div>
-            <h4 className="font-bold text-gray-900 mb-2">Excellence</h4>
+            <h4 className="font-bold text-gray-900 mb-2">
+              {t("commitment.value3Title")}
+            </h4>
             <p className="text-sm text-gray-600">
-              Exceeding regulatory requirements and industry standards
+              {t("commitment.value3Desc")}
             </p>
           </div>
         </div>
 
         <div className="bg-green-50 border-l-4 border-green-600 p-6 my-6">
-          <h4 className="font-bold text-gray-900 mb-4">Our Core Values</h4>
+          <h4 className="font-bold text-gray-900 mb-4">
+            {t("commitment.coreValuesTitle")}
+          </h4>
           <ul className="space-y-3 text-gray-700">
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✓</span>
-              <span>
-                <strong>Legal Compliance:</strong> Full adherence to all
-                applicable laws and regulations
-              </span>
+              <span>{t("commitment.coreValue1")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✓</span>
-              <span>
-                <strong>Financial Transparency:</strong> Clear and accurate
-                financial reporting and documentation
-              </span>
+              <span>{t("commitment.coreValue2")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✓</span>
-              <span>
-                <strong>Ethical Trade Practices:</strong> Responsible and fair
-                business conduct in all transactions
-              </span>
+              <span>{t("commitment.coreValue3")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✓</span>
-              <span>
-                <strong>Continuous Improvement:</strong> Ongoing enhancement of
-                compliance systems and processes
-              </span>
+              <span>{t("commitment.coreValue4")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl">✓</span>
-              <span>
-                <strong>Stakeholder Partnership:</strong> Building trust with
-                clients, suppliers, and regulators
-              </span>
+              <span>{t("commitment.coreValue5")}</span>
             </li>
           </ul>
         </div>
 
         <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-lg p-6 text-white text-center mb-8">
-          <p className="text-xl font-bold">Compliance is Our Foundation</p>
-          <p className="mt-2 text-white/90">
-            Our unwavering commitment to compliance ensures sustainable,
-            transparent, and trustworthy international trade operations.
-          </p>
+          <p className="text-xl font-bold">{t("commitment.highlightTitle")}</p>
+          <p className="mt-2 text-white/90">{t("commitment.highlightDesc")}</p>
         </div>
 
         {/* Call-to-Action box */}
         <div className="bg-gradient-to-r from-[#0a4a9e] to-[#05306b] rounded-lg p-8 text-white">
           <h4 className="text-2xl font-bold mb-4">
-            Experience Compliant and Transparent Trade
+            {t("commitment.ctaTitle")}
           </h4>
-          <p className="mb-6 text-white/90">
-            Partner with Zero International Limited and benefit from our
-            comprehensive documentation and compliance framework. Every
-            transaction is backed by proper legal authorization, transparent
-            procedures, and ethical business practices.
-          </p>
+          <p className="mb-6 text-white/90">{t("commitment.ctaDesc")}</p>
           <a
             href="/contact"
             className="inline-block bg-white text-[#0a4a9e] font-bold px-8 py-3 rounded-full hover:bg-white/90 transition-colors duration-200"
           >
-            Connect with Us Today
+            {t("commitment.ctaButton")}
           </a>
         </div>
       </DocSection>

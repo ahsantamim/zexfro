@@ -35,15 +35,6 @@ export async function generateMetadata({
   };
 }
 
-const sections = [
-  { id: "overview", title: "Logistics Support Overview" },
-  { id: "freight", title: "International Freight Management" },
-  { id: "transportation", title: "Multi-Modal Transportation Services" },
-  { id: "customs", title: "Customs Clearance & Documentation" },
-  { id: "warehousing", title: "Warehousing & Distribution" },
-  { id: "tracking", title: "Real-Time Tracking & Monitoring" },
-];
-
 export default async function LogisticsSupplyChainPage({
   params,
 }: {
@@ -52,6 +43,15 @@ export default async function LogisticsSupplyChainPage({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "logisticsSupport" });
 
+  const sections = [
+    { id: "overview", title: t("sections.overview") },
+    { id: "freight", title: t("sections.freight") },
+    { id: "transportation", title: t("sections.transportation") },
+    { id: "customs", title: t("sections.customs") },
+    { id: "warehousing", title: t("sections.warehousing") },
+    { id: "tracking", title: t("sections.tracking") },
+  ];
+
   return (
     <DocLayout
       sections={sections}
@@ -59,7 +59,7 @@ export default async function LogisticsSupplyChainPage({
       pageDescription={t("pageDescription")}
     >
       {/* Section 1: Overview */}
-      <DocSection id="overview" title="Logistics Support Overview">
+      <DocSection id="overview" title={t("sections.overview")}>
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <Globe className="w-6 h-6 text-[#0a4a9e]" />
@@ -171,7 +171,7 @@ export default async function LogisticsSupplyChainPage({
       </DocSection>
 
       {/* Section 2: International Freight Management */}
-      <DocSection id="freight" title="International Freight Management">
+      <DocSection id="freight" title={t("sections.freight")}>
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <Package className="w-6 h-6 text-green-600" />
@@ -306,10 +306,7 @@ export default async function LogisticsSupplyChainPage({
       </DocSection>
 
       {/* Section 3: Multi-Modal Transportation */}
-      <DocSection
-        id="transportation"
-        title="Multi-Modal Transportation Services"
-      >
+      <DocSection id="transportation" title={t("sections.transportation")}>
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <Globe className="w-6 h-6 text-purple-600" />
@@ -452,7 +449,7 @@ export default async function LogisticsSupplyChainPage({
       </DocSection>
 
       {/* Section 4: Customs Clearance */}
-      <DocSection id="customs" title="Customs Clearance & Documentation">
+      <DocSection id="customs" title={t("sections.customs")}>
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <FileCheck className="w-6 h-6 text-yellow-600" />
@@ -601,7 +598,7 @@ export default async function LogisticsSupplyChainPage({
       </DocSection>
 
       {/* Section 5: Warehousing */}
-      <DocSection id="warehousing" title="Warehousing & Distribution">
+      <DocSection id="warehousing" title={t("sections.warehousing")}>
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <Package className="w-6 h-6 text-orange-600" />
@@ -716,7 +713,7 @@ export default async function LogisticsSupplyChainPage({
       </DocSection>
 
       {/* Section 6: Tracking */}
-      <DocSection id="tracking" title="Real-Time Tracking & Monitoring">
+      <DocSection id="tracking" title={t("sections.tracking")}>
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
             <MonitorDot className="w-6 h-6 text-teal-600" />

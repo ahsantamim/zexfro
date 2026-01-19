@@ -174,6 +174,14 @@
     "metaDescription": "Zexfro proporciona gestión integral de logística y cadena de suministro.",
     "pageTitle": "Logística y Cadena de Suministro",
     "pageDescription": "Soluciones integrales de gestión de cadena de suministro diseñadas para optimizar sus operaciones comerciales globales con eficiencia, confiabilidad y total transparencia.",
+    "sections": {
+      "overview": "Descripción General del Soporte Logístico",
+      "freight": "Gestión de Fletes Internacionales",
+      "transportation": "Servicios de Transporte Multimodal",
+      "customs": "Despacho de Aduanas y Documentación",
+      "warehousing": "Almacenamiento y Distribución",
+      "tracking": "Seguimiento y Monitoreo en Tiempo Real"
+    },
     "overview": {
       "title": "Soluciones Completas de Cadena de Suministro",
       "subtitle": "Desde el origen hasta el destino, gestionamos cada aspecto de sus operaciones logísticas para garantizar un comercio global fluido, eficiente y rentable.",
@@ -448,15 +456,602 @@
   },
   "complianceStandards": {
     "metaTitle": "Cumplimiento y Estándares - Zexfro | Excelencia en Comercio Internacional",
-    "metaDescription": "Zexfro International Limited mantiene un estricto cumplimiento de las leyes internacionales, estándares de abastecimiento ético y puntos de referencia de calidad para operaciones comerciales globales confiables.",
+    "metaDescription": "Zexfro International Limited mantiene un estricto cumplimiento de las leyes internacionales, estándares de aprovisionamiento ético y puntos de referencia de calidad para operaciones comerciales globales confiables.",
     "pageTitle": "Cumplimiento y Estándares",
-    "pageDescription": "En Zexfro International Limited, reconocemos que la confianza es la moneda principal en el comercio global. Operar en el sector de exportación e importación requiere más que solo logística; requiere un compromiso rígido con las leyes internacionales, el abastecimiento ético y los puntos de referencia de calidad."
+    "pageDescription": "En Zexfro International Limited, reconocemos que la confianza es la moneda principal en el comercio global. Operar en el sector de exportación e importación requiere más que solo logística; requiere un compromiso rígido con las leyes internacionales, el aprovisionamiento ético y los puntos de referencia de calidad.",
+    "sections": {
+      "overview": "Visión General de Cumplimiento y Estándares",
+      "regulatory": "Cumplimiento Regulatorio y Comercial",
+      "quality": "Aseguramiento de Calidad y Estándares",
+      "ethical": "Aprovisionamiento Ético y Cumplimiento Social",
+      "environmental": "Estándares Ambientales y de Sostenibilidad",
+      "pillars": "Nuestros Pilares de Cumplimiento"
+    },
+    "overview": {
+      "cardTitle": "La Confianza como Base del Comercio Global",
+      "cardDesc": "Compromiso rígido con las leyes internacionales, el aprovisionamiento ético y los puntos de referencia de calidad en cada transacción.",
+      "intro1": "En Zexfro International Limited, reconocemos que la confianza es la moneda principal en el comercio global. Operar en el sector de exportación e importación requiere más que solo logística; requiere un compromiso rígido con las leyes internacionales, el aprovisionamiento ético y los puntos de referencia de calidad.",
+      "imageAlt": "Cumplimiento y estándares en el comercio internacional",
+      "imageCaption": "Compromiso con la Excelencia y la Integridad",
+      "intro2": "Esta descripción general describe el marco de Cumplimiento y Estándares que gobierna nuestras operaciones, asegurando que cada envío, asociación y transacción cumpla con los más altos estándares internacionales de calidad, legalidad y responsabilidad ética.",
+      "frameworkTitle": "Nuestro Marco de Cumplimiento:",
+      "framework1": "Cumplimiento Regulatorio: Adhesión estricta a las leyes comerciales locales e internacionales",
+      "framework2": "Estándares de Calidad: Procesos alineados con ISO y certificaciones específicas de productos",
+      "framework3": "Aprovisionamiento Ético: Prácticas responsables de cadena de suministro y protección de derechos laborales",
+      "framework4": "Responsabilidad Ambiental: Prácticas sostenibles y reducción de huella de carbono",
+      "bannerTitle": "El Cumplimiento No es Opcional—Es Esencial",
+      "bannerDesc": "Nuestro marco integral asegura que cada aspecto de nuestras operaciones cumple o supera los estándares internacionales."
+    },
+    "regulatory": {
+      "cardTitle": "Adhesión a las Regulaciones Comerciales Internacionales",
+      "cardDesc": "Asegurando transacciones transfronterizas sin problemas mediante el estricto cumplimiento de las leyes comerciales locales e internacionales.",
+      "intro": "Para garantizar transacciones transfronterizas sin problemas, nos adherimos estrictamente tanto a las regulaciones comerciales locales como internacionales. Nuestro marco de cumplimiento regulatorio es integral, cubriendo todos los aspectos del comercio internacional desde la documentación hasta la evaluación de socios.",
+      "imageAlt": "Cumplimiento regulatorio y documentación comercial",
+      "imageCaption": "Cumplimiento Regulatorio Riguroso",
+      "customs": {
+        "title": "Aduanas y Documentación",
+        "desc": "Mantenemos un 100% de precisión en la documentación para prevenir retrasos, discrepancias y problemas legales.",
+        "item1": "Codificación del Sistema Armonizado (HS)",
+        "item2": "Etiquetado de país de origen",
+        "item3": "Métodos de valoración precisos",
+        "item4": "Documentación comercial completa"
+      },
+      "sanctions": {
+        "title": "Filtrado de Sanciones",
+        "desc": "Cada socio, proveedor e institución financiera es filtrado contra listas globales.",
+        "item1": "Verificación de listas de \"Partes Denegadas\"",
+        "item2": "Filtrado de entidades sancionadas",
+        "item3": "Actualizaciones de monitoreo continuo",
+        "item4": "Gestión de base de datos de cumplimiento"
+      },
+      "anticorruption": {
+        "title": "Anti-Soborno y Corrupción (ABC)",
+        "desc": "Política de tolerancia cero con respecto a la corrupción y el soborno en todas sus formas.",
+        "item1": "Cumplimiento de FCPA",
+        "item2": "Leyes anticorrupción locales",
+        "item3": "Prácticas comerciales éticas",
+        "item4": "Capacitación regular del personal"
+      },
+      "fcpaTitle": "Cumplimiento de la Ley de Prácticas Corruptas en el Extranjero (FCPA):",
+      "fcpaDesc": "Operamos bajo una política de tolerancia cero con respecto a la Ley de Prácticas Corruptas en el Extranjero (FCPA) y las leyes anticorrupción locales. Este compromiso incluye:",
+      "fcpaItem1": "Prohibición de pagos, regalos o cualquier cosa de valor a funcionarios extranjeros para obtener o retener negocios",
+      "fcpaItem2": "Libros y registros precisos que reflejen todas las transacciones comerciales",
+      "fcpaItem3": "Controles internos para asegurar el cumplimiento de las leyes anticorrupción",
+      "fcpaItem4": "Capacitación regular para empleados sobre FCPA y regulaciones anticorrupción",
+      "benefitsTitle": "Beneficios del Cumplimiento:",
+      "benefit1": "Cero violaciones legales o penalizaciones",
+      "benefit2": "Despacho aduanero fluido y retrasos reducidos",
+      "benefit3": "Protección contra entidades sancionadas",
+      "benefit4": "Reputación y confiabilidad mejoradas",
+      "benefit5": "Operaciones comerciales éticas",
+      "bannerTitle": "100% de Cumplimiento Regulatorio, 0% de Compromiso",
+      "bannerDesc": "Nuestra estricta adhesión a las regulaciones comerciales internacionales asegura operaciones comerciales legales, éticas y sin problemas."
+    },
+    "quality": {
+      "cardTitle": "La Calidad como Prerrequisito, No como Meta",
+      "cardDesc": "Cada envío que sale o entra en nuestros almacenes cumple con los más altos estándares de calidad.",
+      "intro": "La calidad no es solo una meta; es un prerrequisito para cada envío que sale o entra en nuestros almacenes. Mantenemos procesos rigurosos de aseguramiento de calidad alineados con estándares internacionales para garantizar una excelencia consistente en cada transacción.",
+      "imageAlt": "Aseguramiento de calidad y certificación ISO",
+      "imageCaption": "Gestión de Calidad Alineada con ISO",
+      "isoTitle": "Certificación ISO:",
+      "isoDesc": "Alineamos nuestros procesos con ISO 9001:2015 (Sistemas de Gestión de Calidad) para garantizar consistencia en la prestación de servicios. Este estándar internacional nos ayuda a:",
+      "isoItem1": "Demostrar nuestra capacidad para proporcionar consistentemente productos y servicios que cumplan con los requisitos del cliente y regulatorios",
+      "isoItem2": "Mejorar la satisfacción del cliente mediante la aplicación efectiva del sistema",
+      "isoItem3": "Abordar riesgos y oportunidades asociados con nuestro contexto y objetivos",
+      "isoItem4": "Mejorar continuamente nuestros procesos y desempeño",
+      "productTitle": "Estándares Específicos de Productos",
+      "productDesc": "Dependiendo de la carga (por ejemplo, textiles, electrónica o perecederos), aseguramos el cumplimiento con los estándares internacionales relevantes que garantizan seguridad, calidad y aceptación del mercado.",
+      "ce": {
+        "title": "Marcado CE",
+        "desc": "Estándares de seguridad europeos para productos vendidos en la UE",
+        "item1": "Requisitos de salud y seguridad",
+        "item2": "Protección ambiental",
+        "item3": "Estándares de protección al consumidor",
+        "item4": "Obligatorio para acceso al mercado de la UE"
+      },
+      "astm": {
+        "title": "ASTM/ANSI",
+        "desc": "Estándares técnicos americanos para calidad y rendimiento",
+        "item1": "Especificaciones de materiales",
+        "item2": "Métodos de prueba de rendimiento",
+        "item3": "Requisitos de seguridad",
+        "item4": "Clasificación de productos"
+      },
+      "oeko": {
+        "title": "OEKO-TEX",
+        "desc": "Certificación de exportaciones textiles sostenibles y seguras",
+        "item1": "Prueba de sustancias nocivas",
+        "item2": "Certificación amigable con la piel",
+        "item3": "Sostenibilidad ambiental",
+        "item4": "Confianza del consumidor"
+      },
+      "performanceTitle": "Objetivo de Rendimiento de Calidad",
+      "performanceRate": "99.9%",
+      "performanceLabel": "Tasa de Envíos Sin Defectos",
+      "performanceDesc": "Nuestro compromiso con la excelencia en inspección y pruebas",
+      "bannerTitle": "Aseguramiento de Calidad en Cada Envío",
+      "bannerDesc": "Los procesos alineados con ISO y las certificaciones específicas de productos garantizan una excelencia consistente y la satisfacción del cliente."
+    },
+    "ethical": {
+      "cardTitle": "Responsabilidad Social a lo Largo de la Cadena de Suministro",
+      "cardDesc": "Asegurando prácticas laborales justas, condiciones de trabajo seguras y aprovisionamiento ético en todas nuestras operaciones.",
+      "intro": "El cumplimiento social y el aprovisionamiento ético son integrales a nuestro modelo de negocio. Aseguramos que cada socio en nuestra cadena de suministro defienda prácticas laborales justas, condiciones de trabajo seguras y estándares de aprovisionamiento ético.",
+      "imageAlt": "Aprovisionamiento ético y prácticas laborales justas",
+      "imageCaption": "Compromiso con el Comercio Ético",
+      "laborTitle": "Protección de Derechos Laborales",
+      "laborItem1": "Sin trabajo infantil o trabajo forzado",
+      "laborItem2": "Salarios justos y horas de trabajo",
+      "laborItem3": "Condiciones de trabajo seguras y saludables",
+      "laborItem4": "Libertad de asociación y negociación colectiva",
+      "laborItem5": "No discriminación e igualdad de oportunidades",
+      "laborItem6": "Mecanismos de quejas y voz de los trabajadores",
+      "auditTitle": "Auditorías de Cumplimiento Social",
+      "auditItem1": "Auditorías regulares de fábricas por terceros",
+      "auditItem2": "Verificación de prácticas laborales",
+      "auditItem3": "Inspecciones de condiciones de trabajo",
+      "auditItem4": "Implementación de acciones correctivas",
+      "auditItem5": "Programas de monitoreo continuo",
+      "transparencyTitle": "Transparencia de la Cadena de Suministro",
+      "transparencyItem1": "Divulgación completa de proveedores",
+      "transparencyItem2": "Sistemas de trazabilidad",
+      "transparencyItem3": "Protocolos de evaluación de riesgos",
+      "transparencyItem4": "Compromiso con las partes interesadas",
+      "transparencyItem5": "Informes públicos y rendición de cuentas",
+      "bannerTitle": "El Comercio Ético No es Negociable",
+      "bannerDesc": "Aseguramos que cada eslabón en nuestra cadena de suministro opere con integridad, equidad y respeto por los derechos humanos."
+    },
+    "environmental": {
+      "cardTitle": "Operaciones Sostenibles para un Futuro Mejor",
+      "cardDesc": "Minimizando el impacto ambiental mediante aprovisionamiento responsable, emisiones reducidas y prácticas ecológicas.",
+      "intro": "La sostenibilidad ambiental es un compromiso central en Zexfro. Trabajamos activamente para minimizar nuestra huella de carbono, promover el aprovisionamiento sostenible y apoyar los principios de economía circular.",
+      "imageAlt": "Sostenibilidad ambiental y logística verde",
+      "imageCaption": "Prácticas de Comercio Verde",
+      "carbonTitle": "Reducción de Huella de Carbono",
+      "carbonItem1": "Rutas de envío optimizadas para reducir emisiones",
+      "carbonItem2": "Preferencia por transporte ecológico",
+      "carbonItem3": "Operaciones de almacén eficientes en energía",
+      "carbonItem4": "Programas de compensación de carbono",
+      "carbonItem5": "Evaluaciones regulares de impacto ambiental",
+      "sustainableTitle": "Aprovisionamiento Sostenible",
+      "sustainableItem1": "Asociación con proveedores certificados sostenibles",
+      "sustainableItem2": "Preferencia por materiales reciclados y reciclables",
+      "sustainableItem3": "Apoyo a productos locales y orgánicos",
+      "sustainableItem4": "Soluciones de embalaje biodegradables",
+      "sustainableItem5": "Gestión responsable de recursos",
+      "wasteTitle": "Reducción de Residuos y Economía Circular",
+      "wasteItem1": "Minimización de residuos de embalaje",
+      "wasteItem2": "Programas de reciclaje y reutilización",
+      "wasteItem3": "Consideraciones del ciclo de vida del producto",
+      "wasteItem4": "Sistemas de devolución y reacondicionamiento",
+      "wasteItem5": "Iniciativas de cero residuos",
+      "bannerTitle": "La Sostenibilidad es Nuestra Responsabilidad",
+      "bannerDesc": "Estamos comprometidos a proteger el planeta mientras facilitamos el comercio global mediante prácticas conscientes del medio ambiente."
+    },
+    "pillars": {
+      "cardTitle": "Cuatro Pilares de Nuestro Marco de Cumplimiento",
+      "cardDesc": "La adhesión regulatoria, la excelencia en calidad, la integridad ética y la responsabilidad ambiental guían cada decisión que tomamos.",
+      "intro": "Nuestro marco de cumplimiento se basa en cuatro pilares fundamentales que guían cada decisión, asociación y envío. Estos pilares aseguran que entregamos un valor excepcional mientras mantenemos los más altos estándares de integridad y responsabilidad.",
+      "imageAlt": "Cuatro pilares de excelencia en cumplimiento",
+      "imageCaption": "Fundamento de Confianza y Excelencia",
+      "pillar1": {
+        "title": "Cumplimiento Regulatorio",
+        "desc": "100% de adhesión a las leyes y regulaciones comerciales internacionales",
+        "item1": "Documentación aduanera completa",
+        "item2": "Protocolos de filtrado de sanciones",
+        "item3": "Medidas anticorrupción",
+        "item4": "Gestión de riesgos legales"
+      },
+      "pillar2": {
+        "title": "Estándares de Calidad",
+        "desc": "Procesos alineados con ISO que garantizan una excelencia consistente",
+        "item1": "Procedimientos de inspección rigurosos",
+        "item2": "Certificaciones específicas de productos",
+        "item3": "Sistemas de prevención de defectos",
+        "item4": "Mejora continua"
+      },
+      "pillar3": {
+        "title": "Integridad Ética",
+        "desc": "Prácticas laborales justas y responsabilidad social",
+        "item1": "Protección de derechos laborales",
+        "item2": "Transparencia de la cadena de suministro",
+        "item3": "Auditorías regulares de cumplimiento",
+        "item4": "Rendición de cuentas a las partes interesadas"
+      },
+      "pillar4": {
+        "title": "Gestión Ambiental",
+        "desc": "Prácticas sostenibles que protegen nuestro planeta",
+        "item1": "Reducción de huella de carbono",
+        "item2": "Aprovisionamiento sostenible",
+        "item3": "Minimización de residuos",
+        "item4": "Soluciones de logística verde"
+      },
+      "bannerTitle": "Cuatro Pilares, Un Compromiso: Excelencia",
+      "bannerDesc": "Nuestro marco de cumplimiento asegura que entregamos un valor excepcional mientras mantenemos los más altos estándares de integridad, calidad, ética y sostenibilidad.",
+      "ctaTitle": "Asóciese con una Empresa en la que Puede Confiar",
+      "ctaDesc": "Nuestro marco integral de cumplimiento asegura que cada aspecto de nuestras operaciones cumple o supera los estándares internacionales. Experimente la confianza que proviene de trabajar con un socio comercial verdaderamente conforme y responsable.",
+      "ctaButton": "Comience Su Viaje con Zexfro"
+    }
   },
   "documentationCompliance": {
     "metaTitle": "Documentación y Cumplimiento - Zero International Limited",
-    "metaDescription": "Zero International Limited opera bajo un marco integral de documentación y cumplimiento que garantiza la plena validez legal, operaciones comerciales transparentes y actividades comerciales internacionales fluidas.",
+    "metaDescription": "Zero International Limited opera bajo un marco integral de documentación y cumplimiento que garantiza plena validez legal, operaciones comerciales transparentes y actividades comerciales internacionales fluidas.",
     "pageTitle": "Documentación y Cumplimiento",
-    "pageDescription": "Zero International Limited opera bajo un marco integral de documentación y cumplimiento para garantizar la plena validez legal, operaciones comerciales transparentes y actividades comerciales internacionales fluidas. Todos los procesos siguen estrictamente los requisitos regulatorios de Bangladesh y los estándares de comercio internacional aplicables."
+    "pageDescription": "Zero International Limited opera bajo un marco integral de documentación y cumplimiento para garantizar plena validez legal, operaciones comerciales transparentes y actividades comerciales internacionales fluidas. Todos los procesos siguen estrictamente los requisitos regulatorios de Bangladesh y los estándares aplicables del comercio internacional.",
+    "sections": {
+      "overview": "Marco de Documentación y Cumplimiento",
+      "company": "Registro de Empresa y Fundamento Legal",
+      "tradeAuth": "Autorización de Importación y Exportación",
+      "customs": "Cumplimiento Aduanero y de Envíos",
+      "banking": "Cumplimiento Bancario y Financiero",
+      "tax": "Cumplimiento Fiscal y de IVA",
+      "international": "Cumplimiento Comercial Internacional",
+      "controls": "Control Interno y Gestión de Registros",
+      "membership": "Miembro de Asociación",
+      "commitment": "Compromiso de Cumplimiento"
+    },
+    "overview": {
+      "cardTitle": "Pleno Cumplimiento Legal y Transparencia",
+      "cardDesc": "Marco integral de documentación que garantiza validez legal y cumplimiento regulatorio en todas las operaciones.",
+      "intro": "Zero International Limited opera bajo un marco integral de documentación y cumplimiento para garantizar plena validez legal, operaciones comerciales transparentes y actividades comerciales internacionales fluidas. Todos los procesos siguen estrictamente los requisitos regulatorios de Bangladesh y los estándares aplicables del comercio internacional.",
+      "imageAlt": "Marco de documentación y cumplimiento",
+      "imageCaption": "Marco Integral de Cumplimiento",
+      "frameworkTitle": "Nuestro Marco de Documentación Incluye:",
+      "framework1": "Registro de Empresa y Fundamento Legal: Incorporación adecuada y documentos estatutarios",
+      "framework2": "Autorización de Importación y Exportación: Autorización completa para actividades comerciales internacionales",
+      "framework3": "Cumplimiento Aduanero y de Envíos: Declaraciones precisas y procedimientos transparentes",
+      "framework4": "Cumplimiento Bancario y Financiero: Transacciones autorizadas a través de bancos comerciales",
+      "framework5": "Cumplimiento Fiscal y de IVA: Cumplimiento total con las regulaciones fiscales nacionales",
+      "highlightTitle": "Documentación Completa para Operaciones Transparentes",
+      "highlightDesc": "Cada aspecto de nuestro negocio está debidamente documentado y cumple con todas las regulaciones aplicables.",
+      "bannerTitle": "Documentación Completa para Operaciones Transparentes",
+      "bannerDesc": "Cada aspecto de nuestro negocio está debidamente documentado y cumple con todas las regulaciones aplicables."
+    },
+    "company": {
+      "cardTitle": "Legalmente Registrada y Debidamente Incorporada",
+      "cardDesc": "Zero International Limited es una empresa legalmente registrada en Bangladesh con todos los documentos estatutarios debidamente mantenidos.",
+      "intro": "Zero International Limited es una empresa legalmente registrada en Bangladesh. Todos los documentos de incorporación y estatutarios se mantienen y actualizan adecuadamente para garantizar el cumplimiento regulatorio y la gobernanza corporativa.",
+      "imageAlt": "Registro de empresa y documentos legales",
+      "imageCaption": "Fundamento Legal Sólido",
+      "docsTitle": "Documentos Clave",
+      "doc1": "Certificado de Incorporación - Establecimiento de entidad legal",
+      "doc2": "Memorando y Estatutos de Asociación - Constitución de la empresa",
+      "doc3": "Licencia Comercial - Autorización para operaciones comerciales",
+      "doc4": "Certificado TIN - Número de identificación fiscal",
+      "authorityTitle": "Autoridad Regulatoria",
+      "authorityName": "Oficina del Registrador de Sociedades Anónimas y Empresas (RJSC)",
+      "authorityDesc": "RJSC es la autoridad regulatoria principal responsable de la incorporación, registro y regulación de empresas en Bangladesh.",
+      "governanceLabel": "Estándares de Gobernanza Corporativa",
+      "governanceDesc": "Mantiene adhesión a las disposiciones de la Ley de Empresas, garantiza presentaciones estatutarias regulares y realiza asambleas generales anuales según lo requerido.",
+      "licenseTitle": "Licencia Comercial y Permisos",
+      "licenseDesc": "Todas las licencias comerciales y permisos operativos están actualizados y debidamente mantenidos para garantizar el cumplimiento legal.",
+      "licenseAuthorityLabel": "Autoridad de Licencias",
+      "licenseAuthorityDesc": "La Corporación Municipal emite licencias comerciales para operaciones dentro de su jurisdicción.",
+      "highlightTitle": "Fundamento Legal Sólido",
+      "highlightDesc": "Debidamente incorporada y en pleno cumplimiento con todos los requisitos legales para operaciones comerciales.",
+      "keyDocsTitle": "Documentos Clave",
+      "keyDoc1": "Certificado de Incorporación - Establecimiento de entidad legal",
+      "keyDoc2": "Memorando y Estatutos de Asociación - Constitución de la empresa",
+      "keyDoc3": "Licencia Comercial - Autorización para operaciones comerciales",
+      "keyDoc4": "Certificado TIN - Número de identificación fiscal",
+      "keyDoc5": "Número de Identificación Empresarial (BIN) - Registro fiscal",
+      "regulatoryTitle": "Cumplimiento Regulatorio",
+      "regulatory1": "Cumplimiento total con las regulaciones de la Ley de Empresas",
+      "regulatory2": "Presentaciones estatutarias regulares con RJSC",
+      "regulatory3": "Licencias y permisos comerciales actualizados",
+      "regulatory4": "Estándares de gobernanza corporativa mantenidos",
+      "regulatory5": "Asambleas generales anuales realizadas según lo requerido",
+      "bannerTitle": "Fundamento Legal Sólido",
+      "bannerDesc": "Debidamente incorporada y en pleno cumplimiento con todos los requisitos legales para operaciones comerciales."
+    },
+    "tradeAuth": {
+      "cardTitle": "Totalmente Autorizada para Comercio Internacional",
+      "cardDesc": "Autorización completa de las autoridades pertinentes para operaciones de importación y exportación sin problemas.",
+      "intro": "Zero International Limited está completamente autorizada por el Controlador Jefe de Importaciones y Exportaciones (CCI&E) para realizar comercio internacional. Tenemos todos los registros y autorizaciones necesarios para operaciones legítimas de importación-exportación.",
+      "imageAlt": "Autorización y licencias de importación-exportación",
+      "imageCaption": "Autorización Comercial Completa",
+      "ircTitle": "Certificado de Registro de Importación (IRC)",
+      "ircDesc": "Autorización oficial del Controlador Jefe de Importaciones y Exportaciones para importar bienes a Bangladesh.",
+      "ircBenefit1": "Autorización legal para operaciones de importación",
+      "ircBenefit2": "Acceso a categorías de productos especificadas",
+      "ircBenefit3": "Renovación anual y verificación de cumplimiento",
+      "ircBenefit4": "Registrado en la base de datos de CCI&E",
+      "ercTitle": "Certificado de Registro de Exportación (ERC)",
+      "ercDesc": "Autorización oficial del Controlador Jefe de Importaciones y Exportaciones para exportar bienes desde Bangladesh.",
+      "ercBenefit1": "Autorización legal para operaciones de exportación",
+      "ercBenefit2": "Permiso para exportar varias categorías de productos",
+      "ercBenefit3": "Cumplimiento con regulaciones de promoción de exportaciones",
+      "ercBenefit4": "Actualizaciones de estado y renovaciones regulares",
+      "authorityTitle": "Autoridad Regulatoria",
+      "authorityName": "Oficina del Controlador Jefe de Importaciones y Exportaciones (CCI&E)",
+      "authorityDesc": "CCI&E es la autoridad principal responsable de regular y autorizar actividades de importación-exportación en Bangladesh bajo el Ministerio de Comercio.",
+      "authorityRole1": "Emite Certificados de Registro de Importación y Exportación",
+      "authorityRole2": "Monitorea el cumplimiento de las regulaciones comerciales",
+      "authorityRole3": "Mantiene la base de datos de importadores-exportadores",
+      "authorityRole4": "Hace cumplir las políticas de control de importación-exportación",
+      "highlightTitle": "Autorización Legal Completa para Comercio",
+      "highlightDesc": "Debidamente registrada con CCI&E para todas las actividades de importación-exportación con documentación completa.",
+      "irc1": "Número de Registro - Emitido por Controlador Jefe",
+      "irc2": "Autorización para importación de bienes especificados",
+      "irc3": "Renovación anual y verificación de cumplimiento",
+      "irc4": "Especificaciones de categoría de productos",
+      "erc1": "Número de Registro - Autorización para exportaciones",
+      "erc2": "Permiso para exportar varias categorías de productos",
+      "erc3": "Cumplimiento con regulaciones de promoción de exportaciones",
+      "erc4": "Actualizaciones de estado y renovaciones regulares",
+      "bannerTitle": "Autorización Legal Completa para Comercio",
+      "bannerDesc": "Debidamente registrada con CCI&E para todas las actividades de importación-exportación con documentación completa."
+    },
+    "customs": {
+      "cardTitle": "Cumplimiento Aduanero Preciso y Transparente",
+      "cardDesc": "Adhesión completa a las regulaciones aduaneras con procedimientos transparentes de declaración y documentación.",
+      "intro": "Zero International Limited garantiza el cumplimiento total con las regulaciones aduaneras de Bangladesh. Todos los envíos se procesan a través de canales autorizados con declaraciones precisas y documentación adecuada para garantizar un despacho aduanero fluido.",
+      "imageAlt": "Procedimientos de despacho aduanero y cumplimiento",
+      "imageCaption": "Operaciones Aduaneras Transparentes",
+      "docsTitle": "Documentos Aduaneros Esenciales",
+      "docsIntro": "Cada envío está acompañado de documentación completa y precisa para un procesamiento aduanero sin problemas:",
+      "docColumnTitle": "Documento",
+      "purposeColumnTitle": "Propósito",
+      "doc1Name": "Declaración de Entrada",
+      "doc1Purpose": "Declaración aduanera oficial para mercancías importadas",
+      "doc2Name": "Factura Comercial",
+      "doc2Purpose": "Información detallada de transacciones y precios",
+      "doc3Name": "Lista de Empaque",
+      "doc3Purpose": "Contenidos completos del envío y especificaciones",
+      "doc4Name": "Certificado de Origen",
+      "doc4Purpose": "Verificación del país de origen del producto",
+      "doc5Name": "Conocimiento de Embarque / Guía Aérea",
+      "doc5Purpose": "Documento de transporte y comprobante de envío",
+      "doc6Name": "Certificado de Seguro",
+      "doc6Purpose": "Documentación de cobertura de seguro de carga",
+      "doc7Name": "Licencia de Importación/Exportación",
+      "doc7Purpose": "Autorización para categorías específicas de bienes",
+      "doc8Name": "Certificado de Calidad/Salud",
+      "doc8Purpose": "Verificación de estándares y seguridad del producto",
+      "clearanceNote": "Todos los documentos se envían electrónicamente a través del sistema ASYCUDA World para un procesamiento eficiente.",
+      "feature1Title": "Declaraciones Precisas",
+      "feature1Desc": "Declaraciones aduaneras completas y veraces",
+      "feature2Title": "Despacho Rápido",
+      "feature2Desc": "Retrasos mínimos a través de documentación adecuada",
+      "feature3Title": "Transparencia Total",
+      "feature3Desc": "Cumplimiento abierto con todas las regulaciones",
+      "highlightTitle": "Procesamiento Aduanero Sin Problemas",
+      "highlightDesc": "Declaraciones precisas y documentación completa garantizan un despacho aduanero fluido para todos los envíos.",
+      "importTitle": "Cumplimiento de Importación",
+      "import1": "Declaración de Entrada - Declaración precisa de mercancías",
+      "import2": "Factura Comercial - Documentación de transacción",
+      "import3": "Lista de Empaque - Detalles del envío",
+      "import4": "Certificado de Origen - Verificación del país de origen",
+      "import5": "Documentos LC - Registros de autorización de pago",
+      "exportTitle": "Cumplimiento de Exportación",
+      "export1": "Factura de Envío - Declaración de exportación",
+      "export2": "Factura Comercial - Documentación de transacción",
+      "export3": "Lista de Empaque - Especificaciones del envío",
+      "export4": "Certificado de Origen - Certificación de origen del producto",
+      "export5": "Certificados de Calidad - Verificación de estándares del producto",
+      "benefitsTitle": "Beneficios del Cumplimiento Aduanero",
+      "benefit1": "Despacho aduanero fluido y rápido",
+      "benefit2": "Retrasos y interrupciones mínimos",
+      "benefit3": "Cumplimiento regulatorio completo",
+      "benefit4": "Procedimientos y documentación transparentes",
+      "bannerTitle": "Procesamiento Aduanero Sin Problemas",
+      "bannerDesc": "Declaraciones precisas y documentación completa garantizan un despacho aduanero fluido para todos los envíos."
+    },
+    "banking": {
+      "cardTitle": "Cumplimiento Bancario y Financiero Autorizado",
+      "cardDesc": "Todas las transacciones financieras realizadas a través de bancos comerciales autorizados en pleno cumplimiento regulatorio.",
+      "intro": "Zero International Limited realiza todas las transacciones financieras a través de bancos comerciales autorizados en Bangladesh, garantizando el cumplimiento total con las regulaciones del Banco de Bangladesh. Todas las transacciones de divisas están debidamente documentadas y autorizadas.",
+      "imageAlt": "Cumplimiento bancario y financiero",
+      "imageCaption": "Operaciones Financieras Autorizadas",
+      "docsTitle": "Documentos Financieros",
+      "doc1": "Carta de Crédito (LC) - Mecanismo de pago seguro",
+      "doc2": "Garantías Bancarias - Aseguramiento de desempeño",
+      "doc3": "Documentación de Cambio de Divisas - Cumplimiento de divisas",
+      "doc4": "Permisos de Importación/Exportación - Autorización comercial",
+      "authorityTitle": "Autoridad Regulatoria",
+      "authorityName": "Banco de Bangladesh",
+      "authorityDesc": "El Banco de Bangladesh es el banco central y la autoridad regulatoria principal para todas las transacciones bancarias y financieras, operaciones de divisas y financiamiento del comercio internacional.",
+      "complianceLabel": "Requisitos de Cumplimiento Clave",
+      "requirement1": "Todas las transacciones de divisas a través de distribuidores autorizados",
+      "requirement2": "Documentación adecuada para pagos internacionales",
+      "requirement3": "Cumplimiento con regulaciones de cambio de divisas",
+      "requirement4": "Informes regulares al Banco de Bangladesh",
+      "benefitsTitle": "Beneficios del Cumplimiento Financiero",
+      "benefit1": "Operaciones financieras seguras y transparentes",
+      "benefit2": "Cumplimiento regulatorio completo con el Banco de Bangladesh",
+      "benefit3": "Transacciones protegidas a través de mecanismos de LC",
+      "benefit4": "Pista de auditoría mantenida para todas las operaciones",
+      "highlightTitle": "Operaciones Financieras Seguras",
+      "highlightDesc": "Todas las transacciones realizadas a través de canales autorizados en pleno cumplimiento con las regulaciones del Banco de Bangladesh.",
+      "lcTitle": "Operaciones de Carta de Crédito (LC)",
+      "lc1": "Apertura de LC - A través de bancos comerciales autorizados",
+      "lc2": "Procesamiento de Enmiendas - Documentación y aprobación adecuadas",
+      "lc3": "Negociación de Documentos - Procedimientos verificados y conformes",
+      "lc4": "Procesamiento de Pagos - Transacciones autorizadas y rastreadas",
+      "forexTitle": "Cumplimiento de Divisas y Remesas",
+      "forex1": "Autorización del Banco de Bangladesh - Todas las transacciones de divisas autorizadas",
+      "forex2": "Documentación Adecuada - Registros completos de transacciones",
+      "forex3": "Informes Regulatorios - Presentación oportuna de informes requeridos",
+      "forex4": "Pista de Auditoría - Historial transparente de transacciones",
+      "bannerTitle": "Operaciones Financieras Seguras",
+      "bannerDesc": "Todas las transacciones realizadas a través de canales autorizados en pleno cumplimiento con las regulaciones del Banco de Bangladesh."
+    },
+    "tax": {
+      "cardTitle": "Cumplimiento Total de Impuestos y IVA",
+      "cardDesc": "Cumplimiento completo con las regulaciones nacionales de impuestos y IVA con informes financieros precisos.",
+      "intro": "Zero International Limited cumple totalmente con las regulaciones nacionales de impuestos y IVA y mantiene informes financieros precisos. Todas las obligaciones fiscales se cumplen de acuerdo con los requisitos de la Junta Nacional de Ingresos (NBR).",
+      "imageAlt": "Cumplimiento de impuestos y IVA",
+      "imageCaption": "Cumplimiento Fiscal Integral",
+      "coverageTitle": "Cobertura de Cumplimiento Fiscal",
+      "vatTitle": "Impuesto al Valor Agregado (IVA)",
+      "vatItem1": "Registro de IVA con NBR",
+      "vatItem2": "Presentación de declaraciones mensuales de IVA",
+      "vatItem3": "Facturación adecuada de IVA y mantenimiento de registros",
+      "incomeTaxTitle": "Impuesto sobre la Renta",
+      "incomeTaxItem1": "Declaraciones anuales del impuesto sobre la renta",
+      "incomeTaxItem2": "Deducción de impuestos en la fuente (TDS)",
+      "incomeTaxItem3": "Cumplimiento con auditorías fiscales",
+      "authorityTitle": "Autoridad Fiscal",
+      "authorityName": "Junta Nacional de Ingresos (NBR)",
+      "authoritySubtitle": "Ministerio de Finanzas, Gobierno de Bangladesh",
+      "authorityDesc": "NBR es la autoridad central para la administración tributaria en Bangladesh, responsable de la recolección y aplicación del IVA, impuesto sobre la renta y derechos de aduana.",
+      "feature1Title": "Cumplimiento de IVA",
+      "feature1Desc": "Registrado y conforme",
+      "feature2Title": "Impuesto sobre la Renta",
+      "feature2Desc": "Presentación y pago oportuno",
+      "feature3Title": "Gestión de TDS",
+      "feature3Desc": "Retención adecuada",
+      "feature4Title": "Listo para Auditoría",
+      "feature4Desc": "Documentación completa",
+      "highlightTitle": "Cumplimiento Fiscal Completo",
+      "highlightDesc": "Adhesión completa a todas las obligaciones fiscales y de IVA con informes precisos y oportunos.",
+      "vat1": "Registro de IVA: Debidamente registrado con NBR para cobro y remisión de IVA",
+      "vat2": "Declaraciones Mensuales de IVA: Presentación oportuna de declaraciones de IVA y pago de cuotas",
+      "vat3": "Documentación de IVA: Facturación adecuada y mantenimiento de registros para transacciones de IVA",
+      "incomeTax1": "Declaraciones Anuales del Impuesto sobre la Renta: Presentación completa y oportuna",
+      "incomeTax2": "Deducción de Impuestos en la Fuente (TDS): Retención y remisión adecuadas",
+      "incomeTax3": "Auditorías Fiscales: Cooperación y cumplimiento con auditorías de NBR",
+      "bannerTitle": "Cumplimiento Fiscal Completo",
+      "bannerDesc": "Adhesión completa a todas las obligaciones fiscales y de IVA con informes precisos y oportunos."
+    },
+    "international": {
+      "cardTitle": "Cumplimiento de Estándares Comerciales Internacionales",
+      "cardDesc": "Adhesión a regulaciones y estándares comerciales internacionales más allá de los requisitos nacionales.",
+      "intro": "Más allá de las regulaciones nacionales, Zero International Limited se adhiere a estándares y convenciones comerciales internacionales. Garantizamos el cumplimiento con los requisitos de los países socios y las normas comerciales internacionales.",
+      "imageAlt": "Cumplimiento comercial internacional",
+      "imageCaption": "Estándares Comerciales Globales",
+      "regulationsTitle": "Marco de Cumplimiento",
+      "nationalTitle": "Regulaciones Nacionales",
+      "nationalItem1": "Regulaciones de control de importación-exportación",
+      "nationalItem2": "Cumplimiento aduanero y arancelario",
+      "nationalItem3": "Regulaciones de cambio de divisas",
+      "nationalItem4": "Requisitos específicos de la industria",
+      "standardsTitle": "Estándares Internacionales",
+      "standardsItem1": "Cumplimiento de acuerdos comerciales de la OMC",
+      "standardsItem2": "Certificaciones de calidad de productos",
+      "standardsItem3": "Estándares de envío internacional",
+      "standardsItem4": "Regulaciones de países socios",
+      "policyTitle": "Cumplimiento de Políticas Comerciales",
+      "policyDesc": "Adhesión a políticas y regulaciones nacionales de importación-exportación",
+      "policyItem1": "Cumplimiento de políticas de importación",
+      "policyItem2": "Adhesión a políticas de exportación",
+      "policyItem3": "Monitoreo de artículos restringidos",
+      "policyItem4": "Cumplimiento de requisitos de licencia",
+      "customsTitle": "Procedimientos Aduaneros",
+      "customsDesc": "Siguiendo protocolos y documentación aduaneros estandarizados",
+      "customsItem1": "Clasificación de código HS",
+      "customsItem2": "Cumplimiento de valoración",
+      "customsItem3": "Determinación de origen",
+      "customsItem4": "Estándares de documentación",
+      "intlStandardsTitle": "Estándares Internacionales",
+      "intlStandardsDesc": "Cumplimiento de estándares globales de productos y procesos",
+      "intlStandardsItem1": "Certificaciones de calidad",
+      "intlStandardsItem2": "Estándares de seguridad",
+      "intlStandardsItem3": "Cumplimiento ambiental",
+      "intlStandardsItem4": "Prácticas de abastecimiento ético",
+      "highlightTitle": "Cumplimiento de Estándares Internacionales",
+      "highlightDesc": "Más allá de las regulaciones nacionales, cumplimos con estándares comerciales internacionales y requisitos de países socios.",
+      "standard1": "Regulaciones de la OMC: Cumplimiento con las normas de la Organización Mundial del Comercio",
+      "standard2": "Requisitos del País de Destino: Adhesión a las regulaciones de importación de países socios",
+      "standard3": "Estándares de Producto: Certificaciones internacionales de calidad y seguridad",
+      "standard4": "Verificación de Sanciones: Verificación contra listas de partes restringidas",
+      "bannerTitle": "Cumplimiento de Estándares Internacionales",
+      "bannerDesc": "Más allá de las regulaciones nacionales, cumplimos con estándares comerciales internacionales y requisitos de países socios."
+    },
+    "controls": {
+      "cardTitle": "Controles Internos Robustos",
+      "cardDesc": "Sistemas integrales de control interno y gestión adecuada de registros que garantizan la integridad operativa.",
+      "intro": "Zero International Limited mantiene sistemas robustos de control interno y gestión adecuada de registros. Todos los registros comerciales se mantienen sistemáticamente y están fácilmente disponibles para inspecciones regulatorias.",
+      "imageAlt": "Controles internos y gestión de registros",
+      "imageCaption": "Gestión Sistemática de Registros",
+      "practicesTitle": "Mejores Prácticas",
+      "practice1": "Segregación de funciones en todas las operaciones",
+      "practice2": "Procesos de autorización y aprobación definidos",
+      "practice3": "Auditorías internas y externas regulares",
+      "practice4": "Evaluación y mitigación sistemática de riesgos",
+      "docManagementTitle": "Gestión de Documentos",
+      "docManagement1": "Mantenimiento de registros digitales y físicos",
+      "docManagement2": "Archivo y recuperación sistemáticos",
+      "docManagement3": "Cumplimiento de políticas de retención",
+      "docManagement4": "Almacenamiento seguro de documentos",
+      "docManagement5": "Acceso listo para inspección regulatoria",
+      "qualityControlTitle": "Control de Calidad",
+      "qualityControl1": "Verificación de calidad del producto",
+      "qualityControl2": "Procesos de calificación de proveedores",
+      "qualityControl3": "Auditorías de calidad regulares",
+      "qualityControl4": "Integración de retroalimentación del cliente",
+      "qualityControl5": "Programas de mejora continua",
+      "highlightTitle": "Controles Internos Fuertes",
+      "highlightDesc": "Sistemas integrales que garantizan la integridad operativa y el cumplimiento regulatorio.",
+      "recordTitle": "Sistema de Gestión de Registros",
+      "record1": "Registros de Transacciones: Documentación completa de todas las transacciones comerciales",
+      "record2": "Registros Financieros: Contabilidad precisa y estados financieros",
+      "record3": "Registros de Cumplimiento: Documentación de todas las presentaciones regulatorias",
+      "record4": "Correspondencia: Archivo sistemático de comunicaciones comerciales",
+      "controlsTitle": "Medidas de Control Interno",
+      "control1": "Segregación de Funciones: División clara de responsabilidades",
+      "control2": "Procedimientos de Autorización: Procesos de aprobación definidos",
+      "control3": "Auditorías Regulares: Cumplimiento de auditorías internas y externas",
+      "control4": "Gestión de Riesgos: Evaluación y mitigación sistemática de riesgos",
+      "bannerTitle": "Controles Internos Fuertes",
+      "bannerDesc": "Sistemas integrales que garantizan la integridad operativa y el cumplimiento regulatorio."
+    },
+    "membership": {
+      "cardTitle": "Membresía en Asociaciones Profesionales",
+      "cardDesc": "Membresía activa en asociaciones comerciales profesionales que demuestra compromiso con los estándares de la industria.",
+      "intro": "Zero International Limited es un miembro activo de asociaciones profesionales reconocidas en el sector de importación-exportación. Estas membresías demuestran nuestro compromiso con los estándares de la industria y las prácticas comerciales éticas.",
+      "imageAlt": "Membresía profesional y certificaciones",
+      "imageCaption": "Reconocimiento de la Industria",
+      "aboutTitle": "Acerca de Nuestra Membresía",
+      "aboutDesc": "Como miembro de la Asociación de Importadores y Exportadores de Bangladesh, participamos activamente en el desarrollo de la industria y mantenemos los más altos estándares de conducta profesional.",
+      "aboutRole1": "Defensa para el desarrollo de políticas comerciales",
+      "aboutRole2": "Redes y colaboración de la industria",
+      "aboutRole3": "Acceso a inteligencia de mercado y recursos",
+      "aboutRole4": "Compromiso con prácticas comerciales éticas",
+      "benefitsTitle": "Beneficios de la Membresía",
+      "benefit1": "Reconocimiento y credibilidad de la industria",
+      "benefit2": "Acceso a recursos de facilitación comercial",
+      "benefit3": "Redes con profesionales de la industria",
+      "benefit4": "Actualizaciones sobre cambios regulatorios",
+      "commitmentTitle": "Nuestro Compromiso",
+      "commitment1": "Mantener prácticas comerciales éticas",
+      "commitment2": "Contribuir al desarrollo de la industria",
+      "commitment3": "Mantener estándares profesionales",
+      "commitment4": "Apoyar iniciativas de facilitación comercial",
+      "highlightTitle": "Miembro de la Industria Reconocido",
+      "highlightDesc": "Participación activa en asociaciones profesionales que demuestra compromiso con la excelencia.",
+      "membershipTitle": "Membresías en Asociaciones",
+      "membership1": "Cámara de Comercio: Membresía y participación activa",
+      "membership2": "Asociaciones Comerciales: Participación en organizaciones específicas del sector",
+      "membership3": "Oficina de Promoción de Exportaciones: Registro y cumplimiento",
+      "bannerTitle": "Miembro de la Industria Reconocido",
+      "bannerDesc": "Participación activa en asociaciones profesionales que demuestra compromiso con la excelencia."
+    },
+    "commitment": {
+      "cardTitle": "Compromiso Inquebrantable con el Cumplimiento",
+      "cardDesc": "Dedicación continua a mantener los más altos estándares de conducta comercial legal y ética.",
+      "intro": "Nuestro compromiso con el cumplimiento va más allá de la simple adhesión regulatoria. Representa nuestra filosofía comercial central de realizar comercio internacional con integridad, transparencia y responsabilidad.",
+      "imageAlt": "Compromiso de cumplimiento y valores comerciales",
+      "imageCaption": "Compromiso con la Excelencia",
+      "value1Title": "Integridad",
+      "value1Desc": "Operar con honestidad y principios éticos en todas las transacciones",
+      "value2Title": "Transparencia",
+      "value2Desc": "Mantener operaciones comerciales y documentación claras y abiertas",
+      "value3Title": "Confianza",
+      "value3Desc": "Construir asociaciones duraderas a través de transparencia y prácticas éticas",
+      "value4Title": "Excelencia",
+      "value4Desc": "Exceder los requisitos regulatorios y los estándares de la industria",
+      "coreValuesTitle": "Nuestros Valores Fundamentales",
+      "coreValue1": "Cumplimiento Legal: Adhesión total a todas las leyes y regulaciones aplicables",
+      "coreValue2": "Transparencia Financiera: Informes financieros y documentación claros y precisos",
+      "coreValue3": "Prácticas Comerciales Éticas: Conducta comercial responsable y justa en todas las transacciones",
+      "coreValue4": "Mejora Continua: Mejora continua de sistemas y procesos de cumplimiento",
+      "coreValue5": "Asociación con Partes Interesadas: Construir confianza con clientes, proveedores y reguladores",
+      "bannerTitle": "El Cumplimiento es Nuestro Fundamento",
+      "bannerDesc": "Nuestro compromiso inquebrantable con el cumplimiento garantiza operaciones comerciales internacionales sostenibles, transparentes y confiables.",
+      "ctaTitle": "Experimente Comercio Conforme y Transparente",
+      "ctaDesc": "Asóciese con Zero International Limited y benefíciese de nuestro marco integral de documentación y cumplimiento. Cada transacción está respaldada por autorización legal adecuada, procedimientos transparentes y prácticas comerciales éticas.",
+      "ctaButton": "Conéctese con Nosotros Hoy"
+    }
   },
   "faq": {
     "metaTitle": "Preguntas Frecuentes - FAQ | Zexfro",
@@ -1188,6 +1783,432 @@
       "contactInfo": "O contáctenos directamente:",
       "phone": "+1 (234) 567-890",
       "email": "info@zexfro.com"
+    }
+  },
+  "localServicePage": {
+    "pageTitle": "Actividades Locales y Fabricante - Zexfro | Soluciones de Comercio Doméstico",
+    "pageDescription": "Zexfro International Ltd juega un papel activo en el ecosistema comercial local de Bangladesh, apoyando a las empresas locales y asegurando una distribución eficiente en todo el país.",
+    "header": {
+      "title": "Actividades Locales y Fabricante",
+      "description": "Fortaleciendo el ecosistema comercial de Bangladesh a través de asociaciones locales y excelencia en distribución"
+    },
+    "introduction": {
+      "title": "Actividades Locales de Zexfro International Ltd",
+      "description": "Zexfro International Ltd desempeña un papel activo y responsable en el ecosistema comercial local de Bangladesh. Operando desde Dhaka Uttara, la empresa se enfoca en fortalecer las cadenas de suministro domésticas, apoyar a las empresas locales y garantizar una distribución eficiente de productos importados y producidos localmente de calidad en todo el país."
+    },
+    "distribution": {
+      "title": "Distribución del Mercado Local y Gestión de la Cadena de Suministro",
+      "description": "Zexfro International Ltd mantiene una sólida red de distribución en todo Bangladesh para garantizar la entrega oportuna y confiable de productos importados. La empresa colabora con mayoristas, minoristas y compradores institucionales para distribuir productos de manera eficiente en mercados urbanos y rurales. Esto garantiza la disponibilidad de productos, precios competitivos y suministro constante en todo el país."
+    },
+    "sourcing": {
+      "title": "Abastecimiento y Promoción de Productos de Bangladesh",
+      "description": "Una de las actividades locales clave de Zexfro International Ltd es el abastecimiento de productos de alta calidad fabricados en Bangladesh. La empresa trabaja en estrecha colaboración con fabricantes locales, agricultores, PYMES y fábricas para identificar productos listos para exportar. Estos productos se promueven y preparan según los estándares internacionales para los mercados globales.",
+      "supplierDevelopment": {
+        "title": "Desarrollo de Proveedores Locales",
+        "intro": "Zexfro International Ltd apoya a los proveedores locales mediante:",
+        "items": [
+          "Proporcionar orientación sobre mejora de calidad y embalaje",
+          "Asesorar sobre requisitos de cumplimiento y certificación internacional",
+          "Ayudar a los fabricantes a comprender la demanda del mercado global"
+        ],
+        "conclusion": "Esto fortalece el potencial de exportación de Bangladesh y ayuda a las empresas locales a crecer de manera sostenible."
+      }
+    },
+    "quality": {
+      "title": "Inspección de Calidad y Monitoreo de Cumplimiento",
+      "description": "Antes de la distribución en el mercado local o la exportación al extranjero, Zexfro International Ltd realiza estrictas verificaciones de calidad. Los productos se inspeccionan en cuanto a seguridad, durabilidad, etiquetado y cumplimiento normativo según los estándares de Bangladesh y los requisitos internacionales. Esto garantiza la confianza del consumidor y la fiabilidad de la marca a largo plazo."
+    },
+    "activities": {
+      "marketing": {
+        "title": "Marketing Local y Promoción de Marca",
+        "intro": "Zexfro International Ltd comercializa activamente productos importados dentro de Bangladesh mediante:",
+        "items": [
+          "Redes de distribuidores y concesionarios",
+          "Promociones de empresa a empresa (B2B)",
+          "Ferias comerciales, exposiciones y eventos comerciales locales",
+          "Investigación de mercado y análisis de comentarios de consumidores"
+        ],
+        "conclusion": "Estas actividades ayudan a construir conciencia de marca y expandir el alcance del mercado."
+      },
+      "warehousing": {
+        "title": "Almacenamiento y Gestión de Inventario",
+        "description": "La empresa gestiona instalaciones de almacenamiento seguras para almacenar mercancías importadas y de origen local. Se siguen prácticas adecuadas de control de inventario, rotación de existencias y manejo de productos para mantener la calidad del producto y reducir pérdidas."
+      },
+      "logistics": {
+        "title": "Soporte Logístico y Transporte",
+        "description": "La empresa coordina el transporte doméstico utilizando socios logísticos confiables para garantizar un movimiento fluido de mercancías desde los puertos hasta los almacenes y desde los almacenes hasta los mercados en todo Bangladesh. La planificación eficiente de rutas y la entrega oportuna son prioridades clave."
+      },
+      "customerSupport": {
+        "title": "Soporte al Cliente y Servicios Postventa",
+        "description": "Zexfro International Ltd proporciona soporte dedicado al cliente para compradores locales, distribuidores y socios. Esto incluye seguimiento de pedidos, asistencia técnica (cuando corresponda), manejo de quejas y servicios postventa para garantizar la completa satisfacción del cliente."
+      }
+    },
+    "employment": {
+      "title": "Empleo y Contribución Económica Local",
+      "description": "A través de sus operaciones, Zexfro International Ltd crea oportunidades de empleo para profesionales locales, personal de almacén, personal logístico y equipos de marketing. La empresa contribuye a la economía de Bangladesh al apoyar las industrias locales y las actividades comerciales."
+    },
+    "ethical": {
+      "title": "Prácticas Comerciales Éticas y Responsabilidad Comunitaria",
+      "description": "Zexfro International Ltd sigue prácticas comerciales éticas, principios de comercio justo y operaciones transparentes. La empresa tiene como objetivo construir relaciones a largo plazo con socios locales mientras contribuye positivamente a la comunidad empresarial y al desarrollo económico general de Bangladesh."
+    },
+    "cta": {
+      "button": "Asóciese con Nosotros"
+    }
+  },
+  "globalServicePage": {
+    "pageTitle": "Servicio Global - Zexfro | Soluciones de Comercio Internacional",
+    "pageDescription": "Servicios integrales de comercio global que incluyen envío internacional, despacho de aduanas y logística mundial para empresas que se expanden globalmente.",
+    "header": {
+      "title": "Servicio Global",
+      "description": "Soluciones integrales de comercio internacional para ayudar a su negocio a tener éxito en los mercados globales"
+    },
+    "intro": {
+      "title": "Servicios Comerciales Globales en Todo el Mundo",
+      "description": "Zexfro International Limited conecta empresas a través de continentes con nuestros servicios integrales de comercio global. Facilitamos transacciones internacionales sin problemas, asegurando que sus productos lleguen a los mercados de todo el mundo con eficiencia y cumplimiento."
+    },
+    "servicesTitle": "Nuestros Servicios Globales Incluyen:",
+    "services": {
+      "shipping": {
+        "title": "Envío Internacional",
+        "description": "Servicios de flete marítimo, aéreo y terrestre a más de 150 países en todo el mundo con tarifas competitivas y horarios de entrega confiables."
+      },
+      "customs": {
+        "title": "Despacho de Aduanas",
+        "description": "Servicios expertos de corretaje aduanero que garantizan un despacho fluido a través de fronteras internacionales con pleno cumplimiento regulatorio."
+      },
+      "sourcing": {
+        "title": "Abastecimiento Global",
+        "description": "Acceso a proveedores y fabricantes verificados en Asia, Europa, África y las Américas para diversas categorías de productos."
+      },
+      "documentation": {
+        "title": "Documentación de Exportación",
+        "description": "Soporte completo de documentación que incluye certificados de origen, certificados fitosanitarios y documentos de cumplimiento comercial."
+      },
+      "finance": {
+        "title": "Financiamiento Comercial",
+        "description": "Manejo de carta de crédito (LC), negociación de términos de pago y servicios de procesamiento de pagos internacionales seguros."
+      },
+      "quality": {
+        "title": "Inspección de Calidad",
+        "description": "Servicios de inspección previa al envío que garantizan que los productos cumplan con los estándares de calidad internacional y las especificaciones del comprador."
+      }
+    },
+    "reach": {
+      "title": "Alcance y Capacidades Globales",
+      "export": {
+        "title": "Mercados de Exportación",
+        "items": [
+          "América del Norte",
+          "Unión Europea",
+          "Medio Oriente",
+          "África",
+          "Asia-Pacífico"
+        ]
+      },
+      "import": {
+        "title": "Fuentes de Importación",
+        "items": [
+          "China y Sudeste Asiático",
+          "India y Sur de Asia",
+          "Turquía y Medio Oriente",
+          "Europa",
+          "Estados Unidos y las Américas"
+        ]
+      }
+    },
+    "whyChoose": {
+      "title": "¿Por Qué Elegir Nuestro Servicio Global?",
+      "items": [
+        "Red establecida de socios y agentes internacionales",
+        "Conocimiento experto de las regulaciones comerciales internacionales",
+        "Tarifas de flete internacional competitivas",
+        "Seguimiento de envíos y actualizaciones en tiempo real",
+        "Equipo de soporte multilingüe disponible 24/7",
+        "Opciones de gestión de riesgos y seguro de carga"
+      ]
+    },
+    "conclusion": "Expanda su negocio globalmente con confianza. Asóciese con Zexfro International Limited para soluciones comerciales internacionales confiables, conformes y rentables."
+  },
+  "competitiveAdvantagesPage": {
+    "pageTitle": "Ventajas Competitivas - Zexfro | Por Qué Elegirnos",
+    "pageDescription": "Descubra las ventajas competitivas de Zexfro en el comercio global: red sólida de proveedores, conocimiento del mercado, logística integral, garantía de calidad y soluciones personalizadas.",
+    "header": {
+      "title": "Ventajas Competitivas",
+      "description": "Lo que nos distingue en el comercio global y hace de Zexfro su socio de confianza"
+    },
+    "introduction": "En Zexfro International Limited, nuestra fortaleza radica en nuestra capacidad de conectar los mercados globales con Bangladesh de manera eficiente, confiable y transparente.",
+    "advantages": {
+      "network": {
+        "title": "Red Global Sólida de Proveedores y Compradores",
+        "description": "Zexfro International Limited ha construido una red global poderosa y diversificada de proveedores verificados y compradores internacionales, formando la columna vertebral de nuestras operaciones de importación-exportación.",
+        "keyPointsTitle": "Fortalezas Clave:",
+        "keyPoints": [
+          "Capacidad de Abastecimiento Global a través de Asia, África, Europa, EE. UU. y Medio Oriente",
+          "Alcance del Mercado Internacional para Exportaciones a mayoristas, importadores y minoristas en todo el mundo",
+          "Asociaciones Confiables y a Largo Plazo basadas en confianza y transparencia"
+        ],
+        "tagline": "Nuestra Red, Su Crecimiento"
+      },
+      "marketInsight": {
+        "title": "Conocimiento Profundo del Mercado en Bangladesh",
+        "description": "Nuestra ventaja competitiva se fortalece con nuestra amplia comprensión del mercado bangladesí, el entorno comercial y los patrones de demanda del consumidor.",
+        "insights": {
+          "analysis": "Análisis de Mercado",
+          "analysisDesc": "Comprensión profunda de los sectores de agricultura, maquinaria industrial, bienes de consumo y productos básicos globales",
+          "regulatory": "Experiencia Regulatoria",
+          "regulatoryDesc": "Conocimiento experto de políticas de importación-exportación, procedimientos aduaneros, impuestos y requisitos de documentación"
+        },
+        "tagline": "Nuestro Conocimiento del Mercado Impulsa Su Éxito"
+      },
+      "logistics": {
+        "title": "Experiencia Integral en Comercio y Logística",
+        "description": "Gestionamos todo el ciclo comercial internacional—desde el abastecimiento de productos a nivel mundial hasta la entrega segura y eficiente de mercancías a destinos finales.",
+        "steps": [
+          {
+            "name": "Abastecimiento de Productos y Coordinación de Proveedores"
+          },
+          { "name": "Documentación Comercial y Gestión de Cumplimiento" },
+          { "name": "Flete, Envío y Gestión de Transportistas" },
+          { "name": "Despacho de Aduanas y Manejo Portuario" }
+        ],
+        "tagline": "Nosotros Manejamos el Proceso, Usted Escala el Negocio"
+      },
+      "quality": {
+        "title": "Garantía de Calidad a Precios Competitivos",
+        "description": "Una fortaleza estratégica para Zexfro International Limited, especialmente al operar en abastecimiento global mientras representa a Bangladesh en el comercio internacional.",
+        "frameworkTitle": "Nuestro Marco de Calidad:",
+        "framework": [
+          "Verificación Multi-Nivel de Proveedores con certificaciones internacionales (ISO, HACCP, CE, GMP)",
+          "Inspección Pre-Envío (PSI) utilizando equipos de control de calidad internos y agencias externas",
+          "Cumplimiento con Normas de Exportación de Bangladesh (certificación BSTI, Cuarentena Vegetal)",
+          "Optimización de Precios a través del abastecimiento directo de fabricantes y consolidación a granel"
+        ],
+        "conclusion": "La ventaja de Zexfro no es solo precio bajo, sino precio justo para alta calidad."
+      },
+      "delivery": {
+        "title": "Envío Más Rápido y Compromiso de Entrega Confiable",
+        "description": "Una garantía estratégica de que los productos se moverán rápidamente desde el origen hasta el destino y llegarán al comprador a tiempo, de manera segura y sin interrupciones inesperadas.",
+        "features": [
+          {
+            "title": "Planificación Logística Optimizada",
+            "description": "Rutas de envío pre-evaluadas con transitarios de confianza"
+          },
+          {
+            "title": "Seguimiento en Tiempo Real",
+            "description": "Seguimiento de referencia del transportista con actualizaciones ETD/ETA y notificaciones de retraso"
+          },
+          {
+            "title": "Documentación Eficiente",
+            "description": "Manejo aduanero completo y documentos de cumplimiento comercial"
+          },
+          {
+            "title": "Confiabilidad de Entrega",
+            "description": "99% de entrega puntual con seguridad de carga y cobertura de seguro"
+          }
+        ]
+      },
+      "communication": {
+        "title": "Comunicación Transparente y Soporte al Cliente",
+        "description": "La comunicación es la base de la confianza, las asociaciones a largo plazo y las operaciones comerciales globales sin problemas en Zexfro International Ltd.",
+        "supportTitle": "Nuestro Sistema de Comunicación:",
+        "support": [
+          "Soporte Multi-Canal 24/7 (Email, WhatsApp, WeChat, Skype, Chat en Vivo)",
+          "Gerentes de Cuenta Dedicados y Especialistas en Soporte Comercial",
+          "Respuesta en 10-30 minutos, Cotizaciones en 6-12 horas",
+          "Actualizaciones diarias de envíos y progreso de pedidos con seguimiento en vivo"
+        ],
+        "tagline": "Comunicación Clara, Soporte Rápido y Soluciones Confiables—Cada Vez, en Todo el Mundo."
+      },
+      "customized": {
+        "title": "Soluciones Comerciales Personalizadas para Empresas",
+        "description": "Nos adaptamos a las necesidades únicas de mayoristas, fabricantes, minoristas e importadores proporcionando estrategias de abastecimiento y exportación a medida.",
+        "servicesTitle": "Nuestros Servicios Personalizados:",
+        "services": [
+          "Abastecimiento Global Específico de Productos con análisis detallado de requisitos",
+          "Precios Personalizados y Optimización de Costos de Llegada con total transparencia",
+          "Soporte de Cumplimiento y Regulación Personalizado para despacho más rápido",
+          "Planificación Logística y de Entrega Personalizada (Envío Aéreo/Marítimo/Híbrido)",
+          "Etiquetado Privado, Empaque y Marca para mayor presencia en el mercado"
+        ]
+      }
+    },
+    "conclusion": {
+      "title": "¿Por Qué Elegir Zexfro International Limited?",
+      "description": "No solo comerciamos productos—construimos puentes comerciales globales, simplificamos operaciones complejas de importación-exportación y creamos oportunidades rentables para nuestros socios en todo el mundo.",
+      "cta": "Asóciese con Nosotros Hoy"
+    }
+  },
+  "hsCode": {
+    "metaTitle": "Código HS - Códigos del Sistema Armonizado | Zexfro",
+    "metaDescription": "Acceda a la guía de referencia completa de códigos HS para la clasificación de productos del comercio internacional y el despacho de aduana.",
+    "pageTitle": "Referencia de Códigos HS",
+    "pageDescription": "Códigos del Sistema Armonizado para la Clasificación del Comercio Internacional",
+    "intro": {
+      "title": "¿Qué es el Código HS?",
+      "description1": "El",
+      "hsName": "Sistema Armonizado (HS)",
+      "description2": "es un sistema internacionalmente estandarizado de nombres y números utilizado para clasificar productos comercializados. Es mantenido por la Organización Mundial de Aduanas (OMA) y utilizado por más de 200 países para aranceles aduaneros y estadísticas de comercio internacional."
+    },
+    "stats": {
+      "countries": "200+",
+      "countriesLabel": "Países Usando HS",
+      "coverage": "98%",
+      "coverageLabel": "Cobertura del Comercio Global",
+      "classifications": "5,300+",
+      "classificationsLabel": "Clasificaciones de Productos"
+    },
+    "importance": {
+      "title": "Por Qué Importan los Códigos HS",
+      "point1Title": "Despacho de Aduana",
+      "point1Desc": "Requerido para todos los envíos internacionales y documentación aduanera",
+      "point2Title": "Cálculo de Aranceles",
+      "point2Desc": "Determina los derechos de importación, impuestos y tasas arancelarias para sus productos",
+      "point3Title": "Cumplimiento Comercial",
+      "point3Desc": "Asegura el cumplimiento de las regulaciones y estándares del comercio internacional",
+      "point4Title": "Estadísticas Comerciales",
+      "point4Desc": "Utilizado para recopilar y analizar datos del comercio internacional"
+    },
+    "download": {
+      "title": "Guía Completa de Referencia de Códigos HS",
+      "description": "Acceda al documento completo de 115 páginas con todas las clasificaciones de códigos HS, definiciones y directrices para el comercio internacional",
+      "viewButton": "Ver PDF (115 Páginas)",
+      "downloadButton": "Descargar PDF"
+    },
+    "help": {
+      "title": "¿Necesita Ayuda con la Clasificación de Códigos HS?",
+      "description": "Nuestro equipo de expertos en cumplimiento comercial puede ayudarle a clasificar con precisión sus productos y garantizar un despacho de aduana fluido para sus envíos internacionales.",
+      "button": "Contacte a Nuestros Expertos"
+    }
+  },
+  "termsConditions": {
+    "metaTitle": "Términos y Condiciones | Zexfro",
+    "metaDescription": "Por favor, lea estos términos y condiciones cuidadosamente antes de usar nuestros servicios. Al acceder o usar Zexfro, usted acepta estar sujeto a estos términos.",
+    "pageTitle": "Términos y Condiciones",
+    "pageDescription": "Por favor, lea estos términos y condiciones cuidadosamente antes de usar nuestros servicios. Al acceder o usar Zexfro, usted acepta estar sujeto a estos términos.",
+    "intro": {
+      "lastUpdated": "Última Actualización:",
+      "lastUpdatedDate": "4 de enero de 2026",
+      "effectiveDate": "Fecha de Vigencia:",
+      "effectiveDateValue": "1 de enero de 2026",
+      "version": "Versión:",
+      "versionNumber": "1.0",
+      "welcome": "Bienvenido a Zexfro. Estos Términos y Condiciones (\"Términos\", \"Acuerdo\") rigen su acceso y uso del sitio web y servicios de Zexfro (colectivamente, el \"Servicio\"). Al acceder o usar nuestro Servicio, usted acepta estar sujeto a estos Términos.",
+      "noticeTitle": "Aviso Importante",
+      "noticeText": "Si no está de acuerdo con estos Términos, no debe acceder ni usar nuestro Servicio. Por favor, lea estos Términos cuidadosamente y contáctenos si tiene alguna pregunta."
+    },
+    "acceptance": {
+      "title": "Aceptación de los Términos",
+      "subtitle": "Comprender su acuerdo con Zexfro",
+      "agreementTitle": "1.1 Acuerdo con los Términos",
+      "agreementText": "Al crear una cuenta, acceder a nuestro sitio web o usar cualquiera de nuestros servicios, usted reconoce que ha leído, entendido y acepta estar sujeto a estos Términos y todas las leyes y regulaciones aplicables.",
+      "eligibilityTitle": "1.2 Elegibilidad",
+      "eligibilityText": "Debe tener al menos 18 años y tener la capacidad legal para celebrar contratos para usar nuestro Servicio. Al usar nuestro Servicio, usted declara y garantiza que cumple con estos requisitos de elegibilidad.",
+      "businessTitle": "1.3 Uso Comercial",
+      "businessText": "Nuestro Servicio está destinado únicamente para uso comercial y empresarial. Si está utilizando el Servicio en nombre de una organización, usted declara que tiene la autoridad para obligar a esa organización a estos Términos."
+    },
+    "userAccounts": {
+      "title": "Cuentas de Usuario y Responsabilidades",
+      "subtitle": "Sus obligaciones como usuario de Zexfro",
+      "mustTitle": "Usted Debe:",
+      "must1": "Proporcionar información de registro precisa y completa",
+      "must2": "Mantener la seguridad de las credenciales de su cuenta",
+      "must3": "Notificarnos inmediatamente de cualquier acceso no autorizado",
+      "must4": "Mantener actualizada la información de su cuenta",
+      "must5": "Cumplir con todas las leyes y regulaciones aplicables",
+      "must6": "Usar el Servicio solo para propósitos comerciales legales",
+      "mustNotTitle": "Usted No Debe:",
+      "mustNot1": "Compartir las credenciales de su cuenta con otros",
+      "mustNot2": "Usar el Servicio para actividades ilegales o fraudulentas",
+      "mustNot3": "Intentar obtener acceso no autorizado a nuestros sistemas",
+      "mustNot4": "Cargar virus o código malicioso",
+      "mustNot5": "Interferir con o interrumpir el Servicio",
+      "mustNot6": "Violar derechos de propiedad intelectual"
+    },
+    "services": {
+      "title": "Servicios y Procesamiento de Pedidos",
+      "subtitle": "Cómo manejamos sus transacciones de importación/exportación",
+      "descriptionTitle": "3.1 Descripción del Servicio",
+      "descriptionText": "Zexfro proporciona una plataforma que conecta importadores y exportadores para el comercio internacional. Facilitamos transacciones, gestionamos logística, aseguramos el cumplimiento y proporcionamos servicios de soporte. Los servicios específicos disponibles pueden variar según su ubicación y tipo de cuenta.",
+      "orderTitle": "3.2 Realización de Pedidos",
+      "orderIntro": "Cuando realiza un pedido a través de nuestra plataforma:",
+      "order1": "Usted hace una oferta para comprar productos o servicios al precio indicado",
+      "order2": "Le enviaremos un correo electrónico de confirmación acusando recibo de su pedido",
+      "order3": "El contrato se forma cuando aceptamos su pedido y comenzamos el procesamiento",
+      "order4": "Nos reservamos el derecho de rechazar o cancelar cualquier pedido a nuestra discreción",
+      "pricingTitle": "3.3 Precios y Pago",
+      "pricingIntro": "Todos los precios se muestran en la moneda especificada y están sujetos a cambios sin previo aviso. Los términos de pago incluyen:",
+      "pricing1": "El pago debe realizarse utilizando métodos de pago aprobados",
+      "pricing2": "Usted es responsable de todos los impuestos y aranceles aplicables",
+      "pricing3": "Los pagos atrasados pueden incurrir en tarifas adicionales o suspensión del servicio",
+      "pricing4": "Los reembolsos están sujetos a nuestra política de reembolsos",
+      "shippingTitle": "3.4 Envío y Entrega",
+      "shippingText": "Trabajamos con socios logísticos confiables para entregar sus pedidos. Los tiempos de entrega son estimaciones y pueden variar debido al despacho de aduanas, condiciones climáticas u otros factores fuera de nuestro control. El riesgo de pérdida se transfiere a usted en el momento de la entrega."
+    },
+    "intellectualProperty": {
+      "title": "Derechos de Propiedad Intelectual",
+      "subtitle": "Protegiendo nuestro contenido y su contenido",
+      "ourContentTitle": "4.1 Nuestro Contenido",
+      "ourContentText": "Todo el contenido en la plataforma Zexfro, incluyendo texto, gráficos, logos, imágenes, software y diseño, es propiedad de Zexfro o sus licenciantes y está protegido por derechos de autor, marcas registradas y otras leyes de propiedad intelectual. No puede copiar, modificar, distribuir o crear obras derivadas sin nuestro permiso expreso por escrito.",
+      "yourContentTitle": "4.2 Su Contenido",
+      "yourContentText": "Usted conserva la propiedad de cualquier contenido que envíe a nuestra plataforma. Al enviar contenido, nos otorga una licencia mundial, no exclusiva y libre de regalías para usar, reproducir, modificar y mostrar ese contenido en relación con la prestación de nuestro Servicio.",
+      "trademarksTitle": "4.3 Marcas Registradas",
+      "trademarksText": "\"Zexfro\" y nuestro logotipo son marcas registradas. No puede usar nuestras marcas sin nuestro consentimiento previo por escrito. Todas las demás marcas que aparecen en nuestra plataforma son propiedad de sus respectivos dueños."
+    },
+    "liability": {
+      "title": "Limitación de Responsabilidad y Descargos de Responsabilidad",
+      "subtitle": "Comprender los límites de nuestra responsabilidad",
+      "noticeTitle": "Aviso Legal Importante",
+      "noticeText": "Por favor, lea esta sección cuidadosamente ya que limita nuestra responsabilidad y afecta sus derechos legales.",
+      "asIsTitle": "5.1 Servicio \"Tal Cual\"",
+      "asIsText": "El Servicio se proporciona \"tal cual\" y \"según disponibilidad\" sin garantías de ningún tipo, ya sean expresas o implícitas. No garantizamos que el Servicio será ininterrumpido, seguro o sin errores.",
+      "limitationsTitle": "5.2 Limitación de Responsabilidad",
+      "limitationsIntro": "En la máxima medida permitida por la ley, Zexfro no será responsable de:",
+      "limitation1": "Daños indirectos, incidentales, especiales, consecuentes o punitivos",
+      "limitation2": "Pérdida de ganancias, ingresos, datos u oportunidades comerciales",
+      "limitation3": "Retrasos o fallas en la entrega debido a circunstancias fuera de nuestro control",
+      "limitation4": "Acciones u omisiones de proveedores de servicios de terceros",
+      "maximumTitle": "5.3 Responsabilidad Máxima",
+      "maximumText": "Nuestra responsabilidad total hacia usted por cualquier reclamo que surja de su uso del Servicio no excederá la cantidad que nos haya pagado en los doce (12) meses anteriores al reclamo."
+    },
+    "termination": {
+      "title": "Terminación y Suspensión",
+      "subtitle": "Cómo se pueden terminar las cuentas",
+      "byYouTitle": "6.1 Terminación por Usted",
+      "byYouText": "Puede terminar su cuenta en cualquier momento contactando a nuestro equipo de soporte. Tras la terminación, ya no tendrá acceso a su cuenta ni a los datos asociados con ella.",
+      "byUsTitle": "6.2 Terminación por Nosotros",
+      "byUsIntro": "Podemos suspender o terminar su cuenta inmediatamente, sin previo aviso, si:",
+      "byUs1": "Usted incumple estos Términos o cualquier ley aplicable",
+      "byUs2": "Sospechamos de actividad fraudulenta o ilegal",
+      "byUs3": "Usted no paga las cantidades adeudadas",
+      "byUs4": "Requerido por ley o autoridades reguladoras",
+      "effectTitle": "6.3 Efecto de la Terminación",
+      "effectText": "Tras la terminación, su derecho a usar el Servicio cesará inmediatamente. Todas las disposiciones de estos Términos que por su naturaleza deban sobrevivir a la terminación sobrevivirán, incluyendo disposiciones de propiedad, descargos de garantía y limitaciones de responsabilidad."
+    },
+    "governingLaw": {
+      "title": "Ley Aplicable y Resolución de Disputas",
+      "subtitle": "Jurisdicción legal y manejo de disputas",
+      "lawTitle": "7.1 Ley Aplicable",
+      "lawText": "Estos Términos se regirán e interpretarán de acuerdo con las leyes de Bangladesh, sin tener en cuenta sus disposiciones sobre conflictos de leyes.",
+      "disputeTitle": "7.2 Resolución de Disputas",
+      "disputeText": "Cualquier disputa que surja de estos Términos o su uso del Servicio primero se resolverá mediante negociaciones de buena fe. Si las negociaciones fallan, las disputas se resolverán mediante arbitraje vinculante en Dhaka, Bangladesh, de acuerdo con la Ley de Arbitraje de Bangladesh.",
+      "jurisdictionTitle": "7.3 Jurisdicción",
+      "jurisdictionText": "Usted acepta someterse a la jurisdicción exclusiva de los tribunales ubicados en Dhaka, Bangladesh, para cualquier procedimiento legal que no pueda resolverse mediante arbitraje."
+    },
+    "changes": {
+      "title": "Cambios a Estos Términos",
+      "text1": "Nos reservamos el derecho de modificar estos Términos en cualquier momento. Le notificaremos cualquier cambio material publicando los nuevos Términos en esta página y actualizando la fecha de \"Última Actualización\". Su uso continuado del Servicio después de tales modificaciones constituye su aceptación de los Términos actualizados.",
+      "text2": "Le recomendamos que revise estos Términos periódicamente para mantenerse informado sobre sus derechos y obligaciones."
+    },
+    "contact": {
+      "title": "¿Preguntas Sobre Estos Términos?",
+      "description": "Si tiene alguna pregunta o inquietud sobre estos Términos y Condiciones, no dude en contactar a nuestro equipo legal.",
+      "emailButton": "legal@zexfro.com",
+      "supportButton": "Contactar Soporte"
+    },
+    "cta": {
+      "title": "¿Listo para Comenzar a Comerciar?",
+      "description": "Únase a Zexfro hoy y experimente operaciones de comercio global seguras, conformes y eficientes.",
+      "button": "Crear Su Cuenta"
     }
   }
 }
