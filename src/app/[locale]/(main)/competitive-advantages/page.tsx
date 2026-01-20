@@ -1,12 +1,14 @@
 import { PageHeader } from "@/components/ui/PageHeader";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
+import Link from "next/link";
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   const t = await getTranslations({
     locale,
     namespace: "competitiveAdvantagesPage",
@@ -318,12 +320,12 @@ export default function CompetitiveAdvantagesPage() {
                 {t("conclusion.title")}
               </h3>
               <p className="text-lg mb-6">{t("conclusion.description")}</p>
-              <link
+              <Link
                 href="/contact"
                 className="inline-block bg-white text-[#0a4a9e] font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
               >
                 {t("conclusion.cta")}
-              </link>
+              </Link>
             </div>
           </div>
         </div>
