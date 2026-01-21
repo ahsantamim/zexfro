@@ -64,6 +64,42 @@
       }
     }
   },
+  "servicesHighlight": {
+    "title": "Nos Services",
+    "subtitle": "Des solutions commerciales complètes adaptées aux besoins de votre entreprise - des opérations locales à l'expansion mondiale",
+    "learnMore": "En Savoir Plus",
+    "exploreAll": "Explorer Tous les Services",
+    "seamlessSolutions": {
+      "title": "Solutions Sans Faille",
+      "description": "Solutions complètes d'exportation-importation pour aider votre entreprise à réussir sur les marchés mondiaux. Gestion complète du cycle commercial de l'approvisionnement à la livraison.",
+      "features": [
+        "Gestion Commerciale Complète",
+        "Support de Documentation",
+        "Assurance Qualité",
+        "Suivi en Temps Réel"
+      ]
+    },
+    "localService": {
+      "title": "Service Local",
+      "description": "Solutions commerciales nationales complètes au Bangladesh. Services de logistique et de distribution locale rapides, fiables et rentables.",
+      "features": [
+        "Logistique Nationale",
+        "Entreposage Local",
+        "Réseau de Distribution",
+        "Documentation Commerciale"
+      ]
+    },
+    "globalService": {
+      "title": "Service Global",
+      "description": "Solutions commerciales internationales reliant les entreprises du monde entier. Dédouanement expert, approvisionnement mondial et services d'expédition dans le monde entier.",
+      "features": [
+        "Expédition Internationale",
+        "Dédouanement",
+        "Approvisionnement Mondial",
+        "Financement du Commerce"
+      ]
+    }
+  },
   "productCategories": {
     "title": "Catégories de Produits",
     "subtitle": "Explorez nos catégories approuvées pour un commerce sécurisé et conforme",

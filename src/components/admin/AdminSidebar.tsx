@@ -28,7 +28,12 @@ export function AdminSidebar() {
     { href: "/admin/users", label: "Users", icon: UserCheck },
     { href: "/admin/blog", label: "Blog", icon: FileText },
     { href: "/admin/registrations", label: "Registrations", icon: UserCheck },
-    { href: "/admin/mail", label: "Mail", icon: Mail },
+    {
+      href: "https://mail.mydchub.com/static/login/",
+      label: "Mail",
+      icon: Mail,
+      external: true,
+    },
   ];
 
   return (
@@ -62,6 +67,30 @@ export function AdminSidebar() {
           const Icon = link.icon;
           const isActive = pathname === link.href;
 
+          if (link.external) {
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group relative",
+                  "text-slate-300 hover:bg-slate-700/50 hover:text-white",
+                )}
+              >
+                <Icon
+                  className={cn(
+                    "w-5 h-5 transition-transform duration-200",
+                    "text-slate-400 group-hover:text-white",
+                  )}
+                  strokeWidth={2}
+                />
+                <span className="font-medium text-sm flex-1">{link.label}</span>
+              </a>
+            );
+          }
+
           return (
             <Link
               key={link.href}
@@ -70,7 +99,7 @@ export function AdminSidebar() {
                 "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group relative",
                 isActive
                   ? "bg-blue-600 text-white shadow-lg shadow-blue-600/50"
-                  : "text-slate-300 hover:bg-slate-700/50 hover:text-white"
+                  : "text-slate-300 hover:bg-slate-700/50 hover:text-white",
               )}
             >
               <Icon
@@ -78,7 +107,7 @@ export function AdminSidebar() {
                   "w-5 h-5 transition-transform duration-200",
                   isActive
                     ? "text-white"
-                    : "text-slate-400 group-hover:text-white"
+                    : "text-slate-400 group-hover:text-white",
                 )}
                 strokeWidth={2}
               />

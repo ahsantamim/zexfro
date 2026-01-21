@@ -64,6 +64,42 @@
       }
     }
   },
+  "servicesHighlight": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive trade solutions tailored to your business needs - from local operations to global expansion",
+    "learnMore": "Learn More",
+    "exploreAll": "Explore All Services",
+    "seamlessSolutions": {
+      "title": "Seamless Solutions",
+      "description": "End-to-end export-import solutions to help your business succeed in global markets. Complete trade cycle management from sourcing to delivery.",
+      "features": [
+        "Complete Trade Management",
+        "Documentation Support",
+        "Quality Assurance",
+        "Real-time Tracking"
+      ]
+    },
+    "localService": {
+      "title": "Local Service",
+      "description": "Comprehensive domestic trade solutions within Bangladesh. Fast, reliable, and cost-effective local logistics and distribution services.",
+      "features": [
+        "Domestic Logistics",
+        "Local Warehousing",
+        "Distribution Network",
+        "Trade Documentation"
+      ]
+    },
+    "globalService": {
+      "title": "Global Service",
+      "description": "International trade solutions connecting businesses worldwide. Expert customs clearance, global sourcing, and worldwide shipping services.",
+      "features": [
+        "International Shipping",
+        "Customs Clearance",
+        "Global Sourcing",
+        "Trade Finance"
+      ]
+    }
+  },
   "productCategories": {
     "title": "Product Categories",
     "subtitle": "Explore our approved categories for secure and compliant trade",
