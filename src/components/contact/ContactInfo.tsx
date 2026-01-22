@@ -19,8 +19,8 @@ export function ContactInfo() {
     {
       icon: Mail,
       title: "Email",
-      content: "info@zexfro.com",
-      link: "mailto:info@zexfro.com",
+      content: "info@zexfrointl.com",
+      link: "mailto:info@zexfrointl.com",
       bgColor: "bg-[#0a4a9e]",
     },
     {
@@ -39,8 +39,8 @@ export function ContactInfo() {
     {
       icon: Globe,
       title: "Website",
-      content: "www.zexfro.com",
-      link: "https://www.zexfro.com",
+      content: "www.zexfrointl.com",
+      link: "https://www.zexfrointl.com",
       bgColor: "bg-[#0a4a9e]",
     },
   ];
@@ -53,7 +53,7 @@ export function ContactInfo() {
             Get In Touch
           </h2>
           <p className="text-gray-600">
-            Have a question or need assistance? We're here to help.
+            Have a question or need assistance? We&apos;re here to help.
           </p>
         </div>
 
@@ -76,11 +76,15 @@ export function ContactInfo() {
                 key={index}
                 className="flex items-start gap-4 p-4 rounded-lg hover:bg-gray-50 transition-all duration-300"
               >
-                <div className={`${detail.bgColor} rounded-lg p-3 flex items-center justify-center flex-shrink-0`}>
+                <div
+                  className={`${detail.bgColor} rounded-lg p-3 flex items-center justify-center flex-shrink-0`}
+                >
                   <Icon className="w-5 h-5 text-white" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-semibold text-gray-900 mb-1">{detail.title}</h4>
+                  <h4 className="font-semibold text-gray-900 mb-1">
+                    {detail.title}
+                  </h4>
                   {content}
                 </div>
               </div>
