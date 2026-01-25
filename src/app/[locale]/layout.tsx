@@ -9,14 +9,16 @@ import { SessionProvider } from "@/components/providers/SessionProvider";
 import { Outfit } from "next/font/google";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
+import {
+  generateSEOMetadata,
+  generateOrganizationSchema,
+  generateWebsiteSchema,
+} from "@/lib/seo";
+import { siteConfig } from "@/config/site";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Zexfro - Global Trade Made Simple",
-  description:
-    "Secure. Compliant. Global Trade Made Simple. Connect with verified partners in Europe.",
-};
+export const metadata: Metadata = generateSEOMetadata();
 
 type Props = {
   children: ReactNode;
@@ -41,6 +43,10 @@ export default async function LocaleLayout({ children, params }: Props) {
   // Providing all messages to the client side
   const messages = await getMessages();
 
+  // Generate structured data schemas
+  const organizationSchema = generateOrganizationSchema();
+  const websiteSchema = generateWebsiteSchema();
+
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <head>
@@ -48,6 +54,19 @@ export default async function LocaleLayout({ children, params }: Props) {
         <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
+        <link rel="canonical" href={`${siteConfig.url}/${locale}`} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
       </head>
       <body className={outfit.className}>
         <SessionProvider>
