@@ -241,6 +241,7 @@ export function RegisterModal({ children }: RegisterModalProps) {
       }
 
       setIsSuccess(true);
+      setIsSubmitting(false); // Reset immediately after success
 
       // Reset after 3 seconds
       setTimeout(() => {
@@ -270,7 +271,18 @@ export function RegisterModal({ children }: RegisterModalProps) {
   };
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog
+      open={open}
+      onOpenChange={(newOpen) => {
+        setOpen(newOpen);
+        // Reset form state when modal is closed
+        if (!newOpen) {
+          setIsSubmitting(false);
+          setError("");
+          setIsSuccess(false);
+        }
+      }}
+    >
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-[#0a4a9e]/98 via-[#05306b]/98 to-[#041f3f]/98 backdrop-blur-xl border-2 border-white/20 text-white p-4 sm:p-6 md:p-8 [&::-webkit-scrollbar]:w-3 [&::-webkit-scrollbar-track]:bg-white/10 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gradient-to-b [&::-webkit-scrollbar-thumb]:from-[#0a4a9e] [&::-webkit-scrollbar-thumb]:to-[#05306b] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:border-2 [&::-webkit-scrollbar-thumb]:border-white/20 hover:[&::-webkit-scrollbar-thumb]:from-[#0d5bbf] hover:[&::-webkit-scrollbar-thumb]:to-[#0a4a9e]">
         <DialogHeader>
@@ -365,7 +377,7 @@ export function RegisterModal({ children }: RegisterModalProps) {
                               const selected = countries.find(
                                 (c) =>
                                   c.name.toLowerCase() ===
-                                  currentValue.toLowerCase()
+                                  currentValue.toLowerCase(),
                               );
                               setFormData({
                                 ...formData,
@@ -384,7 +396,7 @@ export function RegisterModal({ children }: RegisterModalProps) {
                                 "ml-auto h-4 w-4",
                                 formData.country === country.name
                                   ? "opacity-100"
-                                  : "opacity-0"
+                                  : "opacity-0",
                               )}
                             />
                           </CommandItem>
@@ -530,7 +542,7 @@ export function RegisterModal({ children }: RegisterModalProps) {
                                   "ml-auto h-4 w-4",
                                   formData.phoneCode === item.code
                                     ? "opacity-100"
-                                    : "opacity-0"
+                                    : "opacity-0",
                                 )}
                               />
                             </CommandItem>
