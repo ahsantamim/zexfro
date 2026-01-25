@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createRegistration } from "@/lib/api/registrations";
 import { sendWelcomeEmail } from "@/lib/mail/carbonio";
+import { sendRegistrationConfirmationEmail } from "@/lib/mail/gmail";
 import { createServerSupabaseClient } from "@/lib/supabase/client";
 
 export async function POST(request: NextRequest) {
@@ -84,6 +85,19 @@ export async function POST(request: NextRequest) {
       await sendWelcomeEmail(email, name);
     } catch (emailError) {
       console.error("Email error:", emailError);
+      // Don't fail the registration if email fails
+    }
+
+    // Send Gmail confirmation email (new professional template)
+    try {
+      await sendRegistrationConfirmationEmail({
+        to: email,
+        name,
+        company,
+      });
+      console.log('✅ Registration confirmation email sent to:', email);
+    } catch (emailError) {
+      console.error("Gmail confirmation error:", emailError);
       // Don't fail the registration if email fails
     }
 

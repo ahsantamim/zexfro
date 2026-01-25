@@ -54,3 +54,12 @@ export async function updateRegistrationStatus(
   });
   return registration as Registration;
 }
+
+export async function getPendingRegistrationsCount(): Promise<number> {
+  const count = await prisma.registration.count({
+    where: {
+      status: "pending",
+    },
+  });
+  return count;
+}
