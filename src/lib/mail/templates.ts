@@ -228,18 +228,22 @@ export function getRegistrationConfirmationHTML({
           <div class="info-label">Email:</div>
           <div class="info-value">${email}</div>
         </div>
-        ${company ? `
+        ${
+          company
+            ? `
         <div class="info-row">
           <div class="info-label">Company:</div>
           <div class="info-value">${company}</div>
         </div>
-        ` : ''}
+        `
+            : ""
+        }
         <div class="info-row">
           <div class="info-label">Registration Date:</div>
-          <div class="info-value">${new Date().toLocaleDateString('en-US', { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
+          <div class="info-value">${new Date().toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
           })}</div>
         </div>
       </div>
@@ -340,12 +344,12 @@ YOUR REGISTRATION HAS BEEN RECEIVED SUCCESSFULLY!
 Registration Details:
 - Name: ${name}
 - Email: ${email}
-${company ? `- Company: ${company}` : ''}
-- Registration Date: ${new Date().toLocaleDateString('en-US', { 
-  year: 'numeric', 
-  month: 'long', 
-  day: 'numeric' 
-})}
+${company ? `- Company: ${company}` : ""}
+- Registration Date: ${new Date().toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  })}
 
 What Happens Next?
 

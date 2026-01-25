@@ -17,7 +17,7 @@ export interface Registration {
 }
 
 export async function createRegistration(
-  data: Partial<Registration>
+  data: Partial<Registration>,
 ): Promise<Registration> {
   const registration = await prisma.registration.create({
     data: {
@@ -46,7 +46,7 @@ export async function getAllRegistrations(): Promise<Registration[]> {
 
 export async function updateRegistrationStatus(
   id: string,
-  status: string
+  status: string,
 ): Promise<Registration | null> {
   const registration = await prisma.registration.update({
     where: { id },

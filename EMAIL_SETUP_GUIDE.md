@@ -5,6 +5,7 @@
 Your email system has been configured with the following components:
 
 ### Files Created:
+
 1. ✅ **Email Templates** - [src/lib/mail/templates.ts](src/lib/mail/templates.ts)
    - Professional HTML email with Zexfro logo
    - Beautiful gradient design
@@ -57,11 +58,13 @@ npm run dev
 Visit: http://localhost:3000/api/test-email
 
 **Method 2 - PowerShell:**
+
 ```powershell
 Invoke-RestMethod -Uri "http://localhost:3000/api/test-email" -Method GET
 ```
 
 Expected Response:
+
 ```json
 {
   "success": true,
@@ -112,12 +115,14 @@ Invoke-RestMethod -Uri "http://localhost:3000/api/test-email" -Method POST -Body
 ### What's Included:
 
 ✨ **Professional Design**
+
 - Zexfro branding with logo
 - Beautiful gradient header
 - Clean, modern layout
 - Mobile responsive
 
 📧 **Email Content**
+
 - Personalized greeting
 - Registration confirmation
 - Registration details summary
@@ -127,6 +132,7 @@ Invoke-RestMethod -Uri "http://localhost:3000/api/test-email" -Method POST -Body
 - Footer with company info
 
 🎨 **Visual Elements**
+
 - Gradient backgrounds
 - Checkmark icons
 - Info boxes
@@ -136,26 +142,34 @@ Invoke-RestMethod -Uri "http://localhost:3000/api/test-email" -Method POST -Body
 ## Troubleshooting
 
 ### Issue: "Authentication failed"
-**Solution:** 
+
+**Solution:**
+
 1. Make sure you're using a Gmail App Password, not your regular password
 2. Enable 2-factor authentication on your Gmail account
 3. Generate a new App Password at: https://myaccount.google.com/apppasswords
 
 ### Issue: "Connection timeout"
+
 **Solution:**
+
 1. Check your internet connection
 2. Verify SMTP_HOST and SMTP_PORT are correct
 3. Check if your firewall is blocking port 587
 
 ### Issue: Email not received
+
 **Solution:**
+
 1. Check spam/junk folder
 2. Verify the recipient email is correct
 3. Check server logs for errors
 4. Wait a few minutes (sometimes delayed)
 
 ### Issue: "SMTP_USER not set"
+
 **Solution:**
+
 1. Make sure .env.local exists in project root
 2. Restart the development server after changing .env.local
 3. Verify no typos in environment variable names
@@ -165,6 +179,7 @@ Invoke-RestMethod -Uri "http://localhost:3000/api/test-email" -Method POST -Body
 Before deploying to production:
 
 1. **Set environment variables in Vercel/hosting platform:**
+
    ```
    SMTP_HOST=smtp.gmail.com
    SMTP_PORT=587
@@ -174,6 +189,7 @@ Before deploying to production:
    ```
 
 2. **Update NEXT_PUBLIC_APP_URL:**
+
    ```
    NEXT_PUBLIC_APP_URL=https://your-domain.com
    ```
@@ -206,6 +222,7 @@ The registration confirmation email includes:
 ## Need Help?
 
 If you encounter any issues:
+
 1. Check the server console for error messages
 2. Verify all environment variables are set
 3. Test SMTP connection first before sending emails

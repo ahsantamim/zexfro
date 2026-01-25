@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
     if (!email || !name) {
       return NextResponse.json(
         { error: "Missing required fields" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
         console.error("Upload error:", uploadError);
         return NextResponse.json(
           { error: "Failed to upload document" },
-          { status: 500 }
+          { status: 500 },
         );
       }
 
@@ -95,7 +95,7 @@ export async function POST(request: NextRequest) {
         name,
         company,
       });
-      console.log('✅ Registration confirmation email sent to:', email);
+      console.log("✅ Registration confirmation email sent to:", email);
     } catch (emailError) {
       console.error("Gmail confirmation error:", emailError);
       // Don't fail the registration if email fails
@@ -106,7 +106,7 @@ export async function POST(request: NextRequest) {
         message: "Registration successful",
         registration: { id: registration.id },
       },
-      { status: 201 }
+      { status: 201 },
     );
   } catch (error: any) {
     console.error("Error creating registration:", error);
@@ -115,13 +115,13 @@ export async function POST(request: NextRequest) {
     if (error.code === "P2002") {
       return NextResponse.json(
         { error: "Email already registered" },
-        { status: 409 }
+        { status: 409 },
       );
     }
 
     return NextResponse.json(
       { error: "Failed to create registration" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

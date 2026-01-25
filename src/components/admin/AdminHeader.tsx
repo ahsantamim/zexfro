@@ -19,10 +19,10 @@ export function AdminHeader() {
 
   // Fetch pending registrations count
   const { data: notifications, refetch } = useQuery({
-    queryKey: ['admin-notifications'],
+    queryKey: ["admin-notifications"],
     queryFn: async () => {
-      const response = await fetch('/api/admin/notifications');
-      if (!response.ok) throw new Error('Failed to fetch notifications');
+      const response = await fetch("/api/admin/notifications");
+      if (!response.ok) throw new Error("Failed to fetch notifications");
       return response.json();
     },
     refetchInterval: 30000, // Refetch every 30 seconds
@@ -33,18 +33,21 @@ export function AdminHeader() {
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsDropdownOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const handleNotificationClick = () => {
     setIsDropdownOpen(false);
-    router.push('/admin/registrations');
+    router.push("/admin/registrations");
   };
 
   const handleLogout = async () => {
@@ -89,7 +92,7 @@ export function AdminHeader() {
 
           {/* Notifications */}
           <div className="relative" ref={dropdownRef}>
-            <button 
+            <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               className="relative p-2 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
             >
@@ -122,10 +125,12 @@ export function AdminHeader() {
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-medium text-gray-900">
-                            {pendingCount} Pending Registration{pendingCount !== 1 ? 's' : ''}
+                            {pendingCount} Pending Registration
+                            {pendingCount !== 1 ? "s" : ""}
                           </p>
                           <p className="text-xs text-gray-500 mt-1">
-                            You have {pendingCount} new registration{pendingCount !== 1 ? 's' : ''} waiting for review
+                            You have {pendingCount} new registration
+                            {pendingCount !== 1 ? "s" : ""} waiting for review
                           </p>
                           <p className="text-xs text-blue-600 mt-1 font-medium">
                             Click to view →
@@ -136,7 +141,9 @@ export function AdminHeader() {
                   ) : (
                     <div className="px-4 py-8 text-center">
                       <Bell className="w-12 h-12 text-gray-300 mx-auto mb-3" />
-                      <p className="text-sm text-gray-500">No new notifications</p>
+                      <p className="text-sm text-gray-500">
+                        No new notifications
+                      </p>
                     </div>
                   )}
                 </div>
