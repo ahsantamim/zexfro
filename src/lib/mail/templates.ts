@@ -11,7 +11,10 @@ export function getRegistrationConfirmationHTML({
   email,
   company,
 }: EmailTemplateProps): string {
-  const logoUrl = `${siteConfig.url}/zexfro_logo_new.png`;
+  // Use production URL for logo to ensure it works in emails
+  const logoUrl = process.env.NEXT_PUBLIC_APP_URL
+    ? `${process.env.NEXT_PUBLIC_APP_URL}/zexfro_logo_new.png`
+    : "https://www.zexfrointl.com/zexfro_logo_new.png";
   const websiteUrl = siteConfig.url;
 
   return `
@@ -313,13 +316,13 @@ export function getRegistrationConfirmationHTML({
       </div>
 
       <p class="footer-text">
-        © ${new Date().getFullYear()} Zexfro. All rights reserved.
+        © ${new Date().getFullYear()} Zexfro International Ltd. All rights reserved.
       </p>
       <p class="footer-text">
         ${siteConfig.company.address}
       </p>
       <p class="footer-text" style="margin-top: 15px; font-size: 11px;">
-        You received this email because you registered at Zexfro.com. 
+        You received this email because you registered at zexfrointl.com. 
         If you didn't register, please ignore this email.
       </p>
     </div>
@@ -337,7 +340,7 @@ export function getRegistrationConfirmationText({
   return `
 Hello ${name}!
 
-Thank you for registering with Zexfro – your trusted partner in global trade solutions.
+Thank you for registering with Zexfro International Ltd. – your trusted partner in global trade solutions.
 
 YOUR REGISTRATION HAS BEEN RECEIVED SUCCESSFULLY!
 
@@ -355,7 +358,6 @@ What Happens Next?
 
 ✓ Review Process: Our team will carefully review your registration details within 24-48 hours.
 ✓ Personal Contact: A dedicated account manager will reach out to you via email or phone.
-✓ Account Setup: We'll guide you through setting up your personalized trading account.
 ✓ Start Trading: Begin connecting with verified partners across Europe and beyond.
 
 If you have any questions, please contact us:

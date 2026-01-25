@@ -3,7 +3,7 @@ export const siteConfig = {
   title: "Zexfro - Global Trade Made Simple",
   description:
     "Secure. Compliant. Global Trade Made Simple. Connect with verified partners in Europe.",
-  url: process.env.NEXT_PUBLIC_APP_URL || "https://zexfro.com",
+  url: process.env.NEXT_PUBLIC_APP_URL || "https://www.zexfrointl.com",
   keywords: [
     "global trade",
     "international trade",
@@ -15,10 +15,10 @@ export const siteConfig = {
     "secure trading platform",
   ],
   company: {
-    name: "Zexfro",
-    address: "123 Business Street, City, Country",
-    phone: "+1 (555) 123-4567",
-    email: "contact@zexfro.com",
+    name: "Zexfro International Ltd.",
+    address: "9/B, Uttara -8, Dhaka -1230, Bangladesh",
+    phone: "+88 01911657332",
+    email: "info@zexfrointl.com",
   },
   social: {
     twitter: "https://twitter.com/zexfro",
