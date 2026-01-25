@@ -1,10 +1,10 @@
-import { ReactNode } from 'react';
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import { notFound } from 'next/navigation';
-import { routing } from '@/i18n/routing';
-import { setRequestLocale } from 'next-intl/server';
-import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
+import { ReactNode } from "react";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
+import { setRequestLocale } from "next-intl/server";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { SessionProvider } from "@/components/providers/SessionProvider";
 import { Outfit } from "next/font/google";
 import "@/styles/globals.css";
@@ -42,7 +42,13 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
+      <head>
+        <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+      </head>
       <body className={outfit.className}>
         <SessionProvider>
           <NextIntlClientProvider messages={messages}>
@@ -54,4 +60,3 @@ export default async function LocaleLayout({ children, params }: Props) {
     </html>
   );
 }
-
