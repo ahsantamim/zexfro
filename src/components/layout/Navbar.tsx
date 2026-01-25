@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { AnnouncementBadge } from "@/components/ui/AnnouncementBadge";
 
 type NavLink =
   | { href: string; key: string; isDropdown?: false }
@@ -115,14 +116,23 @@ export function Navbar() {
             />
           </Link>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="p-2 rounded-md text-white hover:bg-white/10 transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-2">
+            {/* Announcement Badge - Mobile */}
+            <AnnouncementBadge text="New" icon="sparkles" link="/blog" />
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-md text-white hover:bg-white/10 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* DESKTOP LAYOUT - Industry Standard */}
@@ -161,6 +171,15 @@ export function Navbar() {
 
           {/* Desktop Nav Links */}
           <div className="flex items-center space-x-1 lg:space-x-2">
+            {/* Announcement Badge - Desktop */}
+            <div className="mr-2">
+              <AnnouncementBadge
+                text="What's New"
+                icon="sparkles"
+                link="/blog"
+              />
+            </div>
+
             {navLinks.map((link) => {
               if (link.isDropdown) {
                 // Dropdown logic
