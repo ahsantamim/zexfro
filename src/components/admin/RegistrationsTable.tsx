@@ -13,6 +13,7 @@ import {
   MapPin,
   Briefcase,
   ExternalLink,
+  Trash2,
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -25,6 +26,16 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import {
   Table,
   TableBody,
@@ -63,6 +74,11 @@ export function RegistrationsTable({
   const [selectedReg, setSelectedReg] = useState<Registration | null>(null);
   const [viewDialogOpen, setViewDialogOpen] = useState(false);
   const [updating, setUpdating] = useState<string | null>(null);
+  const [deleting, setDeleting] = useState<string | null>(null);
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+  const [registrationToDelete, setRegistrationToDelete] = useState<
+    string | null
+  >(null);
 
   useEffect(() => {
     fetchRegistrations();
@@ -107,6 +123,38 @@ export function RegistrationsTable({
     } finally {
       setUpdating(null);
     }
+  };
+
+  const handleDelete = async (id: string) => {
+    try {
+      setDeleting(id);
+      const response = await fetch(`/api/admin/registrations?id=${id}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        // Remove from local state
+        setRegistrations((prev) => prev.filter((reg) => reg.id !== id));
+        if (selectedReg && selectedReg.id === id) {
+          setViewDialogOpen(false);
+          setSelectedReg(null);
+        }
+      } else {
+        alert("Failed to delete registration");
+      }
+    } catch (error) {
+      console.error("Error deleting registration:", error);
+      alert("An error occurred while deleting the registration");
+    } finally {
+      setDeleting(null);
+      setDeleteDialogOpen(false);
+      setRegistrationToDelete(null);
+    }
+  };
+
+  const confirmDelete = (id: string) => {
+    setRegistrationToDelete(id);
+    setDeleteDialogOpen(true);
   };
 
   const getInitials = (name: string) => {
@@ -273,6 +321,15 @@ export function RegistrationsTable({
                             </Button>
                           </>
                         )}
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="hover:bg-red-50 hover:text-red-600"
+                          onClick={() => confirmDelete(reg.id)}
+                          disabled={deleting === reg.id}
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </Button>
                       </div>
                     </TableCell>
                   </TableRow>
@@ -472,6 +529,30 @@ export function RegistrationsTable({
           )}
         </DialogContent>
       </Dialog>
+
+      {/* Delete Confirmation Dialog */}
+      <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+            <AlertDialogDescription>
+              This action cannot be undone. This will permanently delete this
+              registration from the database.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={() =>
+                registrationToDelete && handleDelete(registrationToDelete)
+              }
+              className="bg-red-600 hover:bg-red-700"
+            >
+              Delete
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </>
   );
 }

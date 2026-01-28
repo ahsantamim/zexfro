@@ -63,3 +63,15 @@ export async function getPendingRegistrationsCount(): Promise<number> {
   });
   return count;
 }
+
+export async function deleteRegistration(id: string): Promise<boolean> {
+  try {
+    await prisma.registration.delete({
+      where: { id },
+    });
+    return true;
+  } catch (error) {
+    console.error("Error deleting registration:", error);
+    return false;
+  }
+}
