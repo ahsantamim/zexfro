@@ -96,7 +96,7 @@ export function RegistrationsTable({
       if (response.ok) {
         // Update local state
         setRegistrations((prev) =>
-          prev.map((reg) => (reg.id === id ? { ...reg, status } : reg))
+          prev.map((reg) => (reg.id === id ? { ...reg, status } : reg)),
         );
         if (selectedReg && selectedReg.id === id) {
           setSelectedReg({ ...selectedReg, status });
@@ -224,8 +224,8 @@ export function RegistrationsTable({
                           reg.status === "approved"
                             ? "bg-green-50 text-green-700 hover:bg-green-50"
                             : reg.status === "pending"
-                            ? "bg-yellow-50 text-yellow-700 hover:bg-yellow-50"
-                            : "bg-red-50 text-red-700 hover:bg-red-50"
+                              ? "bg-yellow-50 text-yellow-700 hover:bg-yellow-50"
+                              : "bg-red-50 text-red-700 hover:bg-red-50"
                         }
                       >
                         {reg.status}
@@ -416,8 +416,8 @@ export function RegistrationsTable({
                           selectedReg.status === "approved"
                             ? "bg-green-50 text-green-700"
                             : selectedReg.status === "pending"
-                            ? "bg-yellow-50 text-yellow-700"
-                            : "bg-red-50 text-red-700"
+                              ? "bg-yellow-50 text-yellow-700"
+                              : "bg-red-50 text-red-700"
                         }
                       >
                         {selectedReg.status}
