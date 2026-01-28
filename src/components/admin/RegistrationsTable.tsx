@@ -12,6 +12,7 @@ import {
   Building,
   MapPin,
   Briefcase,
+  ExternalLink,
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -146,6 +147,9 @@ export function RegistrationsTable({
                 </TableHead>
                 <TableHead className="font-bold text-gray-900">Type</TableHead>
                 <TableHead className="font-bold text-gray-900">
+                  Submitted File
+                </TableHead>
+                <TableHead className="font-bold text-gray-900">
                   Status
                 </TableHead>
                 <TableHead className="font-bold text-gray-900">Date</TableHead>
@@ -157,7 +161,7 @@ export function RegistrationsTable({
             <TableBody>
               {registrations.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={7} className="h-32 text-center">
+                  <TableCell colSpan={8} className="h-32 text-center">
                     <div className="flex flex-col items-center gap-2">
                       <UserCheck className="w-12 h-12 text-gray-300" />
                       <p className="text-gray-600">No registrations yet</p>
@@ -195,6 +199,22 @@ export function RegistrationsTable({
                         </Badge>
                       ) : (
                         "—"
+                      )}
+                    </TableCell>
+                    <TableCell>
+                      {reg.documentUrl ? (
+                        <a
+                          href={reg.documentUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-700 hover:underline text-sm font-medium"
+                        >
+                          <FileText className="w-4 h-4" />
+                          View
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      ) : (
+                        <span className="text-gray-400 text-sm">—</span>
                       )}
                     </TableCell>
                     <TableCell>

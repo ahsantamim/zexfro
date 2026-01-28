@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createRegistration } from "@/lib/api/registrations";
 import { sendWelcomeEmail } from "@/lib/mail/carbonio";
 import { sendRegistrationConfirmationEmail } from "@/lib/mail/gmail";
-import { createServerSupabaseClient } from "@/lib/supabase/client";
+import { createClient } from "@supabase/supabase-js";
 
 export async function POST(request: NextRequest) {
   try {
@@ -31,7 +31,18 @@ export async function POST(request: NextRequest) {
 
     // Upload file to Supabase if provided
     if (file && file.size > 0) {
-      const supabase = createServerSupabaseClient();
+      // Use service role key for server-side uploads (bypasses RLS)
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+      const supabaseServiceKey =
+        process.env.SUPABASE_SERVICE_ROLE_KEY ||
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+
+      const supabase = createClient(supabaseUrl, supabaseServiceKey, {
+        auth: {
+          persistSession: false,
+        },
+      });
+
       const fileExt = file.name.split(".").pop();
       const fileName = `${Date.now()}-${Math.random()
         .toString(36)
