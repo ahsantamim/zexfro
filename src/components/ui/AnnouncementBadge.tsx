@@ -1,21 +1,29 @@
 "use client";
 
 import { Bell, Megaphone, Sparkles } from "lucide-react";
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 
 interface AnnouncementBadgeProps {
   text?: string;
   link?: string;
   icon?: "bell" | "megaphone" | "sparkles";
+  announcements?: string[]; // Array of announcement texts for carousel
 }
 
 export function AnnouncementBadge({
   text = "What's New",
   link = "#",
   icon = "sparkles",
+  announcements = [
+    "New Products!",
+    "Special Offers!",
+    "Latest Updates!",
+    "Check It Out!",
+  ],
 }: AnnouncementBadgeProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const icons = {
     bell: Bell,
@@ -24,6 +32,15 @@ export function AnnouncementBadge({
   };
 
   const Icon = icons[icon];
+
+  // Auto-rotate announcements
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % announcements.length);
+    }, 2500); // Change every 2.5 seconds
+
+    return () => clearInterval(interval);
+  }, [announcements.length]);
 
   return (
     <motion.a
@@ -50,7 +67,7 @@ export function AnnouncementBadge({
       />
 
       {/* Main Badge Container */}
-      <div className="relative flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 rounded-full shadow-lg overflow-hidden">
+      <div className="relative flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3 sm:py-1.5 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 rounded-full shadow-lg overflow-hidden">
         {/* Animated Shine Effect */}
         <motion.div
           className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
@@ -76,10 +93,31 @@ export function AnnouncementBadge({
           <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-white drop-shadow-lg" />
         </motion.div>
 
-        {/* Text */}
-        <span className="text-xs sm:text-sm font-bold text-white drop-shadow-md whitespace-nowrap relative z-10">
-          {text}
-        </span>
+        {/* Scrolling Announcements Container - Seamless Infinite Loop */}
+        <div className="relative overflow-hidden h-5 sm:h-6 flex items-center w-[120px] sm:w-[140px]">
+          <motion.div
+            className="flex whitespace-nowrap gap-8"
+            animate={{
+              x: [0, -250],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "linear",
+              repeatType: "loop",
+            }}
+          >
+            {/* Render multiple copies for seamless infinite scroll */}
+            {[0, 1, 2, 3, 4].map((i) => (
+              <span
+                key={i}
+                className="text-xs sm:text-sm font-bold text-white drop-shadow-md"
+              >
+                {announcements[0] || "Announcement !"}
+              </span>
+            ))}
+          </motion.div>
+        </div>
 
         {/* Pulse Dot */}
         <div className="relative">
