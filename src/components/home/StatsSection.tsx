@@ -56,7 +56,7 @@ const Stat = ({
 
 export function StatsSection() {
   const t = useTranslations("stats");
-  
+
   return (
     <section className="relative border-y border-[#0A4D96]/20 py-12 sm:py-16 md:py-20 bg-[#0A4D96]">
       {/* Enhanced background shapes */}
@@ -102,20 +102,20 @@ export function StatsSection() {
             lightMode={true}
           />
           <Stat
-            num={1.5}
-            decimals={1}
-            suffix="k+"
+            num={500}
+            decimals={0}
+            suffix="+"
             subheading={t("shipmentCompleted")}
             lightMode={true}
           />
           <Stat
-            num={150}
+            num={70}
             suffix="M+"
             subheading={t("revenueGenerated")}
             lightMode={true}
           />
           <Stat
-            num={12}
+            num={7}
             suffix="+"
             subheading={t("yearsExperience")}
             lightMode={true}

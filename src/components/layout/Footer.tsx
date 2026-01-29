@@ -7,9 +7,8 @@ import {
   Phone,
   MapPin,
   Facebook,
-  Twitter,
   Linkedin,
-  Instagram,
+  MessageCircle,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
@@ -103,15 +102,6 @@ export function Footer() {
                   <Facebook className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="w-5 h-5" />
-                </a>
-                <a
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -121,13 +111,13 @@ export function Footer() {
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://wechat.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
-                  aria-label="Instagram"
+                  aria-label="WeChat"
                 >
-                  <Instagram className="w-5 h-5" />
+                  <MessageCircle className="w-5 h-5" />
                 </a>
               </div>
             </div>
