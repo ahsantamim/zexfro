@@ -26,8 +26,8 @@ export function ContactInfo() {
     {
       icon: Phone,
       title: "Phone",
-      content: "+880 1234-567890",
-      link: "tel:+8801234567890",
+      content: "+88 01911657332",
+      link: "tel:+8801911657332",
       bgColor: "bg-[#0a4a9e]",
     },
     {
