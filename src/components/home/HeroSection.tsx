@@ -47,7 +47,7 @@ export function HeroSection() {
           return prev;
         });
       },
-      isDeleting ? deletingSpeed : typingSpeed
+      isDeleting ? deletingSpeed : typingSpeed,
     );
 
     return () => clearInterval(interval);
@@ -92,7 +92,7 @@ export function HeroSection() {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/10" />
 
       {/* MAIN HERO CONTENT (perfect centered) */}
       <div className="container mx-auto max-w-7xl relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-16 flex flex-col items-center justify-center text-center">
@@ -100,13 +100,13 @@ export function HeroSection() {
           {/* TITLE - Animated with LettersPullUp - Two Lines */}
           <div className="mb-6 space-y-2">
             {/* Line 1: Secure. Compliant. */}
-            <LettersPullUp 
+            <LettersPullUp
               text={t("title.line1")}
               className="font-bold leading-[1.2] text-[36px] sm:text-[40px] md:text-[48px] lg:text-[72px] drop-shadow-lg text-white"
               delay={0.08}
             />
             {/* Line 2: Global Trade Made Simple. */}
-            <LettersPullUp 
+            <LettersPullUp
               text={`${t("title.line2")} ${t("title.line3")}`}
               className="font-bold leading-[1.2] text-[36px] sm:text-[40px] md:text-[48px] lg:text-[72px] drop-shadow-lg text-white"
               delay={0.08}
@@ -114,7 +114,7 @@ export function HeroSection() {
           </div>
 
           {/* SUBTITLE - Animated */}
-          <motion.p 
+          <motion.p
             className="font-normal leading-[1.4] md:leading-[1.5] mb-8 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-gray-200 mx-auto max-w-[60ch]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -124,14 +124,14 @@ export function HeroSection() {
           </motion.p>
 
           {/* BUTTON - Animated */}
-          <motion.div 
+          <motion.div
             className="space-y-4 flex flex-col items-center"
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ 
-              duration: 0.7, 
+            transition={{
+              duration: 0.7,
               delay: 1.7,
-              ease: [0.34, 1.56, 0.64, 1]
+              ease: [0.34, 1.56, 0.64, 1],
             }}
           >
             <RegisterModal>
@@ -156,29 +156,15 @@ export function HeroSection() {
                   rounded-full whitespace-nowrap group
                 "
               >
-<span
-  className="
-    font-bold tracking-tight font-[Poppins]
+                <span
+                  className="
+    font-bold tracking-tight 
     text-[32px] sm:text-[30px] md:text-[32px] lg:text-[36px]
-    text-transparent bg-clip-text
-    bg-gradient-to-b from-white via-[#e8e8e8] to-[#bfbfbf] text-yellow-50
-
-    /* Glossy highlight */
-    [text-shadow:
-      0px_1px_1px_rgba(255,255,255,0.9),
-      0px_3px_2px_rgba(255,255,255,0.5),
-
-      /* Deep layered shadow for 3D depth */
-      0px_4px_2px_rgba(0,0,0,0.25),
-      0px_6px_6px_rgba(0,0,0,0.40),
-      0px_10px_12px_rgba(0,0,0,0.50)
-    ]
+    text-white
   "
->
-  {t("cta")}
-</span>
-
-
+                >
+                  {t("cta")}
+                </span>
 
                 <ArrowRight
                   className="
@@ -201,7 +187,7 @@ export function HeroSection() {
               {t("here")}
             </p>
 
-            <motion.div 
+            <motion.div
               className="flex flex-row flex-wrap gap-y-4 gap-x-56 mt-12 justify-center"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -224,14 +210,17 @@ export function HeroSection() {
           </motion.div>
 
           {/* TRUST BADGE - Animated */}
-          <motion.div 
+          <motion.div
             className="mt-10 pt-6 border-t border-gray-400/20 max-w-md mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 2.7, ease: "easeOut" }}
           >
             <p className="text-[12px] sm:text-[13px] text-gray-300">
-              {t("trustedBy")} <span className="font-bold text-white">{t("trustedByCount")}</span>{" "}
+              {t("trustedBy")}{" "}
+              <span className="font-bold text-white">
+                {t("trustedByCount")}
+              </span>{" "}
               {t("trustedByText")}
             </p>
           </motion.div>
