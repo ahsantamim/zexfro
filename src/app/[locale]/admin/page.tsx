@@ -23,6 +23,12 @@ export default async function AdminDashboard() {
     getRecentActivity(),
   ]);
 
+  // Convert Date objects to strings for client component
+  const serializedActivity = recentActivity.map((activity) => ({
+    ...activity,
+    createdAt: activity.createdAt.toISOString(),
+  }));
+
   return (
     <div className="space-y-8">
       {/* Page Header */}
@@ -62,7 +68,7 @@ export default async function AdminDashboard() {
       {/* Analytics Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Analytics />
-        <RecentActivity activities={recentActivity} />
+        <RecentActivity activities={serializedActivity} />
       </div>
     </div>
   );

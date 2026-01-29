@@ -1,6 +1,6 @@
 "use server";
 
-import { revalidateTag, revalidatePath } from "next/cache";
+import { revalidatePath } from "next/cache";
 
 /**
  * Cache revalidation utilities for Next.js server-side caching
@@ -12,11 +12,7 @@ import { revalidateTag, revalidatePath } from "next/cache";
  * Use after any admin action that should update dashboard
  */
 export async function revalidateDashboard() {
-  revalidateTag("dashboard");
-  revalidateTag("stats");
-  revalidateTag("activity");
-
-  // Also revalidate the admin page path
+  // Revalidate the admin page path
   revalidatePath("/[locale]/admin", "page");
 }
 
@@ -24,11 +20,6 @@ export async function revalidateDashboard() {
  * Revalidate after product changes (create, update, delete)
  */
 export async function revalidateAfterProductChange() {
-  revalidateTag("dashboard");
-  revalidateTag("stats");
-  revalidateTag("activity");
-  revalidateTag("products");
-
   revalidatePath("/[locale]/admin", "page");
   revalidatePath("/[locale]/admin/products", "page");
 }
@@ -37,11 +28,6 @@ export async function revalidateAfterProductChange() {
  * Revalidate after blog post changes
  */
 export async function revalidateAfterBlogChange() {
-  revalidateTag("dashboard");
-  revalidateTag("stats");
-  revalidateTag("activity");
-  revalidateTag("blog");
-
   revalidatePath("/[locale]/admin", "page");
   revalidatePath("/[locale]/admin/blog", "page");
 }
@@ -50,11 +36,6 @@ export async function revalidateAfterBlogChange() {
  * Revalidate after category changes
  */
 export async function revalidateAfterCategoryChange() {
-  revalidateTag("dashboard");
-  revalidateTag("stats");
-  revalidateTag("activity");
-  revalidateTag("categories");
-
   revalidatePath("/[locale]/admin", "page");
   revalidatePath("/[locale]/admin/categories", "page");
 }
@@ -63,11 +44,6 @@ export async function revalidateAfterCategoryChange() {
  * Revalidate after user/registration changes
  */
 export async function revalidateAfterUserChange() {
-  revalidateTag("dashboard");
-  revalidateTag("stats");
-  revalidateTag("activity");
-  revalidateTag("users");
-
   revalidatePath("/[locale]/admin", "page");
   revalidatePath("/[locale]/admin/users", "page");
   revalidatePath("/[locale]/admin/registrations", "page");
