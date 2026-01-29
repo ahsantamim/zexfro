@@ -13,7 +13,7 @@ export function ContactInfo() {
     {
       icon: MapPin,
       title: "Address",
-      content: "House# 3, Road# 19, Sector# 11, Uttara, Dhaka-1230, Bangladesh",
+      content: "9/B, Uttara -8, Dhaka -1230, Bangladesh",
       bgColor: "bg-[#0a4a9e]",
     },
     {

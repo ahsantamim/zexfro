@@ -47,15 +47,8 @@ export function MapSection() {
               <MapPin className="w-5 h-5 text-white" />
             </div>
             <div>
-              <p className="text-sm font-semibold text-gray-900 mb-2">
-                Our Location:
-              </p>
               <p className="text-gray-700 text-sm">
-                House# 3, Road# 19, Sector# 11
-                <br />
-                Uttara, Dhaka-1230
-                <br />
-                Bangladesh
+                9/B, Uttara -8, Dhaka -1230, Bangladesh
               </p>
             </div>
           </div>
