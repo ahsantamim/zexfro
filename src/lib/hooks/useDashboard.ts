@@ -35,7 +35,12 @@ export function useDashboard() {
       if (!response.ok) throw new Error("Failed to fetch dashboard data");
       return response.json() as Promise<DashboardData>;
     },
-    staleTime: 30 * 1000, // 30 seconds (more frequent updates for dashboard)
-    refetchInterval: 60 * 1000, // Auto-refetch every minute
+    // Optimized configuration to reduce unnecessary API calls
+    staleTime: 5 * 60 * 1000, // 5 minutes (match server cache duration)
+    gcTime: 10 * 60 * 1000, // 10 minutes (garbage collection time)
+    refetchOnWindowFocus: false, // Don't refetch when switching tabs
+    refetchOnMount: false, // Don't refetch if data exists in cache
+    refetchInterval: false, // Disable auto-refetch (use manual refresh instead)
+    retry: 2, // Reduce retry attempts from default 3
   });
 }

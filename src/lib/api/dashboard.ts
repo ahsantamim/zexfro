@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/db/prisma";
+import { unstable_cache } from "next/cache";
 
 export interface DashboardStats {
   totalProducts: number;
@@ -18,145 +19,153 @@ export interface RecentActivityItem {
   createdAt: Date;
 }
 
-export async function getDashboardStats(): Promise<DashboardStats> {
-  try {
-    const [
-      totalProducts,
-      totalBlogPosts,
-      totalUsers,
-      totalRegistrations,
-      publishedBlogPosts,
-      draftBlogPosts,
-    ] = await Promise.all([
-      prisma.product.count(),
-      prisma.blogPost.count(),
-      prisma.user.count(),
-      prisma.registration.count(),
-      prisma.blogPost.count({ where: { published: true } }),
-      prisma.blogPost.count({ where: { published: false } }),
-    ]);
-
-    // Get categories count using raw query since it's not in Prisma schema
-    let totalCategories = 0;
+// Cached version with 5-minute revalidation to reduce database load
+export const getDashboardStats = unstable_cache(
+  async (): Promise<DashboardStats> => {
     try {
-      const result = await prisma.$queryRaw<Array<{ count: bigint }>>`
-        SELECT COUNT(*) FROM categories
-      `;
-      totalCategories = Number(result[0].count);
+      const [
+        totalProducts,
+        totalBlogPosts,
+        totalUsers,
+        totalRegistrations,
+        publishedBlogPosts,
+        draftBlogPosts,
+      ] = await Promise.all([
+        prisma.product.count(),
+        prisma.blogPost.count(),
+        prisma.user.count(),
+        prisma.registration.count(),
+        prisma.blogPost.count({ where: { published: true } }),
+        prisma.blogPost.count({ where: { published: false } }),
+      ]);
+
+      // Get categories count using raw query since it's not in Prisma schema
+      let totalCategories = 0;
+      try {
+        const result = await prisma.$queryRaw<Array<{ count: bigint }>>`
+          SELECT COUNT(*) FROM categories
+        `;
+        totalCategories = Number(result[0].count);
+      } catch (error) {
+        console.error("Error counting categories:", error);
+      }
+
+      return {
+        totalProducts,
+        totalBlogPosts,
+        totalCategories,
+        totalUsers,
+        totalRegistrations,
+        publishedBlogPosts,
+        draftBlogPosts,
+      };
     } catch (error) {
-      console.error("Error counting categories:", error);
+      console.error("Error fetching dashboard stats:", error);
+      throw error; // Let cache handle error states
     }
+  },
+  ["dashboard-stats"], // Cache key
+  {
+    revalidate: 300, // 5 minutes - adjust based on your needs
+    tags: ["dashboard", "stats"], // For on-demand revalidation
+  },
+);
 
-    return {
-      totalProducts,
-      totalBlogPosts,
-      totalCategories,
-      totalUsers,
-      totalRegistrations,
-      publishedBlogPosts,
-      draftBlogPosts,
-    };
-  } catch (error) {
-    console.error("Error fetching dashboard stats:", error);
-    return {
-      totalProducts: 0,
-      totalBlogPosts: 0,
-      totalCategories: 0,
-      totalUsers: 0,
-      totalRegistrations: 0,
-      publishedBlogPosts: 0,
-      draftBlogPosts: 0,
-    };
-  }
-}
-
-export async function getRecentActivity(): Promise<RecentActivityItem[]> {
-  try {
-    const activities: RecentActivityItem[] = [];
-
-    // Get recent products using Prisma
+// Cached version with 3-minute revalidation (more frequent for activity feed)
+export const getRecentActivity = unstable_cache(
+  async (): Promise<RecentActivityItem[]> => {
     try {
-      const recentProducts = await prisma.product.findMany({
-        take: 5,
-        orderBy: { createdAt: "desc" },
-        select: {
-          id: true,
-          name: true,
-          category: true,
-          createdAt: true,
-        },
-      });
+      const activities: RecentActivityItem[] = [];
 
-      recentProducts.forEach((product) => {
-        activities.push({
-          id: product.id,
-          type: "product",
-          title: "New product added",
-          description: product.name,
-          createdAt: product.createdAt,
+      // Get recent products using Prisma
+      try {
+        const recentProducts = await prisma.product.findMany({
+          take: 5,
+          orderBy: { createdAt: "desc" },
+          select: {
+            id: true,
+            name: true,
+            category: true,
+            createdAt: true,
+          },
         });
-      });
-    } catch (error) {
-      console.error("Error fetching recent products:", error);
-    }
 
-    // Get recent blog posts
-    try {
-      const recentBlogPosts = await prisma.blogPost.findMany({
-        take: 5,
-        orderBy: { createdAt: "desc" },
-        select: {
-          id: true,
-          title: true,
-          category: true,
-          published: true,
-          createdAt: true,
-        },
-      });
-
-      recentBlogPosts.forEach((post) => {
-        activities.push({
-          id: post.id,
-          type: "blog",
-          title: post.published ? "Blog post published" : "Blog post created",
-          description: `${post.category} - ${post.title}`,
-          createdAt: post.createdAt,
+        recentProducts.forEach((product) => {
+          activities.push({
+            id: product.id,
+            type: "product",
+            title: "New product added",
+            description: product.name,
+            createdAt: product.createdAt,
+          });
         });
-      });
-    } catch (error) {
-      console.error("Error fetching recent blog posts:", error);
-    }
+      } catch (error) {
+        console.error("Error fetching recent products:", error);
+      }
 
-    // Get recent categories using raw query
-    try {
-      const recentCategories = await prisma.$queryRaw<
-        Array<{ id: string; name: string; created_at: Date }>
-      >`
-        SELECT id, name, created_at 
-        FROM categories 
-        ORDER BY created_at DESC 
-        LIMIT 3
-      `;
-
-      recentCategories.forEach((category) => {
-        activities.push({
-          id: category.id,
-          type: "category",
-          title: "Category created",
-          description: category.name,
-          createdAt: category.created_at,
+      // Get recent blog posts
+      try {
+        const recentBlogPosts = await prisma.blogPost.findMany({
+          take: 5,
+          orderBy: { createdAt: "desc" },
+          select: {
+            id: true,
+            title: true,
+            category: true,
+            published: true,
+            createdAt: true,
+          },
         });
-      });
-    } catch (error) {
-      console.error("Error fetching recent categories:", error);
-    }
 
-    // Sort by date and return top 8
-    return activities
-      .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
-      .slice(0, 8);
-  } catch (error) {
-    console.error("Error fetching recent activity:", error);
-    return [];
-  }
-}
+        recentBlogPosts.forEach((post) => {
+          activities.push({
+            id: post.id,
+            type: "blog",
+            title: post.published ? "Blog post published" : "Blog post created",
+            description: `${post.category} - ${post.title}`,
+            createdAt: post.createdAt,
+          });
+        });
+      } catch (error) {
+        console.error("Error fetching recent blog posts:", error);
+      }
+
+      // Get recent categories using raw query
+      try {
+        const recentCategories = await prisma.$queryRaw<
+          Array<{ id: string; name: string; created_at: Date }>
+        >`
+          SELECT id, name, created_at 
+          FROM categories 
+          ORDER BY created_at DESC 
+          LIMIT 3
+        `;
+
+        recentCategories.forEach((category) => {
+          activities.push({
+            id: category.id,
+            type: "category",
+            title: "Category created",
+            description: category.name,
+            createdAt: category.created_at,
+          });
+        });
+      } catch (error) {
+        console.error("Error fetching recent categories:", error);
+      }
+
+      // Sort by date and return top 8
+      return activities
+        .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
+        .slice(0, 8);
+    } catch (error) {
+      console.error("Error fetching recent activity:", error);
+      throw error;
+    }
+  },
+  ["dashboard-activity"],
+  {
+    revalidate: 180, // 3 minutes - more frequent updates for activity feed
+    tags: ["dashboard", "activity"],
+  },
+);

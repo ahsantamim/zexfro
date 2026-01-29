@@ -342,190 +342,320 @@ export function RegistrationsTable({
 
       {/* View Dialog */}
       <Dialog open={viewDialogOpen} onOpenChange={setViewDialogOpen}>
-        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle>Registration Details</DialogTitle>
-            <DialogDescription>
-              Complete information for this registration
-            </DialogDescription>
-          </DialogHeader>
-
+        <DialogContent className="max-w-3xl max-h-[85vh] overflow-hidden p-0 [&>button]:hidden">
           {selectedReg && (
-            <div className="space-y-6">
-              {/* User Info */}
-              <div className="space-y-4">
-                <h3 className="font-semibold text-lg border-b pb-2">
-                  Personal Information
-                </h3>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-sm text-gray-500">Full Name</label>
-                    <p className="font-medium">{selectedReg.name}</p>
+            <>
+              {/* Header */}
+              <div className="px-6 py-4 border-b bg-gradient-to-r from-[#0a4a9e] to-[#05306b]">
+                <div className="flex items-start justify-between">
+                  <div className="flex items-center gap-4">
+                    <Avatar className="w-16 h-16 border-3 border-white shadow-lg">
+                      <AvatarFallback className="bg-white text-[#0a4a9e] font-bold text-xl">
+                        {getInitials(selectedReg.name)}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <DialogTitle className="text-2xl font-bold text-white mb-1">
+                        {selectedReg.name}
+                      </DialogTitle>
+                      <DialogDescription className="text-blue-100 flex items-center gap-2">
+                        <Mail className="w-4 h-4" />
+                        {selectedReg.email}
+                      </DialogDescription>
+                    </div>
                   </div>
-                  <div>
-                    <label className="text-sm text-gray-500">Email</label>
-                    <p className="font-medium flex items-center gap-2">
-                      <Mail className="w-4 h-4 text-gray-400" />
-                      {selectedReg.email}
-                    </p>
-                  </div>
-                  {selectedReg.phone && (
-                    <div>
-                      <label className="text-sm text-gray-500">Phone</label>
-                      <p className="font-medium flex items-center gap-2">
-                        <Phone className="w-4 h-4 text-gray-400" />
-                        {selectedReg.phone}
-                      </p>
-                    </div>
-                  )}
-                  {selectedReg.telephone && (
-                    <div>
-                      <label className="text-sm text-gray-500">Telephone</label>
-                      <p className="font-medium flex items-center gap-2">
-                        <Phone className="w-4 h-4 text-gray-400" />
-                        {selectedReg.telephone}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Business Info */}
-              <div className="space-y-4">
-                <h3 className="font-semibold text-lg border-b pb-2">
-                  Business Information
-                </h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {selectedReg.company && (
-                    <div>
-                      <label className="text-sm text-gray-500">Company</label>
-                      <p className="font-medium flex items-center gap-2">
-                        <Building className="w-4 h-4 text-gray-400" />
-                        {selectedReg.company}
-                      </p>
-                    </div>
-                  )}
-                  {selectedReg.designation && (
-                    <div>
-                      <label className="text-sm text-gray-500">
-                        Designation
-                      </label>
-                      <p className="font-medium flex items-center gap-2">
-                        <Briefcase className="w-4 h-4 text-gray-400" />
-                        {selectedReg.designation}
-                      </p>
-                    </div>
-                  )}
-                  {selectedReg.country && (
-                    <div>
-                      <label className="text-sm text-gray-500">Country</label>
-                      <p className="font-medium flex items-center gap-2">
-                        <MapPin className="w-4 h-4 text-gray-400" />
-                        {selectedReg.country}
-                      </p>
-                    </div>
-                  )}
-                  {selectedReg.clientType && (
-                    <div>
-                      <label className="text-sm text-gray-500">
-                        Client Type
-                      </label>
-                      <Badge variant="outline" className="capitalize mt-1">
-                        {selectedReg.clientType}
-                      </Badge>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Document */}
-              {selectedReg.documentUrl && (
-                <div className="space-y-2">
-                  <h3 className="font-semibold text-lg border-b pb-2">
-                    Document
-                  </h3>
-                  <a
-                    href={selectedReg.documentUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-blue-600 hover:text-blue-700"
+                  <Badge
+                    variant="secondary"
+                    className={`px-3 py-1 text-sm font-semibold ${
+                      selectedReg.status === "approved"
+                        ? "bg-green-500 text-white hover:bg-green-600"
+                        : selectedReg.status === "pending"
+                          ? "bg-yellow-500 text-white hover:bg-yellow-600"
+                          : "bg-red-500 text-white hover:bg-red-600"
+                    }`}
                   >
-                    <FileText className="w-4 h-4" />
-                    View uploaded document
-                  </a>
+                    {selectedReg.status.toUpperCase()}
+                  </Badge>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="overflow-y-auto max-h-[calc(85vh-200px)] px-6 py-6">
+                <div className="space-y-6">
+                  {/* Contact Information */}
+                  <div>
+                    <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900 mb-4">
+                      <UserCheck className="w-5 h-5 text-[#0a4a9e]" />
+                      Contact Information
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 border border-gray-200">
+                        <div className="mt-0.5">
+                          <Mail className="w-5 h-5 text-[#0a4a9e]" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                            Email Address
+                          </label>
+                          <p className="font-medium text-gray-900 truncate">
+                            {selectedReg.email}
+                          </p>
+                        </div>
+                      </div>
+
+                      {selectedReg.phone && (
+                        <div className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 border border-gray-200">
+                          <div className="mt-0.5">
+                            <Phone className="w-5 h-5 text-[#0a4a9e]" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                              Mobile Phone
+                            </label>
+                            <p className="font-medium text-gray-900">
+                              {selectedReg.phone}
+                            </p>
+                          </div>
+                        </div>
+                      )}
+
+                      {selectedReg.telephone && (
+                        <div className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 border border-gray-200">
+                          <div className="mt-0.5">
+                            <Phone className="w-5 h-5 text-[#0a4a9e]" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                              Telephone
+                            </label>
+                            <p className="font-medium text-gray-900">
+                              {selectedReg.telephone}
+                            </p>
+                          </div>
+                        </div>
+                      )}
+
+                      {selectedReg.country && (
+                        <div className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 border border-gray-200">
+                          <div className="mt-0.5">
+                            <MapPin className="w-5 h-5 text-[#0a4a9e]" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                              Country
+                            </label>
+                            <p className="font-medium text-gray-900">
+                              {selectedReg.country}
+                            </p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Business Information */}
+                  {(selectedReg.company ||
+                    selectedReg.designation ||
+                    selectedReg.clientType) && (
+                    <div>
+                      <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900 mb-4">
+                        <Building className="w-5 h-5 text-[#0a4a9e]" />
+                        Business Information
+                      </h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {selectedReg.company && (
+                          <div className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 border border-gray-200">
+                            <div className="mt-0.5">
+                              <Building className="w-5 h-5 text-[#0a4a9e]" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                                Company Name
+                              </label>
+                              <p className="font-medium text-gray-900">
+                                {selectedReg.company}
+                              </p>
+                            </div>
+                          </div>
+                        )}
+
+                        {selectedReg.designation && (
+                          <div className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 border border-gray-200">
+                            <div className="mt-0.5">
+                              <Briefcase className="w-5 h-5 text-[#0a4a9e]" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                                Designation
+                              </label>
+                              <p className="font-medium text-gray-900">
+                                {selectedReg.designation}
+                              </p>
+                            </div>
+                          </div>
+                        )}
+
+                        {selectedReg.clientType && (
+                          <div className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 border border-gray-200">
+                            <div className="mt-0.5">
+                              <UserCheck className="w-5 h-5 text-[#0a4a9e]" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                                Client Type
+                              </label>
+                              <Badge
+                                variant="outline"
+                                className="capitalize mt-1 border-[#0a4a9e] text-[#0a4a9e]"
+                              >
+                                {selectedReg.clientType}
+                              </Badge>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Submitted Document */}
+                  {selectedReg.documentUrl && (
+                    <div>
+                      <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900 mb-4">
+                        <FileText className="w-5 h-5 text-[#0a4a9e]" />
+                        Submitted Document
+                      </h3>
+                      <a
+                        href={selectedReg.documentUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 p-4 rounded-lg bg-blue-50 border-2 border-blue-200 hover:border-[#0a4a9e] hover:bg-blue-100 transition-all group"
+                      >
+                        <div className="p-2 bg-[#0a4a9e] rounded-lg group-hover:scale-110 transition-transform">
+                          <FileText className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <p className="font-semibold text-gray-900 group-hover:text-[#0a4a9e]">
+                            View Uploaded Document
+                          </p>
+                          <p className="text-sm text-gray-600">
+                            Click to open in new tab
+                          </p>
+                        </div>
+                        <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-[#0a4a9e]" />
+                      </a>
+                    </div>
+                  )}
+
+                  {/* Timeline */}
+                  <div>
+                    <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900 mb-4">
+                      <svg
+                        className="w-5 h-5 text-[#0a4a9e]"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      Timeline
+                    </h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="p-3 rounded-lg bg-gray-50 border border-gray-200">
+                        <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                          Registered On
+                        </label>
+                        <p className="font-semibold text-gray-900 mt-1">
+                          {new Date(selectedReg.createdAt).toLocaleDateString(
+                            "en-US",
+                            {
+                              weekday: "short",
+                              year: "numeric",
+                              month: "long",
+                              day: "numeric",
+                            },
+                          )}
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          {new Date(selectedReg.createdAt).toLocaleTimeString(
+                            "en-US",
+                            {
+                              hour: "2-digit",
+                              minute: "2-digit",
+                            },
+                          )}
+                        </p>
+                      </div>
+                      <div className="p-3 rounded-lg bg-gray-50 border border-gray-200">
+                        <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                          Last Updated
+                        </label>
+                        <p className="font-semibold text-gray-900 mt-1">
+                          {new Date(selectedReg.updatedAt).toLocaleDateString(
+                            "en-US",
+                            {
+                              weekday: "short",
+                              year: "numeric",
+                              month: "long",
+                              day: "numeric",
+                            },
+                          )}
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          {new Date(selectedReg.updatedAt).toLocaleTimeString(
+                            "en-US",
+                            {
+                              hour: "2-digit",
+                              minute: "2-digit",
+                            },
+                          )}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Footer Actions */}
+              {selectedReg.status === "pending" && (
+                <div className="px-6 py-4 border-t bg-gray-50 flex items-center justify-end gap-3">
+                  <Button
+                    variant="outline"
+                    onClick={() => setViewDialogOpen(false)}
+                    className="min-w-[100px]"
+                  >
+                    Close
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="bg-red-50 text-red-700 hover:bg-red-100 hover:text-red-800 border-red-200 min-w-[120px]"
+                    onClick={() => {
+                      handleStatusUpdate(selectedReg.id, "rejected");
+                      setViewDialogOpen(false);
+                    }}
+                    disabled={updating === selectedReg.id}
+                  >
+                    <XCircle className="w-4 h-4 mr-2" />
+                    Reject
+                  </Button>
+                  <Button
+                    className="bg-green-600 text-white hover:bg-green-700 min-w-[120px]"
+                    onClick={() => {
+                      handleStatusUpdate(selectedReg.id, "approved");
+                      setViewDialogOpen(false);
+                    }}
+                    disabled={updating === selectedReg.id}
+                  >
+                    <CheckCircle className="w-4 h-4 mr-2" />
+                    Approve
+                  </Button>
                 </div>
               )}
-
-              {/* Status & Actions */}
-              <div className="space-y-4">
-                <h3 className="font-semibold text-lg border-b pb-2">
-                  Status & Actions
-                </h3>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <label className="text-sm text-gray-500">
-                      Current Status
-                    </label>
-                    <div className="mt-1">
-                      <Badge
-                        variant="secondary"
-                        className={
-                          selectedReg.status === "approved"
-                            ? "bg-green-50 text-green-700"
-                            : selectedReg.status === "pending"
-                              ? "bg-yellow-50 text-yellow-700"
-                              : "bg-red-50 text-red-700"
-                        }
-                      >
-                        {selectedReg.status}
-                      </Badge>
-                    </div>
-                  </div>
-                  {selectedReg.status === "pending" && (
-                    <div className="flex gap-2">
-                      <Button
-                        variant="outline"
-                        className="bg-green-50 text-green-700 hover:bg-green-100"
-                        onClick={() => {
-                          handleStatusUpdate(selectedReg.id, "approved");
-                          setViewDialogOpen(false);
-                        }}
-                        disabled={updating === selectedReg.id}
-                      >
-                        <CheckCircle className="w-4 h-4 mr-2" />
-                        Approve
-                      </Button>
-                      <Button
-                        variant="outline"
-                        className="bg-red-50 text-red-700 hover:bg-red-100"
-                        onClick={() => {
-                          handleStatusUpdate(selectedReg.id, "rejected");
-                          setViewDialogOpen(false);
-                        }}
-                        disabled={updating === selectedReg.id}
-                      >
-                        <XCircle className="w-4 h-4 mr-2" />
-                        Reject
-                      </Button>
-                    </div>
-                  )}
-                </div>
-                <div className="grid grid-cols-2 gap-4 text-sm text-gray-500">
-                  <div>
-                    <label>Registered At</label>
-                    <p className="font-medium text-gray-900">
-                      {formatDate(selectedReg.createdAt)}
-                    </p>
-                  </div>
-                  <div>
-                    <label>Last Updated</label>
-                    <p className="font-medium text-gray-900">
-                      {formatDate(selectedReg.updatedAt)}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </>
           )}
         </DialogContent>
       </Dialog>

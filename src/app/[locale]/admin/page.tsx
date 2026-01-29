@@ -1,39 +1,27 @@
-"use client";
-
 import { DashboardStats } from "@/components/admin/DashboardStats";
 import { RecentActivity } from "@/components/admin/RecentActivity";
 import { QuickActions } from "@/components/admin/QuickActions";
 import { Analytics } from "@/components/admin/Analytics";
 import { Separator } from "@/components/ui/separator";
-import { LoadingSpinner } from "@/components/ui/LoadingSpinner";
-import { useDashboard } from "@/lib/hooks/useDashboard";
+import { getDashboardStats, getRecentActivity } from "@/lib/api/dashboard";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
 
-export default function AdminDashboard() {
-  const { data: dashboardData, isLoading, error } = useDashboard();
+// Force dynamic rendering for auth check, but data fetching is cached
+export const dynamic = "force-dynamic";
 
-  if (isLoading) {
-    return (
-      <div className="min-h-[600px] flex items-center justify-center">
-        <LoadingSpinner size="lg" text="Loading dashboard..." />
-      </div>
-    );
+export default async function AdminDashboard() {
+  const session = await auth();
+
+  if (!session?.user) {
+    redirect("/login");
   }
 
-  if (error) {
-    return (
-      <div className="flex items-center justify-center h-96">
-        <div className="text-center">
-          <p className="text-red-600 mb-4">Failed to load dashboard data</p>
-          <button
-            onClick={() => window.location.reload()}
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
-          >
-            Reload
-          </button>
-        </div>
-      </div>
-    );
-  }
+  // Parallel data fetching with server-side caching
+  const [stats, recentActivity] = await Promise.all([
+    getDashboardStats(),
+    getRecentActivity(),
+  ]);
 
   return (
     <div className="space-y-8">
@@ -62,7 +50,7 @@ export default function AdminDashboard() {
       <Separator />
 
       {/* Stats Cards */}
-      <DashboardStats stats={dashboardData?.stats} />
+      <DashboardStats stats={stats} />
 
       <Separator />
 
@@ -74,7 +62,7 @@ export default function AdminDashboard() {
       {/* Analytics Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Analytics />
-        <RecentActivity activities={dashboardData?.recentActivity} />
+        <RecentActivity activities={recentActivity} />
       </div>
     </div>
   );
