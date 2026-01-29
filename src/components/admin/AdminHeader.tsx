@@ -84,12 +84,6 @@ export function AdminHeader() {
 
         {/* Right Section */}
         <div className="flex items-center gap-4">
-          {/* Search (placeholder) */}
-          <button className="hidden lg:flex items-center gap-2 px-4 py-2 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors text-gray-600">
-            <Search className="w-4 h-4" />
-            <span className="text-sm">Search...</span>
-          </button>
-
           {/* Notifications */}
           <div className="relative" ref={dropdownRef}>
             <button

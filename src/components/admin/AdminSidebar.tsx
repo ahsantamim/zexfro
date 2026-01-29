@@ -41,13 +41,13 @@ export function AdminSidebar() {
       {/* Logo Section */}
       <div className="p-6 border-b border-slate-700/50">
         <Link href="/admin" className="flex items-center gap-3">
-          <div className="relative w-10 h-10 rounded-lg overflow-hidden bg-white/10 backdrop-blur-sm p-1">
+          <div className="relative w-20 h-20  overflow-hidden  p-2 ">
             <Image
-              src="/logo.png"
+              src="/zexfro_logo_new.png"
               alt="Logo"
-              width={40}
-              height={40}
-              className="object-contain"
+              width={80}
+              height={80}
+              className="object-cover w-full h-full"
               priority
             />
           </div>
