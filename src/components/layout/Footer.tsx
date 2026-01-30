@@ -100,7 +100,7 @@ export function Footer() {
                   href="https://www.linkedin.com/company/zexfro-international-limited/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white bg-blue-800 p-2 rounded hover:opacity-80 "
+                  className="text-white bg-[#0A66C2] p-2 rounded hover:opacity-80 "
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-5 h-5" fill="white" />
