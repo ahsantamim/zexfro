@@ -2,15 +2,10 @@
 
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Facebook,
-  Linkedin,
-  MessageCircle,
-} from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Linkedin } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWeixin } from "@fortawesome/free-brands-svg-icons";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -96,28 +91,28 @@ export function Footer() {
                   href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-[#1877F2] hover:opacity-80 transition-opacity"
                   aria-label="Facebook"
                 >
-                  <Facebook className="w-5 h-5" />
+                  <Facebook className="w-10 h-10" fill="#1877F2" />
                 </a>
                 <a
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-[#0A66C2] hover:opacity-80 transition-opacity"
                   aria-label="LinkedIn"
                 >
-                  <Linkedin className="w-5 h-5" />
+                  <Linkedin className="w-10 h-10" fill="#0A66C2" />
                 </a>
                 <a
                   href="https://wechat.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-[#09B83E] hover:opacity-80 transition-opacity"
                   aria-label="WeChat"
                 >
-                  <MessageCircle className="w-5 h-5" />
+                  <FontAwesomeIcon icon={faWeixin} className="text-4xl mt-1" />
                 </a>
               </div>
             </div>
