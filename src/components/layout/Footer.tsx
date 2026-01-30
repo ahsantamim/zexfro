@@ -6,9 +6,11 @@ import { Mail, Phone, MapPin, Facebook, Linkedin } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWeixin } from "@fortawesome/free-brands-svg-icons";
+import { useState } from "react";
 
 export function Footer() {
   const t = useTranslations("footer");
+  const [wechatModalOpen, setWechatModalOpen] = useState(false);
 
   const footerLinks = {
     company: [
@@ -106,9 +108,11 @@ export function Footer() {
                   <Linkedin className="w-5 h-5" fill="white" />
                 </a>
                 <a
-                  href="https://wechat.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setWechatModalOpen(true);
+                  }}
                   className="text-white bg-[#09B83E] p-1 rounded hover:opacity-80 transition-opacity"
                   aria-label="WeChat"
                 >
@@ -194,6 +198,32 @@ export function Footer() {
           </div>
         </div>
       </div>
+
+      {/* WeChat QR Modal */}
+      {wechatModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+          <div className="bg-white rounded-lg shadow-lg p-6 max-w-xs w-full relative">
+            <button
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl"
+              onClick={() => setWechatModalOpen(false)}
+              aria-label="Close"
+            >
+              &times;
+            </button>
+            <h2 className="text-lg text-black font-semibold mb-4 text-center">
+              WeChat QR
+            </h2>
+            <img
+              src="/social/we%20chat.jpeg"
+              alt="WeChat QR Code"
+              className="w-96 h-96 object-contain mx-auto rounded border"
+            />
+            <p className="text-center text-gray-700 mt-2 text-sm">
+              Scan to connect on WeChat
+            </p>
+          </div>
+        </div>
+      )}
     </footer>
   );
 }
