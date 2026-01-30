@@ -88,7 +88,7 @@ export function Footer() {
               {/* Social Icons */}
               <div className="flex gap-4 justify-center mt-6">
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/profile.php?id=61580928983797"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#1877F2] hover:opacity-80 transition-opacity"
@@ -97,7 +97,7 @@ export function Footer() {
                   <Facebook className="w-7 h-7" fill="#1877F2" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/zexfro-international-limited/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#0A66C2] hover:opacity-80 transition-opacity"
