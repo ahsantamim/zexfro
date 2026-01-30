@@ -109,10 +109,10 @@ export function Footer() {
                   href="https://wechat.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#09B83E] hover:opacity-80 transition-opacity"
+                  className="text-white bg-[#09B83E] p-1 rounded hover:opacity-80 transition-opacity"
                   aria-label="WeChat"
                 >
-                  <FontAwesomeIcon icon={faWeixin} className="text-3xl mt-1" />
+                  <FontAwesomeIcon icon={faWeixin} className="text-xl mt-1" />
                 </a>
               </div>
             </div>
