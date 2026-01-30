@@ -26,7 +26,10 @@ export default async function AdminDashboard() {
   // Convert Date objects to strings for client component
   const serializedActivity = recentActivity.map((activity) => ({
     ...activity,
-    createdAt: activity.createdAt.toISOString(),
+    createdAt:
+      typeof activity.createdAt === "string"
+        ? activity.createdAt
+        : activity.createdAt.toISOString(),
   }));
 
   return (
