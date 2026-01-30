@@ -94,7 +94,7 @@ export function Footer() {
                   className="text-[#1877F2] hover:opacity-80 transition-opacity"
                   aria-label="Facebook"
                 >
-                  <Facebook className="w-10 h-10" fill="#1877F2" />
+                  <Facebook className="w-7 h-7" fill="#1877F2" />
                 </a>
                 <a
                   href="https://linkedin.com"
@@ -103,7 +103,7 @@ export function Footer() {
                   className="text-[#0A66C2] hover:opacity-80 transition-opacity"
                   aria-label="LinkedIn"
                 >
-                  <Linkedin className="w-10 h-10" fill="#0A66C2" />
+                  <Linkedin className="w-7 h-7" fill="#0A66C2" />
                 </a>
                 <a
                   href="https://wechat.com"
@@ -112,7 +112,7 @@ export function Footer() {
                   className="text-[#09B83E] hover:opacity-80 transition-opacity"
                   aria-label="WeChat"
                 >
-                  <FontAwesomeIcon icon={faWeixin} className="text-4xl mt-1" />
+                  <FontAwesomeIcon icon={faWeixin} className="text-3xl mt-1" />
                 </a>
               </div>
             </div>
