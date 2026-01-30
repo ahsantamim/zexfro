@@ -91,19 +91,19 @@ export function Footer() {
                   href="https://www.facebook.com/profile.php?id=61580928983797"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#1877F2] hover:opacity-80 transition-opacity"
+                  className="text-white bg-blue-600 p-2 rounded-full hover:opacity-80 transition-opacity"
                   aria-label="Facebook"
                 >
-                  <Facebook className="w-7 h-7" fill="#1877F2" />
+                  <Facebook className="w-5 h-5" fill="white" />
                 </a>
                 <a
                   href="https://www.linkedin.com/company/zexfro-international-limited/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#0A66C2] hover:opacity-80 transition-opacity"
+                  className="text-white bg-blue-800 p-2 rounded hover:opacity-80 "
                   aria-label="LinkedIn"
                 >
-                  <Linkedin className="w-7 h-7" fill="#0A66C2" />
+                  <Linkedin className="w-5 h-5" fill="white" />
                 </a>
                 <a
                   href="https://wechat.com"

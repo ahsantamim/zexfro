@@ -2252,5 +2252,88 @@
       "description": "Join Zexfro today and experience secure, compliant, and efficient global trade operations.",
       "button": "Create Your Account"
     }
+  },
+  "logisticsSupplyChainPage": {
+    "pageTitle": "Logistics & Supply Chain | Zexfro",
+    "pageDescription": "Comprehensive logistics and supply chain management solutions from global sourcing to last-mile delivery. International freight, customs brokerage, warehousing, and B2B distribution services.",
+    "header": {
+      "title": "Logistics and Supply Chain",
+      "description": "Comprehensive logistics and supply chain management solutions"
+    },
+    "procurement": {
+      "title": "Procurement and Inbound Logistics",
+      "intro": "As an import-oriented firm, Zexfro's supply chain begins with global sourcing.",
+      "internationalSourcing": {
+        "title": "International Sourcing",
+        "description": "They engage in identifying global manufacturers (often in Southeast Asia, China, or Europe) to source raw materials or finished products."
+      },
+      "freightForwarding": {
+        "title": "Freight Forwarding",
+        "description": "Since they operate out of Dhaka, they likely rely on a network of sea and air freight forwarders to move goods through Chattogram Port (sea) or Hazrat Shahjalal International Airport (air)."
+      },
+      "customsBrokerage": {
+        "title": "Customs Brokerage",
+        "description": "A critical link in their chain is clearing goods through Bangladesh Customs, which involves navigating regulatory compliance and duty structures."
+      }
+    },
+    "warehousing": {
+      "title": "Warehousing and Inventory Management",
+      "intro": "Once goods clear customs, they move into the domestic phase of the supply chain.",
+      "centralizedStorage": {
+        "title": "Centralized Storage",
+        "description": "With their primary office in Uttara, the company likely utilizes warehouses in the surrounding industrial zones (such as Gazipur or Tongi) to store bulk inventory."
+      },
+      "stockkeeping": {
+        "title": "Stockkeeping",
+        "description": "As a \"Supply & Marketing\" firm, they maintain safety stocks to buffer against the lead-time variability inherent in international shipping."
+      }
+    },
+    "distribution": {
+      "title": "Distribution and Outbound Logistics",
+      "intro": "The \"Marketing\" arm of Zexfro focuses on moving products from storage to the end-user or secondary distributors.",
+      "lastMile": {
+        "title": "Last-Mile Delivery",
+        "description": "They likely employ a mix of third-party logistics (3PL) providers and local transport fleets to distribute goods across Bangladesh's major cities."
+      },
+      "b2bSupplyChain": {
+        "title": "B2B Supply Chain",
+        "description": "Since they are listed as \"Suppliers,\" their primary customers are likely other businesses (B2B), requiring structured delivery schedules and bulk fulfillment."
+      }
+    },
+    "challenges": {
+      "title": "Key Supply Chain Challenges",
+      "intro": "Operating in the Bangladeshi market presents specific logistical hurdles that Zexfro must manage:",
+      "portCongestion": {
+        "title": "Port Congestion",
+        "description": "Delays at Chattogram Port can impact the \"Import\" timeline, requiring sophisticated lead-time planning."
+      },
+      "infrastructure": {
+        "title": "Infrastructure",
+        "description": "Navigating the traffic and road conditions between the port and the capital (Dhaka) is a core logistical concern for ensuring on-time delivery."
+      },
+      "regulatoryCompliance": {
+        "title": "Regulatory Compliance",
+        "description": "Managing the documentation for Import Registration Certificates (IRC) and Letters of Credit (L/C) is a vital administrative layer of their supply chain."
+      }
+    },
+    "components": {
+      "title": "Supply Chain Components",
+      "tableHeaders": {
+        "stage": "Stage",
+        "keyActivity": "Key Activity"
+      },
+      "upstream": {
+        "stage": "Upstream",
+        "activity": "Supplier selection, L/C opening, International Freight."
+      },
+      "midstream": {
+        "stage": "Midstream",
+        "activity": "Customs clearance, Warehousing in Dhaka/Uttara, Quality Control."
+      },
+      "downstream": {
+        "stage": "Downstream",
+        "activity": "Distribution to local wholesalers, B2B marketing, After-sales support."
+      }
+    }
   }
 }

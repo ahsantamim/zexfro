@@ -14,9 +14,9 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "resources" });
 
   return {
-    title: "Logistics & Supply Chain Resources",
+    title: "Logistics & Supply Chain | Zexfro",
     description:
-      "Comprehensive resources for logistics and supply chain management",
+      "Comprehensive logistics and supply chain management solutions from global sourcing to last-mile delivery. International freight, customs brokerage, warehousing, and B2B distribution services.",
   };
 }
 

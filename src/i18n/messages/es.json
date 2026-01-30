@@ -2248,5 +2248,88 @@
       "description": "Únase a Zexfro hoy y experimente operaciones de comercio global seguras, conformes y eficientes.",
       "button": "Crear Su Cuenta"
     }
+  },
+  "logisticsSupplyChainPage": {
+    "pageTitle": "Logística y Cadena de Suministro | Zexfro",
+    "pageDescription": "Soluciones integrales de gestión logística y cadena de suministro desde el abastecimiento global hasta la entrega de última milla. Servicios de flete internacional, corretaje aduanero, almacenamiento y distribución B2B.",
+    "header": {
+      "title": "Logística y Cadena de Suministro",
+      "description": "Soluciones integrales de gestión logística y cadena de suministro"
+    },
+    "procurement": {
+      "title": "Aprovisionamiento y Logística de Entrada",
+      "intro": "Como empresa orientada a la importación, la cadena de suministro de Zexfro comienza con el abastecimiento global.",
+      "internationalSourcing": {
+        "title": "Abastecimiento Internacional",
+        "description": "Se dedican a identificar fabricantes globales (a menudo en el Sudeste Asiático, China o Europa) para obtener materias primas o productos terminados."
+      },
+      "freightForwarding": {
+        "title": "Transporte de Carga",
+        "description": "Dado que operan desde Dhaka, probablemente dependen de una red de transitarios marítimos y aéreos para mover mercancías a través del Puerto de Chattogram (mar) o el Aeropuerto Internacional Hazrat Shahjalal (aire)."
+      },
+      "customsBrokerage": {
+        "title": "Corretaje Aduanero",
+        "description": "Un eslabón crítico en su cadena es el despacho de mercancías a través de las Aduanas de Bangladesh, lo que implica navegar por el cumplimiento regulatorio y las estructuras arancelarias."
+      }
+    },
+    "warehousing": {
+      "title": "Almacenamiento y Gestión de Inventario",
+      "intro": "Una vez que las mercancías pasan la aduana, entran en la fase nacional de la cadena de suministro.",
+      "centralizedStorage": {
+        "title": "Almacenamiento Centralizado",
+        "description": "Con su oficina principal en Uttara, la empresa probablemente utiliza almacenes en las zonas industriales circundantes (como Gazipur o Tongi) para almacenar inventario a granel."
+      },
+      "stockkeeping": {
+        "title": "Gestión de Existencias",
+        "description": "Como empresa de \"Suministro y Marketing\", mantienen existencias de seguridad para protegerse contra la variabilidad del tiempo de entrega inherente al transporte internacional."
+      }
+    },
+    "distribution": {
+      "title": "Distribución y Logística de Salida",
+      "intro": "El brazo de \"Marketing\" de Zexfro se centra en mover productos desde el almacenamiento hasta el usuario final o distribuidores secundarios.",
+      "lastMile": {
+        "title": "Entrega de Última Milla",
+        "description": "Probablemente emplean una combinación de proveedores de logística de terceros (3PL) y flotas de transporte local para distribuir mercancías en las principales ciudades de Bangladesh."
+      },
+      "b2bSupplyChain": {
+        "title": "Cadena de Suministro B2B",
+        "description": "Dado que figuran como \"Proveedores\", sus clientes principales son probablemente otras empresas (B2B), que requieren horarios de entrega estructurados y cumplimiento a granel."
+      }
+    },
+    "challenges": {
+      "title": "Desafíos Clave de la Cadena de Suministro",
+      "intro": "Operar en el mercado bangladesí presenta obstáculos logísticos específicos que Zexfro debe gestionar:",
+      "portCongestion": {
+        "title": "Congestión Portuaria",
+        "description": "Los retrasos en el Puerto de Chattogram pueden afectar el cronograma de \"Importación\", lo que requiere una planificación sofisticada del tiempo de entrega."
+      },
+      "infrastructure": {
+        "title": "Infraestructura",
+        "description": "Navegar por el tráfico y las condiciones de las carreteras entre el puerto y la capital (Dhaka) es una preocupación logística central para garantizar la entrega a tiempo."
+      },
+      "regulatoryCompliance": {
+        "title": "Cumplimiento Regulatorio",
+        "description": "La gestión de la documentación para Certificados de Registro de Importación (IRC) y Cartas de Crédito (L/C) es una capa administrativa vital de su cadena de suministro."
+      }
+    },
+    "components": {
+      "title": "Componentes de la Cadena de Suministro",
+      "tableHeaders": {
+        "stage": "Etapa",
+        "keyActivity": "Actividad Clave"
+      },
+      "upstream": {
+        "stage": "Ascendente",
+        "activity": "Selección de proveedores, apertura de L/C, Flete Internacional."
+      },
+      "midstream": {
+        "stage": "Intermedia",
+        "activity": "Despacho aduanero, Almacenamiento en Dhaka/Uttara, Control de Calidad."
+      },
+      "downstream": {
+        "stage": "Descendente",
+        "activity": "Distribución a mayoristas locales, marketing B2B, Soporte postventa."
+      }
+    }
   }
 }

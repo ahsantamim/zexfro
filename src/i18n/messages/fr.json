@@ -2248,5 +2248,88 @@
       "description": "Rejoignez Zexfro aujourd'hui et découvrez des opérations de commerce mondial sécurisées, conformes et efficaces.",
       "button": "Créer Votre Compte"
     }
+  },
+  "logisticsSupplyChainPage": {
+    "pageTitle": "Logistique et Chaîne d'Approvisionnement | Zexfro",
+    "pageDescription": "Solutions complètes de gestion logistique et de chaîne d'approvisionnement, de l'approvisionnement mondial à la livraison du dernier kilomètre. Services de fret international, courtage en douane, entreposage et distribution B2B.",
+    "header": {
+      "title": "Logistique et Chaîne d'Approvisionnement",
+      "description": "Solutions complètes de gestion logistique et de chaîne d'approvisionnement"
+    },
+    "procurement": {
+      "title": "Approvisionnement et Logistique Entrante",
+      "intro": "En tant qu'entreprise axée sur l'importation, la chaîne d'approvisionnement de Zexfro commence par l'approvisionnement mondial.",
+      "internationalSourcing": {
+        "title": "Approvisionnement International",
+        "description": "Ils s'engagent à identifier des fabricants mondiaux (souvent en Asie du Sud-Est, en Chine ou en Europe) pour se procurer des matières premières ou des produits finis."
+      },
+      "freightForwarding": {
+        "title": "Transitaire",
+        "description": "Puisqu'ils opèrent depuis Dhaka, ils s'appuient probablement sur un réseau de transitaires maritimes et aériens pour déplacer les marchandises via le port de Chattogram (mer) ou l'aéroport international Hazrat Shahjalal (air)."
+      },
+      "customsBrokerage": {
+        "title": "Courtage en Douane",
+        "description": "Un maillon essentiel de leur chaîne est le dédouanement des marchandises par les douanes du Bangladesh, ce qui implique de naviguer dans la conformité réglementaire et les structures tarifaires."
+      }
+    },
+    "warehousing": {
+      "title": "Entreposage et Gestion des Stocks",
+      "intro": "Une fois que les marchandises ont passé la douane, elles entrent dans la phase nationale de la chaîne d'approvisionnement.",
+      "centralizedStorage": {
+        "title": "Stockage Centralisé",
+        "description": "Avec leur bureau principal à Uttara, l'entreprise utilise probablement des entrepôts dans les zones industrielles environnantes (comme Gazipur ou Tongi) pour stocker les stocks en vrac."
+      },
+      "stockkeeping": {
+        "title": "Gestion des Stocks",
+        "description": "En tant qu'entreprise de \"Fourniture et Marketing\", ils maintiennent des stocks de sécurité pour se protéger contre la variabilité des délais inhérente au transport international."
+      }
+    },
+    "distribution": {
+      "title": "Distribution et Logistique Sortante",
+      "intro": "Le bras \"Marketing\" de Zexfro se concentre sur le déplacement des produits du stockage vers l'utilisateur final ou les distributeurs secondaires.",
+      "lastMile": {
+        "title": "Livraison du Dernier Kilomètre",
+        "description": "Ils emploient probablement un mélange de fournisseurs de logistique tierce (3PL) et de flottes de transport locales pour distribuer les marchandises dans les grandes villes du Bangladesh."
+      },
+      "b2bSupplyChain": {
+        "title": "Chaîne d'Approvisionnement B2B",
+        "description": "Étant donné qu'ils sont répertoriés comme \"Fournisseurs\", leurs principaux clients sont probablement d'autres entreprises (B2B), nécessitant des calendriers de livraison structurés et un traitement en vrac."
+      }
+    },
+    "challenges": {
+      "title": "Défis Clés de la Chaîne d'Approvisionnement",
+      "intro": "L'exploitation sur le marché bangladais présente des obstacles logistiques spécifiques que Zexfro doit gérer :",
+      "portCongestion": {
+        "title": "Congestion Portuaire",
+        "description": "Les retards au port de Chattogram peuvent avoir un impact sur le calendrier d'\"Importation\", nécessitant une planification sophistiquée des délais de livraison."
+      },
+      "infrastructure": {
+        "title": "Infrastructure",
+        "description": "Naviguer dans le trafic et les conditions routières entre le port et la capitale (Dhaka) est une préoccupation logistique centrale pour assurer la livraison à temps."
+      },
+      "regulatoryCompliance": {
+        "title": "Conformité Réglementaire",
+        "description": "La gestion de la documentation pour les certificats d'enregistrement d'importation (IRC) et les lettres de crédit (L/C) est une couche administrative vitale de leur chaîne d'approvisionnement."
+      }
+    },
+    "components": {
+      "title": "Composants de la Chaîne d'Approvisionnement",
+      "tableHeaders": {
+        "stage": "Étape",
+        "keyActivity": "Activité Clé"
+      },
+      "upstream": {
+        "stage": "Amont",
+        "activity": "Sélection des fournisseurs, ouverture de L/C, Fret International."
+      },
+      "midstream": {
+        "stage": "Intermédiaire",
+        "activity": "Dédouanement, Entreposage à Dhaka/Uttara, Contrôle Qualité."
+      },
+      "downstream": {
+        "stage": "Aval",
+        "activity": "Distribution aux grossistes locaux, marketing B2B, Support après-vente."
+      }
+    }
   }
 }
